@@ -14,7 +14,10 @@
 		// scripts
 		wp_enqueue_script( 'admin-js', JSPATH.'admin.js', array('jquery'), '1.0', true );
 		wp_localize_script( 'admin-js', 'ajax_url', admin_url('admin-ajax.php') );
+		wp_localize_script( 'jquery-ui-datepicker', 'ajax_url', JSPATH.'jquery-ui.min.js' );
+		// styles
 		wp_enqueue_style( 'admin-css', CSSPATH.'admin.css' );
+		wp_enqueue_style('jquery-ui-datepicker-style', CSSPATH.'jquery-ui.min.css' );
 
 	});
 
@@ -30,7 +33,10 @@
 
 	});
 
-
+	/**
+	* Add javascript to the footer of admin panel.
+	**/
+	add_action( 'admin_footer', 'footer_admin_scripts', 22 );
 
 
 

@@ -5,21 +5,31 @@
 
 // Base styles
 // --------------------------------------------------
+.bg-color__screen .close-modal{
+  color: @light;
+  font-size: 30px;
+  background-color: @primary;
+  border: none;
+  font-weight: lighter;
+}
+
+.bg-color__screen .btn{
+  margin:@margin-base;
+}
 
 .btn {
   display: inline-block;
-  margin-bottom: 0; border: 1px solid transparent;
-  font-family: @font-family-sans-serif; font-weight: @btn-font-weight;
-  text-align: center; text-transform: uppercase;
+  margin-bottom: 0; // For input.btn
+  font-weight: @btn-font-weight;
+  text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 2px solid transparent;
   white-space: nowrap;
-  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; 0);
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-base; @line-height-base; @btn-border-radius-extralarge);
   .user-select(none);
-
-  .transition(all 0.3s ease);
 
   &,
   &:active,
@@ -87,30 +97,20 @@
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
 
-.btn-squared{
-  padding: @padding-base-vertical;
+.btn-primary-hollow{
+  color: @primary;
+  border-color: @primary;
+  background:none;
 }
 
-//Bordered button
-.btn-bordered{
-  border-left: 1px solid @brand-primary; border-right: 1px solid @brand-primary;
+.btn-light-hollow{
   color: @light;
-
-  &:hover,
-  &:focus,
-  &.focus {
-    color: @brand-primary;
-    border-left: 1px solid @light; border-right: 1px solid @light;
-  }
+  border-color: @light;
+  background:none;
 }
 
-//Map button
-.btn__map{
-  background-color: @brand-primary;
-  color: @light;
-  display: inline-block;
-  font-size: 1.5em;
-}
+
+
 
 // Link buttons
 // -------------------------
@@ -157,14 +157,14 @@
 
 .btn-lg {
   // line-height: ensure even-numbered height of button next to large input
-  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; 0);
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @btn-border-radius-large);
 }
 .btn-sm {
   // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; 0);
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
 }
 .btn-xs {
-  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; 0);
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
 }
 
 
@@ -188,8 +188,4 @@ input[type="button"] {
   &.btn-block {
     width: 100%;
   }
-}
-.btn--target{
-  border:none;
-  border: 2px dashed #000000;
 }

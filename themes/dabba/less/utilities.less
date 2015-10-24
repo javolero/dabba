@@ -1,61 +1,27 @@
 //
 // Utility classes
 // --------------------------------------------------
+.bg-gradient{
+  background:linear-gradient( @primary, @secondary );
+}
 
-// Box model
+
+// Backgrounds
 // -------------------------
-
-//Padding
-
-.padding{ padding: @padding-base-vertical @padding-base-horizontal; }
-.padding--xl{ padding: @padding-xl-vertical @padding-xl-horizontal; }
-.padding--large{ padding: @padding-large-vertical @padding-large-horizontal; }
-.padding--small{ padding: @padding-small-vertical @padding-small-horizontal; }
-.padding--xs{ padding: @padding-xs-vertical @padding-xs-horizontal; }
-
-.padding-bottom{ padding-bottom: @padding-base-vertical; }
-
-.padding-top-bottom{
-  padding-top: @padding-base-vertical; padding-bottom: @padding-base-vertical;
+.bg-color__screen{
+  background-color: @primary;
 }
-.padding-top-bottom--large{
-  padding-top: @padding-large-vertical; padding-bottom: @padding-large-vertical;
+.bg-tertiary{
+  background-color: @tertiary;
+  color: @light;
 }
 
-//Border
-.border-bottom{
-  border-bottom-width: 1; border-bottom-style: solid; border-bottom-color: @dark;
-}
-
-.border-bottom--primary{ border-bottom-color: @brand-primary; }
-.border-bottom--light{ border-bottom-color: @light; }
-
-.border-bottom--dotted{ border-bottom-style: dotted; }
-
-
-//Margin
-.no-margin{ margin: 0; }
-.no-margin-left{ margin-left: 0;}
-
-.margin-auto{
-  margin-left: auto; margin-right: auto;
-}
-
-.margin-bottom{ margin-bottom: @padding-base-vertical; }
-
-
-
-// Geometric forms
+// Colors
 // -------------------------
-.circle{
-  width: 200px; height: 200px;
-  padding: 5%;
-  border-radius: 50%;
-
-  @media (max-width: @screen-sm-min){
-    padding-top: 8%;
-  }
-}
+.color-light{ color: @light; }
+.color-primary{ color: @primary; }
+.color-quaternary{ color: @quaternary }
+.color-gray{color: @gray}
 
 // Floats
 // -------------------------
@@ -91,6 +57,11 @@
   .text-hide();
 }
 
+// underlined
+.text-underlined{ text-decoration: underline; }
+
+
+
 
 // Hide from screenreaders and browsers
 //
@@ -100,7 +71,6 @@
   display: none !important;
 }
 
-
 // For Affix plugin
 // -------------------------
 
@@ -108,14 +78,41 @@
   position: fixed;
 }
 
+//Margin
+.no-margin{ margin: 0; }
 
+.margin{ margin: @margin-base; }
+.margin--large{ margin: @margin-large; }
 
-// Positions
-// -------------------------
+.margin-top { margin-top: @margin-base; }
+.margin-bottom { margin-bottom: @margin-base; }
+.margin-top-bottom--large{ margin: @margin-large 0; }
 
-.relative{ position: relative; }
-.absolute{ position: absolute; }
+//Padding
+.no-padding{ padding: 0; }
 
-.absolute-bottom--0{ bottom: 0; }
+.padding{ padding: @padding-base-vertical @padding-base-horizontal; }
+.padding--xl{ padding: @padding-xl-vertical @padding-xl-horizontal; }
+.padding--large{ padding: @padding-large-vertical @padding-large-horizontal; }
+.padding--small{ padding: @padding-small-vertical @padding-small-horizontal; }
+.padding--xs{ padding: @padding-xs-vertical @padding-xs-horizontal; }
 
-.absolute-left--0{ left: 0; }
+.padding-bottom{ padding-bottom: @padding-base-vertical; }
+
+.padding-top-bottom{
+  padding-top: @padding-base-vertical; padding-bottom: @padding-base-vertical;
+}
+.padding-top-bottom--large{
+  padding-top: @padding-large-vertical; padding-bottom: @padding-large-vertical;
+}
+
+.padding-left-right{
+  padding-left: @padding-base-horizontal;
+  padding-right: @padding-base-horizontal;
+}
+
+.padding-left-right--large{
+  padding-left: @padding-large-horizontal;
+  padding-right: @padding-large-horizontal;
+}
+

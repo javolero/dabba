@@ -15,8 +15,6 @@
 
 
 
-
-
 /*------------------------------------*\
 	#INCLUDES
 \*------------------------------------*/
@@ -28,9 +26,8 @@
 	require_once('inc/users.php');
 	require_once('inc/functions-admin.php');
 	require_once('inc/functions-js-footer.php');
+	require_once('inc/functions-js-footer-admin.php');
 	include 'inc/extra-metaboxes.php';
-
-
 
 
 
@@ -52,8 +49,6 @@
 		wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
 		wp_localize_script( 'functions', 'site_url', site_url() );
 		wp_localize_script( 'functions', 'theme_url', THEMEPATH );
-		wp_localize_script( 'functions', 'allPhotosInfo', get_photos_info() );
-
 
 		// styles
 		wp_enqueue_style( 'styles', get_stylesheet_uri() );
@@ -91,6 +86,9 @@ function print_title(){
 
 }// print_title
 
+show_admin_bar(false);
+
+
 
 
 
@@ -98,6 +96,23 @@ function print_title(){
 	#FORMAT FUNCTIONS
 \*------------------------------------*/
 
+/**
+ * Formatear subtítulo de platillo dependiendo el número de guarniciones.
+ * @param string $platillo
+ * @param string $guarnicion_1
+ * @param string $guarnicion_2
+ * @return string $subtitulo_platillo
+ */
+function format_contenido_platillo( $platillo, $guarnicion_1, $guarnicion_2 ){
+
+	 $subtítulo_platillo = $platillo;
+
+	 if( '' !== $guarnicion_1 ) $subtítulo_platillo .= ', ' . $guarnicion_1;
+	 if( '' !== $guarnicion_2 ) $subtítulo_platillo .= ' y ' . $guarnicion_2;
+
+	 return $subtítulo_platillo;
+
+}// format_contenido_platillo
 
 
 
@@ -107,121 +122,97 @@ function print_title(){
 \*------------------------------------*/
 
 /**
- * Jalar la latitud de un post tipo 'foto-jg'
- * @param int $post_id
- * @return int $lat
+ * Regresa los días restantes de la semana en formato yyyy-dd-mm
+ * @return array $dias_semana
  */
-function get_lat( $post_id ){
-	return get_post_meta($post_id, '_lat_meta', true);
-}// get_lat
+function get_dias_restantes_semana(){
+
+	$dias_extra = 1;
+	$dias_semana = array();
+	//$numero_dia_hoy = date('N')
+	for ( $numero_dia_hoy = 1; $numero_dia_hoy <= 5 ; $numero_dia_hoy++ ) { 
+		array_push( $dias_semana, date( 'Y-m-d', strtotime( '2015-10-19' . ' +' . $dias_extra . ' day' ) ) );
+		$dias_extra++;
+	}
+
+	return $dias_semana;
+
+}// get_dias_restantes_semana
 
 /**
- * Jalar la longitud de un post tipo 'foto-jg'
- * @param int $post_id
- * @return int $lng
+ * Regresa fecha en español.
+ * Ej. Lunes 18 de septiembre
+ * @param string $fecha
+ * @return string $fecha_formateada
  */
-function get_lng( $post_id ){
-	return get_post_meta($post_id, '_lng_meta', true);
-}// get_lng
+function get_fecha_es( $fecha ){
+
+	$dia_semana = get_nombre_dia( date( 'N', strtotime( $fecha ) ) );
+	$fecha_arr = explode( '-', $fecha );
+	$mes = get_nombre_mes( $fecha_arr[1] );
+	return $dia_semana . ' ' . $fecha_arr[2] . ' de ' . $mes;
+
+}// get_fecha_es
 
 /**
- * Jalar heading de un post tipo 'foto-jg'
- * @param int $post_id
- * @return int $heading
+ * Regresa el nombre del día en español
+ * @param int $num_dia
+ * @return string $dia
  */
-function get_heading( $post_id ){
+function get_nombre_dia( $num_dia ){
 
-	$heading =  get_post_meta($post_id, '_heading_meta', true);
-	if( $heading == '' ) return 0; 
+	switch( $num_dia ){
+		case 1: 
+			return 'Lunes';
+		case 2: 
+			return 'Martes';
+		case 3: 
+			return 'Miércoles';
+		case 4: 
+			return 'Jueves';
+		case 5: 
+			return 'Viernes';
+	}
 
-	return $heading;
-
-}// get_heading
+}// get_nombre_dia
 
 /**
- * Jalar lugar de un post tipo 'foto-jg'
- * @param int $post_id
- * @return int $lugar
+ * Regresa el nombre del mes en español
+ * @param int $num_mes
+ * @return string $mes
  */
-function get_lugar( $post_id ){
-	return get_post_meta($post_id, '_lugar_meta', true);
-}// get_lugar
+function get_nombre_mes( $num_mes ){
 
-/**
- * Jalar fecha de un post tipo 'foto-jg'
- * @param int $post_id
- * @return int $fecha
- */
-function get_fecha( $post_id ){
-	return get_post_meta($post_id, '_fecha_meta', true);
-}// get_fecha
+	switch( $num_mes ){
+		case 1: 
+			return 'enero';
+		case 2: 
+			return 'febrero';
+		case 3: 
+			return 'marzo';
+		case 4: 
+			return 'abril';
+		case 5: 
+			return 'mayo';
+		case 6: 
+			return 'junio';
+		case 7: 
+			return 'julio';
+		case 8: 
+			return 'agosto';
+		case 9: 
+			return 'septiembre';
+		case 10: 
+			return 'octubre';	
+		case 11: 
+			return 'noviembre';
+		case 12: 
+			return 'diciembre';
+	}
 
-/**
- * Jalar si es foto aérea de un post tipo 'foto-jg'
- * @param int $post_id
- * @return int $vista_aerea
- */
-function get_vista_aerea( $post_id ){
-	
-	$vista_aerea = get_post_meta($post_id, '_vista_aerea_meta', true);
+}// get_nombre_mes
 
-	if( $vista_aerea == 'si' ) return 1;
 
-	return 0;
-
-}// get_vista_aerea
-
-/**
- * Jalar fecha de un post tipo 'foto-jg'
- * @param int $post_id
- * @return int $decada
- */
-function get_decada( $post_id ){
-	$terms = wp_get_post_terms( $post_id, 'decada' );
-
-	if( empty( $terms ) ) return '-';
-
-	return $terms[0]->name;
-}// get_decada
-
-/**
- * Regresa toda la información de las fotos de Juan Guzmán
- * @return JSON $infoPhotos
- */
-function get_photos_info(){
-
-	$info_photos = array();
-	$args_apas = array(
-		'post_type' 		=> 'foto-jg',
-		'posts_per_page' 	=> -1
-	);
-
-	$query_mapas = new WP_Query( $args_apas );
-	if ( $query_mapas->have_posts() ) : while ( $query_mapas->have_posts() ) : $query_mapas->the_post();
-		global $post;
-
-		$lat = get_lat( $post->ID );
-		$lng = get_lng( $post->ID );
-		$lugar = get_lugar( $post->ID );
-		$fecha = get_fecha( $post->ID );
-		$decada = get_decada( $post->ID );
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-		$info_photos[$post->post_name] = array(
-			'title'			=> $post->post_title,
-			'lat'			=> $lat,
-			'lng'			=> $lng,
-			'lugar'			=> $lugar,
-			'fecha'			=> $fecha,
-			'decada'		=> $decada,
-			'img_url'		=> $image[0],
-			'permalink'		=> get_permalink( $post->ID )
-			);
-
-	endwhile; endif; wp_reset_query();
-
-	return json_encode( $info_photos );
-
-}// get_photos_info
 
 
 /*------------------------------------*\
@@ -267,11 +258,37 @@ function send_email_contacto(){
 		echo json_encode($message , JSON_FORCE_OBJECT);
 		exit();
 
-	}// send_email_contacto
-	add_action("wp_ajax_send_email_contacto", "send_email_contacto");
-	add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
+}// send_email_contacto
+add_action("wp_ajax_send_email_contacto", "send_email_contacto");
+add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
 
 
+
+/*------------------------------------*\
+	WOOCOMMERCE FUNCTIONS / ACTIONS
+\*------------------------------------*/
+
+/*
+ * Add WooCommerce support to current theme.
+ */
+function woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
+/*
+ * Replace WooCommerce default wrapper with ours
+ */
+function my_theme_wrapper_start() {
+	echo '<section id="main">';
+}
+function my_theme_wrapper_end() {
+	echo '</section>';
+}
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
 
 

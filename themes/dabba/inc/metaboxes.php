@@ -12,7 +12,7 @@ add_action('add_meta_boxes', function(){
 			break;
 		default:
 			// POST TYPES
-			add_metaboxes_fotos_jg();
+			add_metaboxes_products();
 	}
 });
 
@@ -25,14 +25,12 @@ add_action('add_meta_boxes', function(){
 /**
 * Add metaboxes for page type "Contacto"
 **/
-function add_metaboxes_fotos_jg(){
+function add_metaboxes_products(){
 
-	add_meta_box( 'texto_complementario', 'Texto Complementario', 'metabox_texto_complementario', 'foto-jg', 'advanced', 'high' );
-	add_meta_box( 'lugar', 'Lugar', 'metabox_lugar', 'foto-jg', 'advanced', 'high' );
-	add_meta_box( 'fecha', 'Fecha', 'metabox_fecha', 'foto-jg', 'advanced', 'high' );
-	add_meta_box( 'coordenadas', 'Coordenadas', 'metabox_coordenadas', 'foto-jg', 'advanced', 'high' );
-	add_meta_box( 'heading', 'Heading', 'metabox_heading', 'foto-jg', 'advanced', 'high' );
-	add_meta_box( 'vista_aerea', 'Vista aérea', 'metabox_vista_aerea', 'foto-jg', 'side', 'high' );
+	add_meta_box( 'platillo_principal', 'Platillo principal', 'metabox_platillo_principal', 'product', 'advanced', 'high' );
+	add_meta_box( 'guarnicion_1', 'Guarnición 1', 'metabox_guarnicion_1', 'product', 'advanced', 'high' );
+	add_meta_box( 'guarnicion_2', 'Guarnición 2', 'metabox_guarnicion_2', 'product', 'advanced', 'high' );
+	add_meta_box( 'fecha_menu', 'Fecha de menú', 'metabox_fecha_menu', 'product', 'advanced', 'high' );
 
 }// add_metaboxes_PAGE
 
@@ -41,97 +39,62 @@ function add_metaboxes_fotos_jg(){
 /*-----------------------------------------*\
 	CUSTOM METABOXES CALLBACK FUNCTIONS
 \*-----------------------------------------*/
-	
-/**
-* Display metabox in page or post type
-* @param obj $post
-**/
-function metabox_coordenadas( $post ){
-
-	$lat = get_post_meta($post->ID, '_lat_meta', true);
-	$lng = get_post_meta($post->ID, '_lng_meta', true);
-
-	wp_nonce_field(__FILE__, '_lat_meta_nonce');
-	wp_nonce_field(__FILE__, '_lng_meta_nonce');
-
-	echo "<label>Latitud:</label>";
-	echo "<input type='text' class='[ widefat ]' name='_lat_meta' value='$lat' />";
-	echo "<label>Longitud:</label>";
-	echo "<input type='text' class='[ widefat ]' name='_lng_meta' value='$lng' />";
-
-}// metabox_coordenadas
 
 /**
 * Display metabox in page or post type
 * @param obj $post
 **/
-function metabox_lugar( $post ){
+function metabox_platillo_principal( $post ){
 
-	$lugar = get_post_meta($post->ID, '_lugar_meta', true);
-	wp_nonce_field(__FILE__, '_lugar_meta_nonce');
-	
-	echo "<input type='text' class='[ widefat ]' name='_lugar_meta' value='$lugar' />";
+	$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
 
-}// metabox_lugar
+	wp_nonce_field(__FILE__, '_platillo_principal_meta_nonce');
 
-/**
-* Display metabox in page or post type
-* @param obj $post
-**/
-function metabox_fecha( $post ){
+	echo "<input type='text' class='[ widefat ]' name='_platillo_principal_meta' value='$platillo_principal'>";
 
-	$fecha = get_post_meta($post->ID, '_fecha_meta', true);
-
-	wp_nonce_field(__FILE__, '_fecha_meta_nonce');
-	
-	echo "<input type='text' class='[ widefat ]' name='_fecha_meta' value='$fecha' />";
-
-}// metabox_fecha
+}// metabox_platillo_principal
 
 /**
 * Display metabox in page or post type
 * @param obj $post
 **/
-function metabox_texto_complementario( $post ){
+function metabox_guarnicion_1( $post ){
 
-	$texto_complementario = get_post_meta($post->ID, '_texto_complementario_meta', true);
+	$guarnicion_1 = get_post_meta($post->ID, '_guarnicion_1_meta', true);
 
-	wp_nonce_field(__FILE__, '_texto_complementario_meta_nonce');
+	wp_nonce_field(__FILE__, '_guarnicion_1_meta_nonce');
 
-	echo "<textarea class='[ widefat ]' name='_texto_complementario_meta'>$texto_complementario</textarea>";
+	echo "<input type='text' class='[ widefat ]' name='_guarnicion_1_meta' value='$guarnicion_1'>";
 
-}// metabox_texto_complementario
-
-/**
-* Display metabox in page or post type
-* @param obj $post
-**/
-function metabox_heading( $post ){
-
-	$heading = get_post_meta($post->ID, '_heading_meta', true);
-
-	wp_nonce_field(__FILE__, '_heading_meta_nonce');
-	
-	echo "<input type='text' class='[ widefat ]' name='_heading_meta' value='$heading' />";
-
-}// metabox_heading
+}// metabox_guarnicion_1
 
 /**
 * Display metabox in page or post type
 * @param obj $post
 **/
-function metabox_vista_aerea( $post ){
+function metabox_guarnicion_2( $post ){
 
-	$vista_aerea = get_post_meta($post->ID, '_vista_aerea_meta', true);
+	$guarnicion_2 = get_post_meta($post->ID, '_guarnicion_2_meta', true);
 
-	wp_nonce_field(__FILE__, '_vista_aerea_meta_nonce');
-	
-	$checked = $vista_aerea == 'si' ? 'checked' : '';
-	echo "<input type='checkbox' class='[ widefat ]' name='_vista_aerea_meta' value='si' $checked />";
-	echo "<label> si</label>";
+	wp_nonce_field(__FILE__, '_guarnicion_2_meta_nonce');
 
-}// metabox_vista_aerea
-	
+	echo "<input type='text' class='[ widefat ]' name='_guarnicion_2_meta' value='$guarnicion_2'>";
+
+}// metabox_guarnicion_2
+
+/**
+* Display metabox in page or post type
+* @param obj $post
+**/
+function metabox_fecha_menu( $post ){
+
+	$fecha_menu = get_post_meta($post->ID, '_fecha_menu_meta', true);
+
+	wp_nonce_field(__FILE__, '_fecha_menu_meta_nonce');
+
+	echo "<input type='text' class='[ widefat ][ js-datepicker ]' name='_fecha_menu_meta' value='$fecha_menu'>";
+
+}// metabox_fecha_menu
 
 
 
@@ -141,46 +104,31 @@ function metabox_vista_aerea( $post ){
 
 	add_action('save_post', function( $post_id ){
 
-		save_metaboxes_foto_jg( $post_id );
+		save_metaboxes_product( $post_id );
 		
 	});
 
 	/**
 	* Save the metaboxes for post type "Productos"
 	**/
-	function save_metaboxes_foto_jg( $post_id ){
+	function save_metaboxes_product( $post_id ){
 	
-		// Latitud
-		if ( isset($_POST['_lat_meta']) and check_admin_referer( __FILE__, '_lat_meta_nonce') ){
-			update_post_meta($post_id, '_lat_meta', $_POST['_lat_meta']);
+		// Platillo principal
+		if ( isset($_POST['_platillo_principal_meta']) and check_admin_referer( __FILE__, '_platillo_principal_meta_nonce') ){
+			update_post_meta($post_id, '_platillo_principal_meta', $_POST['_platillo_principal_meta']);
 		}
-		// Longitud
-		if ( isset($_POST['_lng_meta']) and check_admin_referer( __FILE__, '_lng_meta_nonce') ){
-			update_post_meta($post_id, '_lng_meta', $_POST['_lng_meta']);
+		// Guarnición 1
+		if ( isset($_POST['_guarnicion_1_meta']) and check_admin_referer( __FILE__, '_guarnicion_1_meta_nonce') ){
+			update_post_meta($post_id, '_guarnicion_1_meta', $_POST['_guarnicion_1_meta']);
 		}
-		// Texto complementario
-		if ( isset($_POST['_texto_complementario_meta']) and check_admin_referer( __FILE__, '_texto_complementario_meta_nonce') ){
-			update_post_meta($post_id, '_texto_complementario_meta', $_POST['_texto_complementario_meta']);
+		// Guarnición 2
+		if ( isset($_POST['_guarnicion_2_meta']) and check_admin_referer( __FILE__, '_guarnicion_2_meta_nonce') ){
+			update_post_meta($post_id, '_guarnicion_2_meta', $_POST['_guarnicion_2_meta']);
 		}
-		// Lugar
-		if ( isset($_POST['_lugar_meta']) and check_admin_referer( __FILE__, '_lugar_meta_nonce') ){
-			update_post_meta($post_id, '_lugar_meta', $_POST['_lugar_meta']);
-		}
-		// Fecha
-		if ( isset($_POST['_fecha_meta']) and check_admin_referer( __FILE__, '_fecha_meta_nonce') ){
-			update_post_meta($post_id, '_fecha_meta', $_POST['_fecha_meta']);
-		}
-		// Heading
-		if ( isset($_POST['_heading_meta']) and check_admin_referer( __FILE__, '_heading_meta_nonce') ){
-			update_post_meta($post_id, '_heading_meta', $_POST['_heading_meta']);
-		}
-		// Vista aérea
-		if ( isset($_POST['_vista_aerea_meta']) and check_admin_referer( __FILE__, '_vista_aerea_meta_nonce') ){
-
-			update_post_meta($post_id, '_vista_aerea_meta', $_POST['_vista_aerea_meta']);
-		} else {
-			update_post_meta($post_id, '_vista_aerea_meta', 'no');
+		// Fecha del menú
+		if ( isset($_POST['_fecha_menu_meta']) and check_admin_referer( __FILE__, '_fecha_menu_meta_nonce') ){
+			update_post_meta($post_id, '_fecha_menu_meta', $_POST['_fecha_menu_meta']);
 		}
 
-	}// save_metaboxes_foto_jg
+	}// save_metaboxes_product
 	

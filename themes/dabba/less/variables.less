@@ -7,22 +7,26 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@light:         #fff;
-@gray:          #999;
-@gray-light:    #ccc;
-@dark:          #000;
+@primary: 					#F05475;
+@secondary: 				#673695;
+@tertiary:					#0D1016;
+@quaternary:				#E24B44;
 
-@brand-primary: #D91803;
+@light:						#FFFFFF;
 
-@30s:           #f53817;
-@40s:           #f11f06;
-@50s:           #cc003d;
-@60s:           #9a0b28;
+@gray-base:              	#000;
+@gray-darker:            	lighten(@gray-base, 13.5%); // #222
+@gray-dark:              	lighten(@gray-base, 20%);   // #333
+@gray:                   	lighten(@gray-base, 33.5%); // #555
+@gray-light:             	lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           	lighten(@gray-base, 93.5%); // #eee
 
-@brand-success:         #5cb85c;
-@brand-info:            #5bc0de;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
+@brand-primary:         	darken(#428bca, 6.5%); // #337ab7
+@brand-success:         	@light;
+@brand-info:            	#3B5998;
+@brand-warning:         	#f0ad4e;
+@brand-danger:          	#F65275;
+
 
 
 //== Scaffolding
@@ -31,8 +35,8 @@
 
 //** Background color for `<body>`.
 @body-bg:               #fff;
-//** Global text color on `<body>`.
-@text-color:            @gray;
+//** Global text coflor on `<body>`.
+@text-color:            @gray-dark;
 
 //** Global textual link color.
 @link-color:            @brand-primary;
@@ -46,8 +50,8 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "lft-etica-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       "cordale", Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
@@ -56,7 +60,7 @@
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.8)); // ~50px
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
@@ -80,7 +84,7 @@
 //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
 //** Load fonts from this directory.
-@icon-font-path:          "fonts/";
+@icon-font-path:          "../fonts/";
 //** File name for all font files.
 @icon-font-name:          "glyphicons-halflings-regular";
 //** Element ID within SVG icon file.
@@ -91,17 +95,17 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-xs-vertical:       5px;
-@padding-xs-horizontal:     9px; //4 más
+@padding-base-vertical:     6px;
+@padding-base-horizontal:   12px;
 
-@padding-small-vertical:    9px;
-@padding-small-horizontal:  18px; //doble
+@padding-large-vertical:    10px;
+@padding-large-horizontal:  16px;
 
-@padding-base-vertical:     18px;
-@padding-base-horizontal:   36px; //doble
+@padding-small-vertical:    5px;
+@padding-small-horizontal:  10px;
 
-@padding-large-vertical:    36px;
-@padding-large-horizontal:  42px; //6 más
+@padding-xs-vertical:       1px;
+@padding-xs-horizontal:     5px;
 
 @padding-xl-vertical:       42px;
 @padding-xl-horizontal:     48px; //6 más
@@ -111,7 +115,12 @@
 
 @border-radius-base:        4px;
 @border-radius-large:       6px;
+@border-radius-extralarge:	10px;
 @border-radius-small:       3px;
+
+@margin-large: 				85px; 
+@margin-base: 				20px; 
+@margin-small: 				10px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -149,17 +158,17 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-@btn-font-weight:                bold;
+@btn-font-weight:                normal;
 
 @btn-default-color:              #333;
 @btn-default-bg:                 #fff;
 @btn-default-border:             #ccc;
 
-@btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
+@btn-primary-color:              @light;
+@btn-primary-bg:                 @primary;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 
-@btn-success-color:              #fff;
+@btn-success-color:              @primary;
 @btn-success-bg:                 @brand-success;
 @btn-success-border:             darken(@btn-success-bg, 5%);
 
@@ -173,14 +182,16 @@
 
 @btn-danger-color:               #fff;
 @btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
+@btn-danger-border:              darken(@light, 5%);
+
 
 @btn-link-disabled-color:        @gray-light;
 
 // Allows for customizing button radius independently from global border radius
-@btn-border-radius-base:         @border-radius-base;
-@btn-border-radius-large:        @border-radius-large;
-@btn-border-radius-small:        @border-radius-small;
+@btn-border-radius-base:       	@border-radius-base;
+@btn-border-radius-large:      	@border-radius-large;
+@btn-border-radius-extralarge:	@border-radius-extralarge;
+@btn-border-radius-small:      	@border-radius-small;
 
 
 //== Forms
@@ -190,7 +201,7 @@
 //** `<input>` background color
 @input-bg:                       #fff;
 //** `<input disabled>` background color
-@input-bg-disabled:              @gray-light;
+@input-bg-disabled:              @gray-lighter;
 
 //** Text color for `<input>`s
 @input-color:                    @gray;
@@ -222,11 +233,11 @@
 //** `.form-group` margin
 @form-group-margin-bottom:       15px;
 
-@legend-color:                   @gray;
+@legend-color:                   @gray-dark;
 @legend-border-color:            #e5e5e5;
 
 //** Background color for textual input addons
-@input-group-addon-bg:           @gray-light;
+@input-group-addon-bg:           @gray-lighter;
 //** Border color for textual input addons
 @input-group-addon-border-color: @input-border;
 
@@ -248,9 +259,9 @@
 @dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-@dropdown-link-color:            @gray;
+@dropdown-link-color:            @gray-dark;
 //** Hover color for dropdown links.
-@dropdown-link-hover-color:      darken(@gray, 5%);
+@dropdown-link-hover-color:      darken(@gray-dark, 5%);
 //** Hover background for dropdown links.
 @dropdown-link-hover-bg:         #f5f5f5;
 
@@ -427,7 +438,7 @@
 
 //=== Shared nav styles
 @nav-link-padding:                          10px 15px;
-@nav-link-hover-bg:                         @gray-light;
+@nav-link-hover-bg:                         @gray-lighter;
 
 @nav-disabled-link-color:                   @gray-light;
 @nav-disabled-link-hover-color:             @gray-light;
@@ -435,7 +446,7 @@
 //== Tabs
 @nav-tabs-border-color:                     #ddd;
 
-@nav-tabs-link-hover-border-color:          @gray-light;
+@nav-tabs-link-hover-border-color:          @gray-lighter;
 
 @nav-tabs-active-link-hover-bg:             @body-bg;
 @nav-tabs-active-link-hover-color:          @gray;
@@ -459,7 +470,7 @@
 @pagination-border:                    #ddd;
 
 @pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @gray-light;
+@pagination-hover-bg:                  @gray-lighter;
 @pagination-hover-border:              #ddd;
 
 @pagination-active-color:              #fff;
@@ -493,7 +504,7 @@
 
 @jumbotron-padding:              30px;
 @jumbotron-color:                inherit;
-@jumbotron-bg:                   @gray-light;
+@jumbotron-bg:                   @gray-lighter;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil((@font-size-base * 1.5));
 @jumbotron-heading-font-size:    ceil((@font-size-base * 4.5));
@@ -696,7 +707,7 @@
 //** Text color of disabled list items
 @list-group-disabled-color:      @gray-light;
 //** Background color of disabled list items
-@list-group-disabled-bg:         @gray-light;
+@list-group-disabled-bg:         @gray-lighter;
 //** Text color for content within disabled list items
 @list-group-disabled-text-color: @list-group-disabled-color;
 
@@ -719,7 +730,7 @@
 @panel-inner-border:          #ddd;
 @panel-footer-bg:             #f5f5f5;
 
-@panel-default-text:          @gray;
+@panel-default-text:          @gray-dark;
 @panel-default-border:        #ddd;
 @panel-default-heading-bg:    #f5f5f5;
 
@@ -843,7 +854,7 @@
 @kbd-bg:                      #333;
 
 @pre-bg:                      #f5f5f5;
-@pre-color:                   @gray;
+@pre-color:                   @gray-dark;
 @pre-border-color:            #ccc;
 @pre-scrollable-max-height:   340px;
 
@@ -865,10 +876,10 @@
 //** Blockquote font size
 @blockquote-font-size:        (@font-size-base * 1.25);
 //** Blockquote border color
-@blockquote-border-color:     @gray-light;
+@blockquote-border-color:     @gray-lighter;
 //** Page header border color
-@page-header-border-color:    @gray-light;
+@page-header-border-color:    @gray-lighter;
 //** Width of horizontal description list titles
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
-@hr-border:                   @gray-light;
+@hr-border:                   @gray-lighter;

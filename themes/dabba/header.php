@@ -49,4 +49,8 @@
 		<?php wp_head(); ?>
 	</head>
 
+	<header class=" [ bg-color__screen ] [ text-center ] ">
+ 		<img class=" [ img-header-logo ] " src="<?php echo THEMEPATH ?>img/assets/logo.svg">
+ 	</header>
+
 	<body>

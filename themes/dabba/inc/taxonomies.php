@@ -8,17 +8,17 @@ add_action( 'init', 'custom_taxonomies_callback', 0 );
 function custom_taxonomies_callback(){
 
 	// DÉCADA
-	if( ! taxonomy_exists('decada')){
+	if( ! taxonomy_exists('caracteristica-platillo')){
 
 		$labels = array(
-			'name'              => 'Década',
-			'singular_name'     => 'Década',
+			'name'              => 'Caracterísiticas platillo',
+			'singular_name'     => 'Caracterísiticas platillo',
 			'search_items'      => 'Buscar',
 			'all_items'         => 'Todos',
-			'edit_item'         => 'Editar década',
-			'update_item'       => 'Actualizar década',
-			'add_new_item'      => 'Nueva década',
-			'menu_name'         => 'Décadas'
+			'edit_item'         => 'Editar característica',
+			'update_item'       => 'Actualizar característica',
+			'add_new_item'      => 'Nueva característica',
+			'menu_name'         => 'Caracterísiticas platillo'
 		);
 		$args = array(
 			'hierarchical'      => true,
@@ -27,14 +27,14 @@ function custom_taxonomies_callback(){
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
 			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'decada' ),
+			'rewrite'           => array( 'slug' => 'caracteristica-platillo' ),
 		);
 
-		register_taxonomy( 'decada', 'foto-jg', $args );
+		register_taxonomy( 'caracteristica-platillo', 'product', $args );
 	}
 
 	// Taxonomy terms
-	insert_decada_taxonomy_terms();
+	insert_platillo_taxonomy_terms();
 
 }// custom_taxonomies_callback
 
@@ -44,15 +44,15 @@ function custom_taxonomies_callback(){
 //  * @param string $new_term
 //  * @param string $taxonomy
 //  */
-function insert_decada_taxonomy_terms(){
+function insert_platillo_taxonomy_terms(){
 
-	$decadas = array( 1930, 1940, 1950, 1960 );
-	foreach ( $decadas as $decada ) {
-		$term = term_exists( $decada, 'decada' );
+	$caracteristicas = array( 'Frío', 'Caliente', 'Res', 'Pollo', 'Pescado', 'Cerdo', 'Vegetariano', 'Vegano', 'Picante' );
+	foreach ( $caracteristicas as $car ) {
+		$term = term_exists( $car, 'caracteristica-platillo' );
 		if ( FALSE !== $term && NULL !== $term ) continue;
 
-		wp_insert_term( $decada, 'decada' );
+		wp_insert_term( $car, 'caracteristica-platillo' );
 	}
 	
-}// insert_decada_taxonomy_terms
+}// insert_platillo_taxonomy_terms
 
