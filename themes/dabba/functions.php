@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('America/Mexico_City');
 /*------------------------------------*\
 	#CONSTANTS
 \*------------------------------------*/
@@ -107,8 +107,10 @@ function format_contenido_platillo( $platillo, $guarnicion_1, $guarnicion_2 ){
 
 	 $subtítulo_platillo = $platillo;
 
-	 if( '' !== $guarnicion_1 ) $subtítulo_platillo .= ', ' . $guarnicion_1;
-	 if( '' !== $guarnicion_2 ) $subtítulo_platillo .= ' y ' . $guarnicion_2;
+	 if( '' !== $guarnicion_1 && '' !== $guarnicion_2 ) 
+	 	$subtítulo_platillo .= ', ' . $guarnicion_1 . ' y ' . $guarnicion_2;
+
+	 if( '' !== $guarnicion_1 && '' === $guarnicion_2 ) $subtítulo_platillo .= ' y ' . $guarnicion_1;
 
 	 return $subtítulo_platillo;
 
@@ -130,8 +132,8 @@ function get_dias_restantes_semana(){
 	$dias_extra = 1;
 	$dias_semana = array();
 	//$numero_dia_hoy = date('N')
-	for ( $numero_dia_hoy = 1; $numero_dia_hoy <= 5 ; $numero_dia_hoy++ ) { 
-		array_push( $dias_semana, date( 'Y-m-d', strtotime( '2015-10-19' . ' +' . $dias_extra . ' day' ) ) );
+	for ( $numero_dia_hoy = date('N'); $numero_dia_hoy <= 5 ; $numero_dia_hoy++ ) { 
+		array_push( $dias_semana, date( 'Y-m-d', strtotime( date( 'Y-m-d' ) . ' +' . $dias_extra . ' day' ) ) );
 		$dias_extra++;
 	}
 
@@ -264,9 +266,9 @@ add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
 
 
 
-/*------------------------------------*\
-	WOOCOMMERCE FUNCTIONS / ACTIONS
-\*------------------------------------*/
+/*-----------------------------------------------*\
+	WOOCOMMERCE FUNCTIONS / ACTIONS / FILTERS
+\*-----------------------------------------------*/
 
 /*
  * Add WooCommerce support to current theme.
@@ -289,6 +291,31 @@ add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+/*
+ * Redireccionar a checkout despues de agregar un producto
+ */
+add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
+function redirect_to_checkout() {
+    return WC()->cart->get_checkout_url();
+}
+
+/*
+ *  Solo vender en el DF
+ */
+add_filter( 'woocommerce_states', 'wc_sell_only_states' );
+function wc_sell_only_states( $states ) {
+	$states['MX'] = array(
+		'Distrito Federal' 	=> __( 'Distrito Federal', 'woocommerce' ),
+	);
+	return $states;
+}
+
+
+
+
+
 
 
 

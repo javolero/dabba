@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-wc_print_notices();
-?>
-<section class="[ container-fluid ][ como-funciona ]">
+wc_print_notices(); ?>
+
+<section class="[ container-fluid ]">
 
 	<div class="[ row ]">
 		<form class="[ col-xs-12 ]" action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
@@ -147,10 +147,11 @@ wc_print_notices();
 		<?php do_action( 'woocommerce_after_cart_table' ); ?>
 
 		</form>
+
 	</div><!-- row -->
 
 	<div class="cart-collaterals">
-		<?php do_action( 'woocommerce_cart_collaterals' ); ?>
+		<?php //do_action( 'woocommerce_cart_collaterals' ); ?>
 	</div>
 
 </section>

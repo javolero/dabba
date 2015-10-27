@@ -10,11 +10,13 @@ function footer_admin_scripts(){
 			(function( $ ) {
 				"use strict";
 				$(function(){
+
 					$('.js-datepicker').datepicker({
 						changeMonth: 	true,
 						changeYear: 	true,
 						dateFormat: 	'yy-mm-dd'
 					});
+
 				});
 			}(jQuery));
 		</script>

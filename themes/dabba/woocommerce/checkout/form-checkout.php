@@ -13,10 +13,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wc_print_notices();
 
+
 ?>
 
-<section class="[ container-fluid ][ como-funciona ]">
 
+<section class="[ container-fluid ]">
+
+	<div class="row">
+		<h2 class="[ text-center ]">Bebidas</h2>
+		<div class="[ aguas ]">
+			<?php get_template_part( 'templates/menu', 'aguas' ); ?>
+		</div>
+		<h2 class="[ text-center ]">Postres</h2>
+		<div class="[ postres ]">
+			<?php get_template_part( 'templates/menu', 'postre' ); ?>
+		</div>
+	</div>
 <?php 
 do_action( 'woocommerce_before_checkout_form', $checkout );
 

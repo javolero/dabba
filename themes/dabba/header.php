@@ -50,7 +50,9 @@
 	</head>
 
 	<header class=" [ bg-color__screen ] [ text-center ] ">
- 		<img class=" [ img-header-logo ] " src="<?php echo THEMEPATH ?>img/assets/logo.svg">
+		<a href="<?php echo site_url() ?>">
+	 		<img class=" [ img-header-logo ] " src="<?php echo THEMEPATH ?>img/assets/logo.svg">
+ 		</a>
  	</header>
 
 	<body>
