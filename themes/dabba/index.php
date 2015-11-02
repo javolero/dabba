@@ -4,8 +4,8 @@
 		<section class="[ hero ]">
 			<div class="[ embed-responsive embed-responsive-16by9 ][ hidden-xs ]">
 				<video autoplay loop muted class="[ embed-responsive-item ]">
-			        <source src="http://ak4.picdn.net/shutterstock/videos/2404592/preview/stock-footage-chef-prepares-a-dish-in-a-restaurant-kitchen.mp4" type="video/mp4">
-			  	</video>
+					<source src="http://ak4.picdn.net/shutterstock/videos/2404592/preview/stock-footage-chef-prepares-a-dish-in-a-restaurant-kitchen.mp4" type="video/mp4">
+				</video>
 			</div>
 			<div class=" [ img-background-home ][ visible-xs-block ]">
 	 			<p class=" [ text-punchline ][ text-center ][ text-primary-light ]">Come, lo mejor de tu día.</p>
@@ -34,11 +34,11 @@
 				</div>
 			</div>
 		</section>
-		
+
 	<?php endif; ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
-		
+
 		<section class="[ menu-hoy ]">
 			<div class="[ container-fluid ]">
 				<div class="[ row ]">
@@ -89,7 +89,7 @@
 					<a class="[ btn btn-default ]" href="#">comprar</a>
 				</div>
 			</div>
-		</section>		
+		</section>
 	<?php endif; ?>
 
 	<section class="[ detalles ][ bg-gradient ]">
@@ -117,7 +117,7 @@
 				<!-- <div id="mapa" class="[ col-xs-12 ]"></div> -->
 		<div class="[ embed-responsive ]">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3762.462624634608!2d-99.2077281!3d19.435611!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smx!4v1445293875693" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</div>	
+		</div>
 		<div class="[ container ][ padding-top-bottom--large ]">
 			<div class="[ row ]"></div>
 				<div class="[ col-xs-12 ][ text-center text-primary-light ]">
@@ -131,7 +131,7 @@
 	</section>
 
 	<!-- Modal "comida-gratis"-->
-	<div id="comida-gratis" class="[ modal ][ fade ][ bg-primary ][ text-center ]" tabindex="-1" role="dialog" aria-labelledby="¡Quiero mi comida gratis!" aria-hidden="true" style="display: none;">	
+	<div id="comida-gratis" class="[ modal ][ fade ][ bg-primary ][ text-center ]" tabindex="-1" role="dialog" aria-labelledby="¡Quiero mi comida gratis!" aria-hidden="true" style="display: none;">
 		<div class="[ modal-header ][ bg-light ]">
 			<img src="<?php echo THEMEPATH; ?>img/assets/logo.svg" class="[ color-primary ][ img-header-logo ]" alt="Dabba">
 		</div>
@@ -148,8 +148,8 @@
 				<button class="[ btn ][ btn-light-hollow ]">enviar</button>
 			</div>
 			<div class="[ text-right ]">
-				<button class="[ close ]" data-dismiss="modal" aria-hidden="true">X</button>	
-			</div>		
-		</div>		
+				<button class="[ close ]" data-dismiss="modal" aria-hidden="true">X</button>
+			</div>
+		</div>
 	</div><!-- Modal "comida-gratis"-->
 <?php get_footer(); ?>

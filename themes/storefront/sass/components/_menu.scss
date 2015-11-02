@@ -84,7 +84,8 @@
 @media screen and (min-width: 768px) {
 	.menu-toggle,
 	.handheld-navigation,
-	.main-navigation.toggled .handheld-navigation {
+	.main-navigation.toggled .handheld-navigation,
+	.main-navigation.toggled div.menu {
 		display: none;
 	}
 
@@ -177,7 +178,6 @@
 	 * Primary Navigation
 	 */
 	.main-navigation {
-		position: relative;
 		padding-top: 1.618em;
 
 		ul.menu,
