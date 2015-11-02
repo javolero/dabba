@@ -7,32 +7,34 @@
 					<source src="http://ak4.picdn.net/shutterstock/videos/2404592/preview/stock-footage-chef-prepares-a-dish-in-a-restaurant-kitchen.mp4" type="video/mp4">
 				</video>
 			</div>
-			<div class=" [ img-background-home ] [ text-uppercase ] ">
-				<p class=" [ text-punchline ] ">Dabba Punchline</p>
+			<div class=" [ img-background-home ][ visible-xs-block ]">
+	 			<p class=" [ text-punchline ][ text-center ][ text-primary-light ]">Come, lo mejor de tu día.</p>
+	 		</div>
+		</section>
+
+		<section class="[ container ][ como-funciona ][ text-center ]">
+			<p>Nuevo concepto culinario. Ingredientes frescos y de temporada. Platillos innovadores creados por un Chef. A 3 clicks de ti.</p>
+<!-- 			<hr class="[ divider-primary ][ margin-bottom-large ]">
+			<h2 class="[ text-bold ]">Déjanos llevarte la comida</h2> -->
+			<div class="[ row ]">
+				<div class="[ col-xs-12 ]">
+					<img src="<?php echo THEMEPATH; ?>img/cubiertos1.png">
+					<h3>Checa nuestro menú</h3>
+					<p class="[ text-gray-light ][ padding-left-right ]">Nuestros chefs están preparando algo delicioso para ti.</p>
+				</div>
+				<div class="[ col-xs-12 ]">
+					<img src="<?php echo THEMEPATH; ?>img/cubiertos1.png">
+					<h3>Ordena y escoge tu horario.</h3>
+					<p class="[ text-gray-light ][ padding-left-right ]">Nuestros platillos vuelan, no te los pierdas.</p>
+				</div>
+				<div class="[ col-xs-12 ]">
+					<img src="<?php echo THEMEPATH; ?>img/cubiertos1.png">
+					<h3>¡A comer!</h3>
+					<p class="[ text-gray-light ][ padding-left-right ]">Relájate y disfruta, puedes estar tranquilo de que tu comida llegará fresca, lista y a tiempo a donde tu estés.</p>
+				</div>
 			</div>
 		</section>
 
-		<section class="[ container-fluid ][ como-funciona ]">
-			<div class="[ row ][ text-center ]">
-				<h2 class="[ text-bold ]">Déjanos llevarte la comida</h2>
-				<div class="[ col-xs-12 ]">
-					<img src="<?php echo THEMEPATH; ?>img/cubiertos1.png">
-					<h3>Healthy & Yummy</h3>
-					<p class="[ text-gray-light ][ padding-left-right ]">Vegan Wayfarers seitan salvia lomo mustache., Thundercats wolf tumblr banh mi Pitchfork.</p>
-				</div>
-				<div class="[ col-xs-12 ]">
-					<img src="<?php echo THEMEPATH; ?>img/cubiertos1.png">
-					<h3>Don't Fret, Feast</h3>
-					<p class="[ text-gray-light ][ padding-left-right ]">Vegan Wayfarers seitan salvia lomo mustache., Thundercats wolf tumblr banh mi Pitchfork.</p>
-				</div>
-				<div class="[ col-xs-12 ]">
-					<img src="<?php echo THEMEPATH; ?>img/cubiertos1.png">
-					<h3>Healthy & Yummy</h3>
-					<p class="[ text-gray-light ][ padding-left-right ]">Vegan Wayfarers seitan salvia lomo mustache., Thundercats wolf tumblr banh mi Pitchfork.</p>
-				</div>
-			</div>
-		</section>
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
 	<?php endif; ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
@@ -59,9 +61,9 @@
 
 		<hr class="[ divider-primary ][ margin-bottom-large ]">
 
-		<section class="[ container-fluid ][ creditos ]">
+		<section class="[ container-fluid ][ creditos ][ margin-bottom ]">
+			<h2 class="[ text-center ]">Ahorra con nuestros créditos</h2>
 			<div class="[ row ]">
-				<h2 class="[ text-center ]">Ahorra con nuestros créditos</h2>
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
 						<strong>$350</strong><br>
