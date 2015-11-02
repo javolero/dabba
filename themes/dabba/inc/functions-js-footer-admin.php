@@ -11,13 +11,18 @@ function footer_admin_scripts(){
 				"use strict";
 				$(function(){
 
-					$('.js-datepicker').datepicker({
-						changeMonth: 	true,
-						changeYear: 	true,
-						dateFormat: 	'yy-mm-dd'
-					});
-
+					if ( $('.js-datepicker').length ) initMenuDatepicker();
+					
 				});
+
+				// Admin functions
+				function initMenuDatepicker(){
+				    $('.js-datepicker').datepicker({
+				        changeMonth:    true,
+				        changeYear:     true,
+				        dateFormat:     'yy-mm-dd'
+				    });
+				}
 			}(jQuery));
 		</script>
 <?php }// footer_scripts ?>
