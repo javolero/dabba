@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 
 	<?php if ( ! is_user_logged_in() ) : ?>
-		<section class="[ hero ]">
-			<div class="[ embed-responsive embed-responsive-16by9 ][ hidden-xs ]">
-				<video autoplay loop muted class="[ embed-responsive-item ]">
-					<source src="http://ak4.picdn.net/shutterstock/videos/2404592/preview/stock-footage-chef-prepares-a-dish-in-a-restaurant-kitchen.mp4" type="video/mp4">
-				</video>
+
+		<!-- HERO -->
+		<section class="[ hero hero__image hero__image--home ][  ][ margin-bottom--large ]">
+			<div class="[ col-xs-12 ][ z-index-2 ][ center-full ]">
+				<p class="[ text-punchline text-center text-light ]">Come, lo mejor de tu día.</p>
 			</div>
-			<div class=" [ img-background-home ][ visible-xs-block ]">
-	 			<p class=" [ text-punchline ][ text-center ][ text-primary-light ]">Come, lo mejor de tu día.</p>
-	 		</div>
+			<video class="[ hero__video hero__video--home ][ center-full ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/assets/home-intro.jpg">
+				<source src="http://ak4.picdn.net/shutterstock/videos/2404592/preview/stock-footage-chef-prepares-a-dish-in-a-restaurant-kitchen.mp4" type="video/mp4">
+			</video>
 		</section>
 
 		<section class="[ container ][ como-funciona ][ text-center ]">

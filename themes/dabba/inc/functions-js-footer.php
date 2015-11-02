@@ -20,6 +20,18 @@ function footer_scripts(){
 			**/
 
 			/**
+			 * On load
+			**/
+			var min_w = 300; // minimum video width allowed
+			var vid_w_orig;  // original video dimensions
+			var vid_h_orig;
+			vid_w_orig = parseInt( $('video.hero__video').innerWidth() );
+			vid_h_orig = parseInt( $('video.hero__video').innerHeight() );
+
+			$(window).resize(function () { resizeToCover(min_w, vid_w_orig, vid_h_orig); });
+			$(window).trigger('resize');
+
+			/**
 			 * Triggered events
 			**/
 
@@ -39,7 +51,7 @@ function footer_scripts(){
 				var isAerial = <?php echo get_vista_aerea( get_the_ID() ) ?>;
 				var heading = <?php echo get_heading( get_the_ID() ) ?>;
 
-				showSingleMap( lat, lng, heading, isAerial );			
+				showSingleMap( lat, lng, heading, isAerial );
 
 			<?php endif; ?>
 		</script>

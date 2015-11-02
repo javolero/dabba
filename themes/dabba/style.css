@@ -254,8 +254,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -1372,7 +1372,10 @@ a.text-danger:hover,
 a.text-danger:focus {
   color: #843534;
 }
-.text-primary-light {
+.text-primary {
+  color: #f05475;
+}
+.text-light {
   color: #ffffff;
 }
 .text-gray-light {
@@ -1380,7 +1383,6 @@ a.text-danger:focus {
 }
 .text-punchline {
   font-size: 1.8em;
-  padding: 10%;
 }
 .text-bold {
   font-weight: 600;
@@ -5964,18 +5966,13 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
-.img-background-home {
-  background-image: url('img/assets/home-intro.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: top;
-}
 .img-header-logo {
-  width: 50%;
+  width: 184px;
+  height: auto;
 }
 @media (min-width: 992px) {
   .img-header-logo {
-    width: 20%;
+    width: 200px;
   }
 }
 .modal .bg-color__screen {
@@ -6646,11 +6643,6 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 .pull-right {
   float: right !important;
 }
@@ -6736,6 +6728,73 @@ button.close {
 .padding-left-right--large {
   padding-left: 16px;
   padding-right: 16px;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.center-top {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.center-bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+/**
+ * Variables
+**/
+/**
+ * Applications
+**/
+.z-index-1 {
+  z-index: 100;
+}
+.z-index-2 {
+  z-index: 200;
+}
+.z-index-3 {
+  z-index: 300;
+}
+.z-index-4 {
+  z-index: 400;
+}
+.z-index-5 {
+  z-index: 500;
+}
+.z-index-6 {
+  z-index: 600;
+}
+.z-index-7 {
+  z-index: 700;
+}
+.z-index-8 {
+  z-index: 800;
+}
+.z-index-9 {
+  z-index: 900;
+}
+.z-index-10 {
+  z-index: 1000;
 }
 @-ms-viewport {
   width: device-width;
@@ -6945,6 +7004,43 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important;
+  }
+}
+header {
+  height: 60px;
+}
+.hero {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+/**
+ * Image
+**/
+.hero__image {
+  background-size: cover !important;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+}
+.hero__image--home {
+  background: url('img/assets/home-intro.jpg') no-repeat center center;
+}
+/**
+ * Video
+**/
+.hero__video {
+  overflow: hidden;
+}
+.hero__video--home {
+  display: none;
+  background: url('img/assets/home-intro.jpg') no-repeat center center;
+  background-size: cover;
+}
+@media (min-width: 1200px) {
+  .hero__video--home {
+    display: block;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
