@@ -296,7 +296,7 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 /*
  * Redireccionar a checkout despues de agregar un producto
  */
-add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
+add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
 function redirect_to_checkout() {
     return WC()->cart->get_checkout_url();
 }
