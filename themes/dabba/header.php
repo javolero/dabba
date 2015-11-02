@@ -51,8 +51,8 @@
 
 	<header class=" [ bg-color__screen ] [ text-center ] ">
 		<a href="<?php echo site_url() ?>">
-	 		<img class=" [ img-header-logo ] " src="<?php echo THEMEPATH ?>img/assets/logo.svg">
- 		</a>
- 	</header>
+			<img class=" [ img-header-logo ] " src="<?php echo THEMEPATH ?>img/assets/logo.svg">
+		</a>
+	</header>
 
 	<body>

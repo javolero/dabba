@@ -29,9 +29,6 @@
 .clearfix {
   .clearfix();
 }
-.center-block {
-  .center-block();
-}
 .pull-right {
   float: right !important;
 }
@@ -116,3 +113,46 @@
   padding-right: @padding-large-horizontal;
 }
 
+
+// Centering
+// -------------------------
+
+.center-block { .center-block(); }
+.center-full { .center-full(); }
+.center-top { .center-top(); }
+.center-bottom { .center-bottom(); }
+
+
+
+// Z index
+// -------------------------
+
+/**
+ * Variables
+**/
+
+@zIndex-1:  100;
+@zIndex-2:  200;
+@zIndex-3:  300;
+@zIndex-4:  400;
+@zIndex-5:  500;
+@zIndex-6:  600;
+@zIndex-7:  700;
+@zIndex-8:  800;
+@zIndex-9:  900;
+@zIndex-10: 1000;
+
+/**
+ * Applications
+**/
+
+.z-index-1{ z-index: @zIndex-1; }
+.z-index-2{ z-index: @zIndex-2; }
+.z-index-3{ z-index: @zIndex-3; }
+.z-index-4{ z-index: @zIndex-4; }
+.z-index-5{ z-index: @zIndex-5; }
+.z-index-6{ z-index: @zIndex-6; }
+.z-index-7{ z-index: @zIndex-7; }
+.z-index-8{ z-index: @zIndex-8; }
+.z-index-9{ z-index: @zIndex-9; }
+.z-index-10{ z-index:@zIndex-10; }
