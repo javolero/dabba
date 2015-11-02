@@ -4,7 +4,7 @@ Theme URI:    	http://www.woothemes.com/storefront
 Author:       	WooThemes
 Author URI:		http://www.woothemes.com
 Description:  	Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooThemes, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a WooCommerce theme? Look no further!
-Version:      	1.5.1
+Version:      	1.5.2
 License:      	GNU General Public License v2 or later
 License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  	storefront
@@ -429,13 +429,16 @@ body {
   background-position: center center;
   position: relative;
   z-index: 999; }
-  .site-header .site-logo-anchor {
+  .site-header .site-logo-anchor,
+  .site-header .site-logo-link {
     display: block; }
-    .site-header .site-logo-anchor img {
+    .site-header .site-logo-anchor img,
+    .site-header .site-logo-link img {
       max-height: 2.618em;
       width: auto; }
   .site-header .site-branding,
-  .site-header .site-logo-anchor {
+  .site-header .site-logo-anchor,
+  .site-header .site-logo-link {
     margin-bottom: 1.618em; }
   .site-header .widget {
     margin-bottom: 0; }
@@ -820,7 +823,8 @@ a {
   .site-branding,
   .site-search,
   .site-header-cart,
-  .site-logo-anchor {
+  .site-logo-anchor,
+  .site-logo-link {
     margin-bottom: 1em; }
   .site-header .subscribe-and-connect-connect {
     float: left;
@@ -1041,18 +1045,30 @@ input[type="submit"],
     padding: 0.53em 0.857em;
     font-size: .857em; }
   button.disabled,
+  button:disabled,
   input[type="button"].disabled,
+  input[type="button"]:disabled,
   input[type="reset"].disabled,
+  input[type="reset"]:disabled,
   input[type="submit"].disabled,
+  input[type="submit"]:disabled,
   .button.disabled,
-  .added_to_cart.disabled {
+  .button:disabled,
+  .added_to_cart.disabled,
+  .added_to_cart:disabled {
     opacity: 0.5 !important; }
     button.disabled:hover,
+    button:disabled:hover,
     input[type="button"].disabled:hover,
+    input[type="button"]:disabled:hover,
     input[type="reset"].disabled:hover,
+    input[type="reset"]:disabled:hover,
     input[type="submit"].disabled:hover,
+    input[type="submit"]:disabled:hover,
     .button.disabled:hover,
-    .added_to_cart.disabled:hover {
+    .button:disabled:hover,
+    .added_to_cart.disabled:hover,
+    .added_to_cart:disabled:hover {
       opacity: 0.5 !important; }
 
 input[type="checkbox"],
@@ -1189,7 +1205,8 @@ fieldset {
 @media screen and (min-width: 768px) {
   .menu-toggle,
   .handheld-navigation,
-  .main-navigation.toggled .handheld-navigation {
+  .main-navigation.toggled .handheld-navigation,
+  .main-navigation.toggled div.menu {
     display: none; }
   .primary-navigation {
     display: block; }
@@ -1254,7 +1271,6 @@ fieldset {
 	 * Primary Navigation
 	 */
   .main-navigation {
-    position: relative;
     padding-top: 1.618em; }
     .main-navigation ul.menu > li > a,
     .main-navigation ul.nav-menu > li > a {
@@ -1460,8 +1476,7 @@ fieldset {
   max-width: 100%; }
   .wp-caption img[class*="wp-image-"] {
     display: block;
-    margin: 1.2% auto 0;
-    max-width: 98%; }
+    margin: 0 auto; }
   .wp-caption .wp-caption-text {
     text-align: right;
     font-style: italic;
