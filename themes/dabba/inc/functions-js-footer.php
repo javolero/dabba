@@ -18,7 +18,9 @@ function footer_scripts(){
 			/**
 			 * On load
 			**/
+			imgToSvg();
 
+<<<<<<< HEAD
 			initMap();
 
 			/**
@@ -32,18 +34,38 @@ function footer_scripts(){
 
 			$(window).resize(function () { resizeToCover(min_w, vid_w_orig, vid_h_orig); });
 			$(window).trigger('resize');
+=======
+>>>>>>> 80b3d3a81a0690da156f053dcd96e989265ac202
 
 			/**
 			 * Triggered events
 			**/
+
+			<?php if( is_home() ) : ?>
+
+				/**
+				 * On load
+				**/
+
+				<?php if ( ! is_user_logged_in() ) : ?>
+					var min_w = 300; // minimum video width allowed
+					var vid_w_orig;  // original video dimensions
+					var vid_h_orig;
+					vid_w_orig = parseInt( $('video.hero__video').innerWidth() );
+					vid_h_orig = parseInt( $('video.hero__video').innerHeight() );
+
+					$(window).resize(function () { resizeToCover(min_w, vid_w_orig, vid_h_orig); });
+					$(window).trigger('resize');
+
+				<?php endif; ?>
+
+			<?php endif; ?>
 
 			<?php if( is_archive() ) : ?>
 
 				addAllMarkers();
 
 			<?php endif; ?>
-
-
 
 			<?php if( is_single() ) : ?>
 
