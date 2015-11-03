@@ -3,12 +3,12 @@
 			<div class="[ container ]">
 				<div class="[ row ][ margin-bottom ][ text-center ]">
 					<section class="[ tarjetas ][ col-xs-12 col-sm-6 col-md-4 ][ margin-bottom--large ]">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>img/visa.png" alt="">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>img/master.png" alt="">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>img/american.png" alt="">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>img/paypal.png" alt="">
+						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="">
+						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="">
+						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/amex.svg" alt="">
+						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="">
 					</section>
-					<section class="[ col-xs-12 col-sm-6 ][ margin-bottom--large ]">
+					<section class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Nosotros</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#contacto" data-toggle="modal">Contáctanos</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Términos y condiciones</a>
@@ -16,9 +16,15 @@
 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 					</section>
 					<section class="[ col-xs-12 col-md-2 ][ social ]">
-						<span class="[ glyphicon glyphicon-search ]" aria-hidden="true"></span>
-						<span class="[ glyphicon glyphicon-search ]" aria-hidden="true"></span>
-						<span class="[ glyphicon glyphicon-search ]" aria-hidden="true"></span>
+						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
+						</a>
+						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
+						</a>
+						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-instagram.svg">
+						</a>
 					</section>
 				</div>
 			</div>

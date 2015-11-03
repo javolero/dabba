@@ -20,17 +20,17 @@
 			<!-- <h2 class="[ text-bold ]">Déjanos llevarte la comida</h2> -->
 			<div class="[ row ]">
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-primary ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
+					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-primary ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
 					<h3 class="[ no-margin ]">Checa nuestro menú</h3>
 					<p class="[ text-gray-light ][ padding-left-right ]">Nuestros chefs están preparando algo delicioso para ti.</p>
 				</div>
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-primary ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
+					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-primary ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
 					<h3 class="[ no-margin ]">Ordena y escoge tu horario</h3>
 					<p class="[ text-gray-light ][ padding-left-right ]">Nuestros platillos vuelan, no te los pierdas.</p>
 				</div>
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-primary ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
+					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-primary ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
 					<h3 class="[ no-margin ]">¡A comer!</h3>
 					<p class="[ text-gray-light ][ padding-left-right ]">Relájate y disfruta, puedes estar tranquilo de que tu comida llegará fresca, lista y a tiempo a donde tu estés.</p>
 				</div>
@@ -95,18 +95,18 @@
 			<h2>Detalles</h2>
 			<div class="[ row ]">
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
+					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
 					<h3 class="[ no-margin ]">Horario de entrega</h3>
 					<p class="[ text-light ][ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
 					<p class="[ text-light ][ text-uppercase ]">9am - 4pm</p>
 				</div>
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
+					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
 					<h3 class="[ no-margin ]">$120</h3>
 					<p class="[ text-light ][ no-margin ][ text-uppercase ]">Por cada platillo, ya incluímos el precio del envío.</p>
 				</div>
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
+					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/compass.svg">
 					<h3 class="[ no-margin ]">Área de entrega</h3>
 				</div>
 			</div>
