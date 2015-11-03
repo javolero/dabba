@@ -20,7 +20,6 @@ function footer_scripts(){
 			**/
 			imgToSvg();
 
-<<<<<<< HEAD
 			initMap();
 
 			/**
@@ -34,8 +33,6 @@ function footer_scripts(){
 
 			$(window).resize(function () { resizeToCover(min_w, vid_w_orig, vid_h_orig); });
 			$(window).trigger('resize');
-=======
->>>>>>> 80b3d3a81a0690da156f053dcd96e989265ac202
 
 			/**
 			 * Triggered events
