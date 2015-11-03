@@ -6814,6 +6814,12 @@ button.close {
 .padding--top--large {
   padding-top: 24px;
 }
+.padding--top--xlarge {
+  padding-top: 36px;
+}
+.padding--top--xxlarge {
+  padding-top: 48px;
+}
 .padding--bottom {
   padding-bottom: 12px;
 }
