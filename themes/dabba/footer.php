@@ -38,6 +38,9 @@
 		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="#">
 			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
+		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#">
+			ordena ahora
+		</a>
 		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="#">
 			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 		</a>

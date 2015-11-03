@@ -183,12 +183,16 @@ input[type="button"] {
 // -------------------------
 
 .btn--action{
-  height: 45px;
-  padding: 5px;
+  height: 40px;
+  padding: 3px;
+  line-height: 27px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   position: fixed; bottom: 10px;
 }
 
 .btn--action--left{ left: 10px; }
-.btn--action--center{}
+.btn--action--center{
+  bottom: 10px; left: 50%;
+  .translate(-50%, 0);
+}
 .btn--action--right{ right: 10px; }
