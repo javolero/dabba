@@ -1083,6 +1083,15 @@ th {
 .icon--feature {
   width: 70px !important;
 }
+.icon--logo {
+  width: 150px;
+  height: auto;
+}
+@media (min-width: 992px) {
+  .icon--logo {
+    width: 200px;
+  }
+}
 /*------------------------------------*\
   #COLOR
 \*------------------------------------*/
@@ -1091,6 +1100,7 @@ th {
 **/
 .icon--fill path,
 .icon--fill circle,
+.icon--fill ellipse,
 .icon--fill polygon {
   fill: currentColor;
 }
@@ -1102,6 +1112,7 @@ th {
 }
 .icon--stroke path,
 .icon--stroke circle,
+.icon--stroke ellipse,
 .icon--stroke polygon {
   stroke: currentColor;
 }
@@ -1223,12 +1234,6 @@ blockquote {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.005);
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-}
-.bg-color__screen h2 {
-  color: #ffffff;
-  text-align: center;
-  padding: 5px;
-  margin-top: 85px;
 }
 h1,
 h2,
@@ -1362,6 +1367,10 @@ p {
   .lead {
     font-size: 2.1em;
   }
+}
+p a {
+  text-decoration: underline;
+  font-style: italic;
 }
 .line-height--large {
   line-height: 2.14285714;
@@ -2566,7 +2575,7 @@ table th[class*="col-"] {
     border-bottom: 0;
   }
 }
-.bg-color__screen input {
+.bg-primary input {
   color: #ffffff;
   background-color: #f05475;
   border-bottom: 1px solid #ffffff;
@@ -2578,10 +2587,10 @@ table th[class*="col-"] {
   border-radius: 0px;
   padding: 0px;
 }
-.bg-color__screen select {
+.bg-primary select {
   padding: 0px;
 }
-.bg-color__screen .form-control {
+.bg-primary .form-control {
   color: #ffffff;
   background-color: #f05475;
   border-bottom: 1px solid #ffffff;
@@ -3100,16 +3109,6 @@ select[multiple].input-lg {
     font-size: 1.19em;
   }
 }
-.bg-color__screen .close-modal {
-  color: #ffffff;
-  font-size: 30px;
-  background-color: #f05475;
-  border: none;
-  font-weight: lighter;
-}
-.bg-color__screen .btn {
-  margin: 20px;
-}
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -3562,15 +3561,16 @@ fieldset[disabled] .btn-danger.active {
   color: #f65275;
   background-color: #ffffff;
 }
-.btn-primary-hollow {
-  color: #f05475;
-  border-color: #f05475;
+.btn-hollow {
   background: none;
 }
-.btn-light-hollow {
-  color: #ffffff;
+.btn-hollow.btn-primary {
+  border-color: #f05475;
+  color: #f05475;
+}
+.btn-hollow.btn-light {
   border-color: #ffffff;
-  background: none;
+  color: #ffffff;
 }
 .btn-link {
   color: #337ab7;
@@ -3614,10 +3614,11 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-sm,
 .btn-group-sm > .btn {
-  padding: 5px 10px;
-  font-size: 1.19em;
-  line-height: 1.5;
-  border-radius: 3px;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1.05em;
+  line-height: 1.42857143;
+  border-radius: 8px;
 }
 .btn-xs,
 .btn-group-xs > .btn {
@@ -3637,6 +3638,19 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
+}
+.btn--action {
+  height: 45px;
+  padding: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: fixed;
+  bottom: 10px;
+}
+.btn--action--left {
+  left: 10px;
+}
+.btn--action--right {
+  right: 10px;
 }
 .divider-primary {
   border-color: #f05475;
@@ -5957,10 +5971,6 @@ button.list-group-item-danger.active:focus {
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ebccd1;
 }
-.bg-color__screen .embed-responsive {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 .embed-responsive {
   position: relative;
   display: block;
@@ -6016,16 +6026,16 @@ button.list-group-item-danger.active:focus {
   line-height: 1;
   color: #000000;
   text-shadow: 0 1px 0 #ffffff;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 .close:hover,
 .close:focus {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 button.close {
   padding: 0;
@@ -6034,32 +6044,21 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
-.img-header-logo {
-  width: 184px;
-  height: auto;
-}
-@media (min-width: 992px) {
-  .img-header-logo {
-    width: 200px;
-  }
-}
-.modal .bg-color__screen {
-  width: 100vw;
-  height: inherit;
-}
 .modal-open {
   overflow: hidden;
 }
 .modal {
   display: none;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1050;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
+  z-index: 1050;
   outline: 0;
 }
 .modal.fade .modal-dialog {
@@ -6083,20 +6082,14 @@ button.close {
   overflow-y: auto;
 }
 .modal-dialog {
-  position: relative;
   width: auto;
   margin: 10px;
+  position: relative;
 }
 .modal-content {
+  min-height: 100%;
   position: relative;
   background-color: #ffffff;
-  border: 1px solid #999999;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  background-clip: padding-box;
-  outline: 0;
 }
 .modal-backdrop {
   position: fixed;
@@ -6104,8 +6097,8 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
   background-color: #000000;
+  z-index: 1040;
 }
 .modal-backdrop.fade {
   opacity: 0;
@@ -6116,9 +6109,8 @@ button.close {
   filter: alpha(opacity=50);
 }
 .modal-header {
+  height: 60px;
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
-  min-height: 16.42857143px;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -6128,13 +6120,19 @@ button.close {
   line-height: 1.42857143;
 }
 .modal-body {
-  position: relative;
+  height: calc(100vh - 60px);
   padding: 15px;
+  position: relative;
+  overflow-y: scroll;
 }
 .modal-footer {
+  width: 60px;
+  height: 60px;
   padding: 15px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
@@ -6147,10 +6145,10 @@ button.close {
   margin-left: 0;
 }
 .modal-scrollbar-measure {
-  position: absolute;
-  top: -9999px;
   width: 50px;
   height: 50px;
+  position: absolute;
+  top: -9999px;
   overflow: scroll;
 }
 @media (min-width: 768px) {
@@ -6641,9 +6639,6 @@ button.close {
 }
 .bg-gradient {
   background: linear-gradient(#f05475, #673695);
-}
-.bg-color__screen {
-  background-color: #f05475;
 }
 .bg-tertiary {
   background-color: #0d1016;

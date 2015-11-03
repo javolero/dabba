@@ -51,9 +51,9 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<header class=" [ bg-color__screen ] [ text-center ] ">
-		<a href="<?php echo site_url() ?>">
-			<img class=" [ img-header-logo ] " src="<?php echo THEMEPATH ?>img/assets/logo.svg">
+	<header class="[ bg-primary ][ text-center ][ padding ]">
+		<a class="[ show ]" href="<?php echo site_url() ?>">
+			<img class="[ svg ][ icon icon--logo icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
 		</a>
 	</header>
 
