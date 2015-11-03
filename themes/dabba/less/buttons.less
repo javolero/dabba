@@ -5,18 +5,6 @@
 
 // Base styles
 // --------------------------------------------------
-.bg-color__screen .close-modal{
-  color: @light;
-  font-size: 30px;
-  background-color: @primary;
-  border: none;
-  font-weight: lighter;
-}
-
-.bg-color__screen .btn{
-  margin: @margin-base;
-}
-
 .btn {
   display: inline-block;
   margin-bottom: 0; // For input.btn
@@ -97,18 +85,17 @@
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
 
-.btn-primary-hollow{
-  color: @primary;
+.btn-hollow{ background: none; }
+
+.btn-hollow.btn-primary{
   border-color: @primary;
-  background:none;
+  color: @primary;
 }
 
-.btn-light-hollow{
-  color: @light;
+.btn-hollow.btn-light{
   border-color: @light;
-  background:none;
+  color: @light;
 }
-
 
 
 
@@ -160,8 +147,9 @@
   .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @btn-border-radius-large);
 }
 .btn-sm {
+  border: 1px solid transparent;
   // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
+  .button-size(@padding-base-vertical; @padding-base-horizontal; (@font-size-base * 0.75); @line-height-base; @btn-border-radius-extralarge);
 }
 .btn-xs {
   .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);

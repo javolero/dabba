@@ -13,7 +13,8 @@
 		</section>
 
 		<section class="[ descripcion ][ container ][ margin-bottom--large ]">
-			<h4 class="[ text-center ][ no-margin ]">Nuevo concepto culinario. Ingredientes frescos y de temporada. Platillos innovadores creados por un Chef</h4>
+			<h4 class="[ text-center ][ no-margin ]">Nuevo concepto culinario.</h4>
+			<h4 class="[ text-center ][ no-margin ]">Ingredientes frescos y de temporada. Platillos innovadores creados por un Chef.</h4>
 		</section>
 
 		<section class="[ container ][ como-funciona ][ text-center ][ margin-bottom--large ]">
