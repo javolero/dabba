@@ -35,13 +35,13 @@
 		<!-- =================================================
 		==== Action nav bar
 		================================================== -->
-		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="#">
+		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php site_url('my-account'); ?>">
 			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
-		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#">
+		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza">
 			ordena ahora
 		</a>
-		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="#">
+		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php site_url('cart'); ?>">
 			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 		</a>
 
