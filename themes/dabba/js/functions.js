@@ -63,11 +63,13 @@ function imgToSvg(){
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: {lat: 19.435342, lng: -99.205695},
-        mapTypeId: google.maps.MapTypeId.TERRAIN
+        zoom:           14,
+        center:         {lat: 19.435342, lng: -99.205695},
+        mapTypeId:      google.maps.MapTypeId.TERRAIN,
+        draggable:      false,
+        mapTypeControl: false,
+        scrollwheel:    false,
     });
-
     addPolanco( map );
     addAmpGranada( map );
     addLomas( map );
