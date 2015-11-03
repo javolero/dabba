@@ -114,10 +114,20 @@
 				</div>
 			</div>
 		</div>
-				<!-- <div id="mapa" class="[ col-xs-12 ]"></div> -->
-		<div class="[ embed-responsive ]">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3762.462624634608!2d-99.2077281!3d19.435611!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smx!4v1445293875693" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</div>
+		
+		<!-- Mover a LESS -->
+		<style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			#map {
+				height: 400px;
+			}
+		</style>
+		<div id="map"></div>
+
 		<div class="[ container ][ padding-top-bottom--large ]">
 			<div class="[ row ]"></div>
 				<div class="[ col-xs-12 ][ text-center text-primary-light ]">
@@ -151,5 +161,6 @@
 				<button class="[ close ]" data-dismiss="modal" aria-hidden="true">X</button>
 			</div>
 		</div>
+
 	</div><!-- Modal "comida-gratis"-->
 <?php get_footer(); ?>

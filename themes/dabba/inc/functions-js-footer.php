@@ -19,6 +19,8 @@ function footer_scripts(){
 			 * On load
 			**/
 
+			initMap();
+
 			/**
 			 * On load
 			**/
