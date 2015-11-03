@@ -30,10 +30,10 @@
 					<h3 class="[ no-margin ]">Ordena y escoge tu horario</h3>
 					<p class="[ text-gray-light ][ padding-left-right ]">Nuestros platillos vuelan, no te los pierdas.</p>
 				</div>
-				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-md-4 ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-primary ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/grape.svg">
 					<h3 class="[ no-margin ]">¡A comer!</h3>
-					<p class="[ text-gray-light ][ padding-left-right ]">Relájate y disfruta, puedes estar tranquilo de que tu comida llegará fresca, lista y a tiempo a donde tu estés.</p>
+					<p class="[ text-gray-light ][ padding-left-right ][ no-margin ]">Relájate y disfruta, puedes estar tranquilo de que tu comida llegará fresca, lista y a tiempo a donde tu estés.</p>
 				</div>
 			</div>
 		</section>
@@ -120,7 +120,7 @@
 			<div class="[ col-xs-12 ][ text-center color-light ]">
 				<p>¿No entregamos en tu zona?</p>
 				<p>Déjanos tu correo y tu colonia, cuando estemos por allá te regalaremos una comida, ¿qué dices?</p>
-				<a class="[ btn btn-light-hollow ]" href="#comida-gratis" data-toggle="modal">ok</a>
+				<a class="[ btn btn-light btn-hollow ]" href="#comida-gratis" data-toggle="modal">ok</a>
 			</div><!-- row -->
 		</div><!-- container -->
 
