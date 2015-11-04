@@ -37,13 +37,13 @@
 		==== Action nav bar
 		================================================== -->
 		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php site_url('my-account'); ?>">
-			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
+			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
-		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#excelente" data-toggle="modal">
+		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza" data-toggle="modal">
 			ordena ahora
 		</a>
 		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php site_url('cart'); ?>">
-			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
+			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 		</a>
 
 
@@ -91,18 +91,20 @@
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form>
-							<input class="[ form-control ]" name="email" placeholder="Correo electrónico">
-							<select class="[ form-control ]" name="zona">
-								<option>Zona </option>
-								<option>Polanco</option>
-								<option>Ampliación Granada</option>
-								<option>Corporativos Palmas</option>
-								<option>Corporativos Fc. de Cuernavaca</option>
-								<option>Otra</option>
-							</select>
+							<input class="[ form-control ][ margin-bottom--small ]" name="email" placeholder="Correo electrónico">
+							<div class="[ select-style ]">
+								<select class="[ form-control ]" name="zona">
+									<option>Selecciona tu zona</option>
+									<option>Polanco</option>
+									<option>Ampliación Granada</option>
+									<option>Corporativos Palmas</option>
+									<option>Corporativos Fc. de Cuernavaca</option>
+									<option value="other">Otra</option>
+								</select>
+							</div>
 						</form>
 					</div>
-					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">siguiente</a>
+					<a href="#excelente" class="[ btn btn-sm btn-hollow btn-light ]" data-toggle="modal">siguiente</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
@@ -124,17 +126,23 @@
 					<div class="[ margin-bottom--large ]">
 						<h2>¡Excelente! :)</h2>
 						<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
-						<div class="[ text-center ]">
-							<a class="[ btn btn-info ][ margin-small ]">Facebook</a>
-							<a class="[ btn btn-light ][ color-quaternary ][ margin-small ]">Google</a>
+						<div class="[ margin-bottom ]">
+							<a class="[ btn btn-info ][ margin-sides--small ]">
+								<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg"> Facebook
+							</a>
+							<a class="[ btn btn-light ][ color-quaternary ][ margin-sides--small ]">
+								<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-google.svg"> Google
+							</a>
 						</div>
 						<p>O con tu correo</p>
-						<form>
-							<input class="[ form-control ][ width-medium ][ pull-left ]" id="ejemplo_nombre_1" placeholder="Nombre">
-							<input class="[ form-control ][ width-medium ][ pull-right ]" id="ejemplo_apellido_1" placeholder="Apellido">
-							<input class="[ form-control ]" id="ejemplo_celular_1" placeholder="Celular">
-							<input class="[ form-control ]" id="ejemplo_password_1" placeholder="Contraseña">
-						</form>
+						<div class="[ container ]">
+							<form class="[ row ]">
+								<input class="[ form-control ][ col-xs-6 ][ margin-bottom--small ]" id="ejemplo_nombre_1" placeholder="Nombre">
+								<input class="[ form-control ][ col-xs-6 ][ margin-bottom--small ]" id="ejemplo_apellido_1" placeholder="Apellido">
+								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" id="ejemplo_celular_1" placeholder="Celular">
+								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" id="ejemplo_password_1" placeholder="Contraseña">
+							</form>
+						</div>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">ver platillo de hoy</a>
 
@@ -194,9 +202,67 @@
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal-->
 
+		<!-- Modal "lo sentimos"
+		================================================== -->
+		<div id="error" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="loSentimos" aria-hidden="true">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</div>
+				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
+					<div class="[ margin-bottom--large ]">
+						<h2>Lo sentimos :(</h2>
+						<p>Por ahora no entregamos en tu área, entregamos en</p>
+						<div class="[ embed-responsive ][ margin-bottom ]">
+							<div id="map" class="[ js-map ][ embed-responsive-item ]"></div>
+						</div>
+						<p>Cuando entreguémos en tu colonia recibirás un correo electrónico con un cupón para una comida gratis.</p>
+					</div>
+					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">ok</a>
+				</div><!-- End of Modal-body-->
+				<div class="[ modal-footer ][ bg-primary ]">
+					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+					</a>
+				</div><!-- End of Modal-footer-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
 
-
-		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<!-- Modal "lo sentimos"
+		================================================== -->
+		<div id="comida-gratis" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="comidaGratis" aria-hidden="true">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</div>
+				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
+					<div class="[ margin-bottom--large ]">
+						<h2>¡Quiero mi comida gratis!</h2>
+						<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
+						<form class="[ ]">
+							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Correo electrónico">
+							<div class="[ select-style ][ margin-bottom--small ]">
+								<select class="[ form-control ]" name="zona">
+									<option>Selecciona tu zona</option>
+									<option>Polanco</option>
+									<option>Ampliación Granada</option>
+									<option>Corporativos Palmas</option>
+									<option>Corporativos Fc. de Cuernavaca</option>
+									<option value="other">Otra</option>
+								</select>
+							</div>
+							<input class="[ toggable ][ hidden ][ form-control ][ margin-bottom--small ]" placeholder="Tu zona">
+						</form>
+					</div>
+					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
+				</div><!-- End of Modal-body-->
+				<div class="[ modal-footer ][ bg-primary ]">
+					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+					</a>
+				</div><!-- End of Modal-footer-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
 		<?php wp_footer(); ?>
 	</body>
 </html>

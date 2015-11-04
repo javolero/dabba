@@ -38,23 +38,23 @@
 			</div>
 		</section>
 
+		<hr class="[ divider-primary ][ margin-bottom-large ]">
+
 	<?php endif; ?>
 
-	<hr class="[ divider-primary ][ margin-bottom-large ]">
-
-	<section class="[ menu-hoy ][ margin-bottom--large ]">
-		<div class="[ container-fluid ]">
+	<section class="[ menu-hoy ][ margin-top-bottom--large ]">
+		<div class="[ container ]">
 			<h2 class="[ text-center ]">Menú de hoy</h2>
-			<div class="[ row ]">
-				<?php get_template_part( 'templates/menu', 'hoy' ); ?>
-			</div>
+			<?php get_template_part( 'templates/menu', 'hoy' ); ?>
 		</div>
 	</section>
 
 	<?php if ( is_user_logged_in() ) : ?>
 
+		<hr class="[ divider-primary ][ margin-bottom-large ]">
+
 		<section class="[ menu-semana ][ margin-bottom--large ]">
-			<div class="[ container-fluid ]">
+			<div class="[ container ]">
 				<h2 class="[ text-center ]">Menú de la semana</h2>
 				<?php get_template_part( 'templates/menu', 'semana' ); ?>
 			</div>
@@ -69,7 +69,7 @@
 						<small>x <br> $300</small>
 					</p>
 					<p><small>3 comidas</small></p>
-					<a class="[ btn btn-default ]" href="#">comprar</a>
+					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
 				</div>
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
@@ -77,7 +77,7 @@
 						<small>x <br> $500</small>
 					</p>
 					<p><small>6 comidas</small></p>
-					<a class="[ btn btn-default ]" href="#">comprar</a>
+					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
 				</div>
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
@@ -85,7 +85,7 @@
 						<small>x <br> $700</small>
 					</p>
 					<p><small>10 comidas</small></p>
-					<a class="[ btn btn-default ]" href="#">comprar</a>
+					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
 				</div>
 			</div>
 		</section>
@@ -114,7 +114,7 @@
 		</div>
 
 		<div class="[ embed-responsive ][ margin-bottom ]">
-			<div id="map" class="[ embed-responsive-item ]"></div>
+			<div id="map" class="[ js-map ][ embed-responsive-item ]"></div>
 		</div>
 
 		<div class="[ container ][ padding-top-bottom--large ]">
@@ -127,27 +127,4 @@
 
 	</section>
 
-	<!-- Modal "comida-gratis"-->
-	<div id="comida-gratis" class="[ modal ][ fade ][ bg-primary ][ text-center ]" tabindex="-1" role="dialog" aria-labelledby="¡Quiero mi comida gratis!" aria-hidden="true" style="display: none;">
-		<div class="[ modal-header ][ bg-light ]">
-			<img src="<?php echo THEMEPATH; ?>img/assets/logo.svg" class="[ color-primary ][ img-header-logo ]" alt="Dabba">
-		</div>
-		<div class="[ modal-body ]">
-			<h2>¡Quiero mi comida gratis!</h2>
-			<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
-			<form role="form">
-				<div class="[ form-group ]">
-					<input class="[ form-control ]" placeholder="Correo electrónico">
-					<input class="[ form-control ]" placeholder="Colonia">
-				</div>
-			</form>
-			<div class="[ text-center ]">
-				<button class="[ btn ][ btn-light-hollow ]">enviar</button>
-			</div>
-			<div class="[ text-right ]">
-				<button class="[ close ]" data-dismiss="modal" aria-hidden="true">X</button>
-			</div>
-		</div>
-
-	</div><!-- Modal "comida-gratis"-->
 <?php get_footer(); ?>
