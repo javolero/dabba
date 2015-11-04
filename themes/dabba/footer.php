@@ -38,7 +38,7 @@
 		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php site_url('my-account'); ?>">
 			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
-		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#excelente" data-toggle="modal">
+		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza" data-toggle="modal">
 			ordena ahora
 		</a>
 		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php site_url('cart'); ?>">
@@ -90,15 +90,17 @@
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form>
-							<input class="[ form-control ]" placeholder="Correo electrónico">
-							<select class="[ form-control ]">
-								<option>Colonia </option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>Otra</option>
-							</select>
+							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Correo electrónico">
+							<div class="[ select-style ]">
+								<select class="[ form-control ]">
+									<option>Selecciona tu zona</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>Otra</option>
+								</select>
+							</div>
 						</form>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">siguiente</a>

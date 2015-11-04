@@ -3,31 +3,41 @@
 // --------------------------------------------------
 
 .bg-primary input{
+  padding: 0; border: none; border-bottom: 1px solid @light;
   color: @light;
   background-color: @primary;
-  border-bottom: 1px solid @light;
-  margin-bottom: 20px;
-  border-top: @primary;
-  border-left: @primary;
-  border-right: @primary;
   box-shadow: none;
-  border-radius: 0px;
-  padding: 0px;
-}
-
-.bg-primary select{
-  padding: 0px;
+  border-radius: 0;
 }
 
 .bg-primary .form-control {
+  border: none; border-bottom: 1px solid @light;
   color: @light;
   background-color: @primary;
-  border-bottom: 1px solid @light;
-  border-top: @primary;
-  border-right: @primary;
-  border-left: @primary;
   box-shadow: none;
-  border-radius: 0px;
+  border-radius: 0;
+}
+
+.select-style {
+  width: 100%;
+  padding: 0; border-bottom: 1px solid @light; margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.select-style select {
+  width: 100%;
+  padding: 0 30px 0 0; border: none !important;
+  background-color: transparent;
+  background: transparent url("icons/down-arrow.png") no-repeat 98% 50%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
 }
 
 fieldset {
@@ -139,7 +149,6 @@ output {
   width: 100%;
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: @padding-base-vertical @padding-base-horizontal;
-  font-size: @font-size-base;
   line-height: @line-height-base;
   color: @input-color;
   background-color: @input-bg;
