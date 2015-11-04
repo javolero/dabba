@@ -114,7 +114,7 @@
 		</div>
 
 		<div class="[ embed-responsive ][ margin-bottom ]">
-			<div id="map" class="[ col-xs-12 ]"></div>
+			<div id="map" class="[ embed-responsive-item ]"></div>
 		</div>
 
 		<div class="[ container ][ padding-top-bottom--large ]">
