@@ -31,6 +31,7 @@ function add_metaboxes_products(){
 	add_meta_box( 'guarnicion_1', 'Guarnición 1', 'metabox_guarnicion_1', 'product', 'advanced', 'high' );
 	add_meta_box( 'guarnicion_2', 'Guarnición 2', 'metabox_guarnicion_2', 'product', 'advanced', 'high' );
 	add_meta_box( 'fecha_menu', 'Fecha de menú', 'metabox_fecha_menu', 'product', 'advanced', 'high' );
+	add_meta_box( 'informacion_nutrimental', 'Información nutrimental', 'metabox_informacion_nutrimental', 'product', 'advanced', 'high' );
 
 }// add_metaboxes_PAGE
 
@@ -96,6 +97,20 @@ function metabox_fecha_menu( $post ){
 
 }// metabox_fecha_menu
 
+/**
+* Display metabox in page or post type
+* @param obj $post
+**/
+function metabox_informacion_nutrimental( $post ){
+
+	$informacion_nutrimental = get_post_meta($post->ID, '_informacion_nutrimental_meta', true);
+
+	wp_nonce_field(__FILE__, '_informacion_nutrimental_meta_nonce');
+
+	echo "<textarea class='[ widefat ]' name='_informacion_nutrimental_meta'>$informacion_nutrimental</textarea>";
+
+}// metabox_informacion_nutrimental
+
 
 
 /*------------------------------------*\
@@ -128,6 +143,10 @@ function metabox_fecha_menu( $post ){
 		// Fecha del menú
 		if ( isset($_POST['_fecha_menu_meta']) and check_admin_referer( __FILE__, '_fecha_menu_meta_nonce') ){
 			update_post_meta($post_id, '_fecha_menu_meta', $_POST['_fecha_menu_meta']);
+		}
+		// Fecha del menú
+		if ( isset($_POST['_informacion_nutrimental_meta']) and check_admin_referer( __FILE__, '_informacion_nutrimental_meta_nonce') ){
+			update_post_meta($post_id, '_informacion_nutrimental_meta', $_POST['_informacion_nutrimental_meta']);
 		}
 
 	}// save_metaboxes_product
