@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	$product_args = array(
 		'post_type' 		=> 'product',
@@ -12,7 +12,7 @@
 		'orderby'			=> 'meta_value',
 		'order'				=> 'ASC',
 	);
-	$query = new WP_Query( $product_args ); 
+	$query = new WP_Query( $product_args );
 
 	if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
 		global $product;
@@ -25,23 +25,25 @@
 		$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
 		$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
 ?>
-		<div id="<?php echo $post->ID ?>" class="[ platillo-hoy ]">
-			<div class="[ col-xs-12 ]">
-				<a href="<?php the_permalink(); ?>">
-					<?php echo $image; ?>
-				</a>
-				<p class="[ bg-primary ][ padding ][ text-center ][ color-light ]"><?php echo $fecha_menu ?></p>
+		<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ]">
+			<div class="[ row ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-centered ]">
+					<a class="[ show ]" href="<?php the_permalink(); ?>">
+						<?php echo $image; ?>
+						<p class="[ bg-primary ][ padding no-margin ][ text-center color-light ]"><?php echo $fecha_menu ?></p>
+					</a>
+				</div>
 			</div>
-			<div class="[ col-xs-7 ]">
-				<p><?php echo get_the_title() ?></p>
+			<div class="[ row ]">
+				<div class="[ col-xs-8 ]">
+					<p class="[ no-margin ]"><?php echo get_the_title() ?></p>
+				</div>
+				<div class="[ col-xs-4 ]">
+					<?php echo woocommerce_template_loop_add_to_cart(); ?>
+				</div>
 			</div>
-			<div class="[ col-xs-5 ][ margin-top ]">
-				<?php echo woocommerce_template_loop_add_to_cart(); ?>
-			</div>
-		</div>
+		</article>
 
-<?php 
+<?php
 	endwhile; endif; wp_reset_query();
 ?>
-	
-					

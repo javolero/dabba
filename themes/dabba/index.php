@@ -38,23 +38,23 @@
 			</div>
 		</section>
 
+		<hr class="[ divider-primary ][ margin-bottom-large ]">
+
 	<?php endif; ?>
 
-	<hr class="[ divider-primary ][ margin-bottom-large ]">
-
-	<section class="[ menu-hoy ][ margin-bottom--large ]">
-		<div class="[ container-fluid ]">
+	<section class="[ menu-hoy ][ margin-top-bottom--large ]">
+		<div class="[ container ]">
 			<h2 class="[ text-center ]">Menú de hoy</h2>
-			<div class="[ row ]">
-				<?php get_template_part( 'templates/menu', 'hoy' ); ?>
-			</div>
+			<?php get_template_part( 'templates/menu', 'hoy' ); ?>
 		</div>
 	</section>
 
 	<?php if ( is_user_logged_in() ) : ?>
 
+		<hr class="[ divider-primary ][ margin-bottom-large ]">
+
 		<section class="[ menu-semana ][ margin-bottom--large ]">
-			<div class="[ container-fluid ]">
+			<div class="[ container ]">
 				<h2 class="[ text-center ]">Menú de la semana</h2>
 				<?php get_template_part( 'templates/menu', 'semana' ); ?>
 			</div>
@@ -69,7 +69,7 @@
 						<small>x <br> $300</small>
 					</p>
 					<p><small>3 comidas</small></p>
-					<a class="[ btn btn-default ]" href="#">comprar</a>
+					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
 				</div>
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
@@ -77,7 +77,7 @@
 						<small>x <br> $500</small>
 					</p>
 					<p><small>6 comidas</small></p>
-					<a class="[ btn btn-default ]" href="#">comprar</a>
+					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
 				</div>
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
@@ -85,7 +85,7 @@
 						<small>x <br> $700</small>
 					</p>
 					<p><small>10 comidas</small></p>
-					<a class="[ btn btn-default ]" href="#">comprar</a>
+					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
 				</div>
 			</div>
 		</section>

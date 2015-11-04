@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 	$product_args = array(
 		'post_type' 		=> 'product',
 		'posts_per_page'	=> 1,
@@ -10,7 +9,7 @@
 			)
 		)
 	);
-	$query = new WP_Query( $product_args ); 
+	$query = new WP_Query( $product_args );
 
 	if( $query->have_posts() ) : $query->the_post();
 		global $product;
@@ -23,22 +22,25 @@
 		$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
 ?>
 		<div id="<?php echo $post->ID ?>" class="[ platillo-hoy ]">
-			<div class="[ col-xs-12 ]">
-				<a href="<?php the_permalink(); ?>">
-					<?php echo $image; ?>
-				</a>
+			<div class="[ row ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-centered ]">
+					<a class="[ show ]" href="<?php the_permalink(); ?>">
+						<?php echo $image; ?>
+					</a>
+				</div>
 			</div>
-			<div class="[ col-xs-8 ]">
-				<h3><?php echo get_the_title() ?></h3>
-				<p><?php echo $platillo_principal ?></p>
-			</div>
-			<div class="[ col-xs-4 ][ margin-top ]">
-				<?php echo woocommerce_template_loop_add_to_cart(); ?>
+			<div class="[ row ]">
+				<div class="[ col-xs-8 ]">
+					<h3 class="[ no-margin ]"><?php echo get_the_title() ?></h3>
+					<p class="[ no-margin ]"><?php echo $platillo_principal ?></p>
+				</div>
+				<div class="[ col-xs-4 ]">
+					<?php echo woocommerce_template_loop_add_to_cart(); ?>
+				</div>
 			</div>
 		</div>
 
-<?php 
+<?php
 	endif; wp_reset_query();
 ?>
-	
-					
+

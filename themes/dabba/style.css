@@ -6978,6 +6978,11 @@ button.close {
   -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
+.col-centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
 /**
  * Variables
 **/
