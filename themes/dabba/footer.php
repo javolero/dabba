@@ -37,13 +37,13 @@
 		==== Action nav bar
 		================================================== -->
 		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php site_url('my-account'); ?>">
-			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
+			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
 		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza" data-toggle="modal">
 			ordena ahora
 		</a>
 		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php site_url('cart'); ?>">
-			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
+			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 		</a>
 
 
@@ -104,7 +104,7 @@
 							</div>
 						</form>
 					</div>
-					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">siguiente</a>
+					<a href="#excelente" class="[ btn btn-sm btn-hollow btn-light ]" data-toggle="modal">siguiente</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
@@ -126,17 +126,23 @@
 					<div class="[ margin-bottom--large ]">
 						<h2>¡Excelente! :)</h2>
 						<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
-						<div class="[ text-center ]">
-							<a class="[ btn btn-info ][ margin-small ]">Facebook</a>
-							<a class="[ btn btn-light ][ color-quaternary ][ margin-small ]">Google</a>
+						<div class="[ margin-bottom ]">
+							<a class="[ btn btn-info ][ margin-sides--small ]">
+								<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg"> Facebook
+							</a>
+							<a class="[ btn btn-light ][ color-quaternary ][ margin-sides--small ]">
+								<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-google.svg"> Google
+							</a>
 						</div>
 						<p>O con tu correo</p>
-						<form>
-							<input class="[ form-control ][ width-medium ][ pull-left ]" id="ejemplo_nombre_1" placeholder="Nombre">
-							<input class="[ form-control ][ width-medium ][ pull-right ]" id="ejemplo_apellido_1" placeholder="Apellido">
-							<input class="[ form-control ]" id="ejemplo_celular_1" placeholder="Celular">
-							<input class="[ form-control ]" id="ejemplo_password_1" placeholder="Contraseña">
-						</form>
+						<div class="[ container ]">
+							<form class="[ row ]">
+								<input class="[ form-control ][ col-xs-6 ][ margin-bottom--small ]" id="ejemplo_nombre_1" placeholder="Nombre">
+								<input class="[ form-control ][ col-xs-6 ][ margin-bottom--small ]" id="ejemplo_apellido_1" placeholder="Apellido">
+								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" id="ejemplo_celular_1" placeholder="Celular">
+								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" id="ejemplo_password_1" placeholder="Contraseña">
+							</form>
+						</div>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">ver platillo de hoy</a>
 				</div><!-- End of Modal-body-->
