@@ -11,6 +11,7 @@
 					<section class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Nosotros</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#contacto" data-toggle="modal">Contáctanos</a>
+						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba for business</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Términos y condiciones</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Aviso de privacidad</a>
 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
@@ -90,14 +91,14 @@
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form>
-							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Correo electrónico">
+							<input class="[ form-control ][ margin-bottom--small ]" name="email" placeholder="Correo electrónico">
 							<div class="[ select-style ]">
-								<select class="[ form-control ]">
+								<select class="[ form-control ]" name="zona">
 									<option>Selecciona tu zona</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
+									<option>Polanco</option>
+									<option>Ampliación Granada</option>
+									<option>Corporativos Palmas</option>
+									<option>Corporativos Fc. de Cuernavaca</option>
 									<option>Otra</option>
 								</select>
 							</div>
