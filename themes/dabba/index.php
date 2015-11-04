@@ -113,11 +113,9 @@
 			</div>
 		</div>
 
-		<!-- <div id="mapa" class="[ col-xs-12 ]"></div> -->
 		<div class="[ embed-responsive ][ margin-bottom ]">
-			<div id="map"></div>
+			<div id="map" class="[ col-xs-12 ]"></div>
 		</div>
-
 
 		<div class="[ container ][ padding-top-bottom--large ]">
 			<div class="[ col-xs-12 ][ text-center color-light ]">
