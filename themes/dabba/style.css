@@ -2662,7 +2662,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 16em;
+  height: 1.62857143em;
   padding: 6px 12px;
   font-size: 1.4em;
   line-height: 1.42857143;
@@ -2714,7 +2714,7 @@ input[type="search"] {
   input[type="time"].form-control,
   input[type="datetime-local"].form-control,
   input[type="month"].form-control {
-    line-height: 16em;
+    line-height: 1.62857143em;
   }
   input[type="date"].input-sm,
   input[type="time"].input-sm,
@@ -2891,7 +2891,7 @@ select[multiple].input-lg {
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 20em;
+  padding-right: 2.03571429em;
 }
 .form-control-feedback {
   position: absolute;
@@ -2899,9 +2899,9 @@ select[multiple].input-lg {
   right: 0;
   z-index: 2;
   display: block;
-  width: 16em;
-  height: 16em;
-  line-height: 16em;
+  width: 1.62857143em;
+  height: 1.62857143em;
+  line-height: 1.62857143em;
   text-align: center;
   pointer-events: none;
 }
@@ -4573,8 +4573,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 17px;
-  margin-bottom: 17px;
+  margin-top: 24.18571429px;
+  margin-bottom: 24.18571429px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -4659,8 +4659,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 17px;
-  margin-bottom: 17px;
+  margin-top: 24.18571429px;
+  margin-bottom: 24.18571429px;
 }
 .navbar-btn.btn-sm {
   margin-top: 18.5px;

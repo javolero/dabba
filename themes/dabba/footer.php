@@ -38,7 +38,7 @@
 		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php site_url('my-account'); ?>">
 			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
-		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza">
+		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza" data-toggle="modal">
 			ordena ahora
 		</a>
 		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php site_url('cart'); ?>">
@@ -57,7 +57,7 @@
 
 		<!-- Modal "contacto"
 		================================================== -->
-		<div id="contacto" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+		<div id="contacto" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="Contacto" aria-hidden="true" >
 			<div class="[ modal-content ][ text-center ]">
 				<div class="[ modal-header ][ bg-light ][ padding ]">
 					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
@@ -77,6 +77,41 @@
 				</div><!-- End of Modal-footer-->
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal -->
+
+		<!-- Modal "comienza"
+		================================================== -->
+		<div id="comienza" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="Comienza" aria-hidden="true" style="display: none;">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</div>
+				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
+					<div class="[ margin-bottom--large ]">
+						<h2>Comienza</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
+						<form>
+							<div class="[ form-group ]">
+								<input class="[ form-control ]" placeholder="Correo electrónico">
+								<select class="[ form-control ]">
+									<option>Colonia </option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>Otra</option>
+								</select>
+							</div>
+						</form>
+					</div>
+					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">siguiente</a>
+				</div><!-- End of Modal-body-->
+				<div class="[ modal-footer ][ bg-primary ]">
+					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+					</a>
+				</div><!-- End of Modal-footer-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
 
 
 

@@ -104,7 +104,7 @@
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
 					<h3 class="[ no-margin ]">$120</h3>
-					<p class="[ text-light ][ no-margin ][ text-uppercase ]">Por cada platillo, ya incluímos el precio del envío.</p>
+					<p class="[ text-light ][ no-margin ]">Por cada platillo, ya incluímos el precio del envío.</p>
 				</div>
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/compass.svg">
@@ -113,18 +113,11 @@
 			</div>
 		</div>
 
-		<!-- Mover a LESS -->
-		<style>
-			html, body {
-				height: 100%;
-				margin: 0;
-				padding: 0;
-			}
-			#map {
-				height: 400px;
-			}
-		</style>
-		<div id="map"></div>
+		<!-- <div id="mapa" class="[ col-xs-12 ]"></div> -->
+		<div class="[ embed-responsive ][ margin-bottom ]">
+			<div id="map"></div>
+		</div>
+
 
 		<div class="[ container ][ padding-top-bottom--large ]">
 			<div class="[ col-xs-12 ][ text-center color-light ]">
