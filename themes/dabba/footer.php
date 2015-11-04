@@ -99,7 +99,7 @@
 									<option>Ampliación Granada</option>
 									<option>Corporativos Palmas</option>
 									<option>Corporativos Fc. de Cuernavaca</option>
-									<option>Otra</option>
+									<option value="other">Otra</option>
 								</select>
 							</div>
 						</form>
@@ -145,6 +145,68 @@
 						</div>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">ver platillo de hoy</a>
+				</div><!-- End of Modal-body-->
+				<div class="[ modal-footer ][ bg-primary ]">
+					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+					</a>
+				</div><!-- End of Modal-footer-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
+
+		<!-- Modal "lo sentimos"
+		================================================== -->
+		<div id="error" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="loSentimos" aria-hidden="true">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</div>
+				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
+					<div class="[ margin-bottom--large ]">
+						<h2>Lo sentimos :(</h2>
+						<p>Por ahora no entregamos en tu área, entregamos en</p>
+						<div class="[ embed-responsive ][ margin-bottom ]">
+							<div id="map" class="[ js-map ][ embed-responsive-item ]"></div>
+						</div>
+						<p>Cuando entreguémos en tu colonia recibirás un correo electrónico con un cupón para una comida gratis.</p>
+					</div>
+					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">ok</a>
+				</div><!-- End of Modal-body-->
+				<div class="[ modal-footer ][ bg-primary ]">
+					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+					</a>
+				</div><!-- End of Modal-footer-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
+
+		<!-- Modal "lo sentimos"
+		================================================== -->
+		<div id="comida-gratis" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="comidaGratis" aria-hidden="true">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</div>
+				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
+					<div class="[ margin-bottom--large ]">
+						<h2>¡Quiero mi comida gratis!</h2>
+						<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
+						<form class="[ ]">
+							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Correo electrónico">
+							<div class="[ select-style ][ margin-bottom--small ]">
+								<select class="[ form-control ]" name="zona">
+									<option>Selecciona tu zona</option>
+									<option>Polanco</option>
+									<option>Ampliación Granada</option>
+									<option>Corporativos Palmas</option>
+									<option>Corporativos Fc. de Cuernavaca</option>
+									<option value="other">Otra</option>
+								</select>
+							</div>
+							<input class="[ toggable ][ hidden ][ form-control ][ margin-bottom--small ]" placeholder="Tu zona">
+						</form>
+					</div>
+					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">

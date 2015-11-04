@@ -19,12 +19,8 @@ function footer_scripts(){
 			 * On load
 			**/
 			imgToSvg();
-
 			initMap();
 
-			/**
-			 * On load
-			**/
 			var min_w = 300; // minimum video width allowed
 			var vid_w_orig;  // original video dimensions
 			var vid_h_orig;
@@ -37,6 +33,14 @@ function footer_scripts(){
 			/**
 			 * Triggered events
 			**/
+			$('.modal .select-style').change(function(){
+				console.log( $(this).next('.toggable') );
+				if ($(this).find('select').val() == 'other'){
+					$(this).next('.toggable').toggleClass('hidden');
+				} else {
+					$(this).next('.toggable').toggleClass('hidden');
+				}
+			});
 
 			<?php if( is_home() ) : ?>
 

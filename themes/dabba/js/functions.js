@@ -55,6 +55,10 @@ function imgToSvg(){
 } //imgToSvg
 
 
+function toggleElement(element){
+    $(element).toggleClass('hidden');
+}
+
 
 /*------------------------------------*\
     #MAPS FUNCTIONS

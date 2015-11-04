@@ -114,7 +114,7 @@
 		</div>
 
 		<div class="[ embed-responsive ][ margin-bottom ]">
-			<div id="map" class="[ embed-responsive-item ]"></div>
+			<div id="map" class="[ js-map ][ embed-responsive-item ]"></div>
 		</div>
 
 		<div class="[ container ][ padding-top-bottom--large ]">
@@ -127,27 +127,4 @@
 
 	</section>
 
-	<!-- Modal "comida-gratis"-->
-	<div id="comida-gratis" class="[ modal ][ fade ][ bg-primary ][ text-center ]" tabindex="-1" role="dialog" aria-labelledby="¡Quiero mi comida gratis!" aria-hidden="true" style="display: none;">
-		<div class="[ modal-header ][ bg-light ]">
-			<img src="<?php echo THEMEPATH; ?>img/assets/logo.svg" class="[ color-primary ][ img-header-logo ]" alt="Dabba">
-		</div>
-		<div class="[ modal-body ]">
-			<h2>¡Quiero mi comida gratis!</h2>
-			<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
-			<form role="form">
-				<div class="[ form-group ]">
-					<input class="[ form-control ]" placeholder="Correo electrónico">
-					<input class="[ form-control ]" placeholder="Colonia">
-				</div>
-			</form>
-			<div class="[ text-center ]">
-				<button class="[ btn ][ btn-light-hollow ]">enviar</button>
-			</div>
-			<div class="[ text-right ]">
-				<button class="[ close ]" data-dismiss="modal" aria-hidden="true">X</button>
-			</div>
-		</div>
-
-	</div><!-- Modal "comida-gratis"-->
 <?php get_footer(); ?>
