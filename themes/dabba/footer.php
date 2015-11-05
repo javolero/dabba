@@ -1,5 +1,5 @@
 
-		<footer class="[ bg-tertiary ][ color-light ][ padding--top-bottom--large ]">
+		<footer class="[ bg-tertiary ][ color-light ][ padding--top--large padding--bottom--xxlarge ]">
 			<div class="[ container ]">
 				<div class="[ row ][ margin-bottom ][ text-center ]">
 					<section class="[ tarjetas ][ col-xs-12 col-sm-6 col-md-4 ][ margin-bottom--large ]">

@@ -17,21 +17,15 @@
 	if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
 		global $product;
 
-		$image = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array(
-				'title'	=> $post->post_title,
-				'alt'	=> $post->post_title,
-				'class'	=> '[ img-responsive ]',
-				) );
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
 		$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
 		$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
 ?>
 		<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ]">
-			<div class="[ row ][ margin-bottom ]">
+			<div class="[ row ][ margin-bottom--small ]">
 				<div class="[ col-xs-12 col-centered ]">
-					<a class="[ show ]" href="<?php the_permalink(); ?>">
-						<?php echo $image; ?>
-						<p class="[ bg-primary ][ padding no-margin ][ text-center color-light ]"><?php echo $fecha_menu ?></p>
-					</a>
+					<a class="[ bg-image bg-image--3-1 ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
+					<p class="[ bg-primary ][ padding--sides padding--top-bottom--small no-margin ][ text-center color-light ]"><?php echo $fecha_menu ?></p>
 				</div>
 			</div>
 			<div class="[ row ]">

@@ -6088,6 +6088,9 @@ button.list-group-item-danger.active:focus {
 .embed-responsive-4by3 {
   padding-bottom: 75%;
 }
+body iframe:last-of-type {
+  display: none;
+}
 .well {
   min-height: 20px;
   padding: 19px;
@@ -6134,6 +6137,21 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+}
+.bg-image {
+  display: block;
+  background-size: cover !important;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+}
+.bg-image--16-9 {
+  width: 100%;
+  padding-bottom: 50%;
+}
+.bg-image--3-1 {
+  width: 100%;
+  padding-bottom: 30%;
 }
 .modal-open {
   overflow: hidden;
@@ -6914,6 +6932,12 @@ button.close {
 }
 .padding--bottom--large {
   padding-bottom: 24px;
+}
+.padding--bottom--xlarge {
+  padding-bottom: 36px;
+}
+.padding--bottom--xxlarge {
+  padding-bottom: 48px;
 }
 .padding--top-bottom {
   padding-top: 12px;
