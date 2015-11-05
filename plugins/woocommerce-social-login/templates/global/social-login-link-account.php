@@ -39,7 +39,7 @@
 
 		<?php
 			foreach ( $available_providers as $provider ) :
-				printf( '<a href="%1$s" class="button-social-login button-social-login-%2$s"><span class="si si-%2$s"></span>%3$s</a> ', esc_url( $provider->get_auth_url( $return_url ) ), esc_attr( $provider->get_id() ), esc_html( $provider->get_link_button_text() ) );
+				printf( '<a href="%1$s" class="button-social-login looool button-social-login-%2$s"><span class="si si-%2$s"></span>%3$s</a> ', esc_url( $provider->get_auth_url( $return_url ) ), esc_attr( $provider->get_id() ), esc_html( $provider->get_link_button_text() ) );
 			endforeach;
 		?>
 
