@@ -6747,7 +6747,10 @@ button.close {
   }
 }
 .bg-gradient {
-  background: linear-gradient(#f05475, #673695);
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(145deg, #f05475, #673695);
+  background-image: -o-linear-gradient(145deg, #f05475, #673695);
+  background-image: linear-gradient(145deg, #f05475, #673695);
 }
 .bg-tertiary {
   background-color: #0d1016;

@@ -62,23 +62,6 @@ function footer_scripts(){
 
 			<?php endif; ?>
 
-			<?php if( is_archive() ) : ?>
-
-				addAllMarkers();
-
-			<?php endif; ?>
-
-			<?php if( is_single() ) : ?>
-
-				// Pasar a función
-				var lat = <?php echo get_lat( get_the_ID() ); ?>;
-				var lng = <?php echo get_lng( get_the_ID() ); ?>;
-				var isAerial = <?php echo get_vista_aerea( get_the_ID() ) ?>;
-				var heading = <?php echo get_heading( get_the_ID() ) ?>;
-
-				showSingleMap( lat, lng, heading, isAerial );
-
-			<?php endif; ?>
 		</script>
 <?php
 	endif;

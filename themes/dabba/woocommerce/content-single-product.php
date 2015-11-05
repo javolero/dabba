@@ -45,21 +45,19 @@ $fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) )
 			 */
 			do_action( 'woocommerce_before_single_product_summary' );
 		?>
-		<p class="[ bg-primary ][ padding ][ text-center ][ color-light ]"><?php echo $fecha_menu ?></p>
+		<p class="[ bg-primary ][ padding--sides padding--top-bottom--small ][ text-center ][ color-light ]"><?php echo $fecha_menu ?></p>
 
-		<div class="[ container-fluid ]">
-			<div class="[ row ]">
-
-				<div class="[ summary entry-summary ][ col-xs-12 ]">
-					<?php do_action( 'woocommerce_single_product_summary' ); ?>
-				</div><!-- .summary -->
-
-			</div><!-- row -->
+		<div class="[ container ]">
+			<div class="[ summary entry-summary ][ container ]">
+				<?php do_action( 'woocommerce_single_product_summary' ); ?>
+			</div><!-- .summary -->
 		</div><!-- container-fluid -->
 
-		<div class="[ descripcion ][ bg-gradient ][ padding--large ][ color-light ]">
-			<h2 class="[ text-center ]">Descripción</h2>
-			<p class="[ color-light margin-top-bottom--large ]">We take thick-cut clusters of mealty hen of the woods mushrooms and bake them until they just start to crisp and caramelize. We serve it over crushed red potatoes and top it with a rich leek sauce with hand-diced leeks, white wine, and a touch of cream. It's complemented with charred broccoli and roasted baby turnips.</p>
+		<hr class="[ divider-primary ][ margin-bottom-large ]">
+
+		<div class="[ descripcion ][ bg-gradient ][ padding--top-bottom--xlarge padding--sides ][ color-light ]">
+			<h3 class="[ text-center ][ margin-bottom--large ]">Descripción</h3>
+			<p class="[ color-light ][ no-margin ]">We take thick-cut clusters of mealty hen of the woods mushrooms and bake them until they just start to crisp and caramelize. We serve it over crushed red potatoes and top it with a rich leek sauce with hand-diced leeks, white wine, and a touch of cream. It's complemented with charred broccoli and roasted baby turnips.</p>
 		</div>
 
 				<?php
@@ -75,10 +73,9 @@ $fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) )
 
 				<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
-			
+
 
 	</div><!-- #product-<?php the_ID(); ?> -->
 	<?php do_action( 'woocommerce_after_single_product' ); ?>
 
 </section>
-
