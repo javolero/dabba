@@ -1102,8 +1102,10 @@ th {
  * Fill
 **/
 .icon--fill path,
+.icon--fill line,
 .icon--fill circle,
 .icon--fill ellipse,
+.icon--fill polyline,
 .icon--fill polygon {
   fill: currentColor;
 }
@@ -1114,8 +1116,10 @@ th {
   stroke-width: 0.7;
 }
 .icon--stroke path,
+.icon--stroke line,
 .icon--stroke circle,
 .icon--stroke ellipse,
+.icon--stroke polyline,
 .icon--stroke polygon {
   stroke: currentColor;
 }
@@ -7009,6 +7013,24 @@ button.close {
   float: none;
   margin-left: auto;
   margin-right: auto;
+}
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+}
+.inline-block {
+  display: inline-block;
+}
+.align-top {
+  vertical-align: top;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-bottom {
+  vertical-align: bottom;
 }
 /**
  * Variables

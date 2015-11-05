@@ -9,21 +9,21 @@
 						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="">
 					</section>
 					<section class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
-						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Nosotros</a>
+						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo site_url('nosotros'); ?>">Nosotros</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#contacto" data-toggle="modal">Contáctanos</a>
-						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba for business</a>
+						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba para reuniones</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Términos y condiciones</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Aviso de privacidad</a>
 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 					</section>
 					<section class="[ col-xs-12 col-md-2 ][ social ]">
-						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
 						</a>
-						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
 						</a>
-						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-instagram.svg">
 						</a>
 					</section>
@@ -66,8 +66,8 @@
 				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
 					<div class="[ margin-bottom--large ]">
 						<h2 class="[ margin-bottom ]">Contáctanos</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae vero iure laborum placeat non alias distinctio enim, qui rem quod optio voluptas officiis eius quidem reprehenderit explicabo. Et, quasi, ipsa.</p>
-						<p>Lorem ipsum dolor sit amet <a href="mailto:hola@dabba.mx" class="[ underlined ][ color-light ]">hola@dabba.mx</a> consectetur adipisicing elit <a href="tel:5555555555" class="[ underlined ][ color-light ]">(55)5555-5555</a>.</p>
+						<p>Nuestro equipo de atención a clientes está disponible de lunes a viernes de 10:00 am a 5:00 pm para responder cualquier duda o comentario.</p>
+						<p>Puedes enviarnos un correo a <a href="mailto:clientes@dabba.mx" class="[ underlined ][ color-light ]">clientes@dabba.mx</a> o llámanos al <a href="tel:5510789424" class="[ underlined ][ color-light ]">(55)1078-9424</a>.</p>
 					</div>
 					<a href="mailto:hola@dabba.mx" class="[ btn btn-sm btn-hollow btn-light ]">mándanos un correo</a>
 				</div><!-- End of Modal-body-->
