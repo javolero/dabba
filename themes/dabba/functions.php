@@ -224,45 +224,37 @@ function get_nombre_mes( $num_mes ){
 /**
  * Send contact email to PMI.
  */
-function send_email_contacto(){
+function agregar_usuario_prospecto(){
 
-	$name = $_POST['name'];
+	$zona = $_POST['zona'];
 	$email = $_POST['email'];
-	$to_email = get_contact_email();
-	$msg = $_POST['message'];
 
-	$to = $to_email;
-	$subject = $name . ' te ha contactado a través de www.pmi.com.mx: ';
-	$headers = 'From: My Name <' . $to_email . '>' . "\r\n";
-	$message = '<html><body>';
-	$message .= '<h3>Datos de contacto</h3>';
-	$message .= '<p>Nombre: '.$name.'</p>';
-	$message .= '<p>Email: '. $email . '</p>';
-	if( $msg != '' ) $message .= '<p>Mensaje: '. $msg . '</p>';
-	$message .= '</body></html>';
+	$post_id = wp_insert_post(array (
+	    'post_type' => 'usuarios-prospecto',
+	    'post_title' => $email,
+	    'post_content' => $zona,
+	    'post_status' => 'draft',
+	));
 
-	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
-	$mail = wp_mail($to, $subject, $message, $headers );
-
-	if( ! $mail ) {
-		$message = array(
-		'error'		=> 1,
-		'message'	=> 'No se pudo enviar el correo.',
+	if ($post_id) {
+	    $message = array(
+			'error'		=> false,
+			'message'	=> '¡Prospecto guardado!',
 		);
-		echo json_encode($message , JSON_FORCE_OBJECT);
+		echo json_encode( $message , JSON_FORCE_OBJECT );
 		exit;
 	}
 
-		$message = array(
-			'error'		=> 0,
-			'message'	=> 'Gracias por tu mensaje ' . $name . '. En breve nos pondremos en contacto contigo.',
-		);
-		echo json_encode($message , JSON_FORCE_OBJECT);
-		exit();
+	$message = array(
+		'error'		=> true,
+		'message'	=> 'No se pudo guardar el prospecto',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
 
-}// send_email_contacto
-add_action("wp_ajax_send_email_contacto", "send_email_contacto");
-add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
+}// agregar_usuario_prospecto
+add_action("wp_ajax_agregar_usuario_prospecto", "agregar_usuario_prospecto");
+add_action("wp_ajax_nopriv_agregar_usuario_prospecto", "agregar_usuario_prospecto");
 
 
 
