@@ -91,8 +91,8 @@
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form>
-							<input class="[ form-control ][ margin-bottom--small ]" name="email" placeholder="Correo electrónico">
-							<div class="[ select-style ]">
+							<input class="[ form-control ][ margin-bottom--small ]" name="email-comienza" placeholder="Correo electrónico">
+							<div class="[ select-style ][ margin-bottom--small ]">
 								<select class="[ form-control ]" name="zona">
 									<option>Selecciona tu zona</option>
 									<option>Polanco</option>
@@ -102,9 +102,10 @@
 									<option value="other">Otra</option>
 								</select>
 							</div>
+							<input class="[ toggable hidden ][ form-control ][ margin-bottom--small ]" placeholder="Tu zona" name="zona">
 						</form>
 					</div>
-					<a href="#excelente" class="[ btn btn-sm btn-hollow btn-light ]" data-toggle="modal">siguiente</a>
+					<a href="#excelente" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
@@ -127,6 +128,8 @@
 						<h2>¡Excelente! :)</h2>
 						<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
 						<div class="[ margin-bottom ]">
+
+							<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="https://mystore.com/my-account"]'); ?>
 							<a class="[ btn btn-info ][ margin-sides--small ]">
 								<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg"> Facebook
 							</a>
@@ -145,6 +148,54 @@
 						</div>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">ver platillo de hoy</a>
+
+						<div class="col-2">
+
+
+		<form method="post" class="register">
+
+			<?php do_action( 'woocommerce_register_form_start' ); ?>
+
+
+				<p class="form-row form-row-wide">
+					<label for="reg_username"><?php _e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
+					<input type="text" class="input-text" name="username" id="reg_username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
+				</p>
+
+
+			<p class="form-row form-row-wide">
+				<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+				<input type="email" class="input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
+			</p>
+
+			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+
+				<p class="form-row form-row-wide">
+					<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+					<input type="password" class="input-text" name="password" id="reg_password" />
+				</p>
+
+			<?php endif; ?>
+
+			<!-- Spam Trap -->
+			<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" /></div>
+
+			<?php do_action( 'woocommerce_register_form' ); ?>
+			<?php do_action( 'register_form' ); ?>
+
+			<p class="form-row">
+				<?php wp_nonce_field( 'woocommerce-register' ); ?>
+				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
+			</p>
+
+			<?php do_action( 'woocommerce_register_form_end' ); ?>
+
+		</form>
+
+	</div>
+
+</div>
+
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
@@ -166,7 +217,7 @@
 						<h2>Lo sentimos :(</h2>
 						<p>Por ahora no entregamos en tu área, entregamos en</p>
 						<div class="[ embed-responsive ][ margin-bottom ]">
-							<div id="map" class="[ js-map ][ embed-responsive-item ]"></div>
+							<div id="map-lo-sentimos" class="[ js-map ][ embed-responsive-item ]"></div>
 						</div>
 						<p>Cuando entreguémos en tu colonia recibirás un correo electrónico con un cupón para una comida gratis.</p>
 					</div>
@@ -193,17 +244,7 @@
 						<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
 						<form class="[ ]">
 							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Correo electrónico">
-							<div class="[ select-style ][ margin-bottom--small ]">
-								<select class="[ form-control ]" name="zona">
-									<option>Selecciona tu zona</option>
-									<option>Polanco</option>
-									<option>Ampliación Granada</option>
-									<option>Corporativos Palmas</option>
-									<option>Corporativos Fc. de Cuernavaca</option>
-									<option value="other">Otra</option>
-								</select>
-							</div>
-							<input class="[ toggable ][ hidden ][ form-control ][ margin-bottom--small ]" placeholder="Tu zona">
+							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Tu zona" name="zona">
 						</form>
 					</div>
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>

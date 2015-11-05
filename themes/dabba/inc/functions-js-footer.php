@@ -19,27 +19,41 @@ function footer_scripts(){
 			 * On load
 			**/
 			imgToSvg();
-			initMap();
+			initMap( 'map-lo-sentimos' );
+			initMap( 'map' );
+			
 
-			var min_w = 300; // minimum video width allowed
-			var vid_w_orig;  // original video dimensions
-			var vid_h_orig;
-			vid_w_orig = parseInt( $('video.hero__video').innerWidth() );
-			vid_h_orig = parseInt( $('video.hero__video').innerHeight() );
+			var minW = 300; // minimum video width allowed
+			var vidWOrig;  // original video dimensions
+			var vidHOrig;
+			vidWOrig = parseInt( $('video.hero__video').innerWidth() );
+			vidHOrig = parseInt( $('video.hero__video').innerHeight() );
 
-			$(window).resize(function () { resizeToCover(min_w, vid_w_orig, vid_h_orig); });
+			$(window).resize(function () { resizeToCover(minW, vidWOrig, vidHOrig); });
 			$(window).trigger('resize');
 
 			/**
 			 * Triggered events
 			**/
 			$('.modal .select-style').change(function(){
-				console.log( $(this).next('.toggable') );
+
 				if ($(this).find('select').val() == 'other'){
 					$(this).next('.toggable').toggleClass('hidden');
+					$('.js-btn-siguiente').attr('href', '#error');
 				} else {
 					$(this).next('.toggable').toggleClass('hidden');
 				}
+			});
+
+			$('.js-btn-siguiente').on('click', function() {
+				$('#comienza').modal('toggle');
+				var email = $('input[name="email-comienza"]').val();
+				var zona = $('input[name="zona"]').val();
+
+				if( '' !== zona ) agregarUsuarioProspecto( email, zona );
+
+				$('#reg_email').val( email );
+
 			});
 
 			<?php if( is_home() ) : ?>
@@ -49,13 +63,13 @@ function footer_scripts(){
 				**/
 
 				<?php if ( ! is_user_logged_in() ) : ?>
-					var min_w = 300; // minimum video width allowed
-					var vid_w_orig;  // original video dimensions
-					var vid_h_orig;
-					vid_w_orig = parseInt( $('video.hero__video').innerWidth() );
-					vid_h_orig = parseInt( $('video.hero__video').innerHeight() );
+					var minW = 300; // minimum video width allowed
+					var vidWOrig;  // original video dimensions
+					var vidHOrig;
+					vidWOrig = parseInt( $('video.hero__video').innerWidth() );
+					vidHOrig = parseInt( $('video.hero__video').innerHeight() );
 
-					$(window).resize(function () { resizeToCover(min_w, vid_w_orig, vid_h_orig); });
+					$(window).resize(function () { resizeToCover(minW, vidWOrig, vidHOrig); });
 					$(window).trigger('resize');
 
 				<?php endif; ?>

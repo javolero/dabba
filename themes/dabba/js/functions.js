@@ -64,15 +64,15 @@ function toggleElement(element){
     #MAPS FUNCTIONS
 \*------------------------------------*/
 
-function initMap() {
+function initMap( mapId ) {
 
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById( mapId ), {
         zoom:           14,
         center:         {lat: 19.435342, lng: -99.205695},
         mapTypeId:      google.maps.MapTypeId.TERRAIN,
-        draggable:      false,
-        mapTypeControl: false,
-        scrollwheel:    false,
+        draggable:      true,
+        mapTypeControl: true,
+        scrollwheel:    true,
     });
     addPolanco( map );
     addAmpGranada( map );
@@ -165,6 +165,22 @@ function addLomas( map ){
 /*------------------------------------*\
 	#AJAX FUNCTIONS
 \*------------------------------------*/
+
+function agregarUsuarioProspecto( email, zona ){
+
+    $.post(
+        ajax_url,
+        {
+            email:  email,
+            zona:   zona,
+            action: 'agregar_usuario_prospecto' 
+        },
+        function( response ){
+            console.log( response );
+        }
+    );
+
+}// agregarUsuarioProspecto
 
 /*------------------------------------*\
 	#GET / SET FUNCTIONS
