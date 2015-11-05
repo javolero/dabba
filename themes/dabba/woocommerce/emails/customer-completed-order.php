@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 	</tfoot>
 </table>
-
+<img src="http://www.salud180.com/sites/www.salud180.com/files/134218877.jpg" />
 <?php do_action( 'woocommerce_email_after_order_table', $order, $sent_to_admin, $plain_text ); ?>
 
 <?php do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text ); ?>
