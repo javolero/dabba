@@ -17,13 +17,13 @@
 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 					</section>
 					<section class="[ col-xs-12 col-md-2 ][ social ]">
-						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
 						</a>
-						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
 						</a>
-						<a class="[ block ]" href="<?php echo 'https://twitter.com/' ?>">
+						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-instagram.svg">
 						</a>
 					</section>

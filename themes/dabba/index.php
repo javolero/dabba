@@ -24,7 +24,7 @@
 			<!-- <h2 class="[ text-bold ]">Déjanos llevarte la comida</h2> -->
 			<div class="[ row ]">
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/menu.svg">
+					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/dining-set.svg">
 					<h3 class="[ no-margin ]">Checa nuestros platillos</h3>
 					<p class="[ text-gray-light ][ padding-left-right ]">Estamos preparando algo delicioso para ti.</p>
 				</div>
@@ -64,12 +64,18 @@
 		</section>
 
 		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ]">
-			<h2 class="[ text-center ]">Ahorra con nuestros créditos</h2>
+			<h2 class="[ text-center ]">Pide más Dabba</h2>
+			<div class="[ row ]">
+			</div>
+		</section>
+
+		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ]">
+			<h2 class="[ text-center ]">Pide más Dabba</h2>
 			<div class="[ row ]">
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
 						<strong>$360</strong><br>
-						<small>x <br> $290</small>
+						<small>x<br> $290</small>
 					</p>
 					<p><small>3 comidas</small></p>
 					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
@@ -77,7 +83,7 @@
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
 						<strong>$480</strong><br>
-						<small>x <br> $360</small>
+						<small>x<br> $360</small>
 					</p>
 					<p><small>4 comidas</small></p>
 					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
@@ -85,7 +91,7 @@
 				<div class="[ col-xs-4 ][ text-center ]">
 					<p>
 						<strong>$600</strong><br>
-						<small>x <br> $420</small>
+						<small>x<br> $420</small>
 					</p>
 					<p><small>5 comidas</small></p>
 					<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#">comprar</a>
