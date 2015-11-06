@@ -214,7 +214,17 @@ function get_nombre_mes( $num_mes ){
 
 }// get_nombre_mes
 
+/**
+ * Regresa los ingredientes en un array
+ * @param int $post_id
+ * @return array $ingredientes
+ */
+function get_ingredientes( $post_id ){
 
+	$ingredientes_str = get_post_meta( $post_id, '_ingredientes_meta', true );
+	return explode( ',', $ingredientes_str );
+
+}// get_ingredientes
 
 
 /*------------------------------------*\
