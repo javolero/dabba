@@ -21,7 +21,7 @@ function footer_scripts(){
 			imgToSvg();
 			initMap( 'map-lo-sentimos' );
 			initMap( 'map' );
-			
+
 
 			var minW = 300; // minimum video width allowed
 			var vidWOrig;  // original video dimensions

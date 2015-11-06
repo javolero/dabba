@@ -3,18 +3,6 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-.color-primary {
-  color: #f05475;
-}
-.color-light {
-  color: #ffffff;
-}
-.color-gray {
-  color: #555555;
-}
-.color-gray-light {
-  color: #777777;
-}
 .btn-default,
 .btn-primary,
 .btn-success,

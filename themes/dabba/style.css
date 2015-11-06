@@ -3,18 +3,6 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-.color-primary {
-  color: #f05475;
-}
-.color-light {
-  color: #ffffff;
-}
-.color-gray {
-  color: #555555;
-}
-.color-gray-light {
-  color: #777777;
-}
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -2638,12 +2626,6 @@ legend {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
-label {
-  display: inline-block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
 input[type="search"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2682,7 +2664,6 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
   height: 1.62857143em;
   padding: 6px 12px;
   line-height: 1.42857143;
@@ -2706,12 +2687,15 @@ output {
 .form-control::-moz-placeholder {
   color: #ffffff;
   opacity: 1;
+  font-weight: 300;
 }
 .form-control:-ms-input-placeholder {
   color: #ffffff;
+  font-weight: 300;
 }
 .form-control::-webkit-input-placeholder {
   color: #ffffff;
+  font-weight: 300;
 }
 .form-control[disabled],
 .form-control[readonly],
@@ -3746,6 +3730,14 @@ input[type="button"].btn-block {
 }
 .btn--action--right {
   right: 10px;
+}
+.button-social-login-facebook {
+  background: #3b5998;
+  color: #ffffff;
+}
+.button-social-login-google {
+  background: #ffffff;
+  color: #e24b44;
 }
 .divider-primary {
   border-color: #f05475;
@@ -6760,17 +6752,17 @@ button.close {
   background-color: #0d1016;
   color: #ffffff;
 }
-.color-light {
-  color: #ffffff;
-}
 .color-primary {
   color: #f05475;
 }
-.color-quaternary {
-  color: #e24b44;
+.color-light {
+  color: #ffffff;
 }
 .color-gray {
   color: #555555;
+}
+.color-gray-light {
+  color: #777777;
 }
 .clearfix:before,
 .clearfix:after,
@@ -6864,6 +6856,9 @@ button.close {
 }
 .margin-bottom {
   margin-bottom: 20px;
+}
+.margin-bottom--xsmall {
+  margin-bottom: 5px;
 }
 .margin-bottom--small {
   margin-bottom: 10px;
