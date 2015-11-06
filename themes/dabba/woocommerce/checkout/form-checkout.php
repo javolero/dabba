@@ -13,8 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wc_print_notices();
 
-var_dump( $_POST );
-
 ?>
 
 

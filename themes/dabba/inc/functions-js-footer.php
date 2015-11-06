@@ -19,7 +19,6 @@ function footer_scripts(){
 			 * On load
 			**/
 			imgToSvg();
-			initMap( 'map-lo-sentimos' );
 			initMap( 'map' );
 
 
@@ -47,7 +46,10 @@ function footer_scripts(){
 				var email = $('input[name="email-comienza"]').val();
 				var zona = $('input[name="zona"]').val();
 
-				if( '' !== zona ) agregarUsuarioProspecto( email, zona );
+				if( '' !== zona ) {
+					setTimeout( function(){ initMap( 'map-lo-sentimos' ); } , 400);
+					agregarUsuarioProspecto( email, zona );
+				} 
 
 				$('#reg_email').val( email );
 
