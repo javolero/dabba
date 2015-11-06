@@ -47,28 +47,22 @@ $fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) )
 		?>
 		<p class="[ bg-primary ][ padding--sides padding--top-bottom--small ][ text-center ][ color-light ]"><?php echo $fecha_menu ?></p>
 
-		<div class="[ container ]">
-			<div class="[ summary entry-summary ][ container ]">
-				<?php do_action( 'woocommerce_single_product_summary' ); ?>
-			</div><!-- .summary -->
-		</div><!-- container-fluid -->
+		<section class="[ summary entry-summary ]">
+			<?php do_action( 'woocommerce_single_product_summary' ); ?>
+		</section><!-- .summary -->
 
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
+		<?php
+			/**
+			 * woocommerce_after_single_product_summary hook
+			 *
+			 * @hooked woocommerce_output_product_data_tabs - 10
+			 * @hooked woocommerce_upsell_display - 15
+			 * @hooked woocommerce_output_related_products - 20
+			 */
+			do_action( 'woocommerce_after_single_product_summary' );
+		?>
 
-			<?php
-				/**
-				 * woocommerce_after_single_product_summary hook
-				 *
-				 * @hooked woocommerce_output_product_data_tabs - 10
-				 * @hooked woocommerce_upsell_display - 15
-				 * @hooked woocommerce_output_related_products - 20
-				 */
-				do_action( 'woocommerce_after_single_product_summary' );
-			?>
-
-			<meta itemprop="url" content="<?php the_permalink(); ?>" />
-
-
+		<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 	</div><!-- #product-<?php the_ID(); ?> -->
 	<?php do_action( 'woocommerce_after_single_product' ); ?>

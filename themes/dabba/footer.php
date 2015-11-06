@@ -2,11 +2,19 @@
 		<footer class="[ bg-tertiary ][ color-light ][ padding--top--large padding--bottom--xxlarge ]">
 			<div class="[ container ]">
 				<div class="[ row ][ margin-bottom ][ text-center ]">
-					<section class="[ tarjetas ][ col-xs-12 col-sm-6 col-md-4 ][ margin-bottom--large ]">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/amex.svg" alt="">
-						<img class="[ col-xs-3 ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="">
+					<section class="[ tarjetas ][ col-xs-12 col-sm-6 col-md-4 ][ margin-bottom--large ][ row ]">
+						<div class="[ col-xs-3 ]">
+							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="">
+						</div>
+						<div class="[ col-xs-3 ]">
+							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="">
+						</div>
+						<div class="[ col-xs-3 ]">
+							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/amex.svg" alt="">
+						</div>
+						<div class="[ col-xs-3 ]">
+							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="">
+						</div>
 					</section>
 					<section class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo site_url('nosotros'); ?>">Nosotros</a>
