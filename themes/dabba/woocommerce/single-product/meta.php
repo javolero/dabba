@@ -25,15 +25,19 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 ?>
 <section class="[ product_meta ][ text-center ]">
 
-	<article class="[ margin-bottom-large ]">
-		<?php foreach ( $caracteristicas_platillo as $caracteristica ) : ?>
-			<span class="[ inline-block align-middle ][ margin-sides--small ]">
-				<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-dark ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/<?php echo $caracteristica->slug ?>.svg">
-				<p><small><?php echo $caracteristica->name ?></small></p>
-			</span>
-		<?php endforeach; ?>
-
-	<hr class="[ divider-primary ][ margin-bottom-large ]">
+	
+	<?php if ( ! empty( $caracteristicas_platillo ) ) : ?>
+		<article class="[ margin-bottom-large ]">
+			<?php foreach ( $caracteristicas_platillo as $caracteristica ) : ?>
+				<span class="[ inline-block align-middle ][ margin-sides--small ]">
+					<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-dark ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/<?php echo $caracteristica->slug ?>.svg">
+					<p><small><?php echo $caracteristica->name ?></small></p>
+				</span>
+			<?php endforeach; ?>
+			<hr class="[ divider-primary ][ margin-bottom-large ]">
+		</article>
+	<?php endif; ?>
+	
 	<article>
 		<h3>Ingredientes</h3>
 		<p>
