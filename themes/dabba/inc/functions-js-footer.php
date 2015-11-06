@@ -36,13 +36,10 @@ function footer_scripts(){
 			 * Triggered events
 			**/
 			$('.modal .select-style').change(function(){
-
-				if ($(this).find('select').val() == 'other'){
+				if ( $(this).find('select').val() == 'other' ){
 					$(this).next('.toggable').toggleClass('hidden');
 					$('.js-btn-siguiente').attr('href', '#error');
-				} else {
-					$(this).next('.toggable').toggleClass('hidden');
-				}
+				} 
 			});
 
 			$('.js-btn-siguiente').on('click', function() {

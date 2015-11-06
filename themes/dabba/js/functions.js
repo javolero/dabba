@@ -67,43 +67,62 @@ function toggleElement(element){
 function initMap( mapId ) {
 
     var map = new google.maps.Map(document.getElementById( mapId ), {
-        zoom:           14,
-        center:         {lat: 19.435342, lng: -99.205695},
+        zoom:           13,
+        center:         {lat: 19.436342, lng: -99.202695},
         mapTypeId:      google.maps.MapTypeId.TERRAIN,
         draggable:      true,
         mapTypeControl: true,
         scrollwheel:    true,
     });
-    addPolanco( map );
-    addAmpGranada( map );
-    addLomas( map );
+    addPolyAreaEntrega( map );
 
 }// initMap
 
-function addPolanco( map ){
+function addPolyAreaEntrega( map ){
 
-    var polancoCoords = [
+    var areaEntregaCoords = [
         {lat: 19.438358, lng: -99.205858},
+        {lat: 19.446606, lng: -99.204913},
+        {lat: 19.443019, lng: -99.195852},    
+        {lat: 19.442612, lng: -99.192813},    
+        {lat: 19.442214, lng: -99.192239},
+        {lat: 19.442867, lng: -99.186617},
+        {lat: 19.445897, lng: -99.182658},
+        {lat: 19.439165, lng: -99.183623},
+        {lat: 19.437455, lng: -99.183473},
         {lat: 19.437933, lng: -99.195451},
         {lat: 19.431519, lng: -99.195751},
         {lat: 19.429869, lng: -99.196889},
         {lat: 19.426885, lng: -99.197490},
+        {lat: 19.429453, lng: -99.202637},
+        {lat: 19.427774, lng: -99.203109},
+        {lat: 19.426762, lng: -99.205769},
+        {lat: 19.427865, lng: -99.207647},
+        {lat: 19.428158, lng: -99.209192},
+        {lat: 19.427602, lng: -99.212089},
+        {lat: 19.427561, lng: -99.214202},
+        {lat: 19.427814, lng: -99.215361},
+        {lat: 19.427875, lng: -99.216530},
+        {lat: 19.428523, lng: -99.216959},
+        {lat: 19.429919, lng: -99.217603},
+        {lat: 19.431022, lng: -99.215715},
+        {lat: 19.432873, lng: -99.213516},
+        {lat: 19.433328, lng: -99.210136},
         {lat: 19.432540, lng: -99.208417},
-
         {lat: 19.438358, lng: -99.205858},
-    ];
+      ];
 
-    var areaPolanco = new google.maps.Polygon({
-        paths: polancoCoords,
+    var areaEntrega = new google.maps.Polygon({
+        paths: areaEntregaCoords,
         strokeColor: '#F65275',
         strokeOpacity: 0.8,
         strokeWeight: 2,
         fillColor: '#F65275',
         fillOpacity: 0.35
     });
-    areaPolanco.setMap(map);
+    areaEntrega.setMap(map);
 
-}// addPolanco
+}// addPolyAreaEntrega
 
 function addAmpGranada( map ){
 
