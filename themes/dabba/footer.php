@@ -91,7 +91,7 @@
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form>
-							<input class="[ form-control ][ margin-bottom--small ]" name="email-comienza" placeholder="Correo electrónico">
+							<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" name="email-comienza" placeholder="Correo electrónico">
 							<div class="[ select-style ][ margin-bottom--small ]">
 								<select class="[ form-control ]" name="zona">
 									<option>Selecciona tu zona</option>
@@ -128,14 +128,14 @@
 						<h2>¡Excelente! :)</h2>
 						<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
 						<div class="[ margin-bottom ]">
-							<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="https://mystore.com/my-account"]'); ?>
+							<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
 						</div>
 						<p>O con tu correo</p>
 						<div class="[ container ]">
 							<form method="post" class="[ register ][ row ]">
 								<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-								<input class="[ form-control ][ col-xs-6 ][ margin-bottom--small ][ input-text ]" name="email" type="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" >
+								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ][ input-text ]" name="email" type="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" >
 
 								<!-- <p class="form-row form-row-wide">
 									<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -144,8 +144,8 @@
 
 								<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
-									<p class="[ no-margin ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label></p>
-									<input class="[ form-control ][ margin-bottom--small ][ input-text ]" name="password" type="password" id="reg_password">
+									<p class="[ no-margin no-padding ][ text-left ][ col-xs-12 ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label></p>
+									<input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password">
 
 									<!-- <p class="form-row form-row-wide">
 										<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>

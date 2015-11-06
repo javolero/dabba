@@ -2626,12 +2626,6 @@ legend {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
-label {
-  display: inline-block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
 input[type="search"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2670,7 +2664,6 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
   height: 1.62857143em;
   padding: 6px 12px;
   line-height: 1.42857143;
@@ -2694,12 +2687,15 @@ output {
 .form-control::-moz-placeholder {
   color: #ffffff;
   opacity: 1;
+  font-weight: 300;
 }
 .form-control:-ms-input-placeholder {
   color: #ffffff;
+  font-weight: 300;
 }
 .form-control::-webkit-input-placeholder {
   color: #ffffff;
+  font-weight: 300;
 }
 .form-control[disabled],
 .form-control[readonly],

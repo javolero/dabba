@@ -55,23 +55,18 @@ $fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) )
 
 		<hr class="[ divider-primary ][ margin-bottom-large ]">
 
-		<div class="[ descripcion ][ bg-gradient ][ padding--top-bottom--xlarge padding--sides ][ color-light ]">
-			<h3 class="[ text-center ][ margin-bottom--large ]">Descripción</h3>
-			<p class="[ color-light ][ no-margin ]">We take thick-cut clusters of mealty hen of the woods mushrooms and bake them until they just start to crisp and caramelize. We serve it over crushed red potatoes and top it with a rich leek sauce with hand-diced leeks, white wine, and a touch of cream. It's complemented with charred broccoli and roasted baby turnips.</p>
-		</div>
+			<?php
+				/**
+				 * woocommerce_after_single_product_summary hook
+				 *
+				 * @hooked woocommerce_output_product_data_tabs - 10
+				 * @hooked woocommerce_upsell_display - 15
+				 * @hooked woocommerce_output_related_products - 20
+				 */
+				do_action( 'woocommerce_after_single_product_summary' );
+			?>
 
-				<?php
-					/**
-					 * woocommerce_after_single_product_summary hook
-					 *
-					 * @hooked woocommerce_output_product_data_tabs - 10
-					 * @hooked woocommerce_upsell_display - 15
-					 * @hooked woocommerce_output_related_products - 20
-					 */
-					do_action( 'woocommerce_after_single_product_summary' );
-				?>
-
-				<meta itemprop="url" content="<?php the_permalink(); ?>" />
+			<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 
 
