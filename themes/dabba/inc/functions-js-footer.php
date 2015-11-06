@@ -21,7 +21,7 @@ function footer_scripts(){
 			imgToSvg();
 			initMap( 'map-lo-sentimos' );
 			initMap( 'map' );
-			
+
 
 			var minW = 300; // minimum video width allowed
 			var vidWOrig;  // original video dimensions
@@ -35,8 +35,8 @@ function footer_scripts(){
 			/**
 			 * Triggered events
 			**/
-			$('.modal .select-style').change(function(){
 
+			$('.modal .select-style').change(function(){
 				if ($(this).find('select').val() == 'other'){
 					$(this).next('.toggable').toggleClass('hidden');
 					$('.js-btn-siguiente').attr('href', '#error');
