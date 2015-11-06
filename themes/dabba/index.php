@@ -47,7 +47,6 @@
 
 	<section class="[ menu-hoy ][ margin-top-bottom--large ]">
 		<div class="[ container ]">
-			<h2 class="[ text-center ]">Para hoy</h2>
 			<?php get_template_part( 'templates/menu', 'hoy' ); ?>
 		</div>
 	</section>

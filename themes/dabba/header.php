@@ -46,7 +46,7 @@
 		<script src="https://use.typekit.net/hub0pmr.js"></script>
 		<script> try{Typekit.load({ async: true });}catch(e){} </script>
 		<!-- Google Maps -->
-		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=es&libraries=places&key=AIzaSyAjE9TVybKKQNNOa1g760xJ4y6b5YaZmq4"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?language=es&libraries=places&key=AIzaSyAjE9TVybKKQNNOa1g760xJ4y6b5YaZmq4"></script>
 
 		<?php wp_head(); ?>
 	</head>
