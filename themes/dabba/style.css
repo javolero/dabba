@@ -6857,6 +6857,9 @@ button.close {
 .margin-bottom {
   margin-bottom: 20px;
 }
+.margin-bottom--xsmall {
+  margin-bottom: 5px;
+}
 .margin-bottom--small {
   margin-bottom: 10px;
 }

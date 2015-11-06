@@ -124,60 +124,54 @@
 					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
 				</div>
 				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
-					<div class="[ margin-bottom--large ]">
-						<h2>¡Excelente! :)</h2>
-						<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
-						<div class="[ margin-bottom ]">
-							<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
-						</div>
-						<p>O con tu correo</p>
-						<div class="[ container ]">
-							<form method="post" class="[ register ][ row ]">
-								<?php do_action( 'woocommerce_register_form_start' ); ?>
+					<h2>¡Excelente! :)</h2>
+					<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
+					<div class="[ margin-bottom ]">
+						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
+					</div>
+					<p>O con tu correo</p>
+					<div class="[ container ]">
+						<form method="post" class="[ register ][ row ]">
+							<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ][ input-text ]" name="email" type="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" >
+							<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ][ input-text ]" name="email" type="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" >
+
+							<!-- <p class="form-row form-row-wide">
+								<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+								<input type="email" class="input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
+							</p> -->
+
+							<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+
+								<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label></p>
+								<input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password">
 
 								<!-- <p class="form-row form-row-wide">
-									<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-									<input type="email" class="input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
+									<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+									<input type="password" class="input-text" name="password" id="reg_password" />
 								</p> -->
 
-								<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+							<?php endif; ?>
 
-									<p class="[ no-margin no-padding ][ text-left ][ col-xs-12 ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label></p>
-									<input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password">
+							<!-- Spam Trap -->
+							<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;">
+								<label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label>
+								<input type="text" name="email_2" id="trap" tabindex="-1" />
+							</div>
 
-									<!-- <p class="form-row form-row-wide">
-										<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-										<input type="password" class="input-text" name="password" id="reg_password" />
-									</p> -->
+							<?php do_action( 'woocommerce_register_form' ); ?>
+							<?php do_action( 'register_form' ); ?>
 
-								<?php endif; ?>
+							<?php wp_nonce_field( 'woocommerce-register' ); ?>
 
-								<!-- Spam Trap -->
-								<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;">
-									<label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label>
-									<input type="text" name="email_2" id="trap" tabindex="-1" />
-								</div>
+							<div class="[ clearfix ]"></div>
+							<div class="[ margin-bottom ]">&nbsp;</div>
+							<button type="submit" class="[ btn btn-sm btn-hollow btn-light ]" name="register">ver platillo de hoy</button>
 
-								<?php do_action( 'woocommerce_register_form' ); ?>
-								<?php do_action( 'register_form' ); ?>
+							<?php do_action( 'woocommerce_register_form_end' ); ?>
 
-								<?php wp_nonce_field( 'woocommerce-register' ); ?>
-								<input type="submit" class="[ btn btn-sm btn-hollow btn-light ]" name="register" value="ver platillo de hoy" />
-
-								<?php do_action( 'woocommerce_register_form_end' ); ?>
-
-							</form>
-							<!-- <form class="[ row ]">
-								<input class="[ form-control ][ col-xs-6 ][ margin-bottom--small ]" id="ejemplo_nombre_1" placeholder="Nombre">
-								<input class="[ form-control ][ col-xs-6 ][ margin-bottom--small ]" id="ejemplo_apellido_1" placeholder="Apellido">
-								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" id="ejemplo_celular_1" placeholder="Celular">
-								<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" id="ejemplo_password_1" placeholder="Contraseña">
-							</form> -->
-						</div>
+						</form>
 					</div>
-					<a href="#" class="[ btn btn-sm btn-hollow btn-light ]">ver platillo de hoy</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
