@@ -226,6 +226,43 @@ function get_ingredientes( $post_id ){
 
 }// get_ingredientes
 
+function get_todays_menu_id(){
+
+	$product_args = array(
+		'post_type' 		=> 'product',
+		'posts_per_page'	=> 1,
+		'meta_query' 		=> array(
+			array(
+				'key' 	=> '_fecha_menu_meta',
+				'value'	=> date('Y-m-d'),
+			)
+		)
+	);
+	$query = new WP_Query( $product_args );
+
+	if( $query->have_posts() ) : $query->the_post();
+		global $product;
+		if( $product->is_in_stock() ) return $product->id;
+
+		return 0;
+	endif;
+
+	return 0;
+
+}// get_todays_menu_id
+
+/**
+ * Imprime HTML del botón "Add to cart" para el menú del día
+ */
+function get_todays_add_to_cart_btn(){
+
+	$todays_menu_id = get_todays_menu_id();
+
+	if( $todays_menu_id ) {
+		return '<a href="/dabba/?add-to-cart="' . $todays_menu_id . ' rel="nofollow" data-product_id="' . $todays_menu_id . '" data-product_sku="" data-quantity="1" class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ][ add_to_cart_button product_type_simple ]">ordenar ahora</a>';
+	}
+
+}// get_todays_add_to_cart_btn
 
 /*------------------------------------*\
 	#AJAX FUNCTIONS
