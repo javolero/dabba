@@ -128,14 +128,7 @@
 						<h2>¡Excelente! :)</h2>
 						<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
 						<div class="[ margin-bottom ]">
-
 							<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="https://mystore.com/my-account"]'); ?>
-							<a class="[ btn btn-info ][ margin-sides--small ]">
-								<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg"> Facebook
-							</a>
-							<a class="[ btn btn-light ][ color-quaternary ][ margin-sides--small ]">
-								<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-google.svg"> Google
-							</a>
 						</div>
 						<p>O con tu correo</p>
 						<div class="[ container ]">
@@ -151,10 +144,13 @@
 
 								<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
-									<p class="form-row form-row-wide">
+									<p class="[ no-margin ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label></p>
+									<input class="[ form-control ][ margin-bottom--small ][ input-text ]" name="password" type="password" id="reg_password">
+
+									<!-- <p class="form-row form-row-wide">
 										<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 										<input type="password" class="input-text" name="password" id="reg_password" />
-									</p>
+									</p> -->
 
 								<?php endif; ?>
 

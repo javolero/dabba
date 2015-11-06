@@ -124,7 +124,7 @@ class WC_Settings_Social_Login extends WC_Settings_Page {
 				'name'     => __( 'Social Login Display Text', WC_Social_Login::TEXT_DOMAIN ),
 				'desc_tip' => __( 'This option controls the text for the frontend section where the login providers are shown.', WC_Social_Login::TEXT_DOMAIN ),
 				'id'       => 'wc_social_login_text',
-				'default'  => __( 'For faster checkout, login or register using your social account.', WC_Social_Login::TEXT_DOMAIN ),
+				//'default'  => __( 'For faster checkout, login or register using your social account.', WC_Social_Login::TEXT_DOMAIN ),
 				'type'     => 'textarea',
 				'css'      => 'width:100%; height: 75px;',
 			),

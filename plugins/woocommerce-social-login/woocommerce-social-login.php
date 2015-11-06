@@ -751,7 +751,7 @@ class WC_Social_Login extends SV_WC_Plugin {
 		// settings page defaults.  unfortunately we can't dynamically pull these because the requisite core WC classes aren't loaded
 		// a better solution may be to set any defaults within the save method of the social provider settings classes
 		add_option( 'wc_social_login_display', 'checkout,my_account' );
-		add_option( 'wc_social_login_text', __( 'For faster checkout, login or register using your social account.', WC_Social_Login::TEXT_DOMAIN ) );
+		//add_option( 'wc_social_login_text', __( 'For faster checkout, login or register using your social account.', WC_Social_Login::TEXT_DOMAIN ) );
 	}
 
 

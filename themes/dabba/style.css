@@ -3,18 +3,6 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-.color-primary {
-  color: #f05475;
-}
-.color-light {
-  color: #ffffff;
-}
-.color-gray {
-  color: #555555;
-}
-.color-gray-light {
-  color: #777777;
-}
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -3747,6 +3735,14 @@ input[type="button"].btn-block {
 .btn--action--right {
   right: 10px;
 }
+.button-social-login-facebook {
+  background: #3b5998;
+  color: #ffffff;
+}
+.button-social-login-google {
+  background: #ffffff;
+  color: #e24b44;
+}
 .divider-primary {
   border-color: #f05475;
   width: 150px;
@@ -6760,17 +6756,17 @@ button.close {
   background-color: #0d1016;
   color: #ffffff;
 }
-.color-light {
-  color: #ffffff;
-}
 .color-primary {
   color: #f05475;
 }
-.color-quaternary {
-  color: #e24b44;
+.color-light {
+  color: #ffffff;
 }
 .color-gray {
   color: #555555;
+}
+.color-gray-light {
+  color: #777777;
 }
 .clearfix:before,
 .clearfix:after,
