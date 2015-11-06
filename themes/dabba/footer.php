@@ -166,7 +166,7 @@
 
 							<div class="[ clearfix ]"></div>
 							<div class="[ margin-bottom ]">&nbsp;</div>
-							<button type="submit" class="[ btn btn-sm btn-hollow btn-light ]" name="register">ver platillo de hoy</button>
+							<input type="submit" class="[ btn btn-sm btn-hollow btn-light ]" name="register" value="ver platillo de hoy" />
 
 							<?php do_action( 'woocommerce_register_form_end' ); ?>
 
