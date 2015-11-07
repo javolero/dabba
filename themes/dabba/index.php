@@ -63,7 +63,7 @@
 		</section>
 
 		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ]">
-			<h2 class="[ text-center ]">Pide más Dabba</h2>
+			<h2 class="[ text-center ]">Invita a un amigo</h2>
 			<div class="[ row ]">
 			</div>
 		</section>

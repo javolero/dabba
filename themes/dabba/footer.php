@@ -44,13 +44,13 @@
 		<!-- =================================================
 		==== Action nav bar
 		================================================== -->
-		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php site_url('my-account'); ?>">
+		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php echo site_url('my-account'); ?>">
 			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
 		<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza" data-toggle="modal">
 			ordena ahora
 		</a>
-		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php site_url('cart'); ?>">
+		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php echo site_url('checkout'); ?>">
 			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 		</a>
 
@@ -99,8 +99,8 @@
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form>
-							<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ]" name="email-comienza" placeholder="Correo electrónico">
-							<div class="[ select-style ][ margin-bottom--small ]">
+							<input class="[ form-control form-control-bg-primary ][ col-xs-12 ][ margin-bottom--small ]" name="email-comienza" placeholder="Correo electrónico">
+							<div class="[ select-style ][ form-control form-control-bg-primary ][ margin-bottom--small ]">
 								<select class="[ form-control ]" name="zona">
 									<option>Selecciona tu zona</option>
 									<option value="polanco">Polanco</option>
@@ -142,7 +142,7 @@
 						<form method="post" class="[ register ][ row ]">
 							<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-							<input class="[ form-control ][ col-xs-12 ][ margin-bottom--small ][ input-text ]" name="email" type="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" >
+							<input class="[ form-control form-control-bg-primary ][ col-xs-12 ][ margin-bottom--small ][ input-text ]" name="email" type="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" >
 
 							<!-- <p class="form-row form-row-wide">
 								<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -152,7 +152,7 @@
 							<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 								<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label></p>
-								<input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password">
+								<input class="[ form-control form-control-bg-primary ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password">
 
 								<!-- <p class="form-row form-row-wide">
 									<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -227,8 +227,8 @@
 						<h2>¡Quiero mi comida gratis!</h2>
 						<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
 						<form class="[ ]">
-							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Correo electrónico">
-							<input class="[ form-control ][ margin-bottom--small ]" placeholder="Tu zona" name="zona">
+							<input class="[ form-control form-control-bg-primary ][ margin-bottom--small ]" placeholder="Correo electrónico">
+							<input class="[ form-control form-control-bg-primary ][ margin-bottom--small ]" placeholder="Tu zona" name="zona">
 						</form>
 					</div>
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>

@@ -2,44 +2,6 @@
 // Forms
 // --------------------------------------------------
 
-.bg-primary input{
-  padding: 0; border: none; border-bottom: 1px solid @light;
-  color: @light;
-  background-color: @primary;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.bg-primary .form-control {
-  border: none; border-bottom: 1px solid @light;
-  color: @light;
-  background-color: @primary;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.select-style {
-  width: 100%;
-  padding: 0; border-bottom: 1px solid @light; margin: 0;
-  border-radius: 0;
-  overflow: hidden;
-  background-color: transparent;
-}
-
-.select-style select {
-  width: 100%;
-  padding: 0 30px 0 0; border: none !important;
-  background-color: transparent;
-  background: transparent url("icons/down-arrow.png") no-repeat 98% 50%;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-.select-style select:focus {
-    outline: none;
-}
-
 fieldset {
   padding: 0;
   margin: 0;
@@ -141,14 +103,12 @@ output {
 .form-control {
   display: block;
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  padding: @padding-base-vertical @padding-base-horizontal;
+  padding: 0; border: none; border-bottom: 1px solid @light;
   line-height: @line-height-base;
-  color: @input-color;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid @input-border;
-  border-radius: @input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
-  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  box-shadow: none;
+  border-radius: 0;
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 
   // Customize the `:focus` state to imitate native WebKit styles.
@@ -178,6 +138,12 @@ output {
   textarea& {
     height: auto;
   }
+}
+
+.form-control-bg-primary{
+  color: @light;
+  background-color: @primary;
+  .placeholder(@light);
 }
 
 
@@ -629,4 +595,27 @@ input[type="checkbox"] {
       }
     }
   }
+}
+
+
+.select-style {
+  width: 100%;
+  padding: 0; border-bottom: 1px solid @light; margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.select-style select {
+  width: 100%;
+  padding: 0 30px 0 0; border: none !important;
+  background-color: transparent;
+  background: transparent url("icons/down-arrow.png") no-repeat 98% 50%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
 }
