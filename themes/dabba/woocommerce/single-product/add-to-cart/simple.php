@@ -31,10 +31,10 @@ if ( ! $product->is_purchasable() ) {
 
 	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-	<form class="[ cart ][ text-center ]" method="post" enctype='multipart/form-data'>
-	 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+	<form class="[ cart ][ text-center ][ margin-bottom ]" method="post" enctype='multipart/form-data'>
+		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-	 	<?php /*
+		<?php /*
 	 		if ( ! $product->is_sold_individually() ) {
 	 			woocommerce_quantity_input( array(
 	 				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
@@ -44,9 +44,9 @@ if ( ! $product->is_purchasable() ) {
 	 		}
 	 	*/ ?>
 
-	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
+		<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 
-	 	<button type="submit" class="[ single_add_to_cart_button button alt ][ btn btn-primary btn-hollow ]"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<button type="submit" class="[ single_add_to_cart_button button alt ][ btn btn-primary btn-hollow ]"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>

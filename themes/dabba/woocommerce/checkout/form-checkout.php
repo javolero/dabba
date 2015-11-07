@@ -16,19 +16,21 @@ wc_print_notices();
 ?>
 
 
-<section class="[ container-fluid ]">
+<section class="[ container ]">
 
-	<div class="row">
-		<h2 class="[ text-center ]">Bebidas</h2>
-		<div class="[ aguas ]">
+	<div class="[ margin-bottom--large ]">
+		<h3 class="[ text-center ]">Bebidas</h3>
+		<div class="[ aguas ][ text-center ]">
 			<?php get_template_part( 'templates/menu', 'aguas' ); ?>
 		</div>
-		<h2 class="[ text-center ]">Postres</h2>
-		<div class="[ postres ]">
+	</div>
+	<!-- <div class="[ margin-bottom--large ]">
+		<h3 class="[ text-center ]">Postres</h3>
+		<div class="[ postres ][ text-center ]">
 			<?php get_template_part( 'templates/menu', 'postre' ); ?>
 		</div>
-	</div>
-<?php 
+	</div> -->
+<?php
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout
@@ -46,13 +48,17 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
-				<?php do_action( 'woocommerce_checkout_billing' ); ?>
+		<div class="[ row ]" id="customer_details">
+			<div class="[ col-xs-12 ]">
+				<div class="[ row ">
+					<?php do_action( 'woocommerce_checkout_billing' ); ?>
+				</div>
 			</div>
 
-			<div class="col-2">
-				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+			<div class="[ col-xs-12 ]">
+				<div class="[ row ">
+					<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+				</div>
 			</div>
 		</div>
 
