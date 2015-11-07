@@ -57,7 +57,6 @@
 
 		<section class="[ menu-semana ][ margin-bottom--large ]">
 			<div class="[ container ]">
-				<h2 class="[ text-center ]">Menú de la semana</h2>
 				<?php get_template_part( 'templates/menu', 'semana' ); ?>
 			</div>
 		</section>

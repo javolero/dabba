@@ -14,29 +14,31 @@
 	);
 	$query = new WP_Query( $product_args );
 
-	if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
-		global $product;
+	if( $query->have_posts() ) : 
+		echo '<h2 class="[ text-center ]">Menú de la semana</h2>';
+		while( $query->have_posts() ) : $query->the_post();
+			global $product;
 
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
-		$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
-		$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
-?>
-		<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ]">
-			<div class="[ row ][ margin-bottom--small ]">
-				<div class="[ col-xs-12 col-centered ]">
-					<a class="[ bg-image bg-image--3-1 ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
-					<p class="[ bg-primary ][ padding--sides padding--top-bottom--small no-margin ][ text-center color-light ]"><?php echo $fecha_menu ?></p>
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
+			$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
+			$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
+	?>
+			<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ]">
+				<div class="[ row ][ margin-bottom--small ]">
+					<div class="[ col-xs-12 col-centered ]">
+						<a class="[ bg-image bg-image--3-1 ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
+						<p class="[ bg-primary ][ padding--sides padding--top-bottom--small no-margin ][ text-center color-light ]"><?php echo $fecha_menu ?></p>
+					</div>
 				</div>
-			</div>
-			<div class="[ row ]">
-				<div class="[ col-xs-8 ]">
-					<p class="[ no-margin ]"><?php echo get_the_title() ?></p>
+				<div class="[ row ]">
+					<div class="[ col-xs-8 ]">
+						<p class="[ no-margin ]"><?php echo get_the_title() ?></p>
+					</div>
+					<div class="[ col-xs-4 ]">
+						<?php echo woocommerce_template_loop_add_to_cart(); ?>
+					</div>
 				</div>
-				<div class="[ col-xs-4 ]">
-					<?php echo woocommerce_template_loop_add_to_cart(); ?>
-				</div>
-			</div>
-		</article>
+			</article>
 
 <?php
 	endwhile; endif; wp_reset_query();
