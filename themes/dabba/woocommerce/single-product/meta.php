@@ -50,7 +50,7 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 
 	<div class="[ descripcion ][ bg-gradient ][ padding--top-bottom--xlarge padding--sides ][ color-light ]">
 		<h3 class="[ text-center ][ margin-bottom--large ]">Descripción</h3>
-		<p class="[ color-light ][ no-margin ]">We take thick-cut clusters of mealty hen of the woods mushrooms and bake them until they just start to crisp and caramelize. We serve it over crushed red potatoes and top it with a rich leek sauce with hand-diced leeks, white wine, and a touch of cream. It's complemented with charred broccoli and roasted baby turnips.</p>
+		<p class="[ color-light ][ no-margin ]"><?php echo get_the_content() ?></p>
 	</div>
 		
 	<article>
