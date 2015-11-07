@@ -50,15 +50,11 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 		<div class="[ row ]" id="customer_details">
 			<div class="[ col-xs-12 ]">
-				<div class="[ row ">
-					<?php do_action( 'woocommerce_checkout_billing' ); ?>
-				</div>
+				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 			</div>
 
 			<div class="[ col-xs-12 ]">
-				<div class="[ row ">
-					<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-				</div>
+				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 			</div>
 		</div>
 
