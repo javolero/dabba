@@ -24,18 +24,21 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 
 ?>
 
-<section class="[ margin-bottom-large ][ caracteristicas ][ text-center ][ container ]">
-	<?php foreach ( $caracteristicas_platillo as $caracteristica ) : ?>
-		<span class="[ inline-block align-middle ][ margin-sides--small ]">
-			<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-dark ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/<?php echo $caracteristica->slug ?>.svg">
-			<p><small><?php echo $caracteristica->name ?></small></p>
-		</span>
-	<?php endforeach; ?>
-</section>
 
-<hr class="[ divider-primary ][ margin-bottom-large ]">
 
-<section class="[ text-center ][ margin-bottom-large ]">
+<?php if ( ! empty( $caracteristicas_platillo ) ) : ?>
+	<article class="[ margin-bottom-large ][ caracteristicas ][ text-center ][ container ]">
+		<?php foreach ( $caracteristicas_platillo as $caracteristica ) : ?>
+			<span class="[ inline-block align-middle ][ margin-sides--small ]">
+				<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-dark ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/<?php echo $caracteristica->slug ?>.svg">
+				<p><small><?php echo $caracteristica->name ?></small></p>
+			</span>
+		<?php endforeach; ?>
+	</article>
+	<hr class="[ divider-primary ][ margin-bottom-large ]">
+<?php endif; ?>
+
+<article class="[ text-center ][ margin-bottom-large ]">
 	<h3>Ingredientes</h3>
 	<p>
 	<?php foreach ( $ingredientes as $key => $ingrediente ) : ?>
@@ -43,7 +46,7 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 		<span class="margin-sides--small"><?php echo $ingrediente ?></span>
 	<?php endforeach; ?>
 	</p>
-</section>
+</article>
 
 <section class="[ descripcion ][ bg-gradient ][ padding--top-bottom--xlarge ][ margin-bottom--large ][ color-light ]">
 	<div class="[ container ]">
