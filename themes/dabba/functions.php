@@ -461,6 +461,17 @@ function wcs_login_redirect( $redirect ) {
      return $redirect;
 }
 
+
+/**
+ * Redireccionar usuarios al home despues de registrarse
+ * @return string
+ */
+add_filter('registration_redirect', 'wcs_registration_redirect');
+function wcs_registration_redirect( $redirect ) {
+     $redirect = site_url();
+     return $redirect;
+}
+
 /**
 *  Ensure cart contents update when products are added to the cart via AJAX.
 **/

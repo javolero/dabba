@@ -25,13 +25,13 @@
 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 					</section>
 					<section class="[ col-xs-12 col-md-2 ][ social ]">
-						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
+						<!-- <a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
-						</a>
-						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
+						</a> -->
+						<a class="[ margin-sides--small ]" href="https://www.facebook.com/dabbamx/" target="_blank">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
 						</a>
-						<a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
+						<a class="[ margin-sides--small ]" href="https://instagram.com/dabbamx/" target="_blank">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-instagram.svg">
 						</a>
 					</section>
@@ -105,11 +105,11 @@
 					<div class="[ margin-bottom--large ]">
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
-						<form>
-							<input class="[ form-control form-control-bg-primary ][ col-xs-12 ][ margin-bottom--small ]" name="email-comienza" placeholder="Correo electrónico">
+						<form id="form-zona" data-parsley-validate="">
+							<input class="[ form-control form-control-bg-primary ][ col-xs-12 ][ margin-bottom--small ]" type="email" data-parsley-type="email" name="email-comienza" placeholder="Correo electrónico" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							<div class="[ select-style ][ form-control form-control-bg-primary ][ margin-bottom--small ]">
-								<select class="[ form-control ]" name="zona">
-									<option>Selecciona tu zona</option>
+								<select class="[ form-control ]" name="select-zona" required="">
+									<option value="">Selecciona tu zona</option>
 									<option value="polanco">Polanco</option>
 									<option value="ampliacion-granada">Ampliación Granada</option>
 									<option value="corporativos-palmas">Corporativos Palmas</option>
@@ -117,10 +117,10 @@
 									<option value="other">Otra</option>
 								</select>
 							</div>
-							<input class="[ toggable hidden ][ form-control ][ margin-bottom--small ]" placeholder="Tu zona" name="zona">
+							<input class="[ toggable hidden ][ form-control ][ margin-bottom--small ][ js-zona ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio.">
 						</form>
 					</div>
-					<a href="#excelente" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
+					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
@@ -206,7 +206,7 @@
 				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
 					<div class="[ margin-bottom--large ]">
 						<h2>Lo sentimos :(</h2>
-						<p>Por ahora no entregamos en tu área, entregamos en</p>
+						<p>Por ahora no entregamos en tu área, entregamos en:</p>
 						<div class="[ embed-responsive ][ margin-bottom ]">
 							<div id="map-lo-sentimos" class="[ js-map ][ embed-responsive-item ]"></div>
 						</div>
