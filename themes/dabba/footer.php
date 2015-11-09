@@ -57,10 +57,11 @@
 			<?php endif; ?>
 		<?php elseif( ! is_page( 'checkout' ) ) : ?>
 			<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal">
-					ver platillos
-				</a>
+				ver platillos
+			</a>
 		<?php endif; ?>
-		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php site_url('cart'); ?>">
+		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php echo site_url('checkout'); ?>">
+			<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
 			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 		</a>
 

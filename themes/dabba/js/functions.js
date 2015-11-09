@@ -60,6 +60,27 @@ function toggleElement(element){
 }
 
 
+
+
+
+/*------------------------------------*\
+    #TOGGLE FUNCTIONS
+\*------------------------------------*/
+
+function toggleClass(element, classToToggle){
+    $(element).toggleClass(classToToggle);
+}
+
+// function toggleClassTimeout(element, class){
+//     $(element).addClass('class');
+// }
+
+
+
+
+
+
+
 /*------------------------------------*\
     #MAPS FUNCTIONS
 \*------------------------------------*/
@@ -85,8 +106,8 @@ function addPolyAreaEntrega( map ){
     var areaEntregaCoords = [
         {lat: 19.438358, lng: -99.205858},
         {lat: 19.446606, lng: -99.204913},
-        {lat: 19.443019, lng: -99.195852},    
-        {lat: 19.442612, lng: -99.192813},    
+        {lat: 19.443019, lng: -99.195852},
+        {lat: 19.442612, lng: -99.192813},
         {lat: 19.442214, lng: -99.192239},
         {lat: 19.442867, lng: -99.186617},
         {lat: 19.445897, lng: -99.182658},
@@ -194,7 +215,7 @@ function agregarUsuarioProspecto( email, zona ){
         {
             email:  email,
             zona:   zona,
-            action: 'agregar_usuario_prospecto' 
+            action: 'agregar_usuario_prospecto'
         },
         function( response ){
             console.log( response );

@@ -7,6 +7,7 @@
 // - Backface visibility
 // - Box shadow
 // - Box sizing
+// - Border
 // - Content columns
 // - Hyphens
 // - Placeholder text
@@ -75,6 +76,16 @@
   -webkit-box-sizing: @boxmodel;
      -moz-box-sizing: @boxmodel;
           box-sizing: @boxmodel;
+}
+
+// Border
+.border-radius (@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
 }
 
 // CSS3 Content Columns
@@ -188,10 +199,11 @@
 
 // Transitions
 
-.transition(@transition) {
+.transition (@transition: all 0.3s ease ) {
   -webkit-transition: @transition;
-       -o-transition: @transition;
-          transition: @transition;
+  -moz-transition:    @transition;
+  -ms-transition:     @transition;
+  -o-transition:      @transition;
 }
 .transition-property(@transition-property) {
   -webkit-transition-property: @transition-property;

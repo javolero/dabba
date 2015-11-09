@@ -433,3 +433,19 @@ function wcs_login_redirect( $redirect ) {
      $redirect = site_url();
      return $redirect;
 }
+
+/**
+*  Ensure cart contents update when products are added to the cart via AJAX.
+**/
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+
+	ob_start();
+	?>
+	<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
+	<?php
+
+	$fragments['.notification__number'] = ob_get_clean();
+	return $fragments;
+
+}// woocommerce_header_add_to_cart_fragment
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );

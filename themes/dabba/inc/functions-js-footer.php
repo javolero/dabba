@@ -38,7 +38,7 @@ function footer_scripts(){
 				if ( $(this).find('select').val() == 'other' ){
 					$(this).next('.toggable').toggleClass('hidden');
 					$('.js-btn-siguiente').attr('href', '#error');
-				} 
+				}
 			});
 
 			$('.js-btn-siguiente').on('click', function() {
@@ -49,11 +49,16 @@ function footer_scripts(){
 				if( '' !== zona ) {
 					setTimeout( function(){ initMap( 'map-lo-sentimos' ); } , 400);
 					agregarUsuarioProspecto( email, zona );
-				} 
+				}
 
 				$('#reg_email').val( email );
 
 			});
+
+			$('.add_to_cart_button').on('click', function(){
+				toggleClass('.js-notification__number', 'added');
+			});
+
 
 			<?php if( is_home() ) : ?>
 
