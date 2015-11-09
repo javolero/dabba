@@ -131,7 +131,9 @@ function get_dias_restantes_semana(){
 
 	$dias_extra = 1;
 	$dias_semana = array();
-	//$numero_dia_hoy = date('N')
+
+	if( 5 == date( 'N' ) || 6 == date( 'N' ) || 7 == date( 'N' ) ) return get_dias_siguiente_semana();
+
 	for ( $numero_dia_hoy = date('N'); $numero_dia_hoy <= 5 ; $numero_dia_hoy++ ) {
 		array_push( $dias_semana, date( 'Y-m-d', strtotime( date( 'Y-m-d' ) . ' +' . $dias_extra . ' day' ) ) );
 		$dias_extra++;
@@ -140,6 +142,31 @@ function get_dias_restantes_semana(){
 	return $dias_semana;
 
 }// get_dias_restantes_semana
+
+/**
+ * Regresa los días de la siguiente semana en formato yyyy-dd-mm
+ * @return array $dias_semana
+ */
+function get_dias_siguiente_semana(){
+
+	$dias_semana = array();
+	$dias_extra = 1;
+	switch ( date('N') ) {
+		case 5:
+			$dias_extra += 2;
+			break;
+		case 6:
+			$dias_extra += 1;
+			break;
+	}
+
+	for ( $numero_dia = 1; $numero_dia <= 5 ; $numero_dia++ ) {
+		array_push( $dias_semana, date( 'Y-m-d', strtotime( date( 'Y-m-d' ) . ' +' . $dias_extra . ' day' ) ) );
+		$dias_extra++;
+	}	
+	return $dias_semana;
+
+}// get_dias_siguiente_semana
 
 /**
  * Regresa fecha en español.
