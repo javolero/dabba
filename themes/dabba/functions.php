@@ -129,6 +129,8 @@ function format_contenido_platillo( $platillo, $guarnicion_1, $guarnicion_2 ){
  */
 function get_dias_restantes_semana(){
 
+	if( 6 == date( 'N' ) || 7 == date( 'N' ) ) return 0;
+
 	$dias_extra = 1;
 	$dias_semana = array();
 	//$numero_dia_hoy = date('N')
