@@ -3136,6 +3136,10 @@ select[multiple].input-lg {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 .btn:focus,
 .btn:active:focus,
@@ -3242,25 +3246,25 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
   color: #ffffff;
   background-color: #f05475;
-  border-color: #ee3d62;
+  border-color: #f05475;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #ffffff;
   background-color: #ec254f;
-  border-color: #9d0e2c;
+  border-color: #b51033;
 }
 .btn-primary:hover {
   color: #ffffff;
   background-color: #ec254f;
-  border-color: #da133d;
+  border-color: #eb1c48;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
   background-color: #ec254f;
-  border-color: #da133d;
+  border-color: #eb1c48;
 }
 .btn-primary:active:hover,
 .btn-primary.active:hover,
@@ -3273,7 +3277,7 @@ fieldset[disabled] .btn-default.active {
 .open > .dropdown-toggle.btn-primary.focus {
   color: #ffffff;
   background-color: #da133d;
-  border-color: #9d0e2c;
+  border-color: #b51033;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3299,11 +3303,17 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
   background-color: #f05475;
-  border-color: #ee3d62;
+  border-color: #f05475;
 }
 .btn-primary .badge {
   color: #f05475;
   background-color: #ffffff;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #ffffff;
+  background: #ec254f;
 }
 .btn-light {
   color: #ffffff;
@@ -3642,9 +3652,21 @@ fieldset[disabled] .btn-danger.active {
   border-color: #f05475;
   color: #f05475;
 }
+.btn-hollow.btn-primary:hover,
+.btn-hollow.btn-primary:focus,
+.btn-hollow.btn-primary.focus {
+  color: #ffffff;
+  background: #f05475;
+}
 .btn-hollow.btn-light {
   border-color: #ffffff;
   color: #ffffff;
+}
+.btn-hollow.btn-light:hover,
+.btn-hollow.btn-light:focus,
+.btn-hollow.btn-light.focus {
+  color: #f05475;
+  background: #ffffff;
 }
 .btn-link {
   color: #337ab7;

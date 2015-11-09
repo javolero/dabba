@@ -18,6 +18,8 @@
   white-space: nowrap;
   .button-size(@padding-base-vertical; @padding-large-horizontal; (@font-size-base * 0.8); @line-height-base; @btn-border-radius-extralarge);
   .user-select(none);
+  .transition (all 0.3s ease );
+
 
   &,
   &:active,
@@ -67,6 +69,12 @@
 }
 .btn-primary {
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @light;
+    background: darken(@primary, 10%);
+  }
 }
 .btn-light {
   .button-variant(@btn-primary-color; @light; @light);
@@ -93,11 +101,25 @@
 .btn-hollow.btn-primary{
   border-color: @primary;
   color: @primary;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @light;
+    background: @primary
+  }
 }
 
 .btn-hollow.btn-light{
   border-color: @light;
   color: @light;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @primary;
+    background: @light
+  }
 }
 
 
