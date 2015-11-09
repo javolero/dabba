@@ -44,23 +44,23 @@
 		<!-- =================================================
 		==== Action nav bar
 		================================================== -->
-		<a class="[ btn btn--action btn--action--left ][ bg-primary ]" href="<?php echo site_url('my-account'); ?>">
+		<a class="[ btn btn-primary btn--action btn--action--left ]" href="<?php echo site_url('my-account'); ?>">
 			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 		</a>
 		<?php if( is_single() || is_home() ) : ?>
 			<?php if ( ! is_user_logged_in() ) : ?>
-				<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="#comienza" data-toggle="modal">
+				<a class="[ btn btn-primary btn--action btn--action--center ][ padding--sides ]" href="#comienza" data-toggle="modal">
 					ordena ahora
 				</a>
 			<?php else: ?>
 				<?php echo get_todays_add_to_cart_btn(); ?>
 			<?php endif; ?>
 		<?php elseif( ! is_page( 'checkout' ) ) : ?>
-			<a class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal">
+			<a class="[ btn btn-primary btn--action btn--action--center ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal">
 				ver platillos
 			</a>
 		<?php endif; ?>
-		<a class="[ btn btn--action btn--action--right ][ bg-primary ]" href="<?php echo site_url('checkout'); ?>">
+		<a class="[ btn btn-primary btn--action btn--action--right ]" href="<?php echo site_url('checkout'); ?>">
 			<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
 			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 		</a>

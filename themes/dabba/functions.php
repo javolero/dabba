@@ -163,7 +163,7 @@ function get_dias_siguiente_semana(){
 	for ( $numero_dia = 1; $numero_dia <= 5 ; $numero_dia++ ) {
 		array_push( $dias_semana, date( 'Y-m-d', strtotime( date( 'Y-m-d' ) . ' +' . $dias_extra . ' day' ) ) );
 		$dias_extra++;
-	}	
+	}
 	return $dias_semana;
 
 }// get_dias_siguiente_semana
@@ -286,7 +286,7 @@ function get_todays_add_to_cart_btn(){
 	$todays_menu_id = get_todays_menu_id();
 
 	if( $todays_menu_id ) {
-		return '<a href="/dabba/?add-to-cart="' . $todays_menu_id . ' rel="nofollow" data-product_id="' . $todays_menu_id . '" data-product_sku="" data-quantity="1" class="[ btn btn--action btn--action--center ][ bg-primary ][ padding--sides ][ add_to_cart_button product_type_simple ]">ordenar ahora</a>';
+		return '<a href="/dabba/?add-to-cart="' . $todays_menu_id . ' rel="nofollow" data-product_id="' . $todays_menu_id . '" data-product_sku="" data-quantity="1" class="[ btn btn-primary btn--action btn--action--center ][ padding--sides ][ add_to_cart_button product_type_simple ]">ordenar ahora</a>';
 	}
 
 }// get_todays_add_to_cart_btn
