@@ -37,27 +37,36 @@ function footer_scripts(){
 			$('.modal .select-style').change(function(){
 				if ( $(this).find('select').val() == 'other' ){
 					$(this).next('.toggable').toggleClass('hidden');
-					$('.js-btn-siguiente').attr('href', '#error');
+					$('.js-zona').attr('required', '""');
 				}
 			});
 
-			$('.js-btn-siguiente').on('click', function() {
-				$('#comienza').modal('toggle');
-				var email = $('input[name="email-comienza"]').val();
-				var zona = $('input[name="zona"]').val();
+			$('.js-btn-siguiente').on('click', function(e) {
+				e.preventDefault();
+				$('#form-zona').parsley().validate();
+				
+				if ( true === $('#form-zona').parsley().isValid()) {
+					
+					$('#comienza').modal('toggle');
+					var email = $('input[name="email-comienza"]').val();
+					var zona = $('input[name="zona"]').val();
 
-				if( '' !== zona ) {
-					setTimeout( function(){ initMap( 'map-lo-sentimos' ); } , 400);
-					agregarUsuarioProspecto( email, zona );
+					if( '' !== zona ) {
+						$('#error').modal('toggle');
+						setTimeout( function(){ initMap( 'map-lo-sentimos' ); } , 400);
+						agregarUsuarioProspecto( email, zona );
+					}
+					$('#excelente').modal('toggle');
+					$('#reg_email').val( email );
 				}
-
-				$('#reg_email').val( email );
 
 			});
 
 			$('.add_to_cart_button').on('click', function(){
 				toggleClass('.js-notification__number', 'added');
 			});
+
+
 
 
 			<?php if( is_home() ) : ?>

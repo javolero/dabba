@@ -493,7 +493,7 @@ if ( is_woocommerce_active() ) {
 					echo '<div id="generated_coupon_data_container" style="padding: 2em 0 2em;">';
 
 					if ( $header ) {
-						echo '<h2>' . __( 'Coupon Received', self::$text_domain ) . '</h2>';
+						echo '<h2>Cupones y créditos</h2>';
 					}
 
 					if ( $layout == 'table' ) {

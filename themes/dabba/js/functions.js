@@ -21,6 +21,7 @@ function resizeToCover( min_w, vid_w_orig, vid_h_orig ) {
 	// and center it by scrolling the video viewport
 	$('.hero').scrollLeft(($('.hero__video').width() - $('.hero').width()) / 2);
 	$('.hero').scrollTop(($('.hero__video').height() - $('.hero').height()) / 2);
+    
 };
 
 function imgToSvg(){
