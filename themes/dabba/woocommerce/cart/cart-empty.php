@@ -15,8 +15,11 @@ wc_print_notices();
 
 ?>
 
-<p class="cart-empty"><?php _e( 'Your cart is currently empty.', 'woocommerce' ) ?></p>
+<div class="[ container ][ margin-top margin-bottom--large ][ text-center ]">
+	<p class="[ cart-empty ]"><?php _e( 'Your cart is currently empty.', 'woocommerce' ) ?></p>
+	<?php do_action( 'woocommerce_cart_is_empty' ); ?>
+	<a class="[ btn btn-primary btn-hollow ]" href="<?php echo site_url() ?>">Ver platillos</a>
+</div>
 
-<?php do_action( 'woocommerce_cart_is_empty' ); ?>
+<hr class="[ divider-primary ][ margin-bottom-large ]">
 
-<p class="return-to-shop"><a class="button wc-backward" href="<?php echo site_url() ?>">Ver platillos</a></p>
