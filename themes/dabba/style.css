@@ -1071,17 +1071,15 @@ th {
 .icon--iconed--mini {
   width: 20px !important;
 }
+.icon--iconed--micro {
+  width: 15px !important;
+}
 .icon--feature {
   width: 70px !important;
 }
 .icon--logo {
   width: 150px;
   height: auto;
-}
-@media (min-width: 992px) {
-  .icon--logo {
-    width: 200px;
-  }
 }
 /*------------------------------------*\
   #COLOR
@@ -1150,7 +1148,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #f05475;
   text-decoration: underline;
 }
 a:focus {
@@ -2632,10 +2630,11 @@ output {
   height: 1.62857143em;
   padding: 0;
   border: none;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #f05475;
   line-height: 1.42857143;
   background-color: #ffffff;
   background-image: none;
+  color: #f05475;
   box-shadow: none;
   border-radius: 0;
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -2650,16 +2649,16 @@ output {
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 .form-control::-moz-placeholder {
-  color: #ffffff;
+  color: #eeeeee;
   opacity: 1;
   font-weight: 300;
 }
 .form-control:-ms-input-placeholder {
-  color: #ffffff;
+  color: #eeeeee;
   font-weight: 300;
 }
 .form-control::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #eeeeee;
   font-weight: 300;
 }
 .form-control[disabled],
@@ -2675,20 +2674,21 @@ fieldset[disabled] .form-control {
 textarea.form-control {
   height: auto;
 }
-.form-control-bg-primary {
+.form-control-bg {
+  border-bottom: 1px solid #ffffff;
   color: #ffffff;
-  background-color: #f05475;
+  background-color: transparent;
 }
-.form-control-bg-primary::-moz-placeholder {
+.form-control-bg::-moz-placeholder {
   color: #ffffff;
   opacity: 1;
   font-weight: 300;
 }
-.form-control-bg-primary:-ms-input-placeholder {
+.form-control-bg:-ms-input-placeholder {
   color: #ffffff;
   font-weight: 300;
 }
-.form-control-bg-primary::-webkit-input-placeholder {
+.form-control-bg::-webkit-input-placeholder {
   color: #ffffff;
   font-weight: 300;
 }
@@ -6807,6 +6807,9 @@ button.close {
 .color-primary {
   color: #f05475;
 }
+.color-dark {
+  color: #222222;
+}
 .color-light {
   color: #ffffff;
 }
@@ -6978,7 +6981,7 @@ button.close {
   border: none;
 }
 .no-margin {
-  margin: 0;
+  margin: 0 !important;
 }
 .margin {
   margin: 20px;

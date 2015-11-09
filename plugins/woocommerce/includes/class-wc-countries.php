@@ -522,13 +522,13 @@ class WC_Countries {
 				'required'    => true,
 				'class'       => array( 'form-row-wide', 'address-field' )
 			),
-			'state' => array(
-				'type'        => 'state',
-				'label'       => __( 'State / County', 'woocommerce' ),
-				'required'    => true,
-				'class'       => array( 'form-row-first', 'address-field' ),
-				'validate'    => array( 'state' )
-			),
+			// 'state' => array(
+			// 	'type'        => 'state',
+			// 	'label'       => __( 'State / County', 'woocommerce' ),
+			// 	'required'    => true,
+			// 	'class'       => array( 'form-row-first', 'address-field' ),
+			// 	'validate'    => array( 'state' )
+			// ),
 			'postcode' => array(
 				'label'       => __( 'Postcode / Zip', 'woocommerce' ),
 				'placeholder' => __( 'Postcode / Zip', 'woocommerce' ),
@@ -550,7 +550,7 @@ class WC_Countries {
 		$locale_fields = array (
 			'address_1' => '#billing_address_1_field, #shipping_address_1_field',
 			'address_2' => '#billing_address_2_field, #shipping_address_2_field',
-			'state'     => '#billing_state_field, #shipping_state_field, #calc_shipping_state_field',
+			// 'state'     => '#billing_state_field, #shipping_state_field, #calc_shipping_state_field',
 			'postcode'  => '#billing_postcode_field, #shipping_postcode_field, #calc_shipping_postcode_field',
 			'city'      => '#billing_city_field, #shipping_city_field, #calc_shipping_city_field',
 		);

@@ -987,20 +987,19 @@ p.demo_store a {
     background: rgba(0, 0, 0, .025)
 }
 .woocommerce table.shop_table {
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: none;
     margin: 0 -1px 24px 0;
     text-align: left;
     width: 100%;
     border-collapse: separate;
-    border-radius: 5px
 }
 .woocommerce table.shop_table th {
     font-weight: 700;
-    padding: 9px 12px
+    padding: 9px 0;
 }
 .woocommerce table.shop_table td {
     border-top: 1px solid rgba(0, 0, 0, .1);
-    padding: 6px 12px;
+    padding: 6px 0;
     vertical-align: middle
 }
 .woocommerce table.shop_table td small {
