@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div id="payment">
 		<?php if ( $order->needs_payment() ) : ?>
-		<ul class="payment_methods methods">
+		<ul class="[ payment_methods methods ]">
 			<?php
 				if ( $available_gateways = WC()->payment_gateways->get_available_payment_gateways() ) {
 					// Chosen Method

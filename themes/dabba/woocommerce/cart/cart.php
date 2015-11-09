@@ -50,7 +50,53 @@ wc_print_notices(); ?>
 						</div><!-- row -->
 						<div class="[ row ][ margin-bottom--small ]">
 
-							<article class="[ product-quantity ][ col-xs-3 ]">
+							<article class="[ product-name ][ col-xs-7 ]">
+								<?php
+									if ( ! $_product->is_visible() ) {
+										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
+									} else {
+										echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<p class="[ %s ][ no-margin ]">%s </p>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
+									}
+
+									// Meta data
+									echo WC()->cart->get_item_data( $cart_item );
+
+									// Backorder notification
+									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+										echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
+									}
+								?>
+							</article>
+
+							<article class="[ product-price ][ col-xs-3 ][ text-right ]">
+								<p class="[ no-margin ]">
+									<?php
+										echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+									?>
+								</p>
+							</article>
+
+							<article class="[ product-remove ][ col-xs-2 ]">
+								<?php
+									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+										'<a href="%s" class="[ color-danger ][ pull-right ]" title="%s" data-product_id="%s" data-product_sku="%s"><img class="[ svg ][ icon icon--iconed icon--iconed--micro icon--stroke icon--thickness-2 ][ color-danger ][ no-margin ]" src="'.$themepath.'/icons/bin.svg"></a>',
+										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+										__( 'Remove this item', 'woocommerce' ),
+										esc_attr( $product_id ),
+										esc_attr( $_product->get_sku() )
+									), $cart_item_key );
+								?>
+							</article>
+
+						</div>
+
+						<div class="[ row ]">
+
+							<article class="[ product-quantity ][ col-xs-1 ]">
+								<p class="[ no-margin ]"> x</p>
+							</article>
+
+							<article class="[ product-quantity ][ col-xs-2 ]">
 								<?php
 									if ( $_product->is_sold_individually() ) {
 										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -67,54 +113,13 @@ wc_print_notices(); ?>
 								?>
 							</article>
 
-							<article class="[ product-name ][ col-xs-5 ]">
-								<?php
-									if ( ! $_product->is_visible() ) {
-										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
-									} else {
-										echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a class="[ color-primary ]" href="%s">%s </a>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
-									}
-
-									// Meta data
-									echo WC()->cart->get_item_data( $cart_item );
-
-									// Backorder notification
-									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-										echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
-									}
-								?>
-							</article>
-
-							<article class="[ product-price ][ col-xs-4 ][ text-right ]">
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-								?>
-							</article>
-
-						</div>
-
-						<div class="[ row ]">
-
-							<article class="[ product-remove ][ col-xs-3 ]">
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-										'<a href="%s" class="[ color-danger ]" title="%s" data-product_id="%s" data-product_sku="%s"><strong><img class="[ svg ][ icon icon--iconed icon--iconed--mini icon--stroke icon--thickness-2 ][ color-danger ][ no-margin ]" src="'.$themepath.'/icons/close.svg"></strong></a>',
-										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-										__( 'Remove this item', 'woocommerce' ),
-										esc_attr( $product_id ),
-										esc_attr( $_product->get_sku() )
-									), $cart_item_key );
-								?>
-							</article>
-
-							<article class="[ product-remove ][ col-xs-5 ][ text-right ]">
-								subtotal:
-							</article>
-
-							<article class="[ product-subtotal ][ col-xs-4 ][ text-right ]">
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
-								?>
+							<article class="[ product-subtotal ][ col-xs-7 ][ text-right ]">
+								<p class="[ no-margin ][ color-primary text-semibold ]">
+									subtotal:
+									<?php
+										echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+									?>
+								</p>
 							</article>
 						</div>
 					</section>
@@ -122,24 +127,30 @@ wc_print_notices(); ?>
 				}
 			} ?>
 
-			<input type="submit" class="[ button ][ col-xs-6 ]" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-			<div colspan="6" class="[ actions ]">
+			<div class="[ actions ][ coupon ][ padding--top-bottom margin-bottom ][ bg-gradient ][ color-light ][ row ]">
 
 				<?php if ( WC()->cart->coupons_enabled() ) { ?>
-					<div class="coupon">
-
-						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
+						<!-- <label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> -->
+						<div class="[ col-xs-8 ][ inline-block align-middle ]">
+							<input type="text" name="coupon_code" class="[ input-text ][ form-control form-control-bg ][ col-xs-12 ]" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+						</div>
+						<div class="[ col-xs-4 ][ inline-block align-middle ]">
+							<input type="submit" class="[ btn btn-light btn-hollow btn-sm ]" name="apply_coupon" value="aplicar" />
+						</div>
 
 						<?php do_action( 'woocommerce_cart_coupon' ); ?>
-					</div>
 				<?php } ?>
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 				<?php wp_nonce_field( 'woocommerce-cart' ); ?>
+			</div>
+
+			<div class="[ text-center ][ margin-bottom ]">
+				<input type="submit" class="[ btn btn-primary btn-hollow btn-sm ]" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 			</div>
 
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
@@ -154,3 +165,5 @@ wc_print_notices(); ?>
 	</div>
 
 </section>
+
+<hr class="[ divider-primary ][ margin-bottom-large ]">
