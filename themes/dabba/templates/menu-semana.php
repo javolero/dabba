@@ -18,15 +18,15 @@
 		echo '<h2 class="[ text-center ]">Menú de la semana</h2>';
 		while( $query->have_posts() ) : $query->the_post();
 			global $product;
-
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
 			$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
 			$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
+			$classDisabled = ( ! $product->is_in_stock() ) ? 'disabled' : '';
 	?>
-			<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ]">
+			<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ][ <?php echo $classDisabled ?>]">
 				<div class="[ row ][ margin-bottom--small ]">
 					<div class="[ col-xs-12 col-centered ]">
-						<a class="[ bg-image bg-image--3-1 ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
+						<a class="[ bg-image bg-image--16-9 ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
 						<p class="[ bg-primary ][ padding--sides padding--top-bottom--small no-margin ][ text-center color-light ]"><?php echo $fecha_menu ?></p>
 					</div>
 				</div>
@@ -35,7 +35,13 @@
 						<p class="[ no-margin ]"><?php echo get_the_title() ?></p>
 					</div>
 					<div class="[ col-xs-4 ]">
-						<?php echo woocommerce_template_loop_add_to_cart(); ?>
+						<?php 
+						if ( ! $product->is_in_stock() ) :
+							echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ][ pull-right ]">agotado</a>';
+						else: 
+							echo woocommerce_template_loop_add_to_cart();
+						endif; 
+						?>
 					</div>
 				</div>
 			</article>
