@@ -23,9 +23,13 @@ $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_q
 
 if ( $customer_orders ) : ?>
 
-	<h2><?php echo apply_filters( 'woocommerce_my_account_my_orders_title', __( 'Recent Orders', 'woocommerce' ) ); ?></h2>
+	<h3 class="[ text-left ][ margin-bottom--large ]">
+		<a class="[ color-dark ]" role="button" data-toggle="collapse" href="#pedidosRecientes" aria-expanded="false" aria-controls="pedidosRecientes">
+			<?php echo apply_filters( 'woocommerce_my_account_my_orders_title', __( 'Recent Orders', 'woocommerce' ) ); ?>
+		</a>
+	</h3>
 
-	<table class="shop_table shop_table_responsive my_account_orders">
+	<table class="[ shop_table shop_table_responsive my_account_orders ][ collapse ]" id="pedidosRecientes">
 
 		<thead>
 			<tr>
@@ -95,5 +99,7 @@ if ( $customer_orders ) : ?>
 		?></tbody>
 
 	</table>
+
+	<hr class="[ divider-primary ][ margin-bottom-large ]">
 
 <?php endif; ?>

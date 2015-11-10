@@ -34,7 +34,7 @@
  */
 ?>
 
-<div class="wc-social-login-profile">
+<!-- <div class="wc-social-login-profile">
 
 	<h2><?php _e( 'My Social Login Accounts', WC_Social_Login::TEXT_DOMAIN ); ?></h2>
 
@@ -109,6 +109,6 @@
 
 	</div>
 
-</div>
+</div> -->
 
 <?php

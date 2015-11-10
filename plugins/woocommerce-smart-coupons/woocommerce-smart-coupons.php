@@ -121,7 +121,7 @@ if ( is_woocommerce_active() ) {
 			var $sc_general_settings;
 
 			/**
-			 * @var $text_domain 
+			 * @var $text_domain
 			 */
 			static $text_domain;
 
@@ -490,10 +490,10 @@ if ( is_woocommerce_active() ) {
 
 				if ( $html ) {
 
-					echo '<div id="generated_coupon_data_container" style="padding: 2em 0 2em;">';
+					echo '<div id="generated_coupon_data_container" class="[ margin-top-bottom--large ]">';
 
 					if ( $header ) {
-						echo '<h2>Cupones y créditos</h2>';
+						echo '<h3 class="[ text-left ]">Cupones y créditos</h3>';
 					}
 
 					if ( $layout == 'table' ) {
@@ -503,6 +503,7 @@ if ( is_woocommerce_active() ) {
 					}
 
 					echo '</div>';
+					echo '<hr class="[ divider-primary ][ margin-bottom-large ]">';
 
 					return;
 
@@ -525,9 +526,9 @@ if ( is_woocommerce_active() ) {
 							var total = jQuery('details').length;
 							var open = jQuery('details[open]').length;
 							if ( open == total ) {
-								jQuery('a#more_less').text('" .__( 'Less details', self::$text_domain ) . "');
+								jQuery('a#more_less').text('" .__( 'ocultar detalles', self::$text_domain ) . "');
 							} else {
-								jQuery('a#more_less').text('" . __( 'More details', self::$text_domain ) . "');
+								jQuery('a#more_less').text('" . __( 'ver detalles', self::$text_domain ) . "');
 							}
 						};
 						switchMoreLess();
@@ -536,10 +537,10 @@ if ( is_woocommerce_active() ) {
 							var current = jQuery('details').attr('open');
 							if ( current == '' || current == undefined ) {
 								jQuery('details').attr('open', 'open');
-								jQuery('a#more_less').text('" .__( 'Less details', self::$text_domain ) . "');
+								jQuery('a#more_less').text('" .__( 'ocultar detalles', self::$text_domain ) . "');
 							} else {
 								jQuery('details').removeAttr('open');
-								jQuery('a#more_less').text('" . __( 'More details', self::$text_domain ) . "');
+								jQuery('a#more_less').text('" . __( 'ver detalles', self::$text_domain ) . "');
 							}
 						});
 
@@ -628,16 +629,13 @@ if ( is_woocommerce_active() ) {
 					.generated_coupon_details { margin-left: 2em; margin-bottom: 1em; margin-right: 2em; text-align: left; }
 					.generated_coupon_data { border: solid 1px lightgrey; margin-bottom: 5px; margin-right: 5px; width: 50%; }
 					.generated_coupon_details p { margin: 0; }
-					span.expand_collapse { text-align: right; display: block; margin-bottom: 1em; cursor: pointer; }
+					span.expand_collapse { display: block; }
 					.float_right_block { float: right; }
 					summary::-webkit-details-marker { display: none; }
 					details[open] summary::-webkit-details-marker { display: none; }
 				</style>
 				<div class="generated_coupon_data_wrapper">
-					<span class="expand_collapse" style="display: none;">
-						<a id="more_less"><?php _e( 'More details', self::$text_domain ); ?></a>
-					</span>
-					<div id="all_generated_coupon">
+					<div id="all_generated_coupon" class="[ text-left ][ margin-bottom--small ]">
 					<?php
 						foreach ( $generated_coupon_data as $from => $data ) {
 							foreach ( $data as $coupon_data ) {
@@ -673,7 +671,7 @@ if ( is_woocommerce_active() ) {
 												echo '</div>';
 
 												echo '<div class="code">'. $coupon->code .'</div>';
-												
+
 												$show_coupon_description = get_option( 'smart_coupons_show_coupon_description', 'no' );
 												if ( ! empty( $coupon_post->post_excerpt ) && $show_coupon_description == 'yes' ) {
 													echo '<div class="discount-description">' . $coupon_post->post_excerpt . '</div>';
@@ -706,6 +704,9 @@ if ( is_woocommerce_active() ) {
 						}
 					?>
 					</div>
+					<span class="[ expand_collapse ][ text-left ]" style="display: none;">
+						<a class="[ btn btn-sm btn-primary btn-hollow ]" id="more_less">ver detalles</a>
+					</span>
 				</div>
 				<?php
 			}
@@ -802,9 +803,9 @@ if ( is_woocommerce_active() ) {
 			 * @return array $valid_subscription_coupon
 			 */
 			public function smart_coupon_as_valid_subscription_coupon_type( $valid_subscription_coupon_type ){
-				
+
 				array_push( $valid_subscription_coupon_type , 'smart_coupon' );
-				
+
 				return $valid_subscription_coupon_type;
 			}
 
@@ -2502,7 +2503,7 @@ if ( is_woocommerce_active() ) {
 
 						$coupon = new WC_Coupon( $coupon_title );
 						$is_pick_price_of_product = get_post_meta( $coupon->id, 'is_pick_price_of_product', true );
-										
+
 						if ( $list_started && !empty( $coupon->discount_type ) ) {
 							echo '<div class="clear"></div>';
 							echo '<div class="gift-certificates">';
@@ -2766,7 +2767,7 @@ if ( is_woocommerce_active() ) {
 									$product_cats = wp_get_post_terms( $product['product_id'], 'product_cat', array( "fields" => "ids" ) );
 
 									if ( sizeof( $coupon->product_categories ) > 0 ) {
-	
+
 										$continue = false;
 
 										if ( ! empty( $product['variation_id'] ) && in_array( $product['variation_id'], $discounted_products, true ) ) {
@@ -2910,7 +2911,7 @@ if ( is_woocommerce_active() ) {
 							        );
 
 					$total_discount = $order->get_total_discount();
-					// code to check and manipulate 'Discount' amount based on Store Credit used 
+					// code to check and manipulate 'Discount' amount based on Store Credit used
 					if( $total_discount == $total_credit_used ) {
 						unset( $total_rows['discount'] );
 					} else {
@@ -3014,10 +3015,10 @@ if ( is_woocommerce_active() ) {
 			 * @return float $total_discount
 			 */
 			public function smart_coupons_order_amount_total_discount( $total_discount, $order = null ) {
-				
+
 				// To avoid adding store credit in 'Discount' field on order admin panel
 				if ( did_action( 'woocommerce_admin_order_item_headers' ) >= 1 ) return $total_discount;
-				
+
 				$total_credit_used = $this->get_total_credit_used_in_order( $order );
 				if ( $total_credit_used > 0 ) {
 					$total_discount += $total_credit_used;
@@ -3105,7 +3106,7 @@ if ( is_woocommerce_active() ) {
 			 */
 			public function is_smart_coupon_valid( $valid, $coupon ) {
 				global $woocommerce;
-				
+
 				if ( $coupon->discount_type != 'smart_coupon' ) return $valid;
 
 				$applied_coupons = $this->global_wc()->cart->get_applied_coupons();
@@ -3875,12 +3876,12 @@ if ( is_woocommerce_active() ) {
 			}
 
 			/**
-			 * Function to Restore Smart Coupon Amount back, when an order which was created using this coupon, is refunded or cancelled, 
+			 * Function to Restore Smart Coupon Amount back, when an order which was created using this coupon, is refunded or cancelled,
 			 *
 			 * @param int $order_id
 			 */
 			public function sa_restore_smart_coupon_amount( $order_id = 0 ) {
-				
+
 				if ( empty( $order_id ) ) return;
 
 				$order = $this->get_order( $order_id );
@@ -3961,9 +3962,9 @@ if ( is_woocommerce_active() ) {
 				$subject = apply_filters( 'woocommerce_email_subject_gift_certificate', sprintf( '%s: %s', $blogname, $subject_string ) );
 
 				foreach ( $coupon_title as $email => $coupon ) {
-				
+
 					$_coupon = new WC_Coupon( $coupon['code'] );
-					
+
 					$amount = $coupon['amount'];
 					$coupon_code = $coupon['code'];
 
@@ -3994,7 +3995,7 @@ if ( is_woocommerce_active() ) {
 					if ( $_coupon->free_shipping == "yes" && in_array( $_coupon->discount_type, array( 'fixed_cart', 'fixed_product', 'percent_product', 'percent' ) ) ) {
 						$email_heading = sprintf(__( '%s Free Shipping%s', self::$text_domain ), ( ( ! empty( $amount ) ) ? $email_heading . __( '&', self::$text_domain ) : __( 'You have received a', self::$text_domain ) ), ( ( empty( $amount ) ) ? __( ' coupon', self::$text_domain ) : '' ) );
 					}
-						
+
 					if ( empty( $email ) ) {
 						$email = $gift_certificate_sender_email;
 					}
@@ -4190,7 +4191,7 @@ if ( is_woocommerce_active() ) {
 					$smart_coupon_code = $this->generate_unique_code( $email_id, $coupon );
 
 					$coupon_post = get_post( $coupon->id );
-								
+
 					$smart_coupon_args = array(
 										'post_title'    => strtolower( $smart_coupon_code ),
 										'post_excerpt'	=> $coupon_post->post_excerpt,
@@ -5883,7 +5884,7 @@ if ( is_woocommerce_active() ) {
 				if ( ! wp_script_is( 'jquery' ) ) {
 					wp_enqueue_script( 'jquery' );
 				}
-	            
+
 	            ?>
 	            <script type="text/javascript">
 	            	jQuery(function(){
