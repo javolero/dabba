@@ -22,7 +22,6 @@ if ( $customer_orders ) :
 			if( '' === $fecha_menu || date( 'Y-m-d'  ) >= $fecha_menu ) continue;
 
 			$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $item['product_id'] ), 'single_product_large_thumbnail_size' );
-			$platillo_principal = get_post_meta( $item['product_id'], '_platillo_principal_meta', true );
 			$guarnicion_1 = get_post_meta( $item['product_id'], '_guarnicion_1_meta', true );
 			$guarnicion_2 = get_post_meta( $item['product_id'], '_guarnicion_2_meta', true );
 
@@ -30,7 +29,7 @@ if ( $customer_orders ) :
 				'id'				=> $item['product_id'],
 				'nombre'			=> $item['name'],
 				'image_url'			=> $image_url[0],
-				'info_adicional'	=> format_contenido_platillo( $platillo_principal, $guarnicion_1, $guarnicion_2 )
+				'info_adicional'	=> format_contenido_platillo( $guarnicion_1, $guarnicion_2 )
 				);
 		endforeach;
 	endforeach;

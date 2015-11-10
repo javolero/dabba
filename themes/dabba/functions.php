@@ -98,17 +98,16 @@ show_admin_bar(false);
 
 /**
  * Formatear subtítulo de platillo dependiendo el número de guarniciones.
- * @param string $platillo
  * @param string $guarnicion_1
  * @param string $guarnicion_2
  * @return string $subtitulo_platillo
  */
-function format_contenido_platillo( $platillo, $guarnicion_1, $guarnicion_2 ){
+function format_contenido_platillo( $guarnicion_1, $guarnicion_2 ){
 
-	 $subtítulo_platillo = $platillo;
+	 $subtítulo_platillo = '';
 
 	 if( '' !== $guarnicion_1 && '' !== $guarnicion_2 )
-	 	$subtítulo_platillo .= ', ' . $guarnicion_1 . ' y ' . $guarnicion_2;
+	 	$subtítulo_platillo .= $guarnicion_1 . ' y ' . $guarnicion_2;
 
 	 if( '' !== $guarnicion_1 && '' === $guarnicion_2 ) $subtítulo_platillo .= ' y ' . $guarnicion_1;
 

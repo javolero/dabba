@@ -19,7 +19,6 @@
 		while( $query->have_posts() ) : $query->the_post();
 			global $product;
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
-			$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
 			$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
 			$classDisabled = ( ! $product->is_in_stock() ) ? 'disabled' : '';
 	?>

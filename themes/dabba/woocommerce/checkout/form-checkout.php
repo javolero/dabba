@@ -19,10 +19,7 @@ wc_print_notices();
 <section>
 
 	<article class="[ margin-bottom--large ][ container ]">
-		<h3 class="[ text-center ]">Bebidas</h3>
-		<div class="[ aguas ][ text-center ]">
-			<?php get_template_part( 'templates/menu', 'aguas' ); ?>
-		</div>
+		<?php get_template_part( 'templates/menu', 'aguas' ); ?>
 	</article>
 	<!-- <article class="[ margin-bottom--large ]">
 		<h3 class="[ text-center ]">Postres</h3>
