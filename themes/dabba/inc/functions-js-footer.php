@@ -21,16 +21,6 @@ function footer_scripts(){
 			imgToSvg();
 			initMap( 'map' );
 
-
-			var minW = 300; // minimum video width allowed
-			var vidWOrig;  // original video dimensions
-			var vidHOrig;
-			vidWOrig = parseInt( $('video.hero__video').innerWidth() );
-			vidHOrig = parseInt( $('video.hero__video').innerHeight() );
-
-			$(window).resize(function () { resizeToCover(minW, vidWOrig, vidHOrig); });
-			//$(window).trigger('resize');
-
 			/**
 			 * Triggered events
 			**/
