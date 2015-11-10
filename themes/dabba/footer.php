@@ -2,18 +2,20 @@
 		<footer class="[ bg-tertiary ][ color-light ][ padding--top--large padding--bottom--xxlarge ]">
 			<div class="[ container ]">
 				<div class="[ row ][ margin-bottom ][ text-center ]">
-					<section class="[ tarjetas ][ col-xs-12 col-sm-6 col-md-4 ][ margin-bottom--large ][ row ]">
-						<div class="[ col-xs-3 ]">
-							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="">
-						</div>
-						<div class="[ col-xs-3 ]">
-							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="">
-						</div>
-						<div class="[ col-xs-3 ]">
-							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/amex.svg" alt="">
-						</div>
-						<div class="[ col-xs-3 ]">
-							<img class="[ icon icon--feature ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="">
+					<section class="[ tarjetas ][ col-xs-12 col-sm-6 col-md-4 ][ margin-bottom--large ]">
+						<div class="[ row ]">
+							<div class="[ col-xs-3 ]">
+								<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="">
+							</div>
+							<div class="[ col-xs-3 ]">
+								<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="">
+							</div>
+							<div class="[ col-xs-3 ]">
+								<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/amex.svg" alt="">
+							</div>
+							<div class="[ col-xs-3 ]">
+								<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="">
+							</div>
 						</div>
 					</section>
 					<section class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
@@ -106,7 +108,7 @@
 						<h2>Comienza</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form id="form-zona" data-parsley-validate="">
-							<input class="[ form-control form-control-bg-primary ][ col-xs-12 ][ margin-bottom--small ]" type="email" data-parsley-type="email" name="email-comienza" placeholder="Correo electrónico" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
+							<input class="[ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ]" type="email" data-parsley-type="email" name="email-comienza" placeholder="Correo electrónico" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							<div class="[ select-style ][ form-control form-control-bg ][ margin-bottom--small ]">
 								<select class="[ form-control ]" name="select-zona" required="">
 									<option value="">Selecciona tu zona</option>

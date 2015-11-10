@@ -1069,6 +1069,10 @@ th {
 /*------------------------------------*\
     #SIZES
 \*------------------------------------*/
+.icon--responsive {
+  width: 100%;
+  height: auto;
+}
 .icon--iconed {
   width: 30px !important;
 }
