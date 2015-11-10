@@ -27,7 +27,6 @@ add_action('add_meta_boxes', function(){
 **/
 function add_metaboxes_products(){
 
-	add_meta_box( 'platillo_principal', 'Platillo principal', 'metabox_platillo_principal', 'product', 'advanced', 'high' );
 	add_meta_box( 'guarnicion_1', 'Guarnición 1', 'metabox_guarnicion_1', 'product', 'advanced', 'high' );
 	add_meta_box( 'guarnicion_2', 'Guarnición 2', 'metabox_guarnicion_2', 'product', 'advanced', 'high' );
 	add_meta_box( 'fecha_menu', 'Fecha de menú', 'metabox_fecha_menu', 'product', 'advanced', 'high' );
@@ -41,20 +40,6 @@ function add_metaboxes_products(){
 /*-----------------------------------------*\
 	CUSTOM METABOXES CALLBACK FUNCTIONS
 \*-----------------------------------------*/
-
-/**
-* Display metabox in page or post type
-* @param obj $post
-**/
-function metabox_platillo_principal( $post ){
-
-	$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
-
-	wp_nonce_field(__FILE__, '_platillo_principal_meta_nonce');
-
-	echo "<input type='text' class='[ widefat ]' name='_platillo_principal_meta' value='$platillo_principal'>";
-
-}// metabox_platillo_principal
 
 /**
 * Display metabox in page or post type
@@ -157,10 +142,6 @@ function metabox_informacion_nutrimental( $post ){
 	**/
 	function save_metaboxes_product( $post_id ){
 	
-		// Platillo principal
-		if ( isset($_POST['_platillo_principal_meta']) and check_admin_referer( __FILE__, '_platillo_principal_meta_nonce') ){
-			update_post_meta($post_id, '_platillo_principal_meta', $_POST['_platillo_principal_meta']);
-		}
 		// Guarnición 1
 		if ( isset($_POST['_guarnicion_1_meta']) and check_admin_referer( __FILE__, '_guarnicion_1_meta_nonce') ){
 			update_post_meta($post_id, '_guarnicion_1_meta', $_POST['_guarnicion_1_meta']);

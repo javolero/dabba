@@ -15,7 +15,6 @@
 		global $product;
 
 		$image 				= wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
-		$platillo_principal = get_post_meta($post->ID, '_platillo_principal_meta', true);
 		$guarnicion_1 		= get_post_meta($post->ID, '_guarnicion_1_meta', true);
 		$guarnicion_2 		= get_post_meta($post->ID, '_guarnicion_2_meta', true);
 		$classDisabled		= ( ! $product->is_in_stock() ) ? 'disabled' : '';
@@ -31,7 +30,7 @@
 			<div class="[ row ]">
 				<div class="[ col-xs-8 ]">
 					<h3 class="[ no-margin ]"><?php echo get_the_title() ?></h3>
-					<p class="[ no-margin ]"><?php echo $platillo_principal.', '.$guarnicion_1.' y '.$guarnicion_2 ?></p>
+					<p class="[ no-margin ]"><?php echo format_contenido_platillo( $guarnicion_1, $guarnicion_2 ) ?></p>
 				</div>
 				<div class="[ col-xs-4 ]">
 					<?php 
