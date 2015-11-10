@@ -2,6 +2,7 @@
   display: inline-block; vertical-align: middle;
   height: auto !important;
   margin-right: .2em; margin-left: .2em;
+  .transition;
 }
 
 
@@ -15,12 +16,31 @@
 .icon--iconed{
 	width: 30px !important;
 
-	//.icon-retina-2-width( 60px );
-	//.icon-retina-3-width( 90px );
+	@media (min-width: @screen-sm-min){
+		//width: 8em;
+	}
 }
-.icon--iconed--mini{ width: 20px !important; }
-.icon--iconed--micro{ width: 15px !important; }
-.icon--feature{ width: 70px !important; }
+.icon--iconed--mini{
+	width: 20px !important;
+
+	@media (min-width: @screen-sm-min){
+		//width: 8em;
+	}
+}
+.icon--iconed--micro{
+	width: 15px !important;
+
+	@media (min-width: @screen-sm-min){
+		//width: 8em;
+	}
+}
+.icon--feature{
+	width: 6em !important;
+
+	@media (min-width: @screen-sm-min){
+		width: 8em !important;
+	}
+}
 .icon--logo{
 	width: 150px; height: auto;
 }

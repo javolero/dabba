@@ -9,13 +9,19 @@
 			</div>
 			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-full ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/assets/home-intro.jpg">
 				<source src="<?php echo THEMEPATH; ?>videos/video.mp4" type="video/mp4">
+				<source src="<?php echo THEMEPATH; ?>videos/video.webm" type="video/webm">
+				<source src="<?php echo THEMEPATH; ?>videos/video.ogv" type="video/ogg">
 			</video>
 		</section>
 
 		<section class="[ descripcion ][ container ][ margin-bottom--large ]">
-			<h4 class="[ text-center ][ no-margin ]">Ingredientes frescos de temporada.</h4>
-			<h4 class="[ text-center ][ no-margin ]">Platillos innovadores.</h4>
-			<h4 class="[ text-center ][ no-margin ]">Donde estés.</h4>
+			<h4 class="[ text-center ][ no-margin ]">
+				Ingredientes frescos de temporada<br />
+				&mdash; <br />
+				Platillos innovadores <br />
+				&mdash; <br />
+				Donde estés
+			</h4>
 		</section>
 
 		<hr class="[ divider-primary ][ margin-bottom-large ]">

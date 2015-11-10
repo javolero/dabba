@@ -1061,6 +1061,10 @@ th {
   height: auto !important;
   margin-right: .2em;
   margin-left: .2em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 /*------------------------------------*\
     #SIZES
@@ -1075,7 +1079,12 @@ th {
   width: 15px !important;
 }
 .icon--feature {
-  width: 70px !important;
+  width: 6em !important;
+}
+@media (min-width: 768px) {
+  .icon--feature {
+    width: 8em !important;
+  }
 }
 .icon--logo {
   width: 150px;
