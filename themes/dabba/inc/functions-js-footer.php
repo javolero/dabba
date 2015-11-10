@@ -29,7 +29,7 @@ function footer_scripts(){
 			vidHOrig = parseInt( $('video.hero__video').innerHeight() );
 
 			$(window).resize(function () { resizeToCover(minW, vidWOrig, vidHOrig); });
-			$(window).trigger('resize');
+			//$(window).trigger('resize');
 
 			/**
 			 * Triggered events
@@ -44,9 +44,9 @@ function footer_scripts(){
 			$('.js-btn-siguiente').on('click', function(e) {
 				e.preventDefault();
 				$('#form-zona').parsley().validate();
-				
+
 				if ( true === $('#form-zona').parsley().isValid()) {
-					
+
 					$('#comienza').modal('toggle');
 					var email = $('input[name="email-comienza"]').val();
 					var zona = $('input[name="zona"]').val();

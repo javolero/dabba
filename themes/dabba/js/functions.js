@@ -5,7 +5,7 @@ var $=jQuery.noConflict();
 \*------------------------------------*/
 
 function resizeToCover( min_w, vid_w_orig, vid_h_orig ) {
-
+    console.log('0');
 	// use largest scale factor of horizontal/vertical
 	var scale_h = $('.hero').width() / vid_w_orig;
 	var scale_v = $('.hero').height() / vid_h_orig;
@@ -21,7 +21,7 @@ function resizeToCover( min_w, vid_w_orig, vid_h_orig ) {
 	// and center it by scrolling the video viewport
 	$('.hero').scrollLeft(($('.hero__video').width() - $('.hero').width()) / 2);
 	$('.hero').scrollTop(($('.hero__video').height() - $('.hero').height()) / 2);
-    
+
 };
 
 function imgToSvg(){

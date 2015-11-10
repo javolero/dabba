@@ -7,7 +7,7 @@
 			<div class="[ col-xs-12 ][ z-index-2 ][ center-full ]">
 				<p class="[ text-punchline text-center color-light text-uppercase ]">Comer, lo mejor de tu día.</p>
 			</div>
-			<video class="[ hero__video hero__video--home ][ center-full ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/assets/home-intro.jpg">
+			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-full ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/assets/home-intro.jpg">
 				<source src="http://ak4.picdn.net/shutterstock/videos/2404592/preview/stock-footage-chef-prepares-a-dish-in-a-restaurant-kitchen.mp4" type="video/mp4">
 			</video>
 		</section>
@@ -21,7 +21,6 @@
 		<hr class="[ divider-primary ][ margin-bottom-large ]">
 
 		<section class="[ container ][ como-funciona ][ text-center ][ margin-bottom--large ]">
-			<!-- <h2 class="[ text-bold ]">Déjanos llevarte la comida</h2> -->
 			<div class="[ row ]">
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/dining-set.svg">
@@ -111,7 +110,7 @@
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
 					<h3 class="[ no-margin ]">$120</h3>
-					<p class="[ text-light ][ no-margin ]">Precio de envío incluido.</p>
+					<p class="[ text-light ][ no-margin ]">Postre y precio de envío incluidos.</p>
 				</div>
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/compass.svg">
