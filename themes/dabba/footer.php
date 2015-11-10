@@ -109,8 +109,8 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
 						<form id="form-zona" data-parsley-validate="">
 							<input class="[ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ]" type="email" data-parsley-type="email" name="email-comienza" placeholder="Correo electrónico" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
-							<div class="[ select-style ][ form-control form-control-bg ][ margin-bottom--small ]">
-								<select class="[ form-control ]" name="select-zona" required="">
+							<div class="[ select-style ][ margin-bottom--small ]">
+								<select class="[ form-control form-control-bg ]" name="select-zona" required="">
 									<option value="">Selecciona tu zona</option>
 									<option value="polanco">Polanco</option>
 									<option value="ampliacion-granada">Ampliación Granada</option>
