@@ -109,7 +109,7 @@ function format_contenido_platillo( $guarnicion_1, $guarnicion_2 ){
 	 if( '' !== $guarnicion_1 && '' !== $guarnicion_2 )
 	 	$subtítulo_platillo .= $guarnicion_1 . ' y ' . $guarnicion_2;
 
-	 if( '' !== $guarnicion_1 && '' === $guarnicion_2 ) $subtítulo_platillo .= ' y ' . $guarnicion_1;
+	 if( '' !== $guarnicion_1 && '' === $guarnicion_2 ) $subtítulo_platillo .= $guarnicion_1;
 
 	 return $subtítulo_platillo;
 

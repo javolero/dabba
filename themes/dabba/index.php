@@ -8,7 +8,7 @@
 				<p class="[ text-punchline text-center color-light text-uppercase ]">Comer, lo mejor de tu día.</p>
 			</div>
 			<video class="[ hero__video hero__video--home ][ center-full ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/assets/home-intro.jpg">
-				<source src="http://ak4.picdn.net/shutterstock/videos/2404592/preview/stock-footage-chef-prepares-a-dish-in-a-restaurant-kitchen.mp4" type="video/mp4">
+				<source src="<?php echo THEMEPATH; ?>videos/video.mp4" type="video/mp4">
 			</video>
 		</section>
 
