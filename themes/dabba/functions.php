@@ -450,6 +450,18 @@ function wooc_save_extra_register_fields( $customer_id ) {
 }
 add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
 
+ /**
+ * Quitar el estado de la dirección
+ * @return string
+ */
+add_filter( 'woocommerce_checkout_fields' , 'remove_state_checkout_field' );
+function remove_state_checkout_field( $fields ) {
+
+     unset($fields['billing']['billing_state']);
+     return $fields;
+
+}// remove_state_checkout_field
+
 /**
  * Redireccionar usuarios al home despues de registrarse
  * @return string

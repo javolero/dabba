@@ -19,7 +19,7 @@ function footer_scripts(){
 			 * On load
 			**/
 			imgToSvg();
-			initMap( 'map' );
+			
 
 			/**
 			 * Triggered events
@@ -52,6 +52,12 @@ function footer_scripts(){
 
 			});
 
+			$('.js-registrate').on('click', function(){
+				$('#login').modal('toggle');
+				$('#comienza').modal('toggle');
+			});
+
+
 			$('.add_to_cart_button').on('click', function(){
 				toggleClass('.js-notification__number', 'added');
 			});
@@ -64,6 +70,8 @@ function footer_scripts(){
 				/**
 				 * On load
 				**/
+
+				initMap( 'map' );
 
 				<?php if ( ! is_user_logged_in() ) : ?>
 					var minW = 300; // minimum video width allowed

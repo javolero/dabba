@@ -22,8 +22,9 @@
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo site_url('nosotros'); ?>">Nosotros</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#contacto" data-toggle="modal">Contáctanos</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba para reuniones</a>
-						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Términos y condiciones</a>
-						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#">Aviso de privacidad</a>
+						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/terminos_y_condiciones_dabba.pdf" target="_blank">Términos y condiciones</a>
++						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/aviso_de_privacidad_dabba.pdf" target="_blank">Aviso de privacidad</a>
+ 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 					</section>
 					<section class="[ col-xs-12 col-md-2 ][ social ]">
@@ -46,9 +47,15 @@
 		<!-- =================================================
 		==== Action nav bar
 		================================================== -->
-		<a class="[ btn btn-primary btn--action btn--action--left ]" href="<?php echo site_url('my-account'); ?>">
-			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
-		</a>
+		<?php if ( ! is_user_logged_in() ) : ?>
+			<a class="[ btn btn-primary btn--action btn--action--left ]" href="#login" data-toggle="modal">
+				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
+			</a>
+		<?php else: ?>
+			<a class="[ btn btn-primary btn--action btn--action--left ]" href="<?php echo site_url('mi-cuenta'); ?>">
+				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
+			</a>
+		<?php endif; ?>
 		<?php if( is_single() || is_home() ) : ?>
 			<?php if ( ! is_user_logged_in() ) : ?>
 				<a class="[ btn btn-primary btn--action btn--action--center ][ padding--sides ]" href="#comienza" data-toggle="modal">
@@ -62,10 +69,12 @@
 				ver platillos
 			</a>
 		<?php endif; ?>
-		<a class="[ btn btn-primary btn--action btn--action--right ]" href="<?php echo site_url('checkout'); ?>">
-			<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
-			<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
-		</a>
+		<?php if ( is_user_logged_in() ) : ?>
+			<a class="[ btn btn-primary btn--action btn--action--right ]" href="<?php echo site_url('checkout'); ?>">
+				<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
+				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
+			</a>
+		<?php endif; ?>
 
 
 		<!-- =================================================
@@ -241,6 +250,59 @@
 						</form>
 					</div>
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
+				</div><!-- End of Modal-body-->
+				<div class="[ modal-footer ][ bg-primary ]">
+					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+					</a>
+				</div><!-- End of Modal-footer-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
+
+		<!-- Modal "login"
+		================================================== -->
+		<div id="login" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="Excelente" aria-hidden="true">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</div>
+				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
+					<h2>¡Hola!</h2>
+					<p>Puedes iniciar sesión con las siguientes redes sociales</p>
+					<div class="[ margin-bottom ]">
+						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
+					</div>
+					<p>O con tu correo</p>
+					<div class="[ container ]">
+
+						<form method="post" class="[ login ][ row ]">
+
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="username">Correo electrónico<span class="required">*</span></label>
+								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
+							</p>
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+								<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" />
+							</p>
+
+
+							<p class="form-row">
+								<?php wp_nonce_field( 'woocommerce-login' ); ?>
+								<input type="submit" class="button [ btn btn-sm btn-hollow btn-light ]" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
+								<label for="rememberme" class="[ inline ][ hidden ]">
+									<input name="rememberme" type="checkbox" id="rememberme" value="forever" checked="checked" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
+								</label>
+							</p>
+							<p class="[ lost_password ]">
+								<a class="[ color-light ]" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">¿Olvidaste tu contraseña?</a>
+							</p>
+
+							<p>¿Aún no eres parte de Dabba? <a class="[ color-light ][ js-registrate ]" href="#">Has click aquí para registrarte.</a></p>
+
+						</form>
+						
+					</div>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
 					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
