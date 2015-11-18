@@ -19,7 +19,7 @@ function footer_scripts(){
 			 * On load
 			**/
 			imgToSvg();
-			
+
 
 			/**
 			 * Triggered events
@@ -61,6 +61,8 @@ function footer_scripts(){
 			$('.add_to_cart_button').on('click', function(){
 				toggleClass('.js-notification__number', 'added');
 			});
+
+			$('#form-login').parsley();
 
 
 

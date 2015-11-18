@@ -2585,6 +2585,14 @@ table th[class*="col-"] {
     border-bottom: 0;
   }
 }
+/**
+ * Glow reset
+**/
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
 fieldset {
   padding: 0;
   margin: 0;
@@ -2656,10 +2664,8 @@ output {
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  outline: none;
 }
 .form-control::-moz-placeholder {
   color: #eeeeee;
@@ -3127,8 +3133,45 @@ select[multiple].input-lg {
   -moz-appearance: none;
   appearance: none;
 }
-.select-style select:focus {
-  outline: none;
+/**
+ * Parsely validation
+**/
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #ffffff;
+  border: 1px solid #673695;
+}
+.parsley-errors-list {
+  padding: 5px 10px 5px 10px;
+  margin: 0 0 6px;
+  list-style-type: none;
+  font-size: 90%;
+  background: #673695;
+  color: #ffffff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  text-align: center;
+  opacity: 0;
+  clear: both;
+  transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+}
+.parsley-errors-list.filled {
+  opacity: 1;
 }
 .btn {
   display: inline-block;
@@ -3771,12 +3814,24 @@ input[type="button"].btn-block {
   right: 10px;
 }
 .button-social-login-facebook {
-  background: #3b5998;
   color: #ffffff;
+  background: #3b5998;
+}
+.button-social-login-facebook:hover,
+.button-social-login-facebook:focus,
+.button-social-login-facebook.focus {
+  color: #ffffff;
+  background: #2d4373;
 }
 .button-social-login-google {
-  background: #ffffff;
   color: #e24b44;
+  background: #ffffff;
+}
+.button-social-login-google:hover,
+.button-social-login-google:focus,
+.button-social-login-google.focus {
+  color: #e24b44;
+  background: #e6e6e6;
 }
 .divider-primary {
   border-color: #f05475;
