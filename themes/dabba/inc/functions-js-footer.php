@@ -60,6 +60,7 @@ function footer_scripts(){
 
 			$('.add_to_cart_button').on('click', function(){
 				toggleClass('.js-notification__number', 'added');
+				$('.js-shopping-bag').tooltip('show');
 			});
 
 			$('#form-login').parsley();
