@@ -131,12 +131,14 @@ function get_dias_restantes_semana(){
 	$dias_extra = 1;
 	$dias_semana = array();
 
-	if( 5 == date( 'N' ) || 6 == date( 'N' ) || 7 == date( 'N' ) ) return get_dias_siguiente_semana();
+	if( 6 == date( 'N' ) || 7 == date( 'N' ) ) return get_dias_siguiente_semana();
 
 	for ( $numero_dia_hoy = date('N'); $numero_dia_hoy <= 5 ; $numero_dia_hoy++ ) {
 		array_push( $dias_semana, date( 'Y-m-d', strtotime( date( 'Y-m-d' ) . ' +' . $dias_extra . ' day' ) ) );
 		$dias_extra++;
 	}
+
+	if( 5 == date( 'N' ) ) return array_merge( $dias_semana, get_dias_siguiente_semana() );
 
 	return $dias_semana;
 
