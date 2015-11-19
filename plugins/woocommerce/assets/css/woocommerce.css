@@ -113,7 +113,7 @@ p.demo_store a {
     position: relative;
     background-color: #f7f6f7;
     color: #515151;
-    border-top: 3px solid #a46497;
+    /*border-top: 3px solid #a46497;*/
     list-style: none!important;
     width: auto;
     word-wrap: break-word

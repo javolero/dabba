@@ -114,12 +114,18 @@
 				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
 					<div class="[ margin-bottom--large ]">
 						<h2>Comienza</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odit temporibus consequuntur voluptates, repellendus cumque deleniti porro.</p>
+						<p class="[ margin-bottom--large ]">Ingresa tu siguiente información.</p>
 						<form id="form-zona" data-parsley-validate>
-							<input class="[ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ]" type="email" data-parsley-type="email" name="email-comienza" placeholder="Correo electrónico" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="username">Correo electrónico<span class="required">*</span></label>
+								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-comienza" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
+							</p>
 							<div class="[ select-style ][ margin-bottom--small ]">
+								<p class="[ no-padding ][ text-left ][ col-xs-12 ]">
+									<label for="username">Selecciona tu zona<span class="required">*</span></label>
+								</p>
 								<select class="[ form-control form-control-bg ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
-									<option value="">Selecciona tu zona</option>
+									<option value="">-</option>
 									<option value="polanco">Polanco</option>
 									<option value="ampliacion-granada">Ampliación Granada</option>
 									<option value="corporativos-palmas">Corporativos Palmas</option>
@@ -159,7 +165,10 @@
 						<form method="post" class="[ register ][ row ]" data-parsley-validate>
 							<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-							<input class="[ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ][ input-text ]" name="email" type="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="username">Correo electrónico<span class="required">*</span></label>
+								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+							</p>
 
 							<!-- <p class="form-row form-row-wide">
 								<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -191,7 +200,7 @@
 
 							<div class="[ clearfix ]"></div>
 							<div class="[ margin-bottom ]">&nbsp;</div>
-							<input type="submit" class="[ btn btn-sm btn-hollow btn-light ]" name="register" value="ver platillo de hoy" />
+							<input type="submit" class="[ button ][ btn btn-sm btn-hollow btn-light ]" name="register" value="ver platillo de hoy" />
 
 							<?php do_action( 'woocommerce_register_form_end' ); ?>
 
@@ -278,7 +287,7 @@
 
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="username">Correo electrónico<span class="required">*</span></label>
-								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>"  data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." />
+								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>"  data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." />
 							</p>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
