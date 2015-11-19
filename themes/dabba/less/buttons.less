@@ -228,11 +228,25 @@ input[type="button"] {
 // -------------------------
 
 .button-social-login-facebook{
-  background: @facebook;
   color: @light;
+  background: @facebook;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @light;
+    background: darken(@facebook, 10%);
+  }
 }
 
 .button-social-login-google{
-  background: @light;
   color: @google;
+  background: @light;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @google;
+    background: darken(@light, 10%);
+  }
 }

@@ -1,7 +1,4 @@
 <?php
-
-get_header();
-
 $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
 	'numberposts' => $order_count,
 	'meta_key'    => '_customer_user',
@@ -39,27 +36,29 @@ if ( $customer_orders ) :
 		ksort( $ordenes_programadas )
 ?>
 
-		<div class="[ container-fluid ]">
-			<div class="row">
+		<div class="[ margin-bottom--large ]">
+			<h3 class="[ no-margin ]">
+				Ordenes programadas
+			</h3>
+			<a class="" role="button" data-toggle="collapse" href="#ordenesProgramadas" aria-expanded="false" aria-controls="ordenesProgramadas">
+			  mostrar
+			</a>
 
-				<h2>Órdenes programadas</h2>
+			<div id="ordenesProgramadas" class="[ collapse ]">
 
-				<?php foreach ( $ordenes_programadas as $fecha => $platillo ) : ?>
-					<div class="[ col-xs-12 ]">
-						<img class="[ img-responsive ]" src="<?php echo $platillo['image_url'] ?>" alt="<?php echo $platillo['nombre'] ?>">
-					</div>
-					<div class="[ col-xs-12 ][ text-center ]">
-						<p class="[ bg-primary ][ padding ][ text-center ][ color-light ]"><?php echo get_fecha_es( $fecha ) ?></p>
-						<h3><?php echo $platillo['nombre'] ?></h3>
-						<p><?php echo $platillo['info_adicional'] ?></p>
-					</div>
-					<hr class="[ divider-primary ][ margin-bottom-large ]">
-				<?php endforeach; ?>
+				<div class="[ row ">
+					<?php foreach ( $ordenes_programadas as $fecha => $platillo ) : ?>
+						<div class="[ col-xs-12 ][ text-left ]">
+							<p class="[ bg-primary ][ no-margin ][ padding--small ][ color-light ]"><?php echo get_fecha_es( $fecha ) ?></p>
+							<h3 class="[ no-margin ]"><?php echo $platillo['nombre'] ?></h3>
+							<p><?php echo $platillo['info_adicional'] ?></p>
+						</div>
+					<?php endforeach; ?>
 
-			</div><!-- row -->
-		</div><!-- container-fluid -->
+				</div><!-- row -->
+			</div><!-- #ordenesProgramadas -->
+		</div>
 <?php
 	endif;
 endif;
-get_footer();
 ?>

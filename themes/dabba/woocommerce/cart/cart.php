@@ -15,7 +15,7 @@ wc_print_notices(); ?>
 
 	<h2 class="[ text-center ][ margin-top-bottom--large ]">Checkout</h2>
 
-	<div class="[ container ]">
+	<div class="[ container ][ shop_table cart ]">
 		<form class="[ margin-bottom--large ]" action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 
 			<?php do_action( 'woocommerce_before_cart_table' ); ?>
@@ -33,17 +33,14 @@ wc_print_notices(); ?>
 					?>
 					<section class="[ margin-bottom ] <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-						<div class="[ row ]">
+						<div class="[ row ][ hidden-xs ]">
 
 							<?php
 								//$thumbnail 	= apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 								$image 	= wp_get_attachment_image_src( get_post_thumbnail_id($product_id), 'shop_single' );
 
-								if ( ! $_product->is_visible() ) {
-									echo $thumbnail;
-								} else {
+								if ( $image ) {
 									echo "<a class='[ bg-image bg-image--3-1 ][ product-thumbnail ][ col-xs-12 ][ margin-bottom ]' href='$permalink' style='background-image: url($image[0])' ></a>";
-									//printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $thumbnail );
 								}
 							?>
 

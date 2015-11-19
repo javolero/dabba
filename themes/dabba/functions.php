@@ -386,17 +386,14 @@ function wc_sell_only_states( $states ) {
 function wooc_extra_register_fields() {
 	?>
 
-	<input class="[ col-xs-6 ][ form-control ][ margin-bottom--small ][ input-text ]" name="billing_first_name" type="text" id="reg_billing_first_name" placeholder="<?php _e( 'First name', 'woocommerce' ); ?>*" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" >
-	<input class="[ col-xs-6 ][ form-control ][ margin-bottom--small ][ input-text ]" name="billing_last_name" type="text" id="reg_billing_last_name" placeholder="<?php _e( 'Last name', 'woocommerce' ); ?>*" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" >
+	<!-- <p class="[ margin-bottom--small no-padding ][ text-left ][ col-xs-6 ]">
+		<label for="username">Nombre<span class="required">*</span></label>
+		<input class="[ form-control form-control-bg ]" name="billing_first_name" type="text" id="reg_billing_first_name" placeholder="<?php _e( 'First name', 'woocommerce' ); ?>*" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" required data-parsley-error-message="Por favor ingresa tu nombre.">
+	</p>
 
-	<!-- <p class="form-row form-row-first">
-	<label for="reg_billing_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
-	<input type="text" class="input-text" name="billing_first_name" id="reg_billing_first_name" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" />
-	</p> -->
-
-	<!-- <p class="form-row form-row-last">
-	<label for="reg_billing_last_name"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
-	<input type="text" class="input-text" name="billing_last_name" id="reg_billing_last_name" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" />
+	<p class="[ margin-bottom--small no-padding ][ text-left ][ col-xs-6 ]">
+		<label for="username">Apellido<span class="required">*</span></label>
+		<input class="[ form-control form-control-bg ]" name="billing_last_name" type="text" id="reg_billing_last_name" placeholder="<?php _e( 'Last name', 'woocommerce' ); ?>*" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" required data-parsley-error-message="Por favor ingresa tu apellido.">
 	</p> -->
 
 

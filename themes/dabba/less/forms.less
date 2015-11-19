@@ -2,6 +2,15 @@
 // Forms
 // --------------------------------------------------
 
+
+/**
+ * Glow reset
+**/
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
 fieldset {
   padding: 0;
   margin: 0;
@@ -12,17 +21,17 @@ fieldset {
   min-width: 0;
 }
 
-legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: @line-height-computed;
-  font-size: (@font-size-base * 1.5);
-  line-height: inherit;
-  color: @legend-color;
-  border: 0;
-  border-bottom: 1px solid @legend-border-color;
-}
+// legend {
+//   display: block;
+//   width: 100%;
+//   padding: 0;
+//   margin-bottom: @line-height-computed;
+//   font-size: (@font-size-base * 1.5);
+//   line-height: inherit;
+//   color: @legend-color;
+//   border: 0;
+//   border-bottom: 1px solid @legend-border-color;
+// }
 
 
 
@@ -104,6 +113,7 @@ output {
   display: block;
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: 0; border: none; border-bottom: 1px solid @primary;
+  font-weight: 300;
   line-height: @line-height-base;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
@@ -221,14 +231,14 @@ input[type="search"] {
     cursor: pointer;
   }
 }
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
-}
+// .radio input[type="radio"],
+// .radio-inline input[type="radio"],
+// .checkbox input[type="checkbox"],
+// .checkbox-inline input[type="checkbox"] {
+//   position: absolute;
+//   margin-left: -20px;
+//   margin-top: 4px \9;
+// }
 
 .radio + .radio,
 .checkbox + .checkbox {
@@ -618,6 +628,91 @@ input[type="checkbox"] {
           appearance: none;
 }
 
-.select-style select:focus {
-    outline: none;
+
+
+/**
+ * Parsely validation
+**/
+
+// input.parsley-success,
+// select.parsley-success,
+// textarea.parsley-success {
+//   padding: 0 5px; border: 1px solid @secondary;
+//   color: #52F66D;
+// }
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  padding: 0 5px; border: 1px solid @secondary;
+  color: @light;
+}
+
+.parsley-errors-list {
+  padding: 0; margin: 0;
+  list-style-type: none;
+  font-size: 90%;
+  background: @secondary;
+  color: @light;
+  .border-radius(8px);
+  text-align: center;
+  opacity: 0;
+  clear: both;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  padding: 5px 10px 5px 10px; margin: 0 0 6px;
+  opacity: 1;
+}
+
+/*------------------------------------*\
+    #Checkout & cart forms
+\*------------------------------------*/
+
+#billing_state_field,
+#billing_city_field,
+#billing_country_field{ display: none !important; }
+
+#billiing_timeframe_field{
+  margin: (@margin-base*2) 0;
+  text-align: center;
+  .clearfix;
+}
+
+#billiing_timeframe_field legend{
+  margin-bottom: (@margin-base/2);
+
+  font-family: @headings-font-family;
+  font-size: @font-size-h3;
+  font-weight: 600;
+  line-height: @headings-line-height;
+  color: @headings-color;
+}
+
+#billiing_timeframe_field label{
+  width: 33%;
+  padding: 3px; border-bottom: 1px solid @primary;
+  background: @gray-lighter;
+  float: left;
+}
+
+#billiing_timeframe_field label input{
+  display: block;
+  margin: 3px auto 5px;
+}
+
+
+/*------------------------------------*\
+    #Edit address
+\*------------------------------------*/
+.woocommerce-edit-address{
+
+  #billing_first_name_field,
+  #billing_last_name_field,
+  #billiing_timeframe_field{ display: none !important; }
 }

@@ -36,15 +36,15 @@
 
 <?php if ( $providers ) : ?>
 
-	<div class="wc-social-login form-row-wide">
+	<div class="[ wc-social-login form-row-wide ]">
 
-		<p><?php echo wp_kses_post( $login_text ); ?></p>
+		<!-- <p><?php echo wp_kses_post( $login_text ); ?></p> -->
 
 		<?php
 			$themepath= get_template_directory_uri();
 
 			foreach ( $providers as $provider ) :
-				printf( '<a href="%1$s" class="[ margin-sides--small ][ btn button-social-login-%2$s ]"><img class="[ svg ][ icon icon--iconed--mini icon--fill ][ no-margin ]" src="'.$themepath.'/icons/logo-%2$s.svg"> %3$s</a> ', esc_url( $provider->get_auth_url( $return_url ) ), esc_attr( $provider->get_id() ), esc_html( $provider->get_login_button_text() ) );
+				printf( '<a href="%1$s" class="[ margin-sides--small margin-bottom--small ][ btn button-social-login-%2$s ]"><img class="[ svg ][ icon icon--iconed--mini icon--fill ][ no-margin ]" src="'.$themepath.'/icons/logo-%2$s.svg"> %3$s</a> ', esc_url( $provider->get_auth_url( $return_url ) ), esc_attr( $provider->get_id() ), esc_html( $provider->get_login_button_text() ) );
 				//printf( '<a class="[ btn btn-info ][ margin-sides--small ]"> Facebook</a> ', esc_url( $provider->get_auth_url( $return_url ) ), esc_attr( $provider->get_id() ), esc_html( $provider->get_login_button_text() ) );
 			endforeach;
 		?>

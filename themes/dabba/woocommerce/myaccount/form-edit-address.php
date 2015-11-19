@@ -21,32 +21,36 @@ get_currentuserinfo();
 
 <?php wc_print_notices(); ?>
 
-<?php if ( ! $load_address ) : ?>
+<div class="[ container ]">
 
-	<?php wc_get_template( 'myaccount/my-address.php' ); ?>
+	<?php if ( ! $load_address ) : ?>
 
-<?php else : ?>
+		<?php wc_get_template( 'myaccount/my-address.php' ); ?>
 
-	<form method="post">
+	<?php else : ?>
 
-		<h3><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h3>
+		<form method="post">
 
-		<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>
+			<h3 class="[ text-center ][ margin-top ]"><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h3>
 
-		<?php foreach ( $address as $key => $field ) : ?>
+			<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>
 
-			<?php woocommerce_form_field( $key, $field, ! empty( $_POST[ $key ] ) ? wc_clean( $_POST[ $key ] ) : $field['value'] ); ?>
+			<?php foreach ( $address as $key => $field ) : ?>
 
-		<?php endforeach; ?>
+				<?php woocommerce_form_field( $key, $field, ! empty( $_POST[ $key ] ) ? wc_clean( $_POST[ $key ] ) : $field['value'] ); ?>
 
-		<?php do_action( "woocommerce_after_edit_address_form_{$load_address}" ); ?>
+			<?php endforeach; ?>
 
-		<p>
-			<input type="submit" class="button" name="save_address" value="<?php esc_attr_e( 'Save Address', 'woocommerce' ); ?>" />
-			<?php wp_nonce_field( 'woocommerce-edit_address' ); ?>
-			<input type="hidden" name="action" value="edit_address" />
-		</p>
+			<?php do_action( "woocommerce_after_edit_address_form_{$load_address}" ); ?>
 
-	</form>
+			<p class="[ text-center ]">
+				<input type="submit" class="[ button ][ btn btn-sm btn-hollow btn-primary ]" name="save_address" value="<?php esc_attr_e( 'Save Address', 'woocommerce' ); ?>" />
+				<?php wp_nonce_field( 'woocommerce-edit_address' ); ?>
+				<input type="hidden" name="action" value="edit_address" />
+			</p>
 
-<?php endif; ?>
+		</form>
+
+	<?php endif; ?>
+
+</div>
