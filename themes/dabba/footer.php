@@ -291,7 +291,7 @@
 							</p>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-								<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password"  data-parsley-type="email" required data-parsley-error-message="Por favor ingresa tu contraseña." />
+								<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password"  data-parsley-type="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
 							</p>
 
 							<p class="[ form-row ]">
