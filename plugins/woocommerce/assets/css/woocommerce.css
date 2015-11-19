@@ -692,11 +692,11 @@ p.demo_store a {
 .woocommerce .cart input.button {
     float: none
 }
-.woocommerce a.added_to_cart {
+/*.woocommerce a.added_to_cart {
     padding-top: .5em;
     white-space: nowrap;
     display: inline-block
-}
+}*/
 .woocommerce #reviews #comments .add_review:after,
 .woocommerce #reviews #comments .add_review:before,
 .woocommerce #reviews #comments ol.commentlist li .comment-text:after,
