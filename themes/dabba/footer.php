@@ -23,9 +23,8 @@
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#contacto" data-toggle="modal">Contáctanos</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba para reuniones</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/terminos_y_condiciones_dabba.pdf" target="_blank">Términos y condiciones</a>
-+						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/aviso_de_privacidad_dabba.pdf" target="_blank">Aviso de privacidad</a>
+						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/aviso_de_privacidad_dabba.pdf" target="_blank">Aviso de privacidad</a>
  						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
-						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 					</section>
 					<section class="[ col-xs-12 col-md-2 ][ social ]">
 						<!-- <a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">

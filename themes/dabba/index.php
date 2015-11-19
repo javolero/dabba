@@ -31,7 +31,7 @@
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/dining-set.svg">
 					<h3 class="[ no-margin ]">Checa nuestros platillos</h3>
-					<p class="[ text-gray-light ][ padding-left-right ]">Estamos preparando algo delicioso para ti.</p>
+					<p class="[ text-gray-light ][ padding-left-right ]">Un menú diferente todos los días.</p>
 				</div>
 				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/tap-hold.svg">
