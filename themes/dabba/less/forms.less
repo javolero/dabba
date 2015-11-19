@@ -674,8 +674,9 @@ textarea.parsley-error {
     #Checkout & cart forms
 \*------------------------------------*/
 
+#billing_state_field,
 #billing_city_field,
-#billing_country_field{ display: none; }
+#billing_country_field{ display: none !important; }
 
 #billiing_timeframe_field{
   margin: (@margin-base*2) 0;
@@ -703,4 +704,15 @@ textarea.parsley-error {
 #billiing_timeframe_field label input{
   display: block;
   margin: 3px auto 5px;
+}
+
+
+/*------------------------------------*\
+    #Edit address
+\*------------------------------------*/
+.woocommerce-edit-address{
+
+  #billing_first_name_field,
+  #billing_last_name_field,
+  #billiing_timeframe_field{ display: none !important; }
 }

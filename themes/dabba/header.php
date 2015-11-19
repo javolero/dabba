@@ -57,4 +57,4 @@
 		</a>
 	</header>
 
-	<body>
+	<body <?php body_class(); ?>>

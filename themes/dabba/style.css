@@ -3162,9 +3162,10 @@ textarea.parsley-error {
 /*------------------------------------*\
     #Checkout & cart forms
 \*------------------------------------*/
+#billing_state_field,
 #billing_city_field,
 #billing_country_field {
-  display: none;
+  display: none !important;
 }
 #billiing_timeframe_field {
   margin: 40px 0;
@@ -3204,6 +3205,14 @@ textarea.parsley-error {
 #billiing_timeframe_field label input {
   display: block;
   margin: 3px auto 5px;
+}
+/*------------------------------------*\
+    #Edit address
+\*------------------------------------*/
+.woocommerce-edit-address #billing_first_name_field,
+.woocommerce-edit-address #billing_last_name_field,
+.woocommerce-edit-address #billiing_timeframe_field {
+  display: none !important;
 }
 .btn {
   display: inline-block;
