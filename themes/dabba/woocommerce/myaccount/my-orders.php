@@ -100,6 +100,4 @@ if ( $customer_orders ) : ?>
 
 	</table>
 
-	<hr class="[ divider-primary ][ margin-bottom-large ]">
-
 <?php endif; ?>

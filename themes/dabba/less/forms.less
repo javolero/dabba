@@ -21,17 +21,17 @@ fieldset {
   min-width: 0;
 }
 
-legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: @line-height-computed;
-  font-size: (@font-size-base * 1.5);
-  line-height: inherit;
-  color: @legend-color;
-  border: 0;
-  border-bottom: 1px solid @legend-border-color;
-}
+// legend {
+//   display: block;
+//   width: 100%;
+//   padding: 0;
+//   margin-bottom: @line-height-computed;
+//   font-size: (@font-size-base * 1.5);
+//   line-height: inherit;
+//   color: @legend-color;
+//   border: 0;
+//   border-bottom: 1px solid @legend-border-color;
+// }
 
 
 
@@ -231,14 +231,14 @@ input[type="search"] {
     cursor: pointer;
   }
 }
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
-}
+// .radio input[type="radio"],
+// .radio-inline input[type="radio"],
+// .checkbox input[type="checkbox"],
+// .checkbox-inline input[type="checkbox"] {
+//   position: absolute;
+//   margin-left: -20px;
+//   margin-top: 4px \9;
+// }
 
 .radio + .radio,
 .checkbox + .checkbox {
@@ -668,4 +668,39 @@ textarea.parsley-error {
 .parsley-errors-list.filled {
   padding: 5px 10px 5px 10px; margin: 0 0 6px;
   opacity: 1;
+}
+
+/*------------------------------------*\
+    #Checkout & cart forms
+\*------------------------------------*/
+
+#billing_city_field,
+#billing_country_field{ display: none; }
+
+#billiing_timeframe_field{
+  margin: (@margin-base*2) 0;
+  text-align: center;
+  .clearfix;
+}
+
+#billiing_timeframe_field legend{
+  margin-bottom: (@margin-base/2);
+
+  font-family: @headings-font-family;
+  font-size: @font-size-h3;
+  font-weight: 600;
+  line-height: @headings-line-height;
+  color: @headings-color;
+}
+
+#billiing_timeframe_field label{
+  width: 33%;
+  padding: 3px; border-bottom: 1px solid @primary;
+  background: @gray-lighter;
+  float: left;
+}
+
+#billiing_timeframe_field label input{
+  display: block;
+  margin: 3px auto 5px;
 }

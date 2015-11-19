@@ -31,17 +31,16 @@ $col = 1;
 
 <h3><?php echo $page_title; ?></h3>
 
-<p class="myaccount_address">
+<!-- <p class="myaccount_address">
 	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', __( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); ?>
-</p>
+</p> -->
 
 <?php if ( ! wc_ship_to_billing_address_only() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) echo '<div class="col2-set addresses">'; ?>
 
 <?php foreach ( $get_addresses as $name => $title ) : ?>
 
-	<div class="col-<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> address">
-		<h4><?php echo $title; ?></h4>
-		<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="[ edit ][ color-primary ]"><?php _e( 'Edit', 'woocommerce' ); ?></a>
+	<div class="col-<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> address [ margin-bottom--large ]">
+		<!-- <h4><?php echo $title; ?></h4> -->
 		<address>
 			<?php
 				$address = apply_filters( 'woocommerce_my_account_my_address_formatted_address', array(
@@ -64,6 +63,9 @@ $col = 1;
 					echo $formatted_address;
 			?>
 		</address>
+
+		<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="[ edit ][ btn btn-primary btn-hollow btn-sm ][ color-primary ]"><?php _e( 'Edit', 'woocommerce' ); ?></a>
+
 	</div>
 
 <?php endforeach; ?>
