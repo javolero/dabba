@@ -7,7 +7,7 @@
 			<div class="[ col-xs-12 ][ z-index-2 ][ center-full ]">
 				<p class="[ text-punchline text-center color-light text-uppercase ]">Comer, lo mejor de tu día.</p>
 			</div>
-			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-full ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/assets/home-intro.jpg">
+			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-full ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/home-intro--md.jpg">
 				<source src="<?php echo THEMEPATH; ?>videos/video.mp4" type="video/mp4">
 				<source src="<?php echo THEMEPATH; ?>videos/video.webm" type="video/webm">
 				<source src="<?php echo THEMEPATH; ?>videos/video.ogv" type="video/ogg">
