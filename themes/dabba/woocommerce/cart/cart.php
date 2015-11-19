@@ -15,7 +15,7 @@ wc_print_notices(); ?>
 
 	<h2 class="[ text-center ][ margin-top-bottom--large ]">Checkout</h2>
 
-	<div class="[ container ]">
+	<div class="[ container ][ shop_table cart ]">
 		<form class="[ margin-bottom--large ]" action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 
 			<?php do_action( 'woocommerce_before_cart_table' ); ?>

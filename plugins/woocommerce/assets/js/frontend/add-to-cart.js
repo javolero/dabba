@@ -12,6 +12,8 @@ jQuery( function( $ ) {
 		// AJAX add to cart request
 		var $thisbutton = $( this );
 
+		console.log('add-to-cart.js');
+
 		if ( $thisbutton.is( '.product_type_simple' ) ) {
 
 			if ( ! $thisbutton.attr( 'data-product_id' ) ) {
