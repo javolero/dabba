@@ -113,6 +113,7 @@ output {
   display: block;
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: 0; border: none; border-bottom: 1px solid @primary;
+  font-weight: 300;
   line-height: @line-height-base;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
@@ -633,23 +634,22 @@ input[type="checkbox"] {
  * Parsely validation
 **/
 
-input.parsley-success,
-select.parsley-success,
-textarea.parsley-success {
-  color: #468847;
-  background-color: #DFF0D8;
-  border: 1px solid #D6E9C6;
-}
+// input.parsley-success,
+// select.parsley-success,
+// textarea.parsley-success {
+//   padding: 0 5px; border: 1px solid @secondary;
+//   color: #52F66D;
+// }
 
 input.parsley-error,
 select.parsley-error,
 textarea.parsley-error {
+  padding: 0 5px; border: 1px solid @secondary;
   color: @light;
-  border: 1px solid @secondary;
 }
 
 .parsley-errors-list {
-  padding: 5px 10px 5px 10px; margin: 0 0 6px;
+  padding: 0; margin: 0;
   list-style-type: none;
   font-size: 90%;
   background: @secondary;
@@ -666,5 +666,6 @@ textarea.parsley-error {
 }
 
 .parsley-errors-list.filled {
+  padding: 5px 10px 5px 10px; margin: 0 0 6px;
   opacity: 1;
 }
