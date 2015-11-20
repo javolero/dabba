@@ -42,6 +42,18 @@
 			<script src="js/respond.min.js"></script>
 		<![endif]-->
 
+		<!-- Hotjar Tracking Code for dabba.mx -->
+		<script>
+		   (function(h,o,t,j,a,r){
+		       h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		       h._hjSettings={hjid:101882,hjsv:5};
+		       a=o.getElementsByTagName('head')[0];
+		       r=o.createElement('script');r.async=1;
+		       r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		       a.appendChild(r);
+		   })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+
 		<!-- Google Maps -->
 		<script src="http://maps.googleapis.com/maps/api/js?language=es&libraries=places&key=AIzaSyAjE9TVybKKQNNOa1g760xJ4y6b5YaZmq4"></script>
 
@@ -49,9 +61,33 @@
 	</head>
 
 	<header class="[ bg-primary ][ text-center ][ padding ]">
-		<a class="[ show ]" href="<?php echo site_url() ?>">
-			<img class="[ svg ][ icon icon--logo icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
-		</a>
+		<div class="[ container ]">
+			<div class="[ col-sm-4 ][ hidden-xs ][ text-left ]">
+				<?php if ( ! is_user_logged_in() ) : ?>
+					<a class="[ show ]" href="#login" data-toggle="modal">
+						<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
+					</a>
+				<?php else: ?>
+					<a class="[ show ]" href="<?php echo site_url('mi-cuenta'); ?>">
+						<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
+					</a>
+				<?php endif; ?>
+			</div>
+			<div class="[ col-xs-12 col-sm-4 ]">
+				<a class="[ show ]" href="<?php echo site_url() ?>">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</a>
+			</div>
+			<?php if ( is_user_logged_in() ) : ?>
+				<div class="[ col-sm-4 ][ hidden-xs ][ text-right ]">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ js-shopping-bag ]" href="<?php echo site_url('checkout'); ?>" data-toggle="tooltip" title="se ha agregado un platillo al carrito">
+						<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
+					</a>
+				</div>
+		<?php endif; ?>
+
+		</div>
 	</header>
 
 	<body <?php body_class(); ?>>

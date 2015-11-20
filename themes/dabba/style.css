@@ -6305,9 +6305,45 @@ button.close {
   width: 100%;
   padding-bottom: 50%;
 }
+@media (min-width: 768px) {
+  .bg-image--16-9--sm {
+    width: 100%;
+    padding-bottom: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .bg-image--16-9--md {
+    width: 100%;
+    padding-bottom: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .bg-image--16-9--lg {
+    width: 100%;
+    padding-bottom: 50%;
+  }
+}
 .bg-image--3-1 {
   width: 100%;
   padding-bottom: 30%;
+}
+@media (min-width: 768px) {
+  .bg-image--3-1--sm {
+    width: 100%;
+    padding-bottom: 30%;
+  }
+}
+@media (min-width: 992px) {
+  .bg-image--3-1--md {
+    width: 100%;
+    padding-bottom: 30%;
+  }
+}
+@media (min-width: 1200px) {
+  .bg-image--3-1--lg {
+    width: 100%;
+    padding-bottom: 30%;
+  }
 }
 .modal-open {
   overflow: hidden;

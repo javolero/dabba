@@ -24,7 +24,7 @@
 		<section id="<?php echo $post->ID ?>" class="[ platillo-hoy ][ <?php echo $classDisabled ?> ]">
 			<div class="[ row ][ margin-bottom ]">
 				<div class="[ col-xs-12 col-centered ]">
-					<a class="[ bg-image bg-image--16-9 ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
+					<a class="[ bg-image bg-image--16-9 bg-image--3-1--sm ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
 				</div>
 			</div>
 			<div class="[ row ]">
@@ -33,12 +33,12 @@
 					<p class="[ no-margin ]"><?php echo format_contenido_platillo( $guarnicion_1, $guarnicion_2 ) ?></p>
 				</div>
 				<div class="[ col-xs-4 ]">
-					<?php 
+					<?php
 					if ( ! $product->is_in_stock() ) :
 						echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ][ pull-right ]">agotado</a>';
-					else: 
+					else:
 						echo woocommerce_template_loop_add_to_cart();
-					endif; 
+					endif;
 					?>
 				</div>
 			</div>

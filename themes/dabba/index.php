@@ -28,17 +28,17 @@
 
 		<section class="[ container ][ como-funciona ][ text-center ][ margin-bottom--large ]">
 			<div class="[ row ]">
-				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/dining-set.svg">
 					<h3 class="[ no-margin ]">Checa nuestros platillos</h3>
 					<p class="[ text-gray-light ][ padding-left-right ]">Un menú diferente todos los días.</p>
 				</div>
-				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/tap-hold.svg">
 					<h3 class="[ no-margin ]">Ordena y escoge tu horario</h3>
 					<p class="[ text-gray-light ][ padding-left-right ]">Nuestros platillos vuelan, no te los pierdas.</p>
 				</div>
-				<div class="[ col-xs-12 col-md-4 ]">
+				<div class="[ col-xs-12 col-sm-4 ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-dark ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/vespa.svg">
 					<h3 class="[ no-margin ]">Disfruta de lo mejor de tu día</h3>
 					<p class="[ text-gray-light ][ padding-left-right ][ no-margin ]">Relájate, puedes estar tranquilo de que tu comida llegará a tiempo.</p>
@@ -107,18 +107,18 @@
 		<div class="[ container ][ text-center color-light ][ padding--top--xlarge ]">
 			<h2>Detalles</h2>
 			<div class="[ row ]">
-				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
 					<h3 class="[ no-margin ]">Horario de entrega</h3>
 					<p class="[ text-light ][ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
 					<p class="[ text-light ][ text-uppercase ]">1pm - 4pm</p>
 				</div>
-				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
 					<h3 class="[ no-margin ]">$99 - $119</h3>
 					<p class="[ text-light ][ no-margin ]">Postre y precio de envío incluidos.</p>
 				</div>
-				<div class="[ col-xs-12 col-md-4 ][ margin-bottom ]">
+				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
 					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/compass.svg">
 					<h3 class="[ no-margin ]">Área de entrega</h3>
 				</div>
@@ -132,7 +132,7 @@
 		<div class="[ container ][ padding-top-bottom--large ]">
 			<div class="[ col-xs-12 ][ text-center color-light ]">
 				<p>¿No entregamos en tu zona?</p>
-				<p>Déjanos tu correo y tu colonia, cuando estemos por allá te regalaremos una comida, ¿qué dices?</p>
+				<p>Déjanos tu correo y tu zona, cuando estemos por allá te regalaremos una comida, ¿qué dices?</p>
 				<a class="[ btn btn-light btn-hollow ]" href="#comida-gratis" data-toggle="modal">ok</a>
 			</div><!-- row -->
 		</div><!-- container -->

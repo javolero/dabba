@@ -47,11 +47,11 @@
 		==== Action nav bar
 		================================================== -->
 		<?php if ( ! is_user_logged_in() ) : ?>
-			<a class="[ btn btn-primary btn--action btn--action--left ]" href="#login" data-toggle="modal">
+			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#login" data-toggle="modal">
 				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 			</a>
 		<?php else: ?>
-			<a class="[ btn btn-primary btn--action btn--action--left ]" href="<?php echo site_url('mi-cuenta'); ?>">
+			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="<?php echo site_url('mi-cuenta'); ?>">
 				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 			</a>
 		<?php endif; ?>
@@ -64,12 +64,12 @@
 				<?php echo get_todays_add_to_cart_btn(); ?>
 			<?php endif; ?>
 		<?php elseif( ! is_page( 'checkout' ) ) : ?>
-			<a class="[ btn btn-primary btn--action btn--action--center ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal">
+			<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal">
 				ver platillos
 			</a>
 		<?php endif; ?>
 		<?php if ( is_user_logged_in() ) : ?>
-			<a class="[ btn btn-primary btn--action btn--action--right ][ js-shopping-bag ]" href="<?php echo site_url('checkout'); ?>" data-toggle="tooltip" title="se ha agregado un platillo al carrito">
+			<a class="[ btn btn-primary btn--action btn--action--right ][ js-shopping-bag ][ visible-xs-block ]" href="<?php echo site_url('checkout'); ?>" data-toggle="tooltip" title="se ha agregado un platillo al carrito">
 				<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
 				<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 			</a>
@@ -133,7 +133,7 @@
 									<option value="other">Otra</option>
 								</select>
 							</div>
-							<input class="[ toggable hidden ][ form-control ][ margin-bottom--small ][ js-zona ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio.">
+							<input class="[ toggable hidden ][ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ][ js-zona ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio.">
 						</form>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
