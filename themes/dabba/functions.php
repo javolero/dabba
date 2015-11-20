@@ -292,6 +292,30 @@ function get_todays_add_to_cart_btn(){
 
 }// get_todays_add_to_cart_btn
 
+/**
+ * Regresa el nombre del usuario actual.
+ * @return $first_name
+ */
+function get_first_name(){
+
+	$user = wp_get_current_user();
+	return $user->user_firstname;
+
+}// get_first_name
+
+/**
+ * Regresa el apellido(s) del usuario actual.
+ * @return $lastname
+ */
+function get_last_name(){
+
+	$user = wp_get_current_user();
+	return $user->user_lastname;
+
+}// get_lastname
+
+
+
 /*------------------------------------*\
 	#AJAX FUNCTIONS
 \*------------------------------------*/
@@ -497,3 +521,41 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 
 }// woocommerce_header_add_to_cart_fragment
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+/**
+ * Crea un cupón único para la persona que se registró.
+ * @return $coupon_code
+ */
+function create_coupon(){
+
+	$date = new DateTime();
+	$coupon_code = 'FREEDABBA-' . $date->getTimestamp(); // Code
+	$amount = '120'; // Amount
+	$discount_type = 'fixed_cart'; // Type: fixed_cart, percent, fixed_product, percent_product
+						
+	$coupon = array(
+		'post_title' => $coupon_code,
+		'post_content' => '',
+		'post_status' => 'publish',
+		'post_author' => 1,
+		'post_type'		=> 'shop_coupon'
+	);
+	$new_coupon_id = wp_insert_post( $coupon );		
+	// Add meta
+	update_post_meta( $new_coupon_id, 'discount_type', $discount_type );
+	update_post_meta( $new_coupon_id, 'coupon_amount', $amount );
+	update_post_meta( $new_coupon_id, 'individual_use', 'yes' );
+	update_post_meta( $new_coupon_id, 'product_ids', '' );
+	update_post_meta( $new_coupon_id, 'exclude_product_ids', '' );
+	update_post_meta( $new_coupon_id, 'usage_limit', '2' );
+	update_post_meta( $new_coupon_id, 'expiry_date', '' );
+	update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
+	update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+
+	return $coupon_code;
+
+}// create_coupon
+
+
+
+add_action('woocommerce_applied_coupon', 'redirect_to_checkout' );
