@@ -237,10 +237,10 @@ p.demo_store a {
 .woocommerce div.product .woocommerce-product-rating {
     margin-bottom: 1.618em
 }
-.woocommerce div.product div.images,
+/*.woocommerce div.product div.images,
 .woocommerce div.product div.summary {
     margin-bottom: 2em
-}
+}*/
 .woocommerce div.product div.images img {
     display: block;
     width: 100%;
