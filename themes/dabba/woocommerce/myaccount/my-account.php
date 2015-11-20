@@ -19,8 +19,8 @@ wc_print_notices(); ?>
 
 	<section class="[ margin-bottom--large ]">
 		<h3 class="[ text-left ][ margin-bottom ]">Información personal</h3>
-		<p>Nombre: <strong>Micho</strong></p>
-		<p>Apellido: <strong>Chompers</strong></p>
+		<p>Nombre: <strong><?php echo get_first_name() ?></strong></p>
+		<p>Apellido: <strong><?php echo get_last_name() ?></strong></p>
 
 		<div class="[ text-left ][ margin-top ]">
 			<?php
