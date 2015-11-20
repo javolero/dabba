@@ -1,8 +1,8 @@
 
 		<footer class="[ bg-tertiary ][ color-light ][ padding--top--large padding--bottom--xxlarge ]">
 			<div class="[ container ]">
-				<div class="[ row ][ margin-bottom ][ text-center ]">
-					<section class="[ tarjetas ][ col-xs-12 col-sm-6 col-md-4 ][ margin-bottom--large ]">
+				<div class="[ row ][ margin-bottom ]">
+					<section class="[ footer__payment ][ margin-bottom ]">
 						<div class="[ row ]">
 							<div class="[ col-xs-3 ]">
 								<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="">
@@ -18,7 +18,7 @@
 							</div>
 						</div>
 					</section>
-					<section class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
+					<section class="[ footer__links ][ margin-bottom ]">
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo site_url('nosotros'); ?>">Nosotros</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#contacto" data-toggle="modal">Contáctanos</a>
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba para reuniones</a>
@@ -26,15 +26,15 @@
 						<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/aviso_de_privacidad_dabba.pdf" target="_blank">Aviso de privacidad</a>
  						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
 					</section>
-					<section class="[ col-xs-12 col-md-2 ][ social ]">
-						<!-- <a class="[ margin-sides--small ]" href="<?php echo 'https://twitter.com/' ?>">
-							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
-						</a> -->
-						<a class="[ margin-sides--small ]" href="https://www.facebook.com/dabbamx/" target="_blank">
-							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
+					<section class="[ footer__social-media ][ social ]">
+						<a class="[ margin-sides--xsmall ][ inline-block ]" href="<?php echo 'https://twitter.com/' ?>">
+							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
 						</a>
-						<a class="[ margin-sides--small ]" href="https://instagram.com/dabbamx/" target="_blank">
-							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ margin-sides--small ]" src="<?php echo THEMEPATH; ?>icons/logo-instagram.svg">
+						<a class="[ margin-sides--xsmall ][ inline-block ]" href="https://www.facebook.com/dabbamx/" target="_blank">
+							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
+						</a>
+						<a class="[ margin-sides--xsmall ][ inline-block ]" href="https://instagram.com/dabbamx/" target="_blank">
+							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-instagram.svg">
 						</a>
 					</section>
 				</div>

@@ -7123,6 +7123,10 @@ button.close {
   margin-left: 20px;
   margin-right: 20px;
 }
+.margin-sides--xsmall {
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .margin-sides--small {
   margin-left: 10px;
   margin-right: 10px;
@@ -7481,6 +7485,68 @@ header {
 @media (min-width: 1200px) {
   .hero__video--home {
     display: block;
+  }
+}
+.footer__payment,
+.footer__links,
+.footer__social-media {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer__payment,
+  .footer__links,
+  .footer__social-media {
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .footer__payment,
+  .footer__links,
+  .footer__social-media {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 480px) {
+  .footer__payment {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .footer__payment {
+    width: 33%;
+  }
+}
+@media (min-width: 768px) {
+  .footer__links {
+    width: 50%;
+    text-align: left;
+  }
+  .footer__links a,
+  .footer__links p {
+    margin-left: 0;
+  }
+  .footer__links p {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .footer__links {
+    width: 49%;
+  }
+}
+@media (min-width: 768px) {
+  .footer__social-media {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .footer__social-media {
+    width: 18%;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
