@@ -222,6 +222,23 @@ input[type="button"] {
 }
 .btn--action--right{ right: 10px; }
 
+// Action bar
+// -------------------------
+
+
+.bar-action--sm{
+  @media (min-width: @screen-sm-min) {
+    width: 100%;
+    .border-radius(0);
+    bottom: 0;
+
+    &:hover{
+      height: 55px;
+    }
+  }
+}
+
+
 
 
 // Social login buttons

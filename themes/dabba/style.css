@@ -3854,6 +3854,21 @@ input[type="button"].btn-block {
 .btn--action--right {
   right: 10px;
 }
+@media (min-width: 768px) {
+  .bar-action--sm {
+    width: 100%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    bottom: 0;
+  }
+  .bar-action--sm:hover {
+    height: 55px;
+  }
+}
 .button-social-login-facebook {
   color: #ffffff;
   background: #3b5998;

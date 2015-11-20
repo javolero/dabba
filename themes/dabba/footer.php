@@ -57,7 +57,7 @@
 		<?php endif; ?>
 		<?php if( is_single() || is_home() ) : ?>
 			<?php if ( ! is_user_logged_in() ) : ?>
-				<a class="[ btn btn-primary btn--action btn--action--center ][ padding--sides ]" href="#comienza" data-toggle="modal">
+				<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#comienza" data-toggle="modal">
 					ordena ahora
 				</a>
 			<?php else: ?>
