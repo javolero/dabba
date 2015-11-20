@@ -3,6 +3,15 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .btn-default,
 .btn-primary,
 .btn-success,

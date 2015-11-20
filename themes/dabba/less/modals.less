@@ -22,6 +22,7 @@
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   z-index: @zindex-modal;
+  .transition;
 
   // Prevent Chrome on Windows from adding a focus outline. For details, see
   // https://github.com/twbs/bootstrap/pull/10951.
@@ -33,6 +34,12 @@
     .transition-transform(~"0.3s ease-out");
   }
   &.in .modal-dialog { .translate(0, 0) }
+
+  @media (min-width: @screen-md-min){
+    width: 320px; height: 480px;
+    .center-full;
+  }
+
 }
 .modal-open .modal {
   overflow-x: hidden; overflow-y: auto;
@@ -67,6 +74,12 @@
 .modal-header {
   height: 60px;
   padding: @modal-title-padding;
+  .transition;
+
+  @media (min-width: @screen-md-min){
+    height: 0;
+    padding: 0 !important;
+  }
 }
 // Close icon
 .modal-header .close { margin-top: -2px; }
@@ -84,6 +97,11 @@
   padding: @modal-inner-padding;
   position: relative;
   overflow-y: scroll;
+
+  @media (min-width: @screen-md-min){
+    height: auto; min-height: 480px;
+  }
+
 }
 
 // Footer (for actions)

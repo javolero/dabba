@@ -156,7 +156,7 @@
 				</div>
 				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
 					<h2>¡Excelente! :)</h2>
-					<p>Sí entregamos en tu zona, danos tus datos para continuar con el registro.</p>
+					<p>Ingresa tu password para que puedas darte de alta y veas el menu de hoy.</p>
 					<div class="[ margin-bottom ]">
 						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
 					</div>

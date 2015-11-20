@@ -3,6 +3,15 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  padding-left: 15px;
+  padding-right: 15px;
+}
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -3839,6 +3848,7 @@ input[type="button"].btn-block {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   position: fixed;
   bottom: 10px;
+  z-index: 1000;
 }
 .btn--action--left {
   left: 10px;
@@ -5544,6 +5554,12 @@ a.thumbnail.active {
   -ms-transition: all 0.1s ease-in;
   -o-transition: all 0.1s ease-in;
 }
+@media (min-width: 768px) {
+  .notification__number {
+    top: 11px;
+    right: 15px;
+  }
+}
 .notification__number.added {
   font-size: 0.85em;
 }
@@ -6375,6 +6391,10 @@ button.close {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   z-index: 1050;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   outline: 0;
 }
 .modal.fade .modal-dialog {
@@ -6392,6 +6412,19 @@ button.close {
   -ms-transform: translate(0, 0);
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
+}
+@media (min-width: 992px) {
+  .modal {
+    width: 320px;
+    height: 480px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 }
 .modal-open .modal {
   overflow-x: hidden;
@@ -6427,6 +6460,16 @@ button.close {
 .modal-header {
   height: 60px;
   padding: 15px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+@media (min-width: 992px) {
+  .modal-header {
+    height: 0;
+    padding: 0 !important;
+  }
 }
 .modal-header .close {
   margin-top: -2px;
@@ -6440,6 +6483,12 @@ button.close {
   padding: 15px;
   position: relative;
   overflow-y: scroll;
+}
+@media (min-width: 992px) {
+  .modal-body {
+    height: auto;
+    min-height: 480px;
+  }
 }
 .modal-footer {
   width: 60px;
