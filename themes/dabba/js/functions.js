@@ -206,6 +206,39 @@ function addLomas( map ){
 }// addLomas
 
 
+
+/*------------------------------------*\
+    #HELPER FUNCTIONS
+\*------------------------------------*/
+
+function showAuthenticationError( errorMsg ){
+
+    if( errorMsg.indexOf('No hay ningún usuario registrado') > -1 || errorMsg.indexOf('es incorrecta') > -1 ) {
+        showInvalidLoginError();
+        return;
+    }
+    if( errorMsg.indexOf('Ya ha sido registrada') > -1 ) {
+        showExistingUserError();
+    }
+
+}// showAuthenticationError
+
+function showInvalidLoginError(){
+
+    $('.js-invalid-login-msg').text('El nombre de usuario o contraseña son incorrectos, por favor intenta nuevamente.');
+    $('#login').modal('toggle');
+
+}// showInvalidLoginError
+
+function showExistingUserError(){
+
+    $('.js-invalid-registration-msg').text('El usuario que intentaste registrar ya existe.');
+    $('#excelente').modal('toggle');
+
+}// showExistingUserError
+
+
+
 /*------------------------------------*\
 	#AJAX FUNCTIONS
 \*------------------------------------*/

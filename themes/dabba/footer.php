@@ -72,7 +72,7 @@
 				ver platillos
 			</a>
 		<?php endif; ?>
-		<?php if ( is_user_logged_in() ) : ?>
+		<?php if ( is_user_logged_in() && ( ! is_page('checkout') && ! is_page('cart') ) ) : ?>
 			<a class="[ btn btn-primary btn--action btn--action--right ][ js-shopping-bag ][ visible-xs-block ]" href="<?php echo site_url('checkout'); ?>" data-toggle="tooltip" title="se ha agregado un platillo al carrito">
 				<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
 				<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
@@ -214,6 +214,7 @@
 						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
 					</div>
 					<p>O con tu correo</p>
+
 					<div class="[ container ]">
 						<form method="post" class="[ register ][ row ]" data-parsley-validate>
 							<?php do_action( 'woocommerce_register_form_start' ); ?>
@@ -239,6 +240,7 @@
 								</p> -->
 
 							<?php endif; ?>
+							<p class="[ js-invalid-registration-msg ]"></p>
 
 							<!-- Spam Trap -->
 							<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;">
@@ -345,6 +347,7 @@
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 								<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
+								<p class="[ js-invalid-login-msg ]"></p>
 							</p>
 
 							<p class="[ form-row ]">

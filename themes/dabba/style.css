@@ -3219,8 +3219,7 @@ textarea.parsley-error {
     #Edit address
 \*------------------------------------*/
 .woocommerce-edit-address #billing_first_name_field,
-.woocommerce-edit-address #billing_last_name_field,
-.woocommerce-edit-address #billiing_timeframe_field {
+.woocommerce-edit-address #billing_last_name_field {
   display: none !important;
 }
 .btn {
