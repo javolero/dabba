@@ -65,11 +65,13 @@
 			<div class="[ row ]">
 				<div class="[ col-sm-4 ][ hidden-xs ][ text-left ]">
 					<?php if ( ! is_user_logged_in() ) : ?>
-						<a class="[ show ]" href="#login" data-toggle="modal">
+						<!-- <a class="[ show ]" href="#login" data-toggle="modal"> -->
+						<a class="[ show ]" href="#coming" data-toggle="modal">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 						</a>
 					<?php else: ?>
-						<a class="[ show ]" href="<?php echo site_url('mi-cuenta'); ?>">
+						<!-- <a class="[ show ]" href="<?php echo site_url('mi-cuenta'); ?>"> -->
+						<a class="[ show ]" href="#coming" data-toggle="modal">
 							<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 						</a>
 					<?php endif; ?>
