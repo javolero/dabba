@@ -534,10 +534,10 @@ function create_coupon(){
 	$discount_type = 'fixed_cart'; // Type: fixed_cart, percent, fixed_product, percent_product
 						
 	$coupon = array(
-		'post_title' => $coupon_code,
-		'post_content' => '',
-		'post_status' => 'publish',
-		'post_author' => 1,
+		'post_title' 	=> $coupon_code,
+		'post_content' 	=> '',
+		'post_status'	=> 'publish',
+		'post_author' 	=> 1,
 		'post_type'		=> 'shop_coupon'
 	);
 	$new_coupon_id = wp_insert_post( $coupon );		
@@ -557,5 +557,16 @@ function create_coupon(){
 }// create_coupon
 
 
+add_action('woocommerce_payment_complete', 'update_user_name');
+function update_user_name( $user_id ){
 
-add_action('woocommerce_applied_coupon', 'redirect_to_checkout' );
+	$user = wp_get_current_user();
+
+	if( '' !== $user->user_firstname ){
+		
+	} $user->user_firstname = 'no firstname';
+
+
+}
+
+

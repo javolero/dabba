@@ -161,6 +161,7 @@
 						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
 					</div>
 					<p>O con tu correo</p>
+
 					<div class="[ container ]">
 						<form method="post" class="[ register ][ row ]" data-parsley-validate>
 							<?php do_action( 'woocommerce_register_form_start' ); ?>
@@ -186,6 +187,7 @@
 								</p> -->
 
 							<?php endif; ?>
+							<p class="[ js-invalid-registration-msg ]"></p>
 
 							<!-- Spam Trap -->
 							<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;">
@@ -292,6 +294,7 @@
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 								<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
+								<p class="[ js-invalid-login-msg ]"></p>
 							</p>
 
 							<p class="[ form-row ]">

@@ -69,6 +69,7 @@
 		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ]">
 			<h2 class="[ text-center ]">Invita a un amigo</h2>
 			<div class="[ row ]">
+				<?php echo do_shortcode('[rf_sponsor_form]'); ?>
 			</div>
 		</section>
 

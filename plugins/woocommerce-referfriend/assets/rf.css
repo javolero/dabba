@@ -1,0 +1,52 @@
+	    .rf-share .btn{
+	    	background-color: #DBEAF9;
+	    	border: 1px solid transparent;
+	    	padding: 6px 10px;
+	    	border-radius: 5px;
+	    	color: #fff;
+	    	font-weight: bold;
+	    	-webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.33);
+			-moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.33);
+			box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.33);
+			transition: all 0.3s;
+	    }
+	    .rf-share .btn:hover{
+	    	transition: all 0.3s;
+	    }
+	    .rf-share .btn.btn-fa{
+	    	/*background-color: #3C5A98;*/
+	    	background-color: #306199;
+	    }
+	    .rf-share .btn.btn-fa:hover{
+	    	/*background-color: #3C5A98;*/
+	    	background-color: rgba(36, 72, 114,1);
+	    }
+	    .rf-share .btn.btn-twi{
+	    	/*background-color: #00ACED;*/
+	    	background-color: #26c4f1;
+	    }
+	    .rf-share .btn.btn-twi:hover{
+	    	background-color: rgba(14, 170, 214,1);
+	    }
+	    .rf-share .btn.btn-goog{
+	    	/*background-color: #D74A2D;*/
+	    	background-color: #b81621;
+	    }
+	    .rf-share .btn.btn-goog:hover{
+	    	background-color: rgba(138, 17, 25,1);
+	    }
+	    .rf-share .btn.btn-email{
+	    	background-color: #32506d;
+	    }
+	    .rf-share .btn.btn-email:hover{
+	    	background-color: #22364A;
+	    }
+	    .rf-share i{
+	    	color: #fff;
+	    	font-size: 20px;
+	    	vertical-align: middle;
+	    	border-right: 1px solid #ddd;
+	    	padding-right: 10px;
+	    	margin-right: 10px;
+	    }
+    </style>

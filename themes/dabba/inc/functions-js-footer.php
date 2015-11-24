@@ -15,6 +15,13 @@ function footer_scripts(){
 					#GLOBAL
 				\*------------------------------------*/
 
+				// Notices para contraseña incorrecta y usuario existente.
+				<?php $all_notices = WC()->session->get( 'wc_notices', array() ); ?>
+				<?php if( array_key_exists( 'error', $all_notices ) ) : ?>
+					showAuthenticationError( '<?php echo $all_notices["error"][0] ?>' )
+					//alert( '<?php echo $all_notices["error"][0] ?>' )
+				<?php wc_clear_notices(); endif; ?>
+
 				imgToSvg();
 
 
