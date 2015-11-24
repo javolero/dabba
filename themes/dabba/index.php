@@ -50,17 +50,11 @@
 
 	<?php endif; ?>
 
-	<section class="[ menu-hoy ][ margin-top-bottom--large ]">
-		<div class="[ container ]">
-			<?php get_template_part( 'templates/menu', 'hoy' ); ?>
-		</div>
-	</section>
+	<?php get_template_part( 'templates/menu', 'hoy' ); ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
 
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
-
-		<section class="[ menu-semana ][ margin-bottom--large ]">
+		<section class="[ menu-semana ][ margin-top-bottom--large ]">
 			<div class="[ container ]">
 				<?php get_template_part( 'templates/menu', 'semana' ); ?>
 			</div>
