@@ -67,7 +67,7 @@
 			</div>
 		</section>
 
-		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ]">
+		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ][ hidden ]">
 			<h2 class="[ text-center ]">Pide más Dabba</h2>
 			<div class="[ row ]">
 				<div class="[ col-xs-4 ][ text-center ]">
