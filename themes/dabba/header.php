@@ -79,7 +79,7 @@
 						<img class="[ svg ][ icon icon--logo icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
 					</a>
 				</div>
-				<?php if ( is_user_logged_in() ) : ?>
+				<?php if ( is_user_logged_in() && ( ! is_page('checkout') && ! is_page('cart') ) ) : ?>
 					<div class="[ col-sm-4 ][ hidden-xs ][ text-right ]">
 						<a class="[ show ][ js-shopping-bag ]" href="<?php echo site_url('checkout'); ?>" data-toggle="tooltip" title="se ha agregado un platillo al carrito">
 							<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
