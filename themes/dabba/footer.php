@@ -132,7 +132,7 @@
 								<p class="[ no-padding no-margin ][ text-left ][ col-xs-12 ]">
 									<label for="ZONA">Selecciona tu zona<span class="required">*</span></label>
 									<select class="[ form-control form-control-bg ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
-										<option>¿En qué zona del DF trabajas?</option>
+										<option value="">¿En qué zona del DF trabajas?</option>
 										<option value="Polanco">Polanco</option>
 										<option value="Lomas">Lomas</option>
 										<option value="Santa Fe">Santa Fe</option>
@@ -186,7 +186,7 @@
 									</select>
 								</p>
 							</div>
-							<input class="[ toggable ][ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ][ js-zona ][ hidden ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio."> 
+							<input class="[ toggable ][ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ][ js-zona ][ hidden ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio.">
 						</form>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
@@ -347,7 +347,7 @@
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 								<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
-								<p class="[ js-invalid-login-msg ]"></p>
+								<span class="[ js-invalid-login-msg ]"></span>
 							</p>
 
 							<p class="[ form-row ]">

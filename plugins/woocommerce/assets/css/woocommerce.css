@@ -1251,7 +1251,7 @@ p.demo_store a {
 .woocommerce form .form-row:-ms-input-placeholder {
     line-height: normal
 }
-.woocommerce form.checkout_coupon,
+/*.woocommerce form.checkout_coupon,
 .woocommerce form.login,
 .woocommerce form.register {
     border: 1px solid #d3ced2;
@@ -1259,7 +1259,7 @@ p.demo_store a {
     margin: 2em 0;
     text-align: left;
     border-radius: 5px
-}
+}*/
 .woocommerce ul#shipping_method {
     list-style: none;
     margin: 0;

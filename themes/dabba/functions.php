@@ -486,7 +486,7 @@ function remove_state_checkout_field( $fields ) {
 }// remove_state_checkout_field
 
  /**
- * Quitarle "required" a billing_state 
+ * Quitarle "required" a billing_state
  * @return string
  */
 add_filter( 'woocommerce_billing_fields' , 'remove_required_billing_state_field' );
@@ -607,3 +607,31 @@ function get_notices() {
 	return json_encode( $notice_arr );
 }
 
+/**
+ * Override the quantity input with a dropdown
+ */
+// function woocommerce_quantity_input() {
+//     global $product;
+// 	$defaults = array(
+// 		'input_name'  	=> 'quantity',
+// 		'input_value'  	=> '1',
+// 		'max_value'  	=> apply_filters( 'woocommerce_quantity_input_max', '', $product ),
+// 		'min_value'  	=> apply_filters( 'woocommerce_quantity_input_min', '', $product ),
+// 		'step' 		=> apply_filters( 'woocommerce_quantity_input_step', '1', $product ),
+// 		'style'		=> apply_filters( 'woocommerce_quantity_style', 'float:left; margin-right:10px;', $product )
+// 	);
+// 	if ( ! empty( $defaults['min_value'] ) )
+// 		$min = $defaults['min_value'];
+// 	else $min = 1;
+// 	if ( ! empty( $defaults['max_value'] ) )
+// 		$max = $defaults['max_value'];
+// 	else $max = 20;
+// 	if ( ! empty( $defaults['step'] ) )
+// 		$step = $defaults['step'];
+// 	else $step = 1;
+// 	$options = '';
+// 	for ( $count = $min; $count <= $max; $count = $count+$step ) {
+// 		$options .= '<option value="' . $count . '">' . $count . '</option>';
+// 	}
+// 	echo '<div class="quantity_select" style="' . $defaults['style'] . '"><select name="' . esc_attr( $defaults['input_name'] ) . '" title="' . _x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) . '" class="qty">' . $options . '</select></div>';
+// } //woocommerce_quantity_input

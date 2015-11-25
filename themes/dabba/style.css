@@ -3277,7 +3277,7 @@ textarea.parsley-error {
   border: 2px solid transparent;
   white-space: nowrap;
   padding: 6px 16px;
-  font-size: 1.12em;
+  font-size: 120%;
   line-height: 1.42857143;
   border-radius: 8px;
   -webkit-user-select: none;
@@ -3324,6 +3324,30 @@ fieldset[disabled] .btn {
 a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;
+}
+@media (min-width: 768px) {
+  .btn {
+    padding: 7px 19px;
+    font-size: 125%;
+    line-height: 1.42857143;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 992px) {
+  .btn {
+    padding: 8px 22px;
+    font-size: 130%;
+    line-height: 1.42857143;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 1200px) {
+  .btn {
+    padding: 9px 25px;
+    font-size: 135%;
+    line-height: 1.42857143;
+    border-radius: 8px;
+  }
 }
 .btn-default {
   color: #333333;
@@ -3860,9 +3884,36 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-sm > .btn {
   border: 1px solid transparent;
   padding: 6px 12px;
-  font-size: 1.05em;
+  font-size: 105%;
   line-height: 1.42857143;
   border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .btn-sm,
+  .btn-group-sm > .btn {
+    padding: 7px 14px;
+    font-size: 110%;
+    line-height: 1.42857143;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 992px) {
+  .btn-sm,
+  .btn-group-sm > .btn {
+    padding: 8px 16px;
+    font-size: 115%;
+    line-height: 1.42857143;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 1200px) {
+  .btn-sm,
+  .btn-group-sm > .btn {
+    padding: 9px 19px;
+    font-size: 120%;
+    line-height: 1.42857143;
+    border-radius: 8px;
+  }
 }
 .btn-xs,
 .btn-group-xs > .btn {
@@ -3909,16 +3960,21 @@ input[type="button"].btn-block {
 @media (min-width: 768px) {
   .bar-action--sm {
     width: 100%;
+    height: 50px;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
+    font-size: 130%;
+    line-height: 220%;
     bottom: 0;
   }
   .bar-action--sm:hover {
-    height: 55px;
+    height: 60px;
+    font-size: 140%;
+    line-height: 240%;
   }
 }
 .button-social-login-facebook {

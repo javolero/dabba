@@ -16,7 +16,7 @@
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 2px solid transparent;
   white-space: nowrap;
-  .button-size(@padding-base-vertical; @padding-large-horizontal; (@font-size-base * 0.8); @line-height-base; @btn-border-radius-extralarge);
+  .button-size(@padding-base-vertical; @padding-large-horizontal; 120%; @line-height-base; @btn-border-radius-extralarge);
   .user-select(none);
   .transition (all 0.3s ease );
 
@@ -58,6 +58,17 @@
       pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
     }
   }
+
+  @media (min-width: @screen-sm-min){
+    .button-size(7px; 19px; 125%; @line-height-base; @btn-border-radius-extralarge);
+  }
+  @media (min-width: @screen-md-min){
+    .button-size(8px; 22px; 130%; @line-height-base; @btn-border-radius-extralarge);
+  }
+  @media (min-width: @screen-lg-min){
+    .button-size(9px; 25px; 135%; @line-height-base; @btn-border-radius-extralarge);
+  }
+
 }
 
 
@@ -174,7 +185,17 @@
 .btn-sm {
   border: 1px solid transparent;
   // line-height: ensure proper height of button next to small input
-  .button-size(@padding-base-vertical; @padding-base-horizontal; (@font-size-base * 0.75); @line-height-base; @btn-border-radius-extralarge);
+  .button-size(@padding-base-vertical; @padding-base-horizontal; 105%; @line-height-base; @btn-border-radius-extralarge);
+
+@media (min-width: @screen-sm-min){
+    .button-size(7px; 14px; 110%; @line-height-base; @btn-border-radius-extralarge);
+  }
+  @media (min-width: @screen-md-min){
+    .button-size(8px; 16px; 115%; @line-height-base; @btn-border-radius-extralarge);
+  }
+  @media (min-width: @screen-lg-min){
+    .button-size(9px; 19px; 120%; @line-height-base; @btn-border-radius-extralarge);
+  }
 }
 .btn-xs {
   .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
@@ -229,12 +250,14 @@ input[type="button"] {
 
 .bar-action--sm{
   @media (min-width: @screen-sm-min) {
-    width: 100%;
+    width: 100%; height: 50px;
     .border-radius(0);
+    font-size: 130%; line-height: 220%;
     bottom: 0;
 
     &:hover{
-      height: 55px;
+      height: 60px;
+      font-size: 140%;  line-height: 240%;
     }
   }
 }
