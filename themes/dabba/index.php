@@ -5,7 +5,7 @@
 		<!-- HERO -->
 		<section class="[ hero hero__image hero__image--home ][ margin-bottom--large ]">
 			<div class="[ col-xs-12 ][ z-index-2 ][ center-full ]">
-				<p class="[ text-punchline text-center color-light text-uppercase ]">Comer, lo mejor de tu día.</p>
+				<p class="[ text-punchline text-center color-light text-uppercase ][ no-margin ]">Comer, lo mejor de tu día.</p>
 			</div>
 			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-bottom ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/home-intro--md.jpg">
 				<source src="<?php echo THEMEPATH; ?>videos/video.mp4" type="video/mp4">

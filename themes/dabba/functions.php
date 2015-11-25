@@ -287,7 +287,7 @@ function get_todays_add_to_cart_btn(){
 	$todays_menu_id = get_todays_menu_id();
 
 	if( $todays_menu_id ) {
-		return '<a href="/dabba/?add-to-cart="' . $todays_menu_id . ' rel="nofollow" data-product_id="' . $todays_menu_id . '" data-product_sku="" data-quantity="1" class="[ btn btn-primary btn--action btn--action--center ][ padding--sides ][ add_to_cart_button product_type_simple ]">ordenar ahora</a>';
+		return '<a href="/dabba/?add-to-cart="' . $todays_menu_id . ' rel="nofollow" data-product_id="' . $todays_menu_id . '" data-product_sku="" data-quantity="1" class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ][ add_to_cart_button product_type_simple ]">ordenar ahora</a>';
 	}
 
 }// get_todays_add_to_cart_btn
@@ -532,7 +532,7 @@ function create_coupon(){
 	$coupon_code = 'FREEDABBA-' . $date->getTimestamp(); // Code
 	$amount = '120'; // Amount
 	$discount_type = 'fixed_cart'; // Type: fixed_cart, percent, fixed_product, percent_product
-						
+
 	$coupon = array(
 		'post_title' 	=> $coupon_code,
 		'post_content' 	=> '',
@@ -540,7 +540,7 @@ function create_coupon(){
 		'post_author' 	=> 1,
 		'post_type'		=> 'shop_coupon'
 	);
-	$new_coupon_id = wp_insert_post( $coupon );		
+	$new_coupon_id = wp_insert_post( $coupon );
 	// Add meta
 	update_post_meta( $new_coupon_id, 'discount_type', $discount_type );
 	update_post_meta( $new_coupon_id, 'coupon_amount', $amount );
@@ -563,7 +563,7 @@ function update_user_name( $user_id ){
 	$user = wp_get_current_user();
 
 	if( '' !== $user->user_firstname ){
-		
+
 	} $user->user_firstname = 'no firstname';
 
 

@@ -1506,6 +1506,24 @@ a.text-danger:focus {
 .text-punchline {
   font-size: 2.38em;
 }
+@media (min-width: 768px) {
+  .text-punchline {
+    font-size: 2.618em;
+    font-weight: 400;
+  }
+}
+@media (min-width: 992px) {
+  .text-punchline {
+    font-size: 3.094em;
+    font-weight: 600;
+  }
+}
+@media (min-width: 1200px) {
+  .text-punchline {
+    font-size: 3.57em;
+    font-weight: 700;
+  }
+}
 .text-light {
   font-weight: 300;
 }
