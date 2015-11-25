@@ -2702,7 +2702,7 @@ output {
 }
 .form-control {
   display: block;
-  height: 1.82857143em;
+  height: 2.19428571em;
   padding: 0 12px 1px;
   border: none;
   font-weight: 400;
@@ -7874,7 +7874,22 @@ header {
  * Login
 **/
 .hero__login {
-  bottom: 20px;
+  bottom: 5px;
+}
+@media (min-width: 768px) {
+  .hero__login {
+    bottom: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .hero__login {
+    bottom: 12px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero__login {
+    bottom: 20px;
+  }
 }
 .hero__login p,
 .hero__login a {
