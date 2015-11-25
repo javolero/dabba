@@ -1,14 +1,15 @@
 //
 // Utility classes
 // --------------------------------------------------
+
+// Backgrounds
+// -------------------------
+
 .bg-gradient{
   //background:linear-gradient( @primary, @secondary );
   #gradient >.directional(@primary, @secondary, 145deg);
 }
 
-
-// Backgrounds
-// -------------------------
 .bg-tertiary{
   background-color: @tertiary;
   color: @light;
@@ -161,6 +162,11 @@
 }
 
 
+// Typography
+// -------------------------
+.underline{ text-decoration: underline; }
+
+
 // Displays
 // -------------------------
 .block{ display: block; }
@@ -173,6 +179,17 @@
 .align-top{ vertical-align: top; }
 .align-middle{ vertical-align: middle; }
 .align-bottom{ vertical-align: bottom; }
+
+
+// Positioning
+// -------------------------
+.relative{ position: relative; }
+.absolute{ position: absolute; }
+.fixed{ position: fixed; }
+
+.bottom-0 { bottom: 0; }
+//---
+.bottom-50 { bottom: 50px; }
 
 
 // Z index

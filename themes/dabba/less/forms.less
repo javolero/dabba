@@ -112,12 +112,12 @@ output {
 .form-control {
   display: block;
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  padding: 0; border: none; border-bottom: 1px solid @primary;
-  font-weight: 300;
+  padding: 0 @padding-base-horizontal 1px; border: none;
+  font-weight: 400;
   line-height: @line-height-base;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  color: @primary;
+  color: @light;
   box-shadow: none;
   border-radius: 0;
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
@@ -126,7 +126,7 @@ output {
   .form-control-focus();
 
   // Placeholder
-  .placeholder(@gray-lighter);
+  .placeholder( fade(@light, 50%) );
 
   // Disabled and read-only inputs
   //
@@ -152,10 +152,10 @@ output {
 }
 
 .form-control-bg{
-  border-bottom: 1px solid @light;
   color: @light;
-  background-color:transparent;
-  .placeholder(@light);
+  background-color: fade(@light, 90%);
+  .placeholder( fade(@tertiary, 40%) );
+  color: @tertiary;
 }
 
 
@@ -612,7 +612,7 @@ input[type="checkbox"] {
 
 .select-style {
   width: 100%;
-  padding: 0; border-bottom: 1px solid @light; margin: 0;
+  padding: 0; margin: 0;
   border-radius: 0;
   overflow: hidden;
   background-color: transparent;
@@ -620,9 +620,9 @@ input[type="checkbox"] {
 
 .select-style select {
   width: 100%;
-  padding: 0 30px 0 0; border: none !important;
-  background-color: transparent;
-  background: transparent url("icons/down-arrow.png") no-repeat 98% 50%;
+  padding: 0 30px 0 @padding-base-horizontal;
+  background-color: fade(@light, 90%);
+  background: fade(@light, 90%) url("icons/down-arrow.png") no-repeat 98% 50%;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;

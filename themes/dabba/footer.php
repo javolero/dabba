@@ -131,17 +131,17 @@
 							<div class="[ select-style ][ margin-bottom--small ]">
 								<p class="[ no-padding no-margin ][ text-left ][ col-xs-12 ]">
 									<label for="ZONA">Selecciona tu zona<span class="required">*</span></label>
+									<select class="[ form-control form-control-bg ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
+										<option>¿En qué zona del DF trabajas?</option>
+										<option value="Polanco">Polanco</option>
+										<option value="Lomas">Lomas</option>
+										<option value="Santa Fe">Santa Fe</option>
+										<option value="Condesa">Roma / Condesa</option>
+										<option value="Del Valle">Del Valle</option>
+										<option value="Escandón">Escandón</option>
+										<option value="Otra">Otra</option>
+									</select>
 								</p>
-								<select class="[ form-control form-control-bg ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
-									<option>¿En qué zona del DF trabajas?</option>
-									<option value="Polanco">Polanco</option>
-									<option value="Lomas">Lomas</option>
-									<option value="Santa Fe">Santa Fe</option>
-									<option value="Condesa">Roma / Condesa</option>
-									<option value="Del Valle">Del Valle</option>
-									<option value="Escandón">Escandón</option>
-									<option value="Otra">Otra</option>
-								</select>
 							</div>
 							<div class="[ text-center ]">
 								<button class="[ button ][ btn btn-sm btn-hollow btn-light ]" type="submit">Enviar</button>
@@ -169,22 +169,22 @@
 						<h2>Comienza</h2>
 						<p class="[ margin-bottom--large ]">Ingresa tu siguiente información.</p>
 						<form id="form-zona" data-parsley-validate-comienza>
-							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 								<label for="username">Correo electrónico<span class="required">*</span></label>
 								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-comienza" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							</p>
 							<div class="[ select-style ][ margin-bottom--small ]">
-								<p class="[ no-padding ][ text-left ][ col-xs-12 ]">
+								<p class="[ no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 									<label for="username">Selecciona tu zona<span class="required">*</span></label>
+									<select class="[ form-control form-control-bg ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
+										<option value="">-</option>
+										<option value="polanco">Polanco</option>
+										<option value="ampliacion-granada">Ampliación Granada</option>
+										<option value="corporativos-palmas">Corporativos Palmas</option>
+										<option value="corporativos-fc-de-cuernavaca">Corporativos Fc. de Cuernavaca</option>
+										<option value="other">Otra</option>
+									</select>
 								</p>
-								<select class="[ form-control form-control-bg ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
-									<option value="">-</option>
-									<option value="polanco">Polanco</option>
-									<option value="ampliacion-granada">Ampliación Granada</option>
-									<option value="corporativos-palmas">Corporativos Palmas</option>
-									<option value="corporativos-fc-de-cuernavaca">Corporativos Fc. de Cuernavaca</option>
-									<option value="other">Otra</option>
-								</select>
 							</div>
 							<input class="[ toggable ][ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ][ js-zona ][ hidden ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio."> 
 						</form>
@@ -308,8 +308,8 @@
 						<h2>¡Quiero mi comida gratis!</h2>
 						<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
 						<form class="[ ]">
-							<input class="[ form-control form-control-bg ][ margin-bottom--small ]" placeholder="Correo electrónico">
-							<input class="[ form-control form-control-bg ][ margin-bottom--small ]" placeholder="Tu zona" name="zona">
+							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" placeholder="Correo electrónico" required>
+							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" placeholder="Tu zona" name="zona" required>
 						</form>
 					</div>
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
