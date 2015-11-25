@@ -47,13 +47,13 @@
 		==== Action nav bar
 		================================================== -->
 		<?php if ( ! is_user_logged_in() ) : ?>
-			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#coming" data-toggle="modal">
-			<!-- <a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#login" data-toggle="modal"> -->
+			<!-- <a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#coming" data-toggle="modal"> -->
+			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#login" data-toggle="modal">
 				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 			</a>
 		<?php else: ?>
-			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#coming" data-toggle="modal">
-			<!-- <a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="<?php echo site_url('mi-cuenta'); ?>"> -->
+			<!-- <a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#coming" data-toggle="modal"> -->
+			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="<?php echo site_url('mi-cuenta'); ?>">
 				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 			</a>
 		<?php endif; ?>
@@ -101,7 +101,7 @@
 					<a href="mailto:hola@dabba.mx" class="[ btn btn-sm btn-hollow btn-light ]">mándanos un correo</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -150,7 +150,7 @@
 					</div>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -192,7 +192,7 @@
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -263,7 +263,7 @@
 					</div>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -289,7 +289,7 @@
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">ok</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -315,7 +315,7 @@
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -369,7 +369,7 @@
 					</div>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
