@@ -111,13 +111,13 @@ output {
 
 .form-control {
   display: block;
-  height: (@input-height-base*1.2); // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  height: (@input-height-base*1.15); // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: 0 @padding-base-horizontal 1px; border: none;
   font-weight: 400;
   line-height: @line-height-base;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  color: @light;
+  color: @input-color;
   box-shadow: none;
   border-radius: 0;
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
@@ -711,7 +711,8 @@ textarea.parsley-error {
 \*------------------------------------*/
 .woocommerce-edit-address{
 
-   // #billing_timeframe_field
-  #billing_first_name_field,
-  #billing_last_name_field, { display: none !important; }
+  #billing_timeframe_field
+  //#billing_first_name_field,
+  //#billing_last_name_field
+  { display: none !important; }
 }

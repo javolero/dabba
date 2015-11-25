@@ -2698,18 +2698,18 @@ output {
   padding-top: 7px;
   font-size: 1.4em;
   line-height: 1.42857143;
-  color: #555555;
+  color: #0d1016;
 }
 .form-control {
   display: block;
-  height: 2.19428571em;
+  height: 2.10285714em;
   padding: 0 12px 1px;
   border: none;
   font-weight: 400;
   line-height: 1.42857143;
-  background-color: #f05475;
+  background-color: #eeeeee;
   background-image: none;
-  color: #ffffff;
+  color: #0d1016;
   box-shadow: none;
   border-radius: 0;
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -2737,7 +2737,7 @@ output {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: #eeeeee;
+  background-color: #777777;
   opacity: 1;
 }
 .form-control[disabled],
@@ -3262,8 +3262,7 @@ textarea.parsley-error {
 /*------------------------------------*\
     #Edit address
 \*------------------------------------*/
-.woocommerce-edit-address #billing_first_name_field,
-.woocommerce-edit-address #billing_last_name_field {
+.woocommerce-edit-address #billing_timeframe_field {
   display: none !important;
 }
 .btn {
@@ -4386,7 +4385,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 1.4em;
   font-weight: normal;
   line-height: 1;
-  color: #555555;
+  color: #0d1016;
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #cccccc;
