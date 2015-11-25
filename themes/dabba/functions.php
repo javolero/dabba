@@ -556,7 +556,6 @@ function create_coupon(){
 
 }// create_coupon
 
-
 add_action('woocommerce_payment_complete', 'update_user_name');
 function update_user_name( $user_id ){
 
@@ -566,7 +565,28 @@ function update_user_name( $user_id ){
 
 	} $user->user_firstname = 'no firstname';
 
-
 }
 
+
+function get_notices() {
+	if ( ! did_action( 'woocommerce_init' ) ) {
+		_doing_it_wrong( __FUNCTION__, __( 'This function should not be called before woocommerce_init.', 'woocommerce' ), '2.3' );
+		return;
+	}
+
+	$all_notices  = WC()->session->get( 'wc_notices', array() );
+	$notice_types = apply_filters( 'woocommerce_notice_types', array( 'error', 'success', 'notice' ) );
+
+	$notice_arr = array();
+	foreach ( $notice_types as $notice_type ) {
+		if ( wc_notice_count( $notice_type ) > 0 ) {
+
+			$notice_arr[$notice_type] = $all_notices[$notice_type];
+		}
+	}
+
+	wc_clear_notices();
+
+	return json_encode( $notice_arr );
+}
 
