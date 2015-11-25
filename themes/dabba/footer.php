@@ -47,16 +47,19 @@
 		==== Action nav bar
 		================================================== -->
 		<?php if ( ! is_user_logged_in() ) : ?>
+			<!-- <a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#coming" data-toggle="modal"> -->
 			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#login" data-toggle="modal">
 				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 			</a>
 		<?php else: ?>
+			<!-- <a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="#coming" data-toggle="modal"> -->
 			<a class="[ btn btn-primary btn--action btn--action--left ][ visible-xs-block ]" href="<?php echo site_url('mi-cuenta'); ?>">
 				<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 			</a>
 		<?php endif; ?>
 		<?php if( is_single() || is_home() ) : ?>
 			<?php if ( ! is_user_logged_in() ) : ?>
+				<!-- <a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#coming" data-toggle="modal"> -->
 				<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#comienza" data-toggle="modal">
 					ordena ahora
 				</a>
@@ -64,6 +67,7 @@
 				<?php echo get_todays_add_to_cart_btn(); ?>
 			<?php endif; ?>
 		<?php elseif( ! is_page( 'checkout' ) ) : ?>
+			<!-- <a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#coming" data-toggle="modal"> -->
 			<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal">
 				ver platillos
 			</a>
@@ -97,12 +101,61 @@
 					<a href="mailto:hola@dabba.mx" class="[ btn btn-sm btn-hollow btn-light ]">mándanos un correo</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal -->
+
+		<!-- Modal "coming"
+		================================================== -->
+		<div id="coming" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="Coming" aria-hidden="true">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<img class="[ svg ][ icon icon--logo icon--fill ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/logo-dabba.svg">
+				</div>
+				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
+					<div class="[ margin-bottom--large ]">
+						<h2>Aún no estamos listos…</h2>
+						<p class="[ margin-bottom ]">Suscríbete para recibir una comida gratis.</p>
+						<form id="form-zona" action="//dabba.us11.list-manage.com/subscribe/post?u=2444125ca807d59dd04e2a1dc&amp;id=28d981affe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" data-parsley-validate>
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="FNAME">Nombre y apellido<span class="required">*</span></label>
+								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="FNAME" value="" required data-parsley-error-message="Por favor ingresa tu nombre.">
+							</p>
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="EMAIL">Correo electrónico<span class="required">*</span></label>
+								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="EMAIL" value="" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
+							</p>
+							<div class="[ select-style ][ margin-bottom--small ]">
+								<p class="[ no-padding no-margin ][ text-left ][ col-xs-12 ]">
+									<label for="ZONA">Selecciona tu zona<span class="required">*</span></label>
+								</p>
+								<select class="[ form-control form-control-bg ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
+									<option>¿En qué zona del DF trabajas?</option>
+									<option value="Polanco">Polanco</option>
+									<option value="Lomas">Lomas</option>
+									<option value="Santa Fe">Santa Fe</option>
+									<option value="Condesa">Roma / Condesa</option>
+									<option value="Del Valle">Del Valle</option>
+									<option value="Escandón">Escandón</option>
+									<option value="Otra">Otra</option>
+								</select>
+							</div>
+							<div class="[ text-center ]">
+								<button class="[ button ][ btn btn-sm btn-hollow btn-light ]" type="submit">Enviar</button>
+							</div>
+						</form>
+					</div>
+				</div><!-- End of Modal-body-->
+				<div class="[ modal-footer ][ bg-primary ]">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
+						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+					</a>
+				</div><!-- End of Modal-footer-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
 
 		<!-- Modal "comienza"
 		================================================== -->
@@ -139,7 +192,7 @@
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -210,7 +263,7 @@
 					</div>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -236,7 +289,7 @@
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">ok</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -262,7 +315,7 @@
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->
@@ -316,7 +369,7 @@
 					</div>
 				</div><!-- End of Modal-body-->
 				<div class="[ modal-footer ][ bg-primary ]">
-					<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+					<a class="[ btn btn-primary btn--action btn--action--right ][ close ]" data-dismiss="modal" aria-hidden="true">
 						<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 					</a>
 				</div><!-- End of Modal-footer-->

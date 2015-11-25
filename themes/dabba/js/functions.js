@@ -5,7 +5,7 @@ var $=jQuery.noConflict();
 \*------------------------------------*/
 
 function resizeToCover( min_w, vid_w_orig, vid_h_orig ) {
-	console.log(vid_w_orig);
+	//console.log(vid_w_orig);
 	//console.log(vid_h_orig);
 
 	// use largest scale factor of horizontal/vertical
