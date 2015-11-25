@@ -47,7 +47,7 @@ wc_print_notices(); ?>
 						</div><!-- row -->
 						<div class="[ row ][ margin-bottom--small ]">
 
-							<article class="[ product-name ][ col-xs-7 ]">
+							<article class="[ product-name ][ col-xs-6 ]">
 								<?php
 									if ( ! $_product->is_visible() ) {
 										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
@@ -65,7 +65,7 @@ wc_print_notices(); ?>
 								?>
 							</article>
 
-							<article class="[ product-price ][ col-xs-3 ][ text-right ]">
+							<article class="[ product-price ][ col-xs-4 ][ text-right ]">
 								<p class="[ no-margin ]">
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
@@ -89,11 +89,11 @@ wc_print_notices(); ?>
 
 						<div class="[ row ]">
 
-							<article class="[ product-quantity ][ col-xs-1 ]">
-								<p class="[ no-margin ]"> x</p>
+							<article class="[ product-quantity ][ col-xs-3 ]">
+								<p class="[ no-margin ]"><small>cantidad</small></p>
 							</article>
 
-							<article class="[ product-quantity ][ col-xs-2 ]">
+							<article class="[ product-quantity ][ col-xs-3 ]">
 								<?php
 									if ( $_product->is_sold_individually() ) {
 										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -110,9 +110,8 @@ wc_print_notices(); ?>
 								?>
 							</article>
 
-							<article class="[ product-subtotal ][ col-xs-7 ][ text-right ]">
+							<article class="[ product-subtotal ][ col-xs-4 ][ text-right ]">
 								<p class="[ no-margin ][ color-primary text-semibold ]">
-									subtotal:
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 									?>
@@ -131,10 +130,10 @@ wc_print_notices(); ?>
 
 				<?php if ( WC()->cart->coupons_enabled() ) { ?>
 						<!-- <label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> -->
-						<div class="[ col-xs-8 ][ inline-block align-middle ]">
+						<div class="[ col-xs-8 ][ pull-none  ][ inline-block align-middle ]">
 							<input type="text" name="coupon_code" class="[ input-text ][ form-control form-control-bg ][ col-xs-12 ]" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
-						</div>
-						<div class="[ col-xs-4 ][ inline-block align-middle ]">
+						</div><div
+						class="[ col-xs-4 ][ pull-none  ][ inline-block align-middle ][ text-right ]">
 							<input type="submit" class="[ btn btn-light btn-hollow btn-sm ]" name="apply_coupon" value="aplicar" />
 						</div>
 

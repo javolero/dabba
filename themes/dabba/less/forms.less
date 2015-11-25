@@ -111,7 +111,7 @@ output {
 
 .form-control {
   display: block;
-  height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  height: (@input-height-base*1.2); // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: 0 @padding-base-horizontal 1px; border: none;
   font-weight: 400;
   line-height: @line-height-base;
@@ -152,10 +152,9 @@ output {
 }
 
 .form-control-bg{
-  color: @light;
-  background-color: fade(@light, 90%);
-  .placeholder( fade(@tertiary, 40%) );
+  background-color: @light;
   color: @tertiary;
+  .placeholder( fade(@tertiary, 40%) );
 }
 
 

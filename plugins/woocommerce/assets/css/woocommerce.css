@@ -191,7 +191,7 @@ p.demo_store a {
 }
 .woocommerce .quantity .qty {
     width: 100%;
-    padding: 0px; border: none; border-bottom: 1px solid #f05475;
+    padding: 0px; border: none;
     text-align: center
 }
 .woocommerce div.product {

@@ -332,7 +332,7 @@
 				<div class="[ modal-body ][ bg-primary ][ padding--top--xxlarge padding--bottom--large ]">
 					<h2>¡Hola!</h2>
 					<p>Puedes iniciar sesión con las siguientes redes sociales</p>
-					<div class="[ margin-bottom ]">
+					<div class="[ margin-bottom--small ]">
 						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
 					</div>
 					<p>O con tu correo</p>
