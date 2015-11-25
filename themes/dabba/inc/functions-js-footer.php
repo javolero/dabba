@@ -33,6 +33,8 @@ function footer_scripts(){
 					if ( $(this).find('select').val() == 'other' ){
 						$(this).next('.toggable').toggleClass('hidden');
 						$('.js-zona').attr('required', '""');
+					} else {
+						$(this).next('.toggable').toggleClass('hidden');
 					}
 				});
 
