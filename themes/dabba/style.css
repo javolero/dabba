@@ -3170,8 +3170,8 @@ select[multiple].input-lg {
 .select-style select {
   width: 100%;
   padding: 0 30px 0 12px;
-  background-color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.9) url("icons/down-arrow.png") no-repeat 98% 50%;
+  background-color: #ffffff;
+  background: #ffffff url("icons/down-arrow.png") no-repeat 98% 50%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
