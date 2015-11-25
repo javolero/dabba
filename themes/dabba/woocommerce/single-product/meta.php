@@ -30,7 +30,7 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 	<article class="[ margin-bottom-large ][ caracteristicas ][ text-center ][ container ]">
 		<?php foreach ( $caracteristicas_platillo as $caracteristica ) : ?>
 			<span class="[ inline-block align-middle ][ margin-sides--small ]">
-				<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-dark ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/<?php echo $caracteristica->slug ?>.svg">
+				<img class="[ svg ][ icon icon--iconed icon--stroke icon--thickness-1-4 ][ color-dark ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/<?php echo $caracteristica->slug ?>.svg">
 				<p><small><?php echo $caracteristica->name ?></small></p>
 			</span>
 		<?php endforeach; ?>
@@ -38,45 +38,65 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 	<hr class="[ divider-primary ][ margin-bottom-large ]">
 <?php endif; ?>
 
-<article class="[ text-center ][ margin-bottom-large ]">
-	<h3>Ingredientes</h3>
-	<p>
-	<?php foreach ( $ingredientes as $key => $ingrediente ) : ?>
-		<?php if( 0 !== $key ) echo '-'; ?>
-		<span class="margin-sides--small"><?php echo $ingrediente ?></span>
-	<?php endforeach; ?>
-	</p>
-</article>
+<?php if ( ! empty( $ingredientes[0] ) ) : ?>
+	<article class="[ text-center ][ margin-bottom-large ][ container ]">
+		<h3>Ingredientes</h3>
+		<p>
+		<?php foreach ( $ingredientes as $key => $ingrediente ) : ?>
+			<?php if( 0 !== $key ) echo '-'; ?>
+			<span class="margin-sides--small"><?php echo $ingrediente ?></span>
+		<?php endforeach; ?>
+		</p>
+	</article>
+<?php endif; ?>
 
-<section class="[ descripcion ][ bg-gradient ][ padding--top-bottom--xlarge ][ margin-bottom--large ][ color-light ]">
-	<div class="[ container ][ text-center ]">
-		<h3 class="[ margin-bottom--large ]">Descripción</h3>
-		<div class="[ col-xs-12 col-sm-8 col-md-6 col-centered ]">
-			<p class="[ color-light ][ no-margin ][ text-left ]"><?php echo get_the_content() ?></p>
+<?php  if ( ! empty( get_the_content() ) ) :  ?>
+	<section class="[ descripcion ][ bg-gradient ][ padding--top-bottom--xlarge ][ margin-bottom--large ][ color-light ]">
+		<div class="[ container ][ text-center ]">
+			<h3 class="[ margin-bottom--large ]">Descripción</h3>
+			<div class="[ col-xs-12 col-sm-8 col-md-6 col-centered ]">
+				<p class="[ color-light ][ no-margin ][ text-left ]"><?php echo get_the_content() ?></p>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 
-<section class="[ margin-bottom--large ]">
-	<div class="[ container ]">
-		<h3 class="[ text-center ]">Información nutrimental</h3>
-		<div class="[ row ]">
-			<p class="[ col-xs-6 ]">
-				<strong>Porción</strong><br />
-				<?php echo $porcion ?>
-			</p>
-			<p class="[ col-xs-6 ]">
-				<strong>Proteína</strong><br />
-				<?php echo $proteina ?>
-			</p>
-			<p class="[ col-xs-6 ]">
-				<strong>Calorías</strong><br />
-				<?php echo $calorias ?>
-			</p>
-			<p class="[ col-xs-6 ]">
-				<strong>Fibra dietética</strong><br />
-				<?php echo $fibra_dietetica ?>
-			</p>
+
+<?php  if ( ! empty( $porcion ) || ! empty( $proteina ) || ! empty( $calorias ) || ! empty( $fibra_dietetica ) ) :  ?>
+	<section class="[ margin-bottom--large ]">
+		<div class="[ container ]">
+			<h3 class="[ text-center ]">Información nutrimental</h3>
+			<div class="[ row ]">
+
+				<?php  if ( ! empty( $porcion ) ) :  ?>
+					<p class="[ col-xs-6 ]">
+						<strong>Porción</strong><br />
+						<?php echo $porcion ?>
+					</p>
+				<?php endif; ?>
+
+				<?php  if ( ! empty( $proteina ) ) :  ?>
+					<p class="[ col-xs-6 ]">
+						<strong>Proteína</strong><br />
+						<?php echo $proteina ?>
+					</p>
+				<?php endif; ?>
+
+				<?php  if ( ! empty( $calorias ) ) :  ?>
+					<p class="[ col-xs-6 ]">
+						<strong>Calorías</strong><br />
+						<?php echo $calorias ?>
+					</p>
+				<?php endif; ?>
+
+				<?php  if ( ! empty( $fibra_dietetica ) ) :  ?>
+					<p class="[ col-xs-6 ]">
+						<strong>Fibra dietética</strong><br />
+						<?php echo $fibra_dietetica ?>
+					</p>
+				<?php endif; ?>
+
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
