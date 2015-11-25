@@ -173,6 +173,7 @@ if ( is_woocommerce_active() ) {
 					'order_comments'
 				) ) ) {
 					if ( isset( $fields[ $name ] ) ) {
+
 						$fields[ $name ]                = $old_fields[ $name ];
 						$fields[ $name ]['label']       = ! empty( $data[ $name ]['label'] ) ? $data[ $name ]['label'] : $old_fields[ $name ]['label'];
 

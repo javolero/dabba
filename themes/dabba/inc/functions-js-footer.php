@@ -42,7 +42,7 @@ function footer_scripts(){
 					e.preventDefault();
 					$('#form-zona').parsley().validate();
 
-					if ( true === $('#form-zona').parsley().isValid()) {
+					if ( true === $('[data-parsley-validate-comienza]').parsley().isValid() ) {
 
 						$('#comienza').modal('toggle');
 						var email = $('input[name="email-comienza"]').val();

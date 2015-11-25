@@ -477,13 +477,30 @@ add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
  * Quitar el estado de la dirección
  * @return string
  */
-add_filter( 'woocommerce_checkout_fields' , 'remove_state_checkout_field' );
+// add_filter( 'woocommerce_checkout_fields' , 'remove_state_checkout_field' );
 function remove_state_checkout_field( $fields ) {
 
-     unset($fields['billing']['billing_state']);
-     return $fields;
+   	unset($fields['billing']['billing_state']);
+    return $fields;
 
 }// remove_state_checkout_field
+
+ /**
+ * Quitarle "required" a billing_state 
+ * @return string
+ */
+add_filter( 'woocommerce_billing_fields' , 'remove_required_billing_state_field' );
+function remove_required_billing_state_field( $fields ) {
+
+	$fields['billing_state'] = array(
+		'label'          => __('State/County', 'woothemes'),
+		'placeholder'    => __('State/County', 'woothemes'),
+		'required'       => false,
+		'class'          => array('input-text')
+	);
+	return $fields;
+
+}// remove_required_billing_state_field
 
 /**
  * Redireccionar usuarios al home despues de registrarse
@@ -556,7 +573,6 @@ function create_coupon(){
 
 }// create_coupon
 
-
 add_action('woocommerce_payment_complete', 'update_user_name');
 function update_user_name( $user_id ){
 
@@ -566,7 +582,28 @@ function update_user_name( $user_id ){
 
 	} $user->user_firstname = 'no firstname';
 
-
 }
 
+
+function get_notices() {
+	if ( ! did_action( 'woocommerce_init' ) ) {
+		_doing_it_wrong( __FUNCTION__, __( 'This function should not be called before woocommerce_init.', 'woocommerce' ), '2.3' );
+		return;
+	}
+
+	$all_notices  = WC()->session->get( 'wc_notices', array() );
+	$notice_types = apply_filters( 'woocommerce_notice_types', array( 'error', 'success', 'notice' ) );
+
+	$notice_arr = array();
+	foreach ( $notice_types as $notice_type ) {
+		if ( wc_notice_count( $notice_type ) > 0 ) {
+
+			$notice_arr[$notice_type] = $all_notices[$notice_type];
+		}
+	}
+
+	wc_clear_notices();
+
+	return json_encode( $notice_arr );
+}
 
