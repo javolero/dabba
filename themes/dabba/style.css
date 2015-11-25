@@ -5556,7 +5556,7 @@ a.thumbnail.active {
 @media (min-width: 768px) {
   .notification__number {
     top: 11px;
-    right: 15px;
+    right: 16px;
   }
 }
 .notification__number.added {

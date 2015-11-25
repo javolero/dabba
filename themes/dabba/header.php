@@ -86,7 +86,7 @@
 				<?php if ( is_user_logged_in() && ( ! is_page('checkout') && ! is_page('cart') ) ) : ?>
 					<div class="[ col-sm-4 ][ hidden-xs ][ text-right ]">
 						<a class="[ show ][ js-shopping-bag ]" href="<?php echo site_url('checkout'); ?>" data-toggle="tooltip" title="se ha agregado un platillo al carrito">
-							<p class="[ inline-block align-middle ][ color-light ][ no-margin margin-right--small ]">mi canasta</p>
+							<p class="[ inline-block align-middle ][ color-light ][ no-margin margin-right--small ]">mi pedido</p>
 							<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
 							<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 						</a>
