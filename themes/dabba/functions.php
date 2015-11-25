@@ -477,13 +477,30 @@ add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
  * Quitar el estado de la dirección
  * @return string
  */
-add_filter( 'woocommerce_checkout_fields' , 'remove_state_checkout_field' );
+// add_filter( 'woocommerce_checkout_fields' , 'remove_state_checkout_field' );
 function remove_state_checkout_field( $fields ) {
 
-     unset($fields['billing']['billing_state']);
-     return $fields;
+   	unset($fields['billing']['billing_state']);
+    return $fields;
 
 }// remove_state_checkout_field
+
+ /**
+ * Quitarle "required" a billing_state 
+ * @return string
+ */
+add_filter( 'woocommerce_billing_fields' , 'remove_required_billing_state_field' );
+function remove_required_billing_state_field( $fields ) {
+
+	$fields['billing_state'] = array(
+		'label'          => __('State/County', 'woothemes'),
+		'placeholder'    => __('State/County', 'woothemes'),
+		'required'       => false,
+		'class'          => array('input-text')
+	);
+	return $fields;
+
+}// remove_required_billing_state_field
 
 /**
  * Redireccionar usuarios al home despues de registrarse
