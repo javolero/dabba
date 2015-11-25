@@ -69,7 +69,7 @@
 			</a>
 		<?php endif; ?>
 		<?php if ( is_user_logged_in() && ( ! is_page('checkout') && ! is_page('cart') ) ) : ?>
-			<a class="[ btn btn-primary btn--action btn--action--right ][ js-shopping-bag ][ visible-xs-block ]" href="<?php echo site_url('checkout'); ?>" data-toggle="tooltip" title="se ha agregado un platillo al carrito">
+			<a class="[ btn btn-primary btn--action btn--action--right ][ js-shopping-bag ][ visible-xs-block ]" href="<?php echo site_url('checkout'); ?>" title="se ha agregado un platillo al carrito">
 				<span class="[ notification notification__number ][ js-notification__number ]"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>
 				<img class="[ svg ][ icon icon--iconed icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/shopping-bag.svg">
 			</a>

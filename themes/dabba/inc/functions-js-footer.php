@@ -11,6 +11,7 @@ function footer_scripts(){
 ?>
 		<script type="text/javascript">
 			$( document ).ready(function() {
+
 				/*------------------------------------*\
 					#GLOBAL
 				\*------------------------------------*/
@@ -61,10 +62,8 @@ function footer_scripts(){
 					$('#comienza').modal('toggle');
 				});
 
-
 				$('.add_to_cart_button').on('click', function(){
 					toggleClass('.js-notification__number', 'added');
-					$('.js-shopping-bag').tooltip('show');
 				});
 
 				$('#form-login').parsley();
