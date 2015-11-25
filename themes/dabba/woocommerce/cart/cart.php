@@ -131,10 +131,10 @@ wc_print_notices(); ?>
 
 				<?php if ( WC()->cart->coupons_enabled() ) { ?>
 						<!-- <label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> -->
-						<div class="[ col-xs-8 ][ inline-block align-middle ]">
+						<div class="[ col-xs-8 ][ pull-none  ][ inline-block align-middle ]">
 							<input type="text" name="coupon_code" class="[ input-text ][ form-control form-control-bg ][ col-xs-12 ]" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
-						</div>
-						<div class="[ col-xs-4 ][ inline-block align-middle ]">
+						</div><div
+						class="[ col-xs-4 ][ pull-none  ][ inline-block align-middle ][ text-right ]">
 							<input type="submit" class="[ btn btn-light btn-hollow btn-sm ]" name="apply_coupon" value="aplicar" />
 						</div>
 

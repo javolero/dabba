@@ -2707,7 +2707,7 @@ output {
   border: none;
   font-weight: 400;
   line-height: 1.42857143;
-  background-color: rgba(240, 84, 117, 0.5);
+  background-color: #f05475;
   background-image: none;
   color: #ffffff;
   box-shadow: none;
@@ -2748,8 +2748,7 @@ textarea.form-control {
   height: auto;
 }
 .form-control-bg {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff;
   color: #0d1016;
 }
 .form-control-bg::-moz-placeholder {
@@ -7319,6 +7318,9 @@ button.toast-close-button {
 .panel-body:after,
 .modal-footer:after {
   clear: both;
+}
+.pull-none {
+  float: none !important;
 }
 .pull-right {
   float: right !important;
