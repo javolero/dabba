@@ -477,13 +477,22 @@ add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
  * Quitar el estado de la dirección
  * @return string
  */
-// add_filter( 'woocommerce_checkout_fields' , 'remove_state_checkout_field' );
-function remove_state_checkout_field( $fields ) {
+add_filter( 'woocommerce_checkout_fields' , 'set_timeframe_required' );
+function set_timeframe_required( $fields ) {
 
-   	unset($fields['billing']['billing_state']);
-    return $fields;
+	// $time_now = date("Y-m-d h:i:sa");
+	// $first_timeframe = mktime(13, 0, 0, date("m"), date("d"), date("Y"));
+	// $diff_first_timeframe = round( ( $first_timeframe -  strtotime( $time_now ) ) / 60,2). " minute";
+	// echo $diff_first_timeframe . '<br/>';
+	// echo $time_now . '<br/>';
+	// echo date("Y-m-d h:i:sa", $first_timeframe);
+	// echo '<pre>';
+	// var_dump( $fields['billing']['billing_timeframe'] );
+	// echo '</pre>';
 
-}// remove_state_checkout_field
+	$fields['billing']['billing_timeframe']['required'] = true;
+	return $fields;
+}// set_timeframe_required
 
  /**
  * Quitarle "required" a billing_state 
@@ -501,6 +510,7 @@ function remove_required_billing_state_field( $fields ) {
 	return $fields;
 
 }// remove_required_billing_state_field
+
 
 /**
  * Redireccionar usuarios al home despues de registrarse
