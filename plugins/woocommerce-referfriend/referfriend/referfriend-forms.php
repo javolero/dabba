@@ -27,31 +27,31 @@ function rf_sponsor_form(){
 	<div class="container">
 		<form class="form-horizontal" role="form" method="post">
 		  	<div class="form-group">
-			    <label for="p-firstname" class="col-sm-2 control-label">Your friend's first name</label>
+			    <label for="p-firstname" class="col-sm-2 control-label">Nombre de tu amigo</label>
 			    <div class="col-sm-4">
 			      <input value="<?php echo isset( $_POST['rf_firstname'] ) ? $_POST['rf_firstname'] : '' ?>" type="text" name="rf_firstname" />
 			    </div>
 		  	</div>
 		  	<div class="form-group">
-			    <label for="p-lastname" class="col-sm-2 control-label">Your friend's last name</label>
+			    <label for="p-lastname" class="col-sm-2 control-label">Apellido de tu amigo</label>
 			    <div class="col-sm-4">
 			      	<input value="<?php echo isset( $_POST['rf_lastname'] ) ? $_POST['rf_lastname'] : '' ?>" type="text" name="rf_lastname" />
 			    </div>
 		  	</div>
 		  	<div class="form-group">
-			    <label for="p-email" class="col-sm-2 control-label"> Your friend's email</label>
+			    <label for="p-email" class="col-sm-2 control-label">Email de tu amigo</label>
 			    <div class="col-sm-4">
 			      	<input value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" />
 			    </div>
 		  	</div>
 		  	<div class="form-group">
-			    <label for="p-message" class="col-sm-2 control-label">Optional message</label>
+			    <label for="p-message" class="col-sm-2 control-label">Mensaje opcional</label>
 			    <div class="col-sm-6">
 <textarea rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>			    </div>
 		  	</div>
 		  	<div class="form-group">
 		    	<div class="col-sm-offset-2 col-sm-6">
-		      	<button type="submit" name="submit" class="btn btn-default">Refer my friend</button>
+		      	<button type="submit" name="submit" class="btn btn-default">Invitar</button>
 		    	</div>
 		  	</div>
 	</form>
