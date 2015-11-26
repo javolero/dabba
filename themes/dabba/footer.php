@@ -288,7 +288,7 @@
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal-->
 
-		<!-- Modal "lo sentimos"
+		<!-- Modal "Comida gratis"
 		================================================== -->
 		<div id="comida-gratis" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="comidaGratis" aria-hidden="true">
 			<div class="[ modal-content ][ text-center ]">
