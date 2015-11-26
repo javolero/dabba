@@ -35,9 +35,13 @@
   }
   &.in .modal-dialog { .translate(0, 0) }
 
-  @media (min-width: @screen-md-min){
-    width: 320px; height: 480px;
+  @media (min-width: @screen-sm-min){
+    width: 400px; max-height: 560px;
     .center-full;
+  }
+
+  @media (min-width: @screen-md-min){
+    width: 450px; max-height: 600px;
   }
 
 }
@@ -75,14 +79,7 @@
   height: 60px;
   padding: @modal-title-padding;
   .transition;
-
-  @media (min-width: @screen-md-min){
-    height: 0;
-    padding: 0 !important;
-  }
 }
-// Close icon
-.modal-header .close { margin-top: -2px; }
 
 // Title text within header
 .modal-title {
@@ -94,12 +91,17 @@
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   height: calc(100vh - 60px);
-  padding: @modal-inner-padding;
+  padding: (@padding-base-vertical*8) @modal-inner-padding;
   position: relative;
   overflow-y: scroll;
 
+  @media (min-width: @screen-sm-min){
+    max-height: 500px;
+    padding: @modal-inner-padding;
+  }
+
   @media (min-width: @screen-md-min){
-    height: auto; min-height: 480px;
+    max-height: 540px;
   }
 
 }
@@ -121,6 +123,11 @@
   .btn-group .btn + .btn { margin-left: -1px; }
   // and override it for block buttons as well
   .btn-block + .btn-block { margin-left: 0; }
+
+  @media (min-width: @screen-sm-min) {
+    right: -50px; bottom: -50px;
+  }
+
 }
 
 // Measure scrollbar width for padding body during modal show/hide

@@ -4,12 +4,12 @@
 
 
 .close {
-  float: right;
-  font-size: (@font-size-base * 1.5);
-  font-weight: @close-font-weight;
-  line-height: 1;
+  width: 40px; height: 40px;
+  padding: 10px;
+  font-size: 10px;
   color: @close-color;
   text-shadow: @close-text-shadow;
+  position: absolute; top: 12px; right: 10px;
   .opacity(1);
 
   &:hover,
@@ -31,4 +31,9 @@
     border: 0;
     -webkit-appearance: none;
   }
+}
+
+.close .svg{
+  width: 20px; height: 20px;
+  stroke-width: 2;
 }
