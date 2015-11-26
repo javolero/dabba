@@ -294,7 +294,7 @@
 			<div class="[ modal-content ][ text-center ]">
 				<div class="[ modal-header ][ bg-light ][ padding ]">
 					<h2 class="[ color-primary ][ no-margin ]">
-						<span class="">¡Quiero mi comida gratis!</span>
+						<span class="">¡Comida gratis!</span>
 						<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
 							<img class="[ svg ][ icon icon--stroke ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 						</a>
@@ -304,8 +304,14 @@
 					<div class="[ margin-bottom--large ]">
 						<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
 						<form class="[ ]">
-							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" placeholder="Correo electrónico" required>
-							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" placeholder="Tu zona" name="zona" required>
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="username">Correo electrónico<span class="required">*</span></label>
+								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email" id="email" placeholder="tu@algo.com" value="" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+							</p>
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
+								<label for="username">Tu zona<span class="required">*</span></label>
+								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="tu-zona" id="tu-zona" placeholder="colonia, zona, área, manzana, etc…" value="" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+							</p>
 						</form>
 					</div>
 					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
