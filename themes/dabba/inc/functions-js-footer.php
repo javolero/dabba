@@ -30,11 +30,11 @@ function footer_scripts(){
 				 * Triggered events
 				**/
 				$('.modal .select-style').change(function(){
-					if ( $(this).find('select').val() == 'other' ){
-						$(this).next('.toggable').toggleClass('hidden');
+					if ( $(this).find('select').val() === 'other' ){
+						$(this).next('.toggable').removeClass('hidden');
 						$('.js-zona').attr('required', '""');
 					} else {
-						$(this).next('.toggable').toggleClass('hidden');
+						$(this).next('.toggable').addClass('hidden');
 					}
 				});
 

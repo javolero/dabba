@@ -6509,7 +6509,6 @@ button.close {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
@@ -6539,6 +6538,7 @@ button.close {
 @media (min-width: 768px) {
   .modal {
     width: 400px;
+    height: auto;
     max-height: 560px;
     position: absolute;
     top: 50%;
@@ -6568,6 +6568,11 @@ button.close {
   min-height: 100%;
   position: relative;
   background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .modal-content {
+    min-height: 0;
+  }
 }
 .modal-backdrop {
   position: fixed;
@@ -6606,6 +6611,8 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-body {
+    height: auto;
+    min-height: 0;
     max-height: 500px;
     padding: 15px;
   }
@@ -6651,10 +6658,6 @@ button.close {
   .modal-dialog {
     width: 600px;
     margin: 30px auto;
-  }
-  .modal-content {
-    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
   .modal-sm {
     width: 300px;
