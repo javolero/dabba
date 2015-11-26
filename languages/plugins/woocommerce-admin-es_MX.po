@@ -5092,7 +5092,7 @@ msgstr "\"De\" nombre"
 
 #: includes/admin/settings/class-wc-settings-emails.php:82
 msgid "\"From\" Email Address"
-msgstr "\"De\" Dirección de email"
+msgstr "\"De\" Email"
 
 #: includes/admin/settings/class-wc-settings-emails.php:96
 msgid "Email Template"
