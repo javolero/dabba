@@ -103,19 +103,21 @@
 		</section>
 	<?php endif; ?>
 
-	<section class="[ detalles ][ bg-gradient ][ padding--bottom--large ][ margin-bottom-large ]">
+	<section class="[ detalles ][ bg-gradient ][ padding--bottom--large ][ margin-bottom--large ]">
 		<div class="[ container ][ text-center color-light ][ padding--top--xlarge ]">
-			<div class="[ row ]">
-				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
-					<h3 class="[ no-margin ]">Horario de entrega</h3>
-					<p class="[ text-light ][ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
-					<p class="[ text-light ][ text-uppercase ]">1pm - 4pm</p>
-				</div>
-				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
-					<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
-					<h3 class="[ no-margin ]">$99 - $119</h3>
-					<p class="[ text-light ][ no-margin ]">Postre y precio de envío incluidos.</p>
+			<div class="[ block ][ col-xs-12 col-sm-10 col-md-8 col-lg-6 col-centered ][ text-center ]">
+				<div class="[ row ]">
+					<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
+						<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
+						<h3 class="[ no-margin ]">Horario de entrega</h3>
+						<p class="[ text-light ][ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
+						<p class="[ text-light ][ no-margin ][ text-uppercase ]">1pm - 4pm</p>
+					</div>
+					<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
+						<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
+						<h3 class="[ no-margin ]">$99 - $119</h3>
+						<p class="[ text-light ][ no-margin ][ no-margin ]">Postre y precio de envío incluidos.</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -138,7 +140,7 @@
 
 			<article class="[ padding-top-bottom--large ]">
 				<?php if ( ! is_user_logged_in() ) : ?>
-					<div class="[ col-xs-12 ][ text-center ]">
+					<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ][ no-padding ][ text-center ]">
 						<p>¿No entregamos en tu zona?</p>
 						<p>Déjanos tu correo y tu zona, cuando estemos por allá te regalaremos una comida, ¿qué dices?</p>
 						<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#comida-gratis" data-toggle="modal">ok</a>
