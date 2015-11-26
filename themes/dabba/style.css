@@ -6362,7 +6362,7 @@ button.list-group-item-danger.active:focus {
 .embed-responsive {
   position: relative;
   display: block;
-  height: 300px;
+  height: 230px;
   padding: 0;
   overflow: hidden;
 }

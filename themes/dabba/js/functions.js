@@ -93,7 +93,6 @@ function initMap( mapId ) {
 		zoom:           13,
 		center:         {lat: 19.436342, lng: -99.202695},
 		mapTypeId:      google.maps.MapTypeId.TERRAIN,
-		draggable:      false,
 		mapTypeControl: true,
 		scrollwheel:    false,
 	});
