@@ -56,6 +56,10 @@ function imgToSvg(){
 	});
 } //imgToSvg
 
+function footerBottom(){
+	var alturaFooter = $('footer').height();
+	$('.main').css('padding-bottom', alturaFooter - 50 );
+}
 
 function toggleElement(element){
 	$(element).toggleClass('hidden');

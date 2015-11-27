@@ -2,7 +2,15 @@
 // Footer
 // --------------------------------------------------
 
-footer{}
+footer{
+	width: 100%;
+	padding-bottom: 50px;
+	position: absolute; bottom: 0;
+
+	@media (min-width: @screen-sm-min) {
+		//bottom: 50px;
+	}
+}
 
 .footer__payment,
 .footer__links,

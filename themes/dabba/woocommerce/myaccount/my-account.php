@@ -68,5 +68,5 @@ wc_print_notices(); ?>
 	// 	console.log( i );
 	// 	console.log( val );
 	// })
-	
+
 </script>

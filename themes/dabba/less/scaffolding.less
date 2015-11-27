@@ -25,11 +25,17 @@ html {
 }
 
 body {
-  font-family: @font-family-base;
-  font-size: @font-size-base;
+  font-family: @font-family-base; font-size: @font-size-base;
   line-height: @line-height-base;
   color: @text-color;
   background-color: @body-bg;
+}
+
+html, body{ height: 100%; }
+
+.main{
+  .min-height-calc(100% - 60px);
+  position: relative;
 }
 
 // Reset fonts for relevant elements
