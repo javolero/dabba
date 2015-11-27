@@ -40,14 +40,12 @@ function rf_sponsor_form(){
 		  	</p>
 		  	<p class="[]">
 			    <label for="p-message" class="col-sm-2 control-label">Mensaje opcional</label>
-				<textarea rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>			    </div>
+				<textarea rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
 		  	</p>
 		  	<p class="[]">
-		    	<div class="col-sm-offset-2 col-sm-6">
 		    	<button type="submit" name="submit" class="btn btn-default">Invitar</button>
-		    	</div>
 		  	</p>
-	</form>
+		</form>
 
 	</div>
 

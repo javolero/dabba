@@ -57,8 +57,8 @@ function imgToSvg(){
 } //imgToSvg
 
 function footerBottom(){
-	var alturaFooter = $('footer').height();
-	$('.main').css('padding-bottom', alturaFooter - 50 );
+	var alturaFooter = $('footer').outerHeight();
+	$('.main').css('padding-bottom', alturaFooter );
 }
 
 function toggleElement(element){
