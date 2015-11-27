@@ -25,25 +25,25 @@ function rf_sponsor_form(){
 
     <!-- <script type="text/javascript" src="js/bootstrap.js"></script> -->
 	<div class="[ container ]">
-		<form class="[ form-horizontal ]" role="form" method="post">
+		<form class="[ row ]" role="form" method="post">
 		  	<p class="[]">
 			    <label for="p-firstname" class="col-sm-2 control-label">Nombre de tu amigo</label>
-			    <input value="<?php echo isset( $_POST['rf_firstname'] ) ? $_POST['rf_firstname'] : '' ?>" type="text" name="rf_firstname" />
+			    <input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" value="<?php echo isset( $_POST['rf_firstname'] ) ? $_POST['rf_firstname'] : '' ?>" type="text" name="rf_firstname" />
 		  	</p>
 		  	<p class="[]">
 			    <label for="p-lastname" class="col-sm-2 control-label">Apellido de tu amigo</label>
-			    <input value="<?php echo isset( $_POST['rf_lastname'] ) ? $_POST['rf_lastname'] : '' ?>" type="text" name="rf_lastname" />
+			    <input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" value="<?php echo isset( $_POST['rf_lastname'] ) ? $_POST['rf_lastname'] : '' ?>" type="text" name="rf_lastname" />
 		  	</p>
 		  	<p class="[]">
 			    <label for="p-email" class="col-sm-2 control-label">Email de tu amigo</label>
-			    <input value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" />
+			    <input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" />
 		  	</p>
 		  	<p class="[]">
 			    <label for="p-message" class="col-sm-2 control-label">Mensaje opcional</label>
-				<textarea rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
+				<textarea class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
 		  	</p>
-		  	<p class="[]">
-		    	<button type="submit" name="submit" class="btn btn-default">Invitar</button>
+		  	<p class="[ text-center ]">
+		    	<button type="submit" name="submit" class="[ btn btn-primary btn-hollow btn-sm ]">Invitar</button>
 		  	</p>
 		</form>
 
