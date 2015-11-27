@@ -4389,9 +4389,6 @@ tbody.collapse.in {
   width: 100%;
   margin-bottom: 0;
 }
-textarea.form-control {
-  background-color: black;
-}
 select[name=amount] {
   border: 1px solid #ccc;
   background: url('../img/arrow-up.png');
