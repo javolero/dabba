@@ -37,7 +37,7 @@
 						<?php 
 						if ( ! $product->is_in_stock() ) :
 							echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ][ pull-right ]">agotado</a>';
-						else: 
+						elseif( product_can_be_bought( $product->id ) ): 
 							echo woocommerce_template_loop_add_to_cart();
 						endif; 
 						?>

@@ -4,14 +4,14 @@ date_default_timezone_set('America/Mexico_City');
 	#CONSTANTS
 \*------------------------------------*/
 
-	/**
-	* Define paths to javascript, styles, theme and site.
-	**/
-	define( 'JSPATH', get_template_directory_uri() . '/js/' );
-	define( 'BOOTSTRAP_PATH', get_template_directory_uri() . '/dist/' );
-	define( 'CSSPATH', get_template_directory_uri() . '/css/' );
-	define( 'THEMEPATH', get_template_directory_uri() . '/' );
-	define( 'SITEURL', site_url('/') );
+/**
+* Define paths to javascript, styles, theme and site.
+**/
+define( 'JSPATH', get_template_directory_uri() . '/js/' );
+define( 'BOOTSTRAP_PATH', get_template_directory_uri() . '/dist/' );
+define( 'CSSPATH', get_template_directory_uri() . '/css/' );
+define( 'THEMEPATH', get_template_directory_uri() . '/' );
+define( 'SITEURL', site_url('/') );
 
 
 
@@ -19,15 +19,15 @@ date_default_timezone_set('America/Mexico_City');
 	#INCLUDES
 \*------------------------------------*/
 
-	require_once('inc/post-types.php');
-	require_once('inc/metaboxes.php');
-	require_once('inc/taxonomies.php');
-	require_once('inc/pages.php');
-	require_once('inc/users.php');
-	require_once('inc/functions-admin.php');
-	require_once('inc/functions-js-footer.php');
-	require_once('inc/functions-js-footer-admin.php');
-	include 'inc/extra-metaboxes.php';
+require_once('inc/post-types.php');
+require_once('inc/metaboxes.php');
+require_once('inc/taxonomies.php');
+require_once('inc/pages.php');
+require_once('inc/users.php');
+require_once('inc/functions-admin.php');
+require_once('inc/functions-js-footer.php');
+require_once('inc/functions-js-footer-admin.php');
+include 'inc/extra-metaboxes.php';
 
 
 
@@ -35,32 +35,47 @@ date_default_timezone_set('America/Mexico_City');
 	#GENERAL FUNCTIONS
 \*------------------------------------*/
 
-	/**
-	* Enqueue frontend scripts and styles
-	**/
-	add_action( 'wp_enqueue_scripts', function(){
+/**
+* Enqueue frontend scripts and styles
+**/
+add_action( 'wp_enqueue_scripts', function(){
 
-		// scripts
-		wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
-		wp_enqueue_script( 'functions', JSPATH.'functions.js', array('plugins'), '1.0', true );
-		wp_enqueue_script( 'bootstrap_js', BOOTSTRAP_PATH.'/js/bootstrap.js', array('plugins'), '1.0', true );
+	// scripts
+	wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'functions', JSPATH.'functions.js', array('plugins'), '1.0', true );
+	wp_enqueue_script( 'bootstrap_js', BOOTSTRAP_PATH.'/js/bootstrap.js', array('plugins'), '1.0', true );
 
-		// localize scripts
-		wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
-		wp_localize_script( 'functions', 'site_url', site_url() );
-		wp_localize_script( 'functions', 'theme_url', THEMEPATH );
+	// localize scripts
+	wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
+	wp_localize_script( 'functions', 'site_url', site_url() );
+	wp_localize_script( 'functions', 'theme_url', THEMEPATH );
 
-		// styles
-		wp_enqueue_style( 'styles', get_stylesheet_uri() );
+	// styles
+	wp_enqueue_style( 'styles', get_stylesheet_uri() );
 
-	});
+});
 
-	/**
-	* Add javascript to the footer of pages.
-	**/
-	add_action( 'wp_footer', 'footer_scripts', 21 );
+/**
+* Add javascript to the footer of pages.
+**/
+add_action( 'wp_footer', 'footer_scripts', 21 );
 
+/**
+ * Regresa si el platillo actual se puede comprar
+ * dependiendo de la hora y el día
+ * @return boolean
+ */
+function product_can_be_bought( $product_id ){
 
+	$time_now = date("Y-m-d h:i:sa");
+	$last_timeframe = mktime(15, 0, 0, date("m"), date("d"), date("Y"));
+	$diff_last_timeframe = round( ( $last_timeframe -  strtotime( $time_now ) ) / 60,2);
+
+	if( 15 > $diff_last_timeframe ) return 1;
+
+	return 0;
+
+}// product_can_be_bought
 
 
 
@@ -494,7 +509,6 @@ add_filter( 'woocommerce_checkout_fields' , 'set_timeframe_required' );
 function get_valid_timeframe(){
 
 	$time_now = date("Y-m-d h:i:sa");
-	$test_timeframe = mktime(17, 49, 0, date("m"), date("d"), date("Y"));
 
 	$first_timeframe = mktime(13, 0, 0, date("m"), date("d"), date("Y"));
 	$second_timeframe = mktime(14, 0, 0, date("m"), date("d"), date("Y"));
