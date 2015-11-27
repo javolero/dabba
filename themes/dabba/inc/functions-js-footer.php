@@ -40,8 +40,8 @@ function footer_scripts(){
 
 				$('.js-btn-siguiente').on('click', function(e) {
 					e.preventDefault();
-					$('#form-zona').parsley().validate();
 
+					$('[data-parsley-validate-comienza]').parsley().validate();
 					if ( true === $('[data-parsley-validate-comienza]').parsley().isValid() ) {
 
 						$('#comienza').modal('toggle');
@@ -52,12 +52,20 @@ function footer_scripts(){
 							$('#error').modal('toggle');
 							setTimeout( function(){ initMap( 'map-lo-sentimos' ); } , 400);
 							agregarUsuarioProspecto( email, zona );
+							return;
 						}
 						$('#excelente').modal('toggle');
 						$('#reg_email').val( email );
+						//clearForm('[data-parsley-validate-comienza]');
 					}
 
 				});
+
+				$('[name="select-zona"]').change(function(){
+					if( this.value == 'other' ) return;
+					$('input[name="zona"]').val('');
+					$('.js-zona').removeAttr('required');
+				})
 
 				$('.js-registrate').on('click', function(){
 					$('#login').modal('toggle');
@@ -68,6 +76,21 @@ function footer_scripts(){
 					toggleClass('.js-notification__number', 'added');
 				});
 
+				$('.js-btn-enviar-gratis').on('click', function(e) {
+					console.log('enviar gratis');
+					e.preventDefault();
+
+					$('[data-parsley-validate-gratis]').parsley().validate();
+					if ( true === $('[data-parsley-validate-gratis]').parsley().isValid() ) {
+						var email = $('input[name="email-gratis"]').val();
+						var zona = $('input[name="zona-gratis"]').val();
+						agregarUsuarioProspecto( email, zona );
+						$('#comida-gratis').modal('toggle');
+					}
+
+				});
+
+				// Validar formas QUITAR
 				$('#form-login').parsley();
 
 
