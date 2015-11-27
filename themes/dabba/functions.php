@@ -477,22 +477,38 @@ add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
  * Quitar el estado de la dirección
  * @return string
  */
-add_filter( 'woocommerce_checkout_fields' , 'set_timeframe_required' );
 function set_timeframe_required( $fields ) {
 
-	// $time_now = date("Y-m-d h:i:sa");
-	// $first_timeframe = mktime(13, 0, 0, date("m"), date("d"), date("Y"));
-	// $diff_first_timeframe = round( ( $first_timeframe -  strtotime( $time_now ) ) / 60,2). " minute";
-	// echo $diff_first_timeframe . '<br/>';
-	// echo $time_now . '<br/>';
-	// echo date("Y-m-d h:i:sa", $first_timeframe);
-	// echo '<pre>';
-	// var_dump( $fields['billing']['billing_timeframe'] );
-	// echo '</pre>';
-
+	$opts = get_valid_timeframe();
+	$fields['billing']['billing_timeframe']['options'] = $opts; 
 	$fields['billing']['billing_timeframe']['required'] = true;
 	return $fields;
+
 }// set_timeframe_required
+add_filter( 'woocommerce_checkout_fields' , 'set_timeframe_required' );
+
+/**
+ * Regresa las ventanas de tiempo disponibles para el platillo del día / semana
+ * @return array $timeframe_options
+ */
+function get_valid_timeframe(){
+
+	$time_now = date("Y-m-d h:i:sa");
+	$test_timeframe = mktime(17, 49, 0, date("m"), date("d"), date("Y"));
+
+	$first_timeframe = mktime(13, 0, 0, date("m"), date("d"), date("Y"));
+	$second_timeframe = mktime(14, 0, 0, date("m"), date("d"), date("Y"));
+	$third_timeframe = mktime(15, 0, 0, date("m"), date("d"), date("Y"));
+
+	$diff_first_timeframe = round( ( $first_timeframe -  strtotime( $time_now ) ) / 60,2);
+	$diff_second_timeframe = round( ( $second_timeframe -  strtotime( $time_now ) ) / 60,2);
+	$diff_third_timeframe = round( ( $third_timeframe -  strtotime( $time_now ) ) / 60,2);
+
+	if( 15 <= $diff_first_timeframe || 15 > $diff_third_timeframe  ) return array( '1:00pm - 2:00pm' => '1:00pm - 2:00pm', '2:00pm - 3:00pm' => '2:00pm - 3:00pm', '3:00pm - 4:00pm' => '3:00pm - 4:00pm' ); 
+	if( 15 <= $diff_second_timeframe ) return array( '2:00pm - 3:00pm' => '2:00pm - 3:00pm', '3:00pm - 4:00pm' => '3:00pm - 4:00pm' );
+	if( 15 <= $diff_third_timeframe ) return array( '3:00pm - 4:00pm' => '3:00pm - 4:00pm' );
+
+}// get_valid_timeframe
 
  /**
  * Quitarle "required" a billing_state

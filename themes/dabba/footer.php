@@ -173,13 +173,13 @@
 						<form id="form-zona" data-parsley-validate-comienza>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 								<label for="username">Correo electrónico<span class="required">*</span></label>
-								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-comienza" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
+								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-comienza" placeholder="nombre@micorreo.com" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							</p>
 							<div class="[ select-style ][ margin-bottom--small ]">
 								<p class="[ no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 									<label for="username">Selecciona tu zona<span class="required">*</span></label>
 									<select class="[ form-control form-control-bg ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
-										<option value="">-</option>
+										<option disabled selected="selected">zona</option>
 										<option value="polanco">Polanco</option>
 										<option value="ampliacion-granada">Ampliación Granada</option>
 										<option value="corporativos-palmas">Corporativos Palmas</option>
@@ -210,7 +210,7 @@
 					</h2>
 				</div>
 				<div class="[ modal-body ][ bg-primary ]">
-					<p>Ingresa tu password para que puedas darte de alta y veas el menu de hoy.</p>
+					<p>Regístrate con</p>
 					<div class="[ margin-bottom ]">
 						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
 					</div>
@@ -221,7 +221,7 @@
 
 						<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 							<label for="username">Correo electrónico<span class="required">*</span></label>
-							<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email" id="reg_email" placeholder="<?php _e( 'Email address', 'woocommerce' ); ?>" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+							<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
 						</p>
 
 						<!-- <p class="form-row form-row-wide">
@@ -277,7 +277,7 @@
 				</div>
 				<div class="[ modal-body ][ bg-primary ]">
 					<div class="[ margin-bottom--large ]">
-						<p>Por ahora no entregamos en tu área, entregamos en:</p>
+						<p>Por ahora no entregamos en tu zona, entregamos en:</p>
 						<div class="[ embed-responsive ][ margin-bottom ]">
 							<div id="map-lo-sentimos" class="[ js-map ][ embed-responsive-item ]"></div>
 						</div>
@@ -303,18 +303,18 @@
 				<div class="[ modal-body ][ bg-primary ]">
 					<div class="[ margin-bottom--large ]">
 						<p>Gracias por dejarnos tus datos, esperámos verte muy pronto.</p>
-						<form class="[ ]">
+						<form class="[ ]" data-parsley-validate-gratis>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="username">Correo electrónico<span class="required">*</span></label>
-								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email" id="email" placeholder="tu@algo.com" value="" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-gratis" id="email" placeholder="nombre@micorreo.com" data-parsley-type="email" data-parsley-error-message="Por favor ingresa un correo electrónico válido." required>
 							</p>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="username">Tu zona<span class="required">*</span></label>
-								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="tu-zona" id="tu-zona" placeholder="colonia, zona, área, manzana, etc…" value="" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="zona-gratis" id="tu-zona" placeholder="colonia o zona, área, etc…" value="" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." required>
 							</p>
 						</form>
 					</div>
-					<a href="#" class="[ ][ btn btn-sm btn-hollow btn-light ]" data-dismiss="modal" aria-hidden="true">enviar</a>
+					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-enviar-gratis ]" aria-hidden="true">enviar</a>
 				</div><!-- End of Modal-body-->
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal-->
@@ -346,8 +346,8 @@
 						<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 							<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
-							<span class="[ js-invalid-login-msg ]"></span>
 						</p>
+						<span class="[ js-invalid-login-msg ]"></span>
 
 						<p class="[ lost_password ]">
 							<small><a class="[ color-light ]" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">¿Olvidaste tu contraseña?</a></small>

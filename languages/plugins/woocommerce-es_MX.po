@@ -6584,7 +6584,7 @@ msgstr "Código postal"
 
 #: includes/class-wc-countries.php:963
 msgid "Email Address"
-msgstr "Dirección de email"
+msgstr "Email"
 
 #: includes/class-wc-countries.php:970
 msgid "Phone"
