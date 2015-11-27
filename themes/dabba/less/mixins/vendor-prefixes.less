@@ -14,6 +14,7 @@
 // - Transformations
 // - Transitions
 // - User Select
+// - Calc
 
 
 // Animations
@@ -237,4 +238,33 @@
      -moz-user-select: @select;
       -ms-user-select: @select; // IE10+
           user-select: @select;
+}
+
+// Calculations
+.width-calc(@expression) {
+  width: -moz-calc(@expression);
+  width: -o-calc(@expression);
+  width: -webkit-calc(@expression);
+  width: calc(@expression);
+}
+
+.min-width-calc(@expression) {
+  min-width: -moz-calc(@expression);
+  min-width: -o-calc(@expression);
+  min-width: -webkit-calc(@expression);
+  min-width: calc(@expression);
+}
+
+.height-calc(@expression) {
+  height: -moz-calc(@expression);
+  height: -o-calc(@expression);
+  height: -webkit-calc(@expression);
+  height: calc(@expression);
+}
+
+.min-height-calc(@expression) {
+  min-height: -moz-calc(@expression);
+  min-height: -o-calc(@expression);
+  min-height: -webkit-calc(@expression);
+  min-height: calc(@expression);
 }

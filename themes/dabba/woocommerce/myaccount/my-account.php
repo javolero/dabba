@@ -37,9 +37,9 @@ wc_print_notices(); ?>
 
 	<?php wc_get_template( 'myaccount/my-address.php' ); ?>
 
-	<?php wc_get_template( 'myaccount/my-programmed-orders.php' ); ?>
+	<?php // wc_get_template( 'myaccount/my-programmed-orders.php' ); ?>
 
-	<?php wc_get_template( 'myaccount/my-orders.php', array( 'order_count' => $order_count ) ); ?>
+	<?php // wc_get_template( 'myaccount/my-orders.php', array( 'order_count' => $order_count ) ); ?>
 
 	<div class="[ myaccount_user ][ margin-top-bottom--large ][ text-center ]">
 		<?php
@@ -68,5 +68,5 @@ wc_print_notices(); ?>
 	// 	console.log( i );
 	// 	console.log( val );
 	// })
-	
+
 </script>

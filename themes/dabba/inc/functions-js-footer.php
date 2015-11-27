@@ -24,11 +24,14 @@ function footer_scripts(){
 				<?php wc_clear_notices(); endif; ?>
 
 				imgToSvg();
+				footerBottom();
 
 
 				/**
 				 * Triggered events
 				**/
+				$(window).resize(function () { footerBottom(); });
+
 				$('.modal .select-style').change(function(){
 					if ( $(this).find('select').val() === 'other' ){
 						$(this).next('.toggable').removeClass('hidden');

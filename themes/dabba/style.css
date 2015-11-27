@@ -1067,7 +1067,6 @@ th {
 .icon {
   display: inline-block;
   vertical-align: middle;
-  height: auto !important;
   margin-right: .2em;
   margin-left: .2em;
   -webkit-transition: all 0.3s ease;
@@ -1084,24 +1083,29 @@ th {
 }
 .icon--iconed {
   width: 30px !important;
+  height: 30px !important;
 }
 .icon--iconed--mini {
   width: 20px !important;
+  height: 20px !important;
 }
 .icon--iconed--micro {
   width: 15px !important;
+  height: 15px !important;
 }
 .icon--feature {
   width: 6em !important;
+  height: 6em !important;
 }
 @media (min-width: 768px) {
   .icon--feature {
     width: 8em !important;
+    width: 6em !important;
   }
 }
 .icon--logo {
   width: 150px;
-  height: auto;
+  height: 33px;
 }
 /*------------------------------------*\
   #COLOR
@@ -1185,6 +1189,17 @@ body {
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
+}
+html,
+body {
+  height: 100%;
+}
+.main {
+  min-height: -moz-calc(100% - 60px);
+  min-height: -o-calc(100% - 60px);
+  min-height: -webkit-calc(100% - 60px);
+  min-height: calc(100% - 60px);
+  position: relative;
 }
 input,
 button,
@@ -7991,6 +8006,12 @@ header {
   color: #ffffff;
   text-decoration: underline;
   font-style: normal;
+}
+footer {
+  width: 100%;
+  padding-bottom: 50px;
+  position: absolute;
+  bottom: 0;
 }
 .footer__payment,
 .footer__links,
