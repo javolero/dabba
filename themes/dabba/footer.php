@@ -27,9 +27,9 @@
 	 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script>. Dabba Foods S.A. de C.V.</p>
 						</section>
 						<section class="[ footer__social-media ][ social ]">
-							<a class="[ margin-sides--xsmall ][ inline-block ]" href="<?php echo 'https://twitter.com/' ?>">
+							<!-- <a class="[ margin-sides--xsmall ][ inline-block ]" href="<?php echo 'https://twitter.com/' ?>">
 								<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
-							</a>
+							</a> -->
 							<a class="[ margin-sides--xsmall ][ inline-block ]" href="https://www.facebook.com/dabbamx/" target="_blank">
 								<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
 							</a>
