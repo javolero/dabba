@@ -370,6 +370,25 @@
 				</div><!-- End of Modal-body-->
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal-->
+
+		<!-- Modal "invita-a-un-amigo"
+		================================================== -->
+		<div id="invita-a-un-amigo" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="InvitaAUnAmigo" aria-hidden="true">
+			<div class="[ modal-content ][ text-center ]">
+				<div class="[ modal-header ][ bg-light ][ padding ]">
+					<h2 class="[ color-primary ][ no-margin ]">
+						<span class="">Invita a un amigo</span>
+						<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+							<img class="[ svg ][ icon icon--stroke ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+						</a>
+					</h2>
+				</div>
+				<div class="[ modal-body ][ bg-primary ]">
+					<?php echo do_shortcode('[rf_sponsor_form]'); ?>
+				</div><!-- End of Modal-body-->
+			</div><!-- End of Modal-content-->
+		</div><!-- End of Modal-->
+
 		<?php wp_footer(); ?>
 	</body>
 </html>

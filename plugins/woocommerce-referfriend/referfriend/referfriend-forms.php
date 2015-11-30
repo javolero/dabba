@@ -20,35 +20,27 @@ function rf_sponsor_form(){
 	//WC()->session->set( 'rf_notices' , '');
 	?>
 
-    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-
-    <!-- <script type="text/javascript" src="js/bootstrap.js"></script> -->
-	<div class="[ container ][ margin-top-bottom--large ]">
-		<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ]">
-			<form class="[ row ]" role="form" method="post">
-			  	<p class="[]">
-				    <label for="p-firstname" class="[]">Nombre de tu amigo</label>
-				    <input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_firstname'] ) ? $_POST['rf_firstname'] : '' ?>" type="text" name="rf_firstname" />
-			  	</p>
-			  	<p class="[]">
-				    <label for="p-lastname" class="[]">Apellido de tu amigo</label>
-				    <input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_lastname'] ) ? $_POST['rf_lastname'] : '' ?>" type="text" name="rf_lastname" />
-			  	</p>
-			  	<p class="[]">
-				    <label for="p-email" class="[]">Email de tu amigo</label>
-				    <input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" />
-			  	</p>
-			  	<p class="[]">
-				    <label for="p-message" class="[]">Mensaje opcional</label>
-					<textarea class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
-			  	</p>
-			  	<p class="[ text-center ]">
-			    	<button type="submit" name="submit" class="[ btn btn-primary btn-hollow btn-sm ]">Invitar</button>
-			  	</p>
-			</form>
+	<form class="[ ]" role="form" method="post" data-parsley-validate-invita-a-un-amigo>
+		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
+			<label for="p-firstname" class="[]">Nombre de tu amigo<span class="required">*</span></label>
+			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_firstname'] ) ? $_POST['rf_firstname'] : '' ?>" type="text" name="rf_firstname" />
+		</p>
+		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
+			<label for="p-lastname" class="[]">Apellido de tu amigo<span class="required">*</span></label>
+			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_lastname'] ) ? $_POST['rf_lastname'] : '' ?>" type="text" name="rf_lastname" />
+		</p>
+		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
+			<label for="p-email" class="[]">Email de tu amigo<span class="required">*</span></label>
+			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" />
+		</p>
+		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
+			<label for="p-message" class="[]">Mensaje opcional</label>
+			<textarea class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
+		</p>
+		<div class="[ text-center ]">
+			<button type="submit" name="submit" class="[ btn btn-light btn-hollow btn-sm ]">Invitar</button>
 		</div>
-	</div>
+	</form>
 
 
 

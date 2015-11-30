@@ -1427,14 +1427,12 @@ p {
   font-size: 1.1em;
 }
 .lead {
-  margin-bottom: 2em;
-  font-size: 1em;
-  font-weight: 300;
+  font-size: 130%;
   line-height: 1.4;
 }
 @media (min-width: 768px) {
   .lead {
-    font-size: 2.1em;
+    font-size: 135%;
   }
 }
 p a {
@@ -3216,12 +3214,6 @@ textarea.parsley-error {
   font-size: 90%;
   background: #673695;
   color: #ffffff;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
   text-align: center;
   opacity: 0;
   clear: both;
