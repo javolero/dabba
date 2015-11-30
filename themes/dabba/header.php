@@ -70,7 +70,7 @@
 							<a class="[ show ]" href="#login" data-toggle="modal">
 							<!-- <a class="[ show ]" href="#coming" data-toggle="modal"> -->
 								<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
-								<p class="[ inline-block align-middle ][ color-light ][ no-margin margin-left--small ]">login</p>
+								<p class="[ inline-block align-middle ][ color-light ][ no-margin margin-left--small ]">Entrar</p>
 							</a>
 						<?php else: ?>
 							<a class="[ show ]" href="<?php echo site_url('mi-cuenta'); ?>">

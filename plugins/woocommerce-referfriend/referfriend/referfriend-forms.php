@@ -12,9 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function rf_sponsor_form(){
 	do_action('magenestnest_before_refer_friend_form');
 	do_action('rf_before_form');
-	add_action( 'rf_before_form', 'wc_print_notices', 10 );
-
-	wc_print_notices();
+	//add_action( 'rf_before_form', 'wc_print_notices', 10 );
+	//wc_print_notices();
 
 	//echo WC()->session->get( 'rf_notices');
 	//WC()->session->set( 'rf_notices' , '');

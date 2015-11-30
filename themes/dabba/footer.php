@@ -24,7 +24,7 @@
 							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba para reuniones</a>
 							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/terminos_y_condiciones_dabba.pdf" target="_blank">Términos y condiciones</a>
 							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/aviso_de_privacidad_dabba.pdf" target="_blank">Aviso de privacidad</a>
-	 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script></p>
+	 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script>. Dabba Foods S.A. de C.V.</p>
 						</section>
 						<section class="[ footer__social-media ][ social ]">
 							<a class="[ margin-sides--xsmall ][ inline-block ]" href="<?php echo 'https://twitter.com/' ?>">
@@ -371,6 +371,8 @@
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal-->
 
+
+
 		<!-- Modal "invita-a-un-amigo"
 		================================================== -->
 		<div id="invita-a-un-amigo" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="InvitaAUnAmigo" aria-hidden="true">
@@ -390,5 +392,6 @@
 		</div><!-- End of Modal-->
 
 		<?php wp_footer(); ?>
+
 	</body>
 </html>

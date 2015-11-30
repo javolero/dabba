@@ -34,15 +34,17 @@
 							<h3 class="[ no-margin ]"><?php echo get_the_title() ?></h3>
 							<p class="[ no-margin ]"><?php echo format_contenido_platillo( $guarnicion_1, $guarnicion_2 ) ?></p>
 						</div>
-						<div class="[ col-xs-4 ]">
-							<?php
-							if ( ! $product->is_in_stock() ) :
-								echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ][ pull-right ]">agotado</a>';
-							else:
-								echo woocommerce_template_loop_add_to_cart();
-							endif;
-							?>
-						</div>
+						<?php if ( is_user_logged_in() ) : ?>
+							<div class="[ col-xs-4 ]">
+								<?php
+								if ( ! $product->is_in_stock() ) :
+									echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ][ pull-right ]">agotado</a>';
+								else:
+									echo woocommerce_template_loop_add_to_cart();
+								endif;
+								?>
+							</div>
+						<?php endif; ?>
 					</div>
 				</section>
 			</div>
