@@ -54,6 +54,7 @@ textarea {
 a {
   color: @link-color;
   text-decoration: none;
+  .transition;
 
   &:hover,
   &:focus {
@@ -63,6 +64,14 @@ a {
 
   &:focus {
     .tab-focus();
+  }
+}
+
+a.color-light {
+
+  &:hover,
+  &:focus {
+    color: darken(@light, 10%);
   }
 }
 
