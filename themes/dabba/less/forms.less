@@ -646,16 +646,17 @@ input.parsley-error,
 select.parsley-error,
 textarea.parsley-error {
   padding: 0 5px; border: 1px solid @secondary;
-  color: @light;
+  color: @gray-light;
 }
 
 .parsley-errors-list {
-  padding: 0; margin: 0;
+  padding: 5px 10px 5px 10px; margin: 0 0 6px 0;
   list-style-type: none;
   font-size: 90%;
   background: @secondary;
   color: @light;
   text-align: center;
+  position: relative; top: -10px;
   opacity: 0;
   clear: both;
 
@@ -666,7 +667,6 @@ textarea.parsley-error {
 }
 
 .parsley-errors-list.filled {
-  padding: 5px 10px 5px 10px; margin: 0 0 6px;
   opacity: 1;
 }
 

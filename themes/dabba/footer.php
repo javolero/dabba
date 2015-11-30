@@ -131,10 +131,10 @@
 								<label for="EMAIL">Correo electrónico<span class="required">*</span></label>
 								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="EMAIL" value="" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							</p>
-							<div class="[ select-style ][ margin-bottom--small ]">
-								<p class="[ no-padding no-margin ][ text-left ][ col-xs-12 ]">
+							<div class="[ select-style ]">
+								<p class="[ no-padding ][ text-left ][ col-xs-12 ]">
 									<label for="ZONA">Selecciona tu zona<span class="required">*</span></label>
-									<select class="[ form-control form-control-bg ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
+									<select class="[ form-control form-control-bg ][ margin-bottom--xsmall ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
 										<option value="">¿En qué zona del DF trabajas?</option>
 										<option value="Polanco">Polanco</option>
 										<option value="Lomas">Lomas</option>
@@ -175,10 +175,10 @@
 								<label for="username">Correo electrónico<span class="required">*</span></label>
 								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-comienza" placeholder="nombre@micorreo.com" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							</p>
-							<div class="[ select-style ][ margin-bottom--small ]">
-								<p class="[ no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
+							<div class="[ select-style ]">
+								<p class="[ no-padding ][ text-left ][ col-xs-12 ]">
 									<label for="username">Selecciona tu zona<span class="required">*</span></label>
-									<select class="[ form-control form-control-bg ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
+									<select class="[ form-control form-control-bg ][ margin-bottom--xsmall ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
 										<option disabled selected="selected">zona</option>
 										<option value="polanco">Polanco</option>
 										<option value="ampliacion-granada">Ampliación Granada</option>
@@ -216,7 +216,7 @@
 					</div>
 					<p>O con tu correo</p>
 
-					<form method="post" class="[ register ][ row ]" data-parsley-validate-excelente>
+					<form method="post" class="[ register ]" data-parsley-validate-excelente>
 						<?php do_action( 'woocommerce_register_form_start' ); ?>
 
 						<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
