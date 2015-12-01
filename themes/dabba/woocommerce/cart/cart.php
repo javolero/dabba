@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-wc_print_notices(); ?>
+// wc_print_notices(); ?>
 
 	<h2 class="[ text-center ][ margin-top-bottom--large ]">Checkout</h2>
 

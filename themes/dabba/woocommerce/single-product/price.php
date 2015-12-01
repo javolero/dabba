@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version 2.4.9
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,3 +23,5 @@ global $product;
 	<link itemprop="availability" href="http://schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" />
 
 </div> -->
+
+

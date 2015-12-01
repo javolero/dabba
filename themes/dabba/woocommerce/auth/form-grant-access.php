@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <h1><?php printf( __( '%s would like to connect to your store' , 'woocommerce' ), esc_html( $app_name ) ); ?></h1>
 
-<?php wc_print_notices(); ?>
+<?php //wc_print_notices(); ?>
 
 <p><?php printf( __( 'This will give "%s" <strong>%s</strong> access which will allow it to:' , 'woocommerce' ), esc_html( $app_name ), esc_html( $scope ) ); ?></p>
 

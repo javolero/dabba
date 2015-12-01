@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<h3 class="[ text-center ][ margin-top margin-bottom--large ]">Editar mi información</h3>
 
-	<?php wc_print_notices(); ?>
+	<?php //wc_print_notices(); ?>
 
 	<form action="" method="post">
 
