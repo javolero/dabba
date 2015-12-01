@@ -118,10 +118,23 @@ function footer_scripts(){
 
 							$(window).resize(function () { resizeToCover(minW, vidWOrig, vidHOrig); });
 							$(window).trigger('resize');
-
 						}
 
 					<?php endif; ?>
+
+				<?php endif; ?>
+
+				<?php if( is_page( 'Para reuniones' ) ) : ?>
+
+					$('[data-parsley-validate-reuniones]').parsley();
+					$('.js-para-reuniones').submit( function(e){
+						e.preventDefault();
+
+						$('[data-parsley-validate-reuniones]').parsley().validate();
+						if ( true === $('[data-parsley-validate-reuniones]').parsley().isValid() ) 
+							sendMailReuniones( $('.js-para-reuniones').serialize() );
+
+					})
 
 				<?php endif; ?>
 			});

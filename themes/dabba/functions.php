@@ -394,6 +394,43 @@ function agregar_usuario_prospecto(){
 add_action("wp_ajax_agregar_usuario_prospecto", "agregar_usuario_prospecto");
 add_action("wp_ajax_nopriv_agregar_usuario_prospecto", "agregar_usuario_prospecto");
 
+/**
+ * Send email for "more information"
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function send_email_reuniones(){
+
+	$nombre_apellido 	= $_POST['nombre-y-apellido'];
+	$email 				= $_POST['email'];
+	$comensales 		= $_POST['comensales'];
+	$fecha 				= $_POST['fecha'];
+	$comentarios 		= isset( $_POST['comentarios'] ) ? $_POST['comentarios'] : '-';
+
+	$to = 'miguel@pcuervo.com';
+	$subject = 'Informes acerca de Dabba para reuniones';
+	$headers = 'From: Dabba <no-reply@dabba.mx>' . "\r\n";
+	$message = '<html><body>';
+	$message .= '<p><strong>'.$nombre_apellido.'</strong> ha solicitado información para una reunión.</p>';
+	$message .= '<p>Email: '. $email . '</p>';
+	$message .= '<p>Número de comensales estimado: '. $comensales . '</p>';
+	$message .= '<p>Fecha estimada: '. $fecha . '</p>';
+	if( $comentarios != '' ) $message .= '<p>Comentarios adicionales: '. $comentarios . '</p>';
+	$message .= '</body></html>';
+
+	add_filter( 'wp_mail_content_type',create_function('', 'return "text/html"; ') );
+	wp_mail( $to, $subject, $message, $headers );
+
+	$message = array(
+		'error'		=> 0,
+		'message'	=> '¡Gracias por contactarnos ' . $nombre_apellido .'!',
+		);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
+
+}// send_email_reuniones
+add_action("wp_ajax_send_email_reuniones", "send_email_reuniones");
+add_action("wp_ajax_nopriv_send_email_reuniones", "send_email_reuniones");
+
 
 
 /*-----------------------------------------------*\

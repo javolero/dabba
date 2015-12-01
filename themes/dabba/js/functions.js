@@ -93,8 +93,10 @@ function toggleClass(element, classToToggle){
 
 function initMap( mapId ) {
 
+    var zoom = ( $(window).width() < 800 ) ? 13 : 14; 
+    console.log( $(window).width() );
 	var map = new google.maps.Map(document.getElementById( mapId ), {
-		zoom:           13,
+		zoom:           zoom,
 		center:         {lat: 19.436342, lng: -99.202695},
 		mapTypeId:      google.maps.MapTypeId.TERRAIN,
 		mapTypeControl: true,
@@ -246,6 +248,9 @@ function showExistingUserError(){
 	#AJAX FUNCTIONS
 \*------------------------------------*/
 
+/**
+ * Guarda prospectos como post en WP
+ */
 function agregarUsuarioProspecto( email, zona ){
 
 	$.post(
@@ -261,6 +266,21 @@ function agregarUsuarioProspecto( email, zona ){
 	);
 
 }// agregarUsuarioProspecto
+
+/**
+ * Manda correo a admin con informes para reuniones.
+ */
+function sendMailReuniones( data ){
+
+    $.post(
+        ajax_url,
+        data,
+        function( response ){
+            console.log( response );
+        }
+    );
+
+}// sendMailReuniones
 
 /*------------------------------------*\
 	#GET / SET FUNCTIONS
