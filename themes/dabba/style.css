@@ -4019,6 +4019,16 @@ input[type="button"].btn-block {
   color: #ffffff;
   background: #2d4373;
 }
+.button-social-login-twitter {
+  color: #ffffff;
+  background: #55acee;
+}
+.button-social-login-twitter:hover,
+.button-social-login-twitter:focus,
+.button-social-login-twitter.focus {
+  color: #ffffff;
+  background: #2795e9;
+}
 .button-social-login-google {
   color: #e24b44;
   background: #ffffff;
