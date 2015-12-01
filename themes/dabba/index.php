@@ -55,7 +55,7 @@
 
 	<?php endif; ?>
 
-	<?php get_template_part( 'templates/menu', 'hoy' ); ?>
+	<?php if( can_order_today() ) get_template_part( 'templates/menu', 'hoy' ); ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
 

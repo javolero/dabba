@@ -61,11 +61,17 @@ add_action( 'wp_enqueue_scripts', function(){
 add_action( 'wp_footer', 'footer_scripts', 21 );
 
 /**
- * Regresa si el platillo actual se puede comprar
- * dependiendo de la hora y el día
+ * Regresa si el platillo de la semana actual se 
+ * puede comprar dependiendo de la hora y el día
  * @return boolean
  */
 function product_can_be_bought( $product_id ){
+
+	
+	$fecha_menu = get_post_meta( $product_id, '_fecha_menu_meta', true );
+	$diff_menu_item_date = round( ( strtotime( $fecha_menu ) -  strtotime( date('Y-m-d') ) ) / 60 / 60,2 );
+
+	if( 24 < intval( $diff_menu_item_date ) ) return 0;
 
 	$time_now = date("Y-m-d h:i:sa");
 	$last_timeframe = mktime(15, 0, 0, date("m"), date("d"), date("Y"));
@@ -76,6 +82,24 @@ function product_can_be_bought( $product_id ){
 	return 0;
 
 }// product_can_be_bought
+
+/**
+ * Regresa si el platillo de hoy se puede comprar
+ * dependiendo de la hora del día
+ * @return boolean
+ */
+function can_order_today(){
+
+	if( 6 == date( 'N' ) || 7 == date( 'N' ) ) return 0;
+
+	$time_now = date("Y-m-d h:i:sa");
+	$last_timeframe = mktime(15, 0, 0, date("m"), date("d"), date("Y"));
+	$diff_last_timeframe = round( ( $last_timeframe -  strtotime( $time_now ) ) / 60,2);
+
+	if( 15 <= $diff_last_timeframe ) return 1;
+
+	return 0;
+}
 
 
 
@@ -586,7 +610,8 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
 function create_coupon(){
 
 	$date = new DateTime();
-	$coupon_code = 'FREEDABBA-' . $date->getTimestamp(); // Code
+	$coupon_code = 'BIENVENIDO-' . $date->getTimestamp(); // Code
+	//$coupon_code = 'BIENVENIDO'; // Code
 	$amount = '120'; // Amount
 	$discount_type = 'fixed_cart'; // Type: fixed_cart, percent, fixed_product, percent_product
 
@@ -612,6 +637,8 @@ function create_coupon(){
 	return $coupon_code;
 
 }// create_coupon
+// add_action('user_register', 'create_coupon');
+
 
 add_action('woocommerce_payment_complete', 'update_user_name');
 function update_user_name( $user_id ){
@@ -623,7 +650,6 @@ function update_user_name( $user_id ){
 	} $user->user_firstname = 'no firstname';
 
 }
-
 
 function get_notices() {
 	if ( ! did_action( 'woocommerce_init' ) ) {
