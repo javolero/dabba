@@ -15,7 +15,7 @@
 				<?php the_content( ); ?>
 			</div>
 			<div class="[ col-xs-12 col-sm-8 col-md-6 ]">
-				<form action="">
+				<form action="" data-parsley-validate-reuniones>
 					<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 						<label for="nombre-y-apellido">Nombre y apellido<span class="required">*</span></label>
 						<input type="text" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="nombre-y-apellido" value="" required data-parsley-error-message="Por favor ingresa tu nombre y apellido">

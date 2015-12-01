@@ -54,7 +54,8 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 	</article>
 <?php endif; ?>
 
-<?php  if ( ! empty( get_the_content() ) ) :  ?>
+<?php $content =  get_the_content(); ?>
+<?php  if ( ! empty( $content ) ) :  ?>
 	<section class="[ descripcion ][ bg-gradient ][ padding--top-bottom--xlarge ][ margin-bottom--large ][ color-light ]">
 		<div class="[ container ][ text-center ]">
 			<h3 class="[ margin-bottom--large ]">Descripción</h3>
