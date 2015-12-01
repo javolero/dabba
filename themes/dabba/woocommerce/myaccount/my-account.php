@@ -39,6 +39,10 @@ wc_print_notices(); ?>
 
 	<?php wc_get_template( 'myaccount/my-orders.php', array( 'order_count' => $order_count ) ); ?>
 
+	<?php /* wc_get_template( 'myaccount/my-downloads.php' );  */ ?>
+
+	<?php  do_action( 'woocommerce_after_my_account' ); ?>
+
 	<div class="[ myaccount_user ][ margin-top-bottom--large ][ text-center ]">
 		<?php
 
@@ -49,9 +53,5 @@ wc_print_notices(); ?>
 			);
 		?>
 	</div>
-
-	<?php /* wc_get_template( 'myaccount/my-downloads.php' );  */ ?>
-
-	<?php  do_action( 'woocommerce_after_my_account' ); ?>
 
 </div>
