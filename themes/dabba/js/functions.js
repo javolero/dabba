@@ -216,7 +216,7 @@ function addLomas( map ){
     #HELPER FUNCTIONS
 \*------------------------------------*/
 
-function showAuthenticationError( errorMsg ){
+function showErrorNotification( errorMsg ){
 
     if( errorMsg.indexOf('No hay ningún usuario registrado') > -1 || errorMsg.indexOf('es incorrecta') > -1 ) {
         showInvalidLoginError();
@@ -224,9 +224,12 @@ function showAuthenticationError( errorMsg ){
     }
     if( errorMsg.indexOf('Ya ha sido registrada') > -1 ) {
         showExistingUserError();
+        return;
     }
 
-}// showAuthenticationError
+    toastr.error( errorMsg );
+
+}// showErrorNotification
 
 function showInvalidLoginError(){
 

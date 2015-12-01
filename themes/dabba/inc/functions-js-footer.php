@@ -21,7 +21,7 @@ function footer_scripts(){
 				<?php if( array_key_exists( 'error', $all_notices ) ) : ?>
 					console.log('dafuq');
 					console.log( '<?php echo $all_notices["error"][0] ?>' );
-					showAuthenticationError( '<?php echo $all_notices["error"][0] ?>' )
+					showErrorNotification( '<?php echo $all_notices["error"][0] ?>' )
 				<?php wc_clear_notices(); endif; ?>
 
 				imgToSvg();
@@ -138,6 +138,11 @@ function footer_scripts(){
 
 				<?php endif; ?>
 			});
+
+			// Mostrar toast cuando se agrega un producto
+			$('body').on('added_to_cart', function( e, fragments, cartHash, btn ){
+				toastr.info('Se ha agregado el platillo a tu pedido.');
+			})
 		</script>
 <?php
 	endif;
