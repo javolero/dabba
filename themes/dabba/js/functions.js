@@ -231,6 +231,12 @@ function showErrorNotification( errorMsg ){
 
 }// showErrorNotification
 
+function showSuccessNotification( successMsg ){
+
+    toastr.success( successMsg );
+
+}// showSuccessNotification
+
 function showInvalidLoginError(){
 
     $('.js-invalid-login-msg').text('El nombre de usuario o contraseña son incorrectos, por favor intenta nuevamente.');

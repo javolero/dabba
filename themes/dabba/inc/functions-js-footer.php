@@ -19,9 +19,14 @@ function footer_scripts(){
 				// Notices para contraseña incorrecta y usuario existente.
 				<?php $all_notices = WC()->session->get( 'wc_notices', array() ); ?>
 				<?php if( array_key_exists( 'error', $all_notices ) ) : ?>
-					console.log('dafuq');
+					console.log('gettin error msg...');
 					console.log( '<?php echo $all_notices["error"][0] ?>' );
 					showErrorNotification( '<?php echo $all_notices["error"][0] ?>' )
+				<?php endif; ?>
+				<?php if( array_key_exists( 'success', $all_notices ) ) : ?>
+					console.log('gettin success msg...');
+					console.log( '<?php echo $all_notices["success"][0] ?>' );
+					showSuccessNotification( '<?php echo $all_notices["success"][0] ?>' )
 				<?php wc_clear_notices(); endif; ?>
 
 				imgToSvg();
