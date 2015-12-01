@@ -103,6 +103,4 @@ if ( $customer_orders ) : ?>
 
 	</table>
 
-<hr class="[ divider-primary ]">
-
 <?php endif; ?>

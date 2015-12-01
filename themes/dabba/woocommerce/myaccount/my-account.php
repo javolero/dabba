@@ -31,8 +31,6 @@ wc_print_notices(); ?>
 		</div>
 	</section>
 
-	<hr class="[ divider-primary ]">
-
 	<?php do_action( 'woocommerce_before_my_account' ); ?>
 
 	<?php wc_get_template( 'myaccount/my-address.php' ); ?>
@@ -57,16 +55,3 @@ wc_print_notices(); ?>
 	<?php  do_action( 'woocommerce_after_my_account' ); ?>
 
 </div>
-
-<script>
-	// $(document).ready(function(){
-	// 	console.log('hi ma');
-	// });
-	// var noticeObj = JSON.parse('<?php echo get_notices() ?>');
-
-	// $.each( noticeObj, function( i, val){
-	// 	console.log( i );
-	// 	console.log( val );
-	// })
-
-</script>

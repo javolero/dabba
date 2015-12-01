@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 /**
  * WooCommerce countries
  *
@@ -522,13 +527,13 @@ class WC_Countries {
 				'required'    => true,
 				'class'       => array( 'form-row-wide', 'address-field' )
 			),
-			// 'state' => array(
-			// 	'type'        => 'state',
-			// 	'label'       => __( 'State / County', 'woocommerce' ),
-			// 	'required'    => true,
-			// 	'class'       => array( 'form-row-first', 'address-field' ),
-			// 	'validate'    => array( 'state' )
-			// ),
+			'state' => array(
+				'type'        => 'state',
+				'label'       => __( 'State / County', 'woocommerce' ),
+				'required'    => true,
+				'class'       => array( 'form-row-first', 'address-field' ),
+				'validate'    => array( 'state' )
+			),
 			'postcode' => array(
 				'label'       => __( 'Postcode / Zip', 'woocommerce' ),
 				'placeholder' => __( 'Postcode / Zip', 'woocommerce' ),

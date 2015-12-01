@@ -62,6 +62,37 @@ class Sendgrid_Tools
   }
 
   /**
+   * Check template
+   *
+   * @param   string  $template   sendgrid template
+   * @return  bool
+   */
+  public static function check_template( $template )
+  {
+    $url = 'v3/templates/' . $template;
+
+    $parameters['api_user'] = Sendgrid_Tools::get_username();
+    $parameters['api_key']  = Sendgrid_Tools::get_password();
+    $parameters['apikey']   = Sendgrid_Tools::get_api_key();
+
+    $response = Sendgrid_Tools::curl_request( $url, $parameters );
+
+    if ( !$response ) 
+    {
+      return false;
+    }
+
+    $response = json_decode( $response, true );
+
+    if ( isset( $response['error'] ) )
+    {
+      return false;
+    }
+
+    return true;
+  }
+
+  /**
    * Make cURL request to SendGrid API
    *
    * @param type $api
@@ -263,5 +294,19 @@ class Sendgrid_Tools
     }
 
     return array();
+  }
+
+  /**
+   * Return template from the database or global variable
+   *
+   * @return string template
+   */
+  public static function get_template()
+  {
+    if ( defined('SENDGRID_TEMPLATE') ) {
+      return SENDGRID_TEMPLATE;
+    } else {
+      return get_option( 'sendgrid_template' );
+    }
   }
 }
