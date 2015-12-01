@@ -55,7 +55,7 @@
 
 	<?php endif; ?>
 
-	<?php get_template_part( 'templates/menu', 'hoy' ); ?>
+	<?php if( can_order_today() ) get_template_part( 'templates/menu', 'hoy' ); ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
 
@@ -146,7 +146,7 @@
 
 	<?php if ( is_user_logged_in() ) : ?>
 		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ][ text-center ]">
-			<h2 class="">Share the love</h2>
+			<h2 class="">Comparte Dabba</h2>
 			<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ]">
 				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por XXX, entre más amigos invites, más comida gratis para tí.</p>
 			</div>

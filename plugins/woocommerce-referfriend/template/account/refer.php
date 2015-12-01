@@ -14,11 +14,11 @@ $summary = urlencode($content);//urlencode( get_option( 'rf_share_text' ));//url
 $imageurl = urlencode( get_option( 'rf_share_image_url' ) );
 $current_user = wp_get_current_user();
 ?>
-<h4><?php echo __('Copy the below link and broadcast it to get coupon ') ?></h4>
+<h4>Invita a un amigo a unirse a Dabba y recibe un cupón por $100 en su primera compra. ¡Entre más amigos invites, más comida gratis para todos!</h4>
 
 <?php 
 
-echo '<a href=' . $not_encode_url . '>Share link</a>';
+echo '<h5>' . $not_encode_url . '></h5>';
 
 $url = urlencode($not_encode_url);
 
@@ -36,7 +36,7 @@ $google_share_link = "https://plus.google.com/share?url=" . $url . '&amp;title='
 
     <script type="text/javascript" src="js/bootstrap.js"></script> -->
 <div class="rf-share">
-<h3> <?php echo __('Share', 'mg_referfriend') ?></h3>
+<h3>Comparte en redes sociales</h3>
 <ul class="list-inline">
 	<?php if (get_option( 'rf_share_facebook' ) == 'yes') : ?>
 		<li style="list-style-type: none;">

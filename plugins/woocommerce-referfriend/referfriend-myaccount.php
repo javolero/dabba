@@ -9,10 +9,10 @@ class Magenest_Rf_MyAccount {
 		//account page
 		add_action('woocommerce_after_my_account', array($this,'rf'));
 		
-// 		add_action( 'woocommerce_order_status_processing', array($this, 'rf_woocommerce_order_status_processing') );
-// 		add_action( 'woocommerce_order_status_on-hold', array($this, 'rf_woocommerce_order_status_on_hold') );
-// 		add_action( 'woocommerce_payment_complete_order_status_processing', array($this, 'rf_woocommerce_order_status_processing') );
-// 		add_action( 'woocommerce_payment_complete_order_status_on-hold', array($this, 'rf_woocommerce_order_status_on_hold') );
+		add_action( 'woocommerce_order_status_processing', array($this, 'rf_woocommerce_order_status_processing') );
+		add_action( 'woocommerce_order_status_on-hold', array($this, 'rf_woocommerce_order_status_on_hold') );
+		add_action( 'woocommerce_payment_complete_order_status_processing', array($this, 'rf_woocommerce_order_status_processing') );
+		add_action( 'woocommerce_payment_complete_order_status_on-hold', array($this, 'rf_woocommerce_order_status_on_hold') );
 
 		add_action ( 'woocommerce_order_status_pending', array ($this, 'rf_woocommerce_order_status_processing' ),10 );
 		add_action ( 'woocommerce_order_status_failed', array ( $this, 'rf_woocommerce_order_status_processing' ) ,10);
