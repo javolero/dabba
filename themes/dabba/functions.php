@@ -538,6 +538,7 @@ function remove_city_state_as_required( $fields ) {
 
 }// remove_city_state_as_required
 add_filter( 'woocommerce_checkout_fields' , 'remove_city_state_as_required' );
+add_filter( 'woocommerce_billing_fields' , 'remove_city_state_as_required' );
 
 /**
  * Regresa las ventanas de tiempo disponibles para el platillo del día / semana
@@ -560,6 +561,7 @@ function get_valid_timeframe(){
 	if( 15 <= $diff_third_timeframe ) return array( '3:00pm - 4:00pm' => '3:00pm - 4:00pm' );
 
 }// get_valid_timeframe
+
 
 /**
  * Redireccionar usuarios al home despues de registrarse
