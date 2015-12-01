@@ -35,7 +35,7 @@ if ( $order ) : ?>
 
 		<?php else : ?>
 
-			<h3 class="[ text-center ]"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. <br /> Your order has been received.', 'woocommerce' ), $order ); ?></h3>
+			<h3 class="[ text-center ]">¡Gracias por tu compra! <br />Tu pedido ha sido recibido.</h3>
 
 			<div class="[ order_details ]">
 				<li class="[ order ]">
