@@ -513,7 +513,7 @@ function wooc_save_extra_register_fields( $customer_id ) {
 add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
 
  /**
- * Quitar el estado de la dirección
+ * Poner como obligatoria la ventana en el checkout
  * @return string
  */
 function set_timeframe_required( $fields ) {
@@ -525,6 +525,19 @@ function set_timeframe_required( $fields ) {
 
 }// set_timeframe_required
 add_filter( 'woocommerce_checkout_fields' , 'set_timeframe_required' );
+
+/**
+ * Quitar el estado de la dirección
+ * @return string
+ */
+function remove_city_state_as_required( $fields ) {
+
+	$fields['billing']['billing_state']['required'] = false;
+	$fields['billing']['billing_city']['required'] = false;
+	return $fields;
+
+}// remove_city_state_as_required
+add_filter( 'woocommerce_checkout_fields' , 'remove_city_state_as_required' );
 
 /**
  * Regresa las ventanas de tiempo disponibles para el platillo del día / semana
@@ -547,24 +560,6 @@ function get_valid_timeframe(){
 	if( 15 <= $diff_third_timeframe ) return array( '3:00pm - 4:00pm' => '3:00pm - 4:00pm' );
 
 }// get_valid_timeframe
-
- /**
- * Quitarle "required" a billing_state
- * @return string
- */
-add_filter( 'woocommerce_billing_fields' , 'remove_required_billing_state_field' );
-function remove_required_billing_state_field( $fields ) {
-
-	$fields['billing_state'] = array(
-		'label'          => __('State/County', 'woothemes'),
-		'placeholder'    => __('State/County', 'woothemes'),
-		'required'       => false,
-		'class'          => array('input-text')
-	);
-	return $fields;
-
-}// remove_required_billing_state_field
-
 
 /**
  * Redireccionar usuarios al home despues de registrarse
