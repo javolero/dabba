@@ -3215,6 +3215,8 @@ textarea.parsley-error {
   border: 1px solid #673695;
   color: #777777;
 }
+.js-invalid-registration-msg,
+.invalid-login-msg,
 .parsley-errors-list {
   padding: 5px 10px 5px 10px;
   margin: 0 0 6px 0;
@@ -3232,8 +3234,15 @@ textarea.parsley-error {
   -moz-transition: all 0.3s ease-in;
   -webkit-transition: all 0.3s ease-in;
 }
+.js-invalid-registration-msg,
+.invalid-login-msg,
 .parsley-errors-list.filled {
   opacity: 1;
+}
+.js-invalid-registration-msg,
+.invalid-login-msg {
+  margin: 10px 0;
+  display: inline-block;
 }
 /*------------------------------------*\
     #Checkout & cart forms
@@ -4391,7 +4400,7 @@ tbody.collapse.in {
 }
 select[name=amount] {
   border: 1px solid #ccc;
-  background: url('../img/arrow-up.png');
+  background: url('../images/arrow-up.png');
   background-position: right;
   background-size: 100%;
   -moz-appearance: none;
@@ -6466,6 +6475,10 @@ button.close {
   background-position: center center;
   position: relative;
   overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 .bg-image--16-9 {
   width: 100%;
@@ -7952,7 +7965,7 @@ header {
   overflow: hidden;
 }
 .hero__image--home {
-  background: url('img/home-intro--xs.jpg') no-repeat center bottom;
+  background: url('images/home-intro--xs.jpg') no-repeat center bottom;
 }
 @media (min-width: 768px) {
   .hero__image--home {

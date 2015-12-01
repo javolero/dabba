@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	
+
 	<?php if ( ! is_user_logged_in() ) : ?>
 
 		<!-- HERO -->
@@ -63,14 +63,6 @@
 			<div class="[ container ]">
 				<?php get_template_part( 'templates/menu', 'semana' ); ?>
 			</div>
-		</section>
-
-		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ][ text-center ]">
-			<h2 class="">Share the love</h2>
-			<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ]">
-				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por XXX, entre más amigos invites, más comida gratis para tí.</p>
-			</div>
-			<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#invita-a-un-amigo" data-toggle="modal">invitar</a>
 		</section>
 
 		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ][ hidden ]">
@@ -152,8 +144,14 @@
 
 	</section>
 
-
-
-	</section>
+	<?php if ( is_user_logged_in() ) : ?>
+		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ][ text-center ]">
+			<h2 class="">Share the love</h2>
+			<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ]">
+				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por XXX, entre más amigos invites, más comida gratis para tí.</p>
+			</div>
+			<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#invita-a-un-amigo" data-toggle="modal">invitar</a>
+		</section>
+	<?php endif; ?>
 
 <?php get_footer(); ?>
