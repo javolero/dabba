@@ -503,7 +503,6 @@ if ( is_woocommerce_active() ) {
 					}
 
 					echo '</div>';
-					echo '<hr class="[ divider-primary ][ margin-bottom-large ]">';
 
 					return;
 

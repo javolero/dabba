@@ -21,7 +21,7 @@
 						<section class="[ footer__links ][ margin-bottom ]">
 							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo site_url('nosotros'); ?>">Nosotros</a>
 							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#contacto" data-toggle="modal">Contáctanos</a>
-							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="#" data-toggle="modal">Dabba para reuniones</a>
+							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo site_url('para-reuniones'); ?>" data-toggle="modal">Dabba para reuniones</a>
 							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/terminos_y_condiciones_dabba.pdf" target="_blank">Términos y condiciones</a>
 							<a class="[ text-underlined color-light ][ margin-sides--small ][ line-height--large ]" href="<?php echo THEMEPATH; ?>pdf/aviso_de_privacidad_dabba.pdf" target="_blank">Aviso de privacidad</a>
 	 						<p class="[ color-gray ][ margin-sides--small ][ line-height--large ]">&copy; Copyright <script>document.write( new Date().getFullYear() )</script>. Dabba Foods S.A. de C.V.</p>
@@ -199,7 +199,7 @@
 
 		<!-- Modal "excelente"
 		================================================== -->
-		<div id="excelente" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="Excelente" aria-hidden="true">
+		<div id="excelente" class="[ modal fade ]" tabindex="-1" role="dialog" aria-labelledby="Excelente" aria-hidden="true">
 			<div class="[ modal-content ][ text-center ]">
 				<div class="[ modal-header ][ bg-light ][ padding ]">
 					<h2 class="[ color-primary ][ no-margin ]">
@@ -210,7 +210,7 @@
 					</h2>
 				</div>
 				<div class="[ modal-body ][ bg-primary ]">
-					<p>Regístrate con</p>
+					<p>Sí entregamos en tu zona, regístrate con</p>
 					<div class="[ margin-bottom ]">
 						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
 					</div>
@@ -231,7 +231,7 @@
 
 						<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
-							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label></p>
+							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?><span class="required">*</span></label></p>
 							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password" required>
 
 							<!-- <p class="form-row form-row-wide">
@@ -321,11 +321,11 @@
 
 		<!-- Modal "login"
 		================================================== -->
-		<div id="login" class="[ modal ]" tabindex="-1" role="dialog" aria-labelledby="Excelente" aria-hidden="true">
+		<div id="login" class="[ modal fade ]" tabindex="-1" role="dialog" aria-labelledby="modalHola">
 			<div class="[ modal-content ][ text-center ]">
 				<div class="[ modal-header ][ bg-light ][ padding ]">
 					<h2 class="[ color-primary ][ no-margin ]">
-						<span class="">¡Hola!</span>
+						<span class="[ modal-title ]" id="modalHola">¡Hola!</span>
 						<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
 							<img class="[ svg ][ icon icon--stroke ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 						</a>
@@ -347,7 +347,7 @@
 							<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
 						</p>
-						<span class="[ js-invalid-login-msg ]"></span>
+						<span class="[ invalid-login-msg ][ js-invalid-login-msg ]"></span>
 
 						<p class="[ lost_password ]">
 							<small><a class="[ color-light ]" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">¿Olvidaste tu contraseña?</a></small>

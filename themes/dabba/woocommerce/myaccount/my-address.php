@@ -83,5 +83,3 @@ $col = 1;
 	<?php if ( ! wc_ship_to_billing_address_only() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) echo '</div>'; ?>
 
 </div>
-
-<hr class="[ divider-primary ]">

@@ -649,6 +649,8 @@ textarea.parsley-error {
   color: @gray-light;
 }
 
+.js-invalid-registration-msg,
+.invalid-login-msg,
 .parsley-errors-list {
   padding: 5px 10px 5px 10px; margin: 0 0 6px 0;
   list-style-type: none;
@@ -666,8 +668,16 @@ textarea.parsley-error {
   -webkit-transition: all .3s ease-in;
 }
 
+.js-invalid-registration-msg,
+.invalid-login-msg,
 .parsley-errors-list.filled {
   opacity: 1;
+}
+
+.js-invalid-registration-msg,
+.invalid-login-msg{
+  margin: 10px 0;
+  display: inline-block;
 }
 
 /*------------------------------------*\

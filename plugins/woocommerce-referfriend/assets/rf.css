@@ -1,3 +1,4 @@
+	    /*
 	    .rf-share .btn{
 	    	background-color: #DBEAF9;
 	    	border: 1px solid transparent;
@@ -14,22 +15,22 @@
 	    	transition: all 0.3s;
 	    }
 	    .rf-share .btn.btn-fa{
-	    	/*background-color: #3C5A98;*/
+	    	background-color: #3C5A98;
 	    	background-color: #306199;
 	    }
 	    .rf-share .btn.btn-fa:hover{
-	    	/*background-color: #3C5A98;*/
+	    	background-color: #3C5A98;
 	    	background-color: rgba(36, 72, 114,1);
 	    }
 	    .rf-share .btn.btn-twi{
-	    	/*background-color: #00ACED;*/
+	    	background-color: #00ACED;
 	    	background-color: #26c4f1;
 	    }
 	    .rf-share .btn.btn-twi:hover{
 	    	background-color: rgba(14, 170, 214,1);
 	    }
 	    .rf-share .btn.btn-goog{
-	    	/*background-color: #D74A2D;*/
+	    	background-color: #D74A2D;
 	    	background-color: #b81621;
 	    }
 	    .rf-share .btn.btn-goog:hover{
@@ -41,6 +42,7 @@
 	    .rf-share .btn.btn-email:hover{
 	    	background-color: #22364A;
 	    }
+	    */
 	    .rf-share i{
 	    	color: #fff;
 	    	font-size: 20px;

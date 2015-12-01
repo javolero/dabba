@@ -1,8 +1,6 @@
 /*global wc_add_to_cart_params */
 jQuery( function( $ ) {
 
-    console.log('running add to cart');
-
 	// wc_add_to_cart_params is required to continue, ensure the object exists
 	if ( typeof wc_add_to_cart_params === 'undefined' ) {
 		return false;
