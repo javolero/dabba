@@ -1,6 +1,8 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 /**
  * Checkout Field Editor Export Handler
@@ -13,7 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class WC_Checkout_Field_Editor_Export_Handler {
 
-
 	/** @var checkout fields */
 	private $fields;
 
@@ -25,7 +26,7 @@ class WC_Checkout_Field_Editor_Export_Handler {
 	 */
 	public function __construct() {
 
-		$this->fields = $this->get_fields();
+		$this->fields = $this->set_fields();
 
 		// Customer / Order CSV Export column headers/data
 		add_filter( 'wc_customer_order_csv_export_order_headers', array( $this, 'add_fields_to_csv_export_column_headers' ), 10, 2 );
@@ -110,12 +111,12 @@ class WC_Checkout_Field_Editor_Export_Handler {
 
 
 	/**
-	 * Get all registered fields
+	 * Set all registered fields
 	 *
 	 * @since 1.2.5
 	 * @return array
 	 */
-	private function get_fields() {
+	private function set_fields() {
 
 		$fields = array();
 
@@ -140,5 +141,14 @@ class WC_Checkout_Field_Editor_Export_Handler {
 		return $fields;
 	}
 
+	/**
+	 * Get all registered fields
+	 *
+	 * @since 1.4.9
+	 * @return array
+	 */
+	public function get_fields() {
+		return $this->fields;
+	}
 
 } // end WC_Checkout_Field_Editor_Export_Handler

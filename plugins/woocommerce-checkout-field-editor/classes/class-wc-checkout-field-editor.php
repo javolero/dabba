@@ -635,6 +635,11 @@ class WC_Checkout_Field_Editor {
 			$fields = $this->get_fields( $type );
 
 			foreach ( $fields as $name => $field ) {
+				
+				if ( empty( $posted[ $name ] ) ) {
+					continue;
+				}
+
 				if ( ! empty( $field['custom'] ) ) {
 					$value = wc_clean( $posted[ $name ] );
 

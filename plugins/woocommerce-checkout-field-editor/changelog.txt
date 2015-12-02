@@ -1,5 +1,11 @@
 *** Checkout Field Editor Changelog ***
 
+2015.11.09 - version 1.4.9
+* Add - Public method for getting all checkout fields for better extensibility.
+
+2015.11.03 - version 1.4.8
+* Fix - Unexpected token error in checkout when a required field is added to shipping tab.
+
 2015.10.07 - version 1.4.7
 * Fix - Add jQuery tiptip as a dependency when script loads to prevent edge case it does not load.
 

@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Checkout Field Editor
 Plugin URI: http://woothemes.com/woocommerce/
 Description: Add, remove and modifiy fields shown on your WooCommerce checkout page.
-Version: 1.4.7
+Version: 1.4.9
 Author: WooThemes / Mike Jolley / Patrick Garman
 Author URI: http://woothemes.com
 
@@ -173,9 +173,6 @@ if ( is_woocommerce_active() ) {
 					'order_comments'
 				) ) ) {
 					if ( isset( $fields[ $name ] ) ) {
- 
-						if ( ! isset( $old_fields[ $name ] ) ) continue; 
-						
 						$fields[ $name ]                = $old_fields[ $name ];
 						$fields[ $name ]['label']       = ! empty( $data[ $name ]['label'] ) ? $data[ $name ]['label'] : $old_fields[ $name ]['label'];
 
