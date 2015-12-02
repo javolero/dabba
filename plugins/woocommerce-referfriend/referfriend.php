@@ -134,7 +134,7 @@ class MG_Referfriend_Woocommerce {
 	private function hooks() {	
 		add_action('wp_enqueue_scripts', array($this,'load_assets'));
 		
-		//add_action( 'magenestnest_before_refer_friend_form', 'wc_print_notices', 10 );
+		add_action( 'magenestnest_before_refer_friend_form', 'wc_print_notices', 10 );
 		
 		add_action( 'init', array( $this, 'mg_referfriend_create_post_type' ) );	
 		add_filter( 'woocommerce_get_settings_pages', array( $this, 'rf_add_settings_page'), 10, 1);

@@ -5,8 +5,6 @@ var $=jQuery.noConflict();
 \*------------------------------------*/
 
 function resizeToCover( min_w, vid_w_orig, vid_h_orig ) {
-	//console.log(vid_w_orig);
-	//console.log(vid_h_orig);
 
 	// use largest scale factor of horizontal/vertical
 	var scale_h = $('.hero').width() / vid_w_orig;
@@ -94,7 +92,6 @@ function toggleClass(element, classToToggle){
 function initMap( mapId ) {
 
     var zoom = ( $(window).width() < 800 ) ? 13 : 14; 
-    console.log( $(window).width() );
 	var map = new google.maps.Map(document.getElementById( mapId ), {
 		zoom:           zoom,
 		center:         {lat: 19.436342, lng: -99.202695},
@@ -236,6 +233,12 @@ function showSuccessNotification( successMsg ){
     toastr.success( successMsg );
 
 }// showSuccessNotification
+
+function showInfoNotification( infoMsg ){
+
+    toastr.info( infoMsg );
+
+}// showInfoNotification
 
 function showInvalidLoginError(){
 

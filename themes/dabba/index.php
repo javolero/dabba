@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+	
 	<?php if ( ! is_user_logged_in() ) : ?>
 
 		<!-- HERO -->

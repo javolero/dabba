@@ -1,4 +1,4 @@
-button wc-backward<?php
+<?php
 /**
  * Cart errors page
  *
@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-
-<?php //wc_print_notices(); ?>
+<?php var_dump( $_POST ); ?>
+<?php wc_print_notices(); ?>
 
 <p><?php _e( 'There are some issues with the items in your cart (shown above). Please go back to the cart page and resolve these issues before checking out.', 'woocommerce' ) ?></p>
 

@@ -10,8 +10,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 function rf_sponsor_form(){
-	do_action('magenestnest_before_refer_friend_form');
-	do_action('rf_before_form');
+	//do_action('magenestnest_before_refer_friend_form');
+	//do_action('rf_before_form');
 	//add_action( 'rf_before_form', 'wc_print_notices', 10 );
 	//wc_print_notices();
 
@@ -19,25 +19,26 @@ function rf_sponsor_form(){
 	//WC()->session->set( 'rf_notices' , '');
 	?>
 
-	<form class="[ ]" role="form" method="post" data-parsley-validate-invita-a-un-amigo>
+	
+	<form class="[ js-form-invita-amigo ]" role="form" method="post" data-parsley-validate-invita-a-un-amigo>
 		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 			<label for="p-firstname" class="[]">Nombre de tu amigo<span class="required">*</span></label>
-			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_firstname'] ) ? $_POST['rf_firstname'] : '' ?>" type="text" name="rf_firstname" />
+			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_firstname'] ) ? $_POST['rf_firstname'] : '' ?>" type="text" name="rf_firstname" required />
 		</p>
 		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 			<label for="p-lastname" class="[]">Apellido de tu amigo<span class="required">*</span></label>
-			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_lastname'] ) ? $_POST['rf_lastname'] : '' ?>" type="text" name="rf_lastname" />
+			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_lastname'] ) ? $_POST['rf_lastname'] : '' ?>" type="text" name="rf_lastname" required />
 		</p>
 		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 			<label for="p-email" class="[]">Email de tu amigo<span class="required">*</span></label>
-			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" />
+			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" required />
 		</p>
 		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 			<label for="p-message" class="[]">Mensaje opcional</label>
 			<textarea class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
 		</p>
 		<div class="[ text-center ]">
-			<button type="submit" name="submit" class="[ btn btn-light btn-hollow btn-sm ]">Invitar</button>
+			<button type="submit" name="submit_invitation" class="[ btn btn-light btn-hollow btn-sm ]">Invitar</button>
 		</div>
 	</form>
 
@@ -46,12 +47,12 @@ function rf_sponsor_form(){
 
 <?php
 
-	if( isset($_POST['submit'] ) ) {
+	if( isset($_POST['submit_invitation'] ) ) {
 		global $wpdb;
 		// check if emai has invited
 		$invite_email = $_POST['rf_email'];
 		if( $wpdb->get_row( "SELECT * FROM $wpdb->postmeta WHERE meta_value = '$invite_email' AND meta_key = 'rf_invite_email'", OBJECT ) ) {
-			wc_add_notice(__('This email has been invited') ,'notice');
+			wc_add_notice(__('Lo sentimos, ese email ya ha sido invitado.') ,'notice');
 			return;
 		}
 
@@ -143,11 +144,11 @@ function rf_sponsor_form(){
 			remove_filter( 'wp_mail_content_type',  'magenest_rf_set_html_content_type' );
 
 			//notice message
-			wc_add_notice(__('The invitation email is sent') ,'success');
+			wc_add_notice('¡Se le mandó la invitación a tu amig@!' ,'success');
 
 
 			if (WC()->session) {
-				$notices = __('The invitation email is sent');
+				$notices = '¡Se le mandó la invitación a tu amig@!';
 				WC()->session->set( 'rf_notices', $notices );
 			}
 		}

@@ -28,6 +28,11 @@ function footer_scripts(){
 					console.log( '<?php echo $all_notices["success"][0] ?>' );
 					showSuccessNotification( '<?php echo $all_notices["success"][0] ?>' )
 				<?php wc_clear_notices(); endif; ?>
+				<?php if( array_key_exists( 'notice', $all_notices ) ) : ?>
+					console.log('gettin notice msg...');
+					console.log( '<?php echo $all_notices["notice"][0] ?>' );
+					showInfoNotification( '<?php echo $all_notices["notice"][0] ?>' )
+				<?php wc_clear_notices(); endif; ?>
 
 				imgToSvg();
 				footerBottom();
@@ -111,6 +116,8 @@ function footer_scripts(){
 					**/
 
 					initMap( 'map' );
+
+					$('[data-parsley-validate-invita-a-un-amigo]').parsley();					
 
 					<?php if ( ! is_user_logged_in() ) : ?>
 						var vid = $('video.hero__video'); //JQuery selector
