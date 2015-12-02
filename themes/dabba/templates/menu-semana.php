@@ -16,22 +16,23 @@
 
 	if( $query->have_posts() ) :
 		echo '<h2 class="[ text-center ]">Menú de la semana</h2>';
+		echo '<div class="row">';
 		while( $query->have_posts() ) : $query->the_post();
 			global $product;
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
 			$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
 			$classDisabled = ( ! $product->is_in_stock() ) ? 'disabled' : '';
 	?>
-			<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ][ <?php echo $classDisabled ?>]">
+			<article id="<?php echo $post->ID ?>" class="[ platillo-semana ][ margin-bottom ][ col-xs-12 col-md-6 ][ <?php echo $classDisabled ?>]">
 				<div class="[ row ][ margin-bottom--small ]">
 					<div class="[ col-xs-12 col-centered ]">
-						<a class="[ bg-image bg-image--16-9 ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
+						<a class="[ bg-image bg-image--16-9 bg-image--3-1--sm ]" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $image[0]; ?>')" ></a>
 						<p class="[ bg-primary ][ padding--sides padding--top-bottom--small no-margin ][ text-center color-light ]"><?php echo $fecha_menu ?></p>
 					</div>
 				</div>
 				<div class="[ row ]">
 					<div class="[ col-xs-8 ]">
-						<p class="[ no-margin ]"><?php echo get_the_title() ?></p>
+						<h3 class="[ no-margin ]"><?php echo get_the_title() ?></h3>
 					</div>
 					<div class="[ col-xs-4 ][ pull-right ]">
 						<div class="[ pull-right ]">
@@ -48,5 +49,7 @@
 			</article>
 
 <?php
-	endwhile; endif; wp_reset_query();
+	endwhile;
+	echo '</div>';
+	endif; wp_reset_query();
 ?>
