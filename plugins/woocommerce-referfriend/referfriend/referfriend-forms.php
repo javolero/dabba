@@ -33,10 +33,10 @@ function rf_sponsor_form(){
 			<label for="p-email" class="[]">Email de tu amigo<span class="required">*</span></label>
 			<input class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" value="<?php echo isset( $_POST['rf_email'] ) ? $_POST['rf_email'] : '' ?>" type="text" name="rf_email" required />
 		</p>
-		<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
+		<!-- <p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 			<label for="p-message" class="[]">Mensaje opcional</label>
-			<textarea class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" rows="6" name="rf_message"><?php echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
-		</p>
+			<textarea class="[ margin-bottom--small ][ form-control input-text ][ col-xs-12 ][ pull-none ]" rows="6" name="rf_message"><?php //echo isset( $_POST['rf_message'] ) ? $_POST['rf_message'] : '' ?></textarea>
+		</p> -->
 		<div class="[ text-center ]">
 			<button type="submit" name="submit_invitation" class="[ btn btn-light btn-hollow btn-sm ]">Invitar</button>
 		</div>
@@ -127,7 +127,7 @@ function rf_sponsor_form(){
 			// Send mail
 			$data = array(
 				'friend'   => $_POST['rf_firstname'] . ' ' . $_POST['rf_lastname'],
-				'sponsor'  => $current_user->user_email,
+				'sponsor'  => $current_user->user_firstname . ' ' .$current_user->user_lastname,
 				'coupon'   => $title,
 				'affiliate_message' => $_POST['rf_message'],
 				'coupon_value' => $amount,
