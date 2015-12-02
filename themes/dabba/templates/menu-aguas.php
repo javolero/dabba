@@ -1,5 +1,5 @@
 
-<div class="[ aguas ][ text-center ]">		
+<div class="[ aguas ][ text-center ]">
 	<div class="[ row ]">
 		<?php
 		$product_args = array(
@@ -17,11 +17,11 @@
 		);
 		$query = new WP_Query( $product_args );
 
-		if( $query->have_posts() ) : 
+		if( $query->have_posts() ) :
 			echo '<h3 class="[ text-center ]">Bebidas</h3>';
 			while( $query->have_posts() ) : $query->the_post();
 				global $product;
-				
+
 				$image = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array(
 						'title'	=> $post->post_title,
 						'alt'	=> $post->post_title,
@@ -32,7 +32,7 @@
 					<?php echo $image; ?>
 					<p><small><?php echo get_the_title() ?></small></p>
 				</div>
-			<?php endwhile; 
+			<?php endwhile;
 		endif; wp_reset_query(); ?>
 	</div>
 	<div class="[ row ]">

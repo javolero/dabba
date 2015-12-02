@@ -36,13 +36,15 @@
 						</div>
 						<?php if ( is_user_logged_in() ) : ?>
 							<div class="[ col-xs-4 ]">
-								<?php
-								if ( ! $product->is_in_stock() ) :
-									echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ][ pull-right ]">agotado</a>';
-								else:
-									echo woocommerce_template_loop_add_to_cart();
-								endif;
-								?>
+								<div class="[ pull-right ]">
+									<?php
+									if ( ! $product->is_in_stock() ) :
+										echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ]">agotado</a>';
+									else:
+										echo woocommerce_template_loop_add_to_cart();
+									endif;
+									?>
+								</div>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -51,7 +53,7 @@
 		</section>
 
 		<hr class="[ divider-primary ][ margin-bottom--large ]">
-		
+
 <?php
 	endif; wp_reset_query();
 ?>

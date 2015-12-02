@@ -14,7 +14,7 @@
 	);
 	$query = new WP_Query( $product_args );
 
-	if( $query->have_posts() ) : 
+	if( $query->have_posts() ) :
 		echo '<h2 class="[ text-center ]">Menú de la semana</h2>';
 		while( $query->have_posts() ) : $query->the_post();
 			global $product;
@@ -33,14 +33,16 @@
 					<div class="[ col-xs-8 ]">
 						<p class="[ no-margin ]"><?php echo get_the_title() ?></p>
 					</div>
-					<div class="[ col-xs-4 ]">
-						<?php 
-						if ( ! $product->is_in_stock() ) :
-							echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ][ pull-right ]">agotado</a>';
-						elseif( product_can_be_bought( $product->id ) ): 
-							echo woocommerce_template_loop_add_to_cart();
-						endif; 
-						?>
+					<div class="[ col-xs-4 ][ pull-right ]">
+						<div class="[ pull-right ]">
+							<?php
+							if ( ! $product->is_in_stock() ) :
+								echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ]">agotado</a>';
+							elseif( product_can_be_bought( $product->id ) ):
+								echo woocommerce_template_loop_add_to_cart();
+							endif;
+							?>
+						</div>
 					</div>
 				</div>
 			</article>
