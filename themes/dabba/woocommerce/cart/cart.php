@@ -13,11 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
  wc_print_notices(); ?>
 
-	<h2 class="[ text-center ][ margin-top-bottom--large ]">Checkout</h2>
-
 	<div class="[ container ][ shop_table cart ]">
 		<div class="[ row ]">
-			<div class="[ col-xs-12 col-md-8 ]">
+			<div class="[ col-xs-12 col-md-7 ]">
+				<h2 class="[ text-center ][ margin-top-bottom--large ]">Checkout</h2>
 				<form class="[ margin-bottom--large ]" action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 
 					<?php do_action( 'woocommerce_before_cart_table' ); ?>
@@ -163,7 +162,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="cart-collaterals">
 		<?php //do_action( 'woocommerce_cart_collaterals' ); ?>
 	</div>
-
-</section>
-
-<hr class="[ divider-primary ][ margin-bottom-large ]">

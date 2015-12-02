@@ -117,7 +117,7 @@ function footer_scripts(){
 
 					initMap( 'map' );
 
-					$('[data-parsley-validate-invita-a-un-amigo]').parsley();					
+					$('[data-parsley-validate-invita-a-un-amigo]').parsley();
 
 					<?php if ( ! is_user_logged_in() ) : ?>
 						var vid = $('video.hero__video'); //JQuery selector
@@ -143,11 +143,20 @@ function footer_scripts(){
 						e.preventDefault();
 
 						$('[data-parsley-validate-reuniones]').parsley().validate();
-						if ( true === $('[data-parsley-validate-reuniones]').parsley().isValid() ) 
+						if ( true === $('[data-parsley-validate-reuniones]').parsley().isValid() )
 							sendMailReuniones( $('.js-para-reuniones').serialize() );
 
 					})
 
+				<?php endif; ?>
+
+				<?php if( is_checkout() ) : ?>
+
+					toggleHeaderScrolled();
+
+					$( window ).scroll(function() {
+						toggleHeaderScrolled();
+					});
 				<?php endif; ?>
 			});
 

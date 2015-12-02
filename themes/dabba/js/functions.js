@@ -59,25 +59,73 @@ function footerBottom(){
 	$('.main').css('padding-bottom', alturaFooter );
 }
 
-function toggleElement(element){
-	$(element).toggleClass('hidden');
-}
 
 
 
 
 
 /*------------------------------------*\
-	#TOGGLE FUNCTIONS
+    #GET/SET FUNCTIONS
+\*------------------------------------*/
+
+/**
+ * Get header's height
+ */
+function getHeaderHeight(){
+	console.log($('.js-header').outerHeight());
+    return $('.js-header').outerHeight();
+}// getHeaderHeight
+
+/**
+ * Get footer's height
+ */
+function getFooterHeight(){
+    return $('footer').height();
+}// getFooterHeight
+
+/**
+ * Get the scrolled pixels in Y axis
+ */
+function getScrollY() {
+    return $(window).scrollTop();
+}// getScrollY
+
+
+
+
+
+
+
+/*------------------------------------*\
+    #TOGGLE FUNCTIONS
 \*------------------------------------*/
 
 function toggleClass(element, classToToggle){
-	$(element).toggleClass(classToToggle);
+    element.toggleClass(classToToggle);
 }
 
-// function toggleClassTimeout(element, class){
-//     $(element).addClass('class');
-// }
+function toggleElement(element){
+	$(element).toggleClass('hidden');
+}
+
+/**
+ * Toggle action buttons
+ */
+ function toggleHeaderScrolled(){
+
+    //Get the header height so we can now when
+    //to change the heade state
+    var headerHeight = getHeaderHeight();
+    //Scrolled pixels in Y axis
+    var sy = getScrollY();
+    //Compare the two numbers, when they are the same or less
+    //add fixed class to the header.
+    if ( sy >= headerHeight ) {
+        $('.order_review').addClass('scrolled');
+    } else {
+        $('.order_review').removeClass('scrolled');
+    }
+}// toggleActionButtons
 
 
 
@@ -91,7 +139,7 @@ function toggleClass(element, classToToggle){
 
 function initMap( mapId ) {
 
-    var zoom = ( $(window).width() < 800 ) ? 13 : 14; 
+    var zoom = ( $(window).width() < 800 ) ? 13 : 14;
 	var map = new google.maps.Map(document.getElementById( mapId ), {
 		zoom:           zoom,
 		center:         {lat: 19.436342, lng: -99.202695},

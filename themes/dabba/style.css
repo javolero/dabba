@@ -8221,4 +8221,39 @@ details[open] summary::-webkit-details-marker,
 #details-marker {
   display: none;
 }
+/*------------------------------------*\
+    #Woocommerce
+\*------------------------------------*/
+.woocommerce-breadcrumb {
+  display: none;
+}
+.order_review {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+@media (min-width: 992px) {
+  .order_review {
+    width: 404px;
+    position: fixed;
+    top: 80px;
+    right: -moz-calc((100% - 970px)/2);
+    right: -o-calc((100% - 970px)/2);
+    right: -webkit-calc((100% - 970px)/2);
+    right: calc((100% - 970px)/2);
+  }
+}
+@media (min-width: 1200px) {
+  .order_review {
+    width: 488px;
+    right: -moz-calc((100% - 1170px)/2);
+    right: -o-calc((100% - 1170px)/2);
+    right: -webkit-calc((100% - 1170px)/2);
+    right: calc((100% - 1170px)/2);
+  }
+}
+.order_review.scrolled {
+  top: 20px;
+}
 /*# sourceMappingURL=bootstrap.css.map */

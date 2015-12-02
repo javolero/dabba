@@ -1,0 +1,20 @@
+//
+// checkout
+// --------------------------------------------------
+
+.order_review{ .transition; }
+
+.order_review{
+	@media (min-width: @screen-md-min) {
+		width: 404px;
+		position: fixed; top: 80px; .right-calc(~"(100% - @{container-md})/2");
+	}
+	@media (min-width: @screen-lg-min) {
+		width: 488px;
+		.right-calc(~"(100% - @{container-lg})/2");
+	}
+}
+
+.order_review.scrolled{
+	 top: 20px;
+}

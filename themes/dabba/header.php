@@ -71,7 +71,7 @@
 		})(window,document,'script','dataLayer','GTM­PBHGDV');</script>
 		<!-- End Google Tag Manager ­­-->
 
-		<header class="[ bg-primary ][ text-center ][ padding ]">
+		<header class="[ bg-primary ][ text-center ][ padding ][ js-header ]">
 			<div class="[ container ]">
 				<div class="[ row ]">
 					<div class="[ col-sm-4 ][ hidden-xs ][ text-left ]">
