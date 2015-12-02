@@ -13,12 +13,6 @@ $twitter_summary =$content  ;//str_replace( '{wishlist_url}', '', get_option( 'r
 $summary = urlencode($content);//urlencode( get_option( 'rf_share_text' ));//urlencode( str_replace( '{wishlist_url}', $not_encode_url, get_option( 'rf_share_text' ) ) );
 $imageurl = urlencode( get_option( 'rf_share_image_url' ) );
 $current_user = wp_get_current_user();
-?>
-<p class="[ lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por $100 en su primera compra. ¡Entre más amigos invites, más comida gratis para todos!</p>
-
-<?php
-
-echo '<p>' . $not_encode_url . '</p>';
 
 $url = urlencode($not_encode_url);
 
@@ -31,8 +25,10 @@ $twitter_share_link = "https://twitter.com/share?url=" . $url . "&amp;text=" . $
 $google_share_link = "https://plus.google.com/share?url=" . $url . '&amp;title=' . $title ;
 ?>
 
-<div class="rf-share">
+<div class="[ rf-share ][ margin-bottom--large ]">
 	<h3>Comparte en redes sociales</h3>
+	<p class="[ lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por $100 en su primera compra. ¡Entre más amigos invites, más comida gratis para todos!</p>
+	<?php echo '<p>' . $not_encode_url . '</p>'; ?>
 	<?php if (get_option( 'rf_share_facebook' ) == 'yes') : ?>
 		<a target="_blank" class="[ margin-sides--small margin-bottom--small ][ btn button-social-login-facebook ]" href="<?php echo $facebook_share_link ?>">
 			<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg"> <?php echo __('Facebook' ,'mg_referfriend')?>

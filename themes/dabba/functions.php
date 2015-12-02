@@ -61,13 +61,13 @@ add_action( 'wp_enqueue_scripts', function(){
 add_action( 'wp_footer', 'footer_scripts', 21 );
 
 /**
- * Regresa si el platillo de la semana actual se 
+ * Regresa si el platillo de la semana actual se
  * puede comprar dependiendo de la hora y el día
  * @return boolean
  */
 function product_can_be_bought( $product_id ){
 
-	
+
 	$fecha_menu = get_post_meta( $product_id, '_fecha_menu_meta', true );
 	$diff_menu_item_date = round( ( strtotime( $fecha_menu ) -  strtotime( date('Y-m-d') ) ) / 60 / 60,2 );
 
@@ -353,6 +353,17 @@ function get_last_name(){
 
 }// get_lastname
 
+/**
+ * Regresa el email del usuario actual.
+ * @return $email
+ */
+function get_email(){
+
+	$user = wp_get_current_user();
+	return $user->user_email;
+
+}// get_lastname
+
 
 
 /*------------------------------------*\
@@ -556,7 +567,7 @@ add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
 function set_timeframe_required( $fields ) {
 
 	$opts = get_valid_timeframe();
-	$fields['billing']['billing_timeframe']['options'] = $opts; 
+	$fields['billing']['billing_timeframe']['options'] = $opts;
 	$fields['billing']['billing_timeframe']['required'] = true;
 	return $fields;
 
@@ -593,7 +604,7 @@ function get_valid_timeframe(){
 	$diff_second_timeframe = round( ( $second_timeframe -  strtotime( $time_now ) ) / 60,2);
 	$diff_third_timeframe = round( ( $third_timeframe -  strtotime( $time_now ) ) / 60,2);
 
-	if( 15 <= $diff_first_timeframe || 15 > $diff_third_timeframe  ) return array( '1:00pm - 2:00pm' => '1:00pm - 2:00pm', '2:00pm - 3:00pm' => '2:00pm - 3:00pm', '3:00pm - 4:00pm' => '3:00pm - 4:00pm' ); 
+	if( 15 <= $diff_first_timeframe || 15 > $diff_third_timeframe  ) return array( '1:00pm - 2:00pm' => '1:00pm - 2:00pm', '2:00pm - 3:00pm' => '2:00pm - 3:00pm', '3:00pm - 4:00pm' => '3:00pm - 4:00pm' );
 	if( 15 <= $diff_second_timeframe ) return array( '2:00pm - 3:00pm' => '2:00pm - 3:00pm', '3:00pm - 4:00pm' => '3:00pm - 4:00pm' );
 	if( 15 <= $diff_third_timeframe ) return array( '3:00pm - 4:00pm' => '3:00pm - 4:00pm' );
 
@@ -708,30 +719,6 @@ function get_notices() {
 }
 
 /**
- * Override the quantity input with a dropdown
+ * Deletes all woocommerce styles
  */
-// function woocommerce_quantity_input() {
-//     global $product;
-// 	$defaults = array(
-// 		'input_name'  	=> 'quantity',
-// 		'input_value'  	=> '1',
-// 		'max_value'  	=> apply_filters( 'woocommerce_quantity_input_max', '', $product ),
-// 		'min_value'  	=> apply_filters( 'woocommerce_quantity_input_min', '', $product ),
-// 		'step' 		=> apply_filters( 'woocommerce_quantity_input_step', '1', $product ),
-// 		'style'		=> apply_filters( 'woocommerce_quantity_style', 'float:left; margin-right:10px;', $product )
-// 	);
-// 	if ( ! empty( $defaults['min_value'] ) )
-// 		$min = $defaults['min_value'];
-// 	else $min = 1;
-// 	if ( ! empty( $defaults['max_value'] ) )
-// 		$max = $defaults['max_value'];
-// 	else $max = 20;
-// 	if ( ! empty( $defaults['step'] ) )
-// 		$step = $defaults['step'];
-// 	else $step = 1;
-// 	$options = '';
-// 	for ( $count = $min; $count <= $max; $count = $count+$step ) {
-// 		$options .= '<option value="' . $count . '">' . $count . '</option>';
-// 	}
-// 	echo '<div class="quantity_select" style="' . $defaults['style'] . '"><select name="' . esc_attr( $defaults['input_name'] ) . '" title="' . _x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) . '" class="qty">' . $options . '</select></div>';
-// } //woocommerce_quantity_input
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );

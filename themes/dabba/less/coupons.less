@@ -1,0 +1,69 @@
+//
+// Coupons
+// --------------------------------------------------
+
+.coupon-container {
+	margin: .2em;
+	box-shadow: 0 0 5px #e0e0e0;
+	display: inline-table;
+	text-align: center;
+	cursor: pointer;
+}
+.coupon-container.previews { cursor: inherit }
+.coupon-container.blue { background-color: #e0f7ff }
+.coupon-container.red { background-color: #ffe0e0 }
+.coupon-container.green { background-color: #e0ffe0 }
+.coupon-container.yellow { background-color: #f7f7e0 }
+
+.coupon-container.small {
+	padding: .3em;
+	line-height: 1.2em;
+}
+.coupon-container.medium {
+	padding: .4em;
+	line-height: 1.4em;
+}
+.coupon-container.large {
+	padding: .5em;
+	line-height: 1.6em;
+}
+
+.coupon-content.small { padding: .2em 1.2em }
+.coupon-content.medium { padding: .4em 1.4em }
+.coupon-content.large { padding: .6em 1.6em }
+.coupon-content.dashed { border: 2.3px dashed }
+.coupon-content.dotted { border: 2.3px dotted }
+.coupon-content.groove { border: 2.3px groove }
+.coupon-content.solid { border: 2.3px solid }
+.coupon-content.none { border: 2.3px none }
+.coupon-content.blue { border-color: #c0d7ee }
+.coupon-content.red { border-color: #eec0c0 }
+.coupon-content.green { border-color: #c0eec0 }
+.coupon-content.yellow { border-color: #e0e0c0 }
+.coupon-content .code {
+	font-family: monospace;
+	font-size: 1.2em;
+	font-weight:700;
+}
+
+.coupon-content .coupon-expire,
+.coupon-content .discount-info {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1em;
+}
+.coupon-content .discount-description {
+    font: .7em/1 Helvetica, Arial, sans-serif;
+    width: 250px;
+    margin: 10px inherit;
+    display: inline-block;
+}
+.generated_coupon_summary { margin: 0.8em 0.8em; }
+.generated_coupon_details { margin-left: 2em; margin-bottom: 1em; margin-right: 2em; text-align: left; }
+.generated_coupon_data { border: solid 1px lightgrey; margin-bottom: 5px; margin-right: 5px; width: 50%; }
+.generated_coupon_details p { margin: 0; }
+span.expand_collapse { display: block; }
+.float_right_block { float: right; }
+
+summary::-webkit-details-marker,
+details[open] summary::-webkit-details-marker,
+#details-marker{ display: none; }
