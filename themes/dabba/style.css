@@ -2729,6 +2729,7 @@ output {
   line-height: 1.42857143;
   color: #0d1016;
 }
+.input-text,
 .form-control {
   display: block;
   height: 2.10285714em;
@@ -2746,33 +2747,43 @@ output {
   -ms-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+.input-text:focus,
 .form-control:focus {
   outline: 0;
   outline: none;
 }
+.input-text::-moz-placeholder,
 .form-control::-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
   opacity: 1;
   font-weight: 300;
 }
+.input-text:-ms-input-placeholder,
 .form-control:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
 }
+.input-text::-webkit-input-placeholder,
 .form-control::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
 }
+.input-text[disabled],
 .form-control[disabled],
+.input-text[readonly],
 .form-control[readonly],
+fieldset[disabled] .input-text,
 fieldset[disabled] .form-control {
   background-color: #777777;
   opacity: 1;
 }
+.input-text[disabled],
 .form-control[disabled],
+fieldset[disabled] .input-text,
 fieldset[disabled] .form-control {
   cursor: not-allowed;
 }
+textarea.input-text,
 textarea.form-control {
   height: auto;
 }
