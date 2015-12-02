@@ -575,17 +575,31 @@ function set_timeframe_required( $fields ) {
 add_filter( 'woocommerce_checkout_fields' , 'set_timeframe_required' );
 
 /**
- * Quitar el estado de la dirección
+ * Quitar el estado y ciudad de la dirección (checkout)
  * @return string
  */
-function remove_city_state_as_required( $fields ) {
+function remove_city_state_as_required_checkout( $fields ) {
+
 
 	$fields['billing']['billing_state']['required'] = false;
 	$fields['billing']['billing_city']['required'] = false;
 	return $fields;
 
+}// remove_city_state_as_required_checkout
+add_filter( 'woocommerce_checkout_fields' , 'remove_city_state_as_required_checkout' );
+
+/**
+ * Quitar el estado y ciudad de la dirección (mi cuenta)
+ * @return string
+ */
+function remove_city_state_as_required( $fields ) {
+
+
+	$fields['billing_state']['required'] = false;
+	$fields['billing_city']['required'] = false;
+	return $fields;
+
 }// remove_city_state_as_required
-add_filter( 'woocommerce_checkout_fields' , 'remove_city_state_as_required' );
 add_filter( 'woocommerce_billing_fields' , 'remove_city_state_as_required' );
 
 /**
