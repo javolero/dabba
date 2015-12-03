@@ -72,7 +72,6 @@ function footerBottom(){
  * Get header's height
  */
 function getHeaderHeight(){
-	console.log($('.js-header').outerHeight());
     return $('.js-header').outerHeight();
 }// getHeaderHeight
 

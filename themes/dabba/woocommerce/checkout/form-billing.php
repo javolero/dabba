@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php if ( ! empty( $checkout->checkout_fields['account'] ) ) : ?>
 
-			<div class="create-account">
+			<div class="[ create-account ]">
 
 				<p><?php _e( 'Create an account by entering the information below. If you are a returning customer please login at the top of the page.', 'woocommerce' ); ?></p>
 

@@ -574,6 +574,7 @@ function set_timeframe_required( $fields ) {
 }// set_timeframe_required
 add_filter( 'woocommerce_checkout_fields' , 'set_timeframe_required' );
 
+
 /**
  * Quitar el estado de la dirección
  * @return string

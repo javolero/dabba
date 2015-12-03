@@ -1,5 +1,5 @@
 
-<div class="[ aguas ][ text-center ]">
+<div class="[ aguas ][ text-center ][ margin-bottom--large ]">
 	<div class="[ row ]">
 		<?php
 		$product_args = array(
