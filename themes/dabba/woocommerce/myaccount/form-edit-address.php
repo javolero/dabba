@@ -19,7 +19,7 @@ get_currentuserinfo();
 
 ?>
 
-<?php wc_print_notices(); ?>
+<?php //wc_print_notices(); ?>
 
 <div class="[ container ]">
 
