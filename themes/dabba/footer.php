@@ -1,5 +1,5 @@
 
-			<footer class="[ bg-tertiary ][ color-light ][ padding--top--large ]">
+			<footer class="[ bg-secondary ][ color-light ][ padding--top--large ]">
 				<div class="[ container ]">
 					<div class="[ row ][ margin-bottom ]">
 						<section class="[ footer__payment ][ margin-bottom ]">
@@ -125,16 +125,16 @@
 						<form id="form-zona" action="//dabba.us11.list-manage.com/subscribe/post?u=2444125ca807d59dd04e2a1dc&amp;id=28d981affe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" data-parsley-validate-no-listos>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="FNAME">Nombre y apellido<span class="required">*</span></label>
-								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="FNAME" value="" required data-parsley-error-message="Por favor ingresa tu nombre.">
+								<input type="text" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="FNAME" value="" required data-parsley-error-message="Por favor ingresa tu nombre.">
 							</p>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="EMAIL">Correo electrónico<span class="required">*</span></label>
-								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="EMAIL" value="" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
+								<input type="email" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="EMAIL" value="" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							</p>
 							<div class="[ select-style ]">
 								<p class="[ no-padding ][ text-left ][ col-xs-12 ]">
 									<label for="ZONA">Selecciona tu zona<span class="required">*</span></label>
-									<select class="[ form-control form-control-bg ][ margin-bottom--xsmall ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
+									<select class="[ form-control ][ margin-bottom--xsmall ]" name="ZONA" required data-parsley-error-message="por favor selecciona una zona">
 										<option value="">¿En qué zona del DF trabajas?</option>
 										<option value="Polanco">Polanco</option>
 										<option value="Lomas">Lomas</option>
@@ -173,12 +173,12 @@
 						<form id="form-zona" data-parsley-validate-comienza>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
 								<label for="username">Correo electrónico<span class="required">*</span></label>
-								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-comienza" placeholder="nombre@micorreo.com" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
+								<input type="email" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-comienza" placeholder="nombre@micorreo.com" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido.">
 							</p>
 							<div class="[ select-style ]">
 								<p class="[ no-padding ][ text-left ][ col-xs-12 ]">
 									<label for="username">Selecciona tu zona<span class="required">*</span></label>
-									<select class="[ form-control form-control-bg ][ margin-bottom--xsmall ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
+									<select class="[ form-control ][ margin-bottom--xsmall ]" name="select-zona" required data-parsley-error-message="por favor selecciona una zona">
 										<option disabled selected="selected">zona</option>
 										<option value="polanco">Polanco</option>
 										<option value="ampliacion-granada">Ampliación Granada</option>
@@ -188,7 +188,7 @@
 									</select>
 								</p>
 							</div>
-							<input class="[ toggable ][ form-control form-control-bg ][ col-xs-12 ][ margin-bottom--small ][ js-zona ][ hidden ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio.">
+							<input class="[ toggable ][ form-control ][ col-xs-12 ][ margin-bottom--small ][ js-zona ][ hidden ]" placeholder="Tu zona" name="zona" data-parsley-error-message="Este campo es obligatorio.">
 						</form>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
@@ -221,7 +221,7 @@
 
 						<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 							<label for="username">Correo electrónico<span class="required">*</span></label>
-							<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
+							<input type="email" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." >
 						</p>
 
 						<!-- <p class="form-row form-row-wide">
@@ -232,7 +232,7 @@
 						<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]"><label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?><span class="required">*</span></label></p>
-							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password" required>
+							<input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="password" type="password" id="reg_password" required>
 
 							<!-- <p class="form-row form-row-wide">
 								<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -306,11 +306,11 @@
 						<form class="[ ]" data-parsley-validate-gratis>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="username">Correo electrónico<span class="required">*</span></label>
-								<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-gratis" id="email" placeholder="nombre@micorreo.com" data-parsley-type="email" data-parsley-error-message="Por favor ingresa un correo electrónico válido." required>
+								<input type="email" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="email-gratis" id="email" placeholder="nombre@micorreo.com" data-parsley-type="email" data-parsley-error-message="Por favor ingresa un correo electrónico válido." required>
 							</p>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 								<label for="username">Tu zona<span class="required">*</span></label>
-								<input type="text" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="zona-gratis" id="tu-zona" placeholder="colonia o zona, área, etc…" value="" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." required>
+								<input type="text" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="zona-gratis" id="tu-zona" placeholder="colonia o zona, área, etc…" value="" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." required>
 							</p>
 						</form>
 					</div>
@@ -323,15 +323,15 @@
 		================================================== -->
 		<div id="login" class="[ modal fade ]" tabindex="-1" role="dialog" aria-labelledby="modalHola">
 			<div class="[ modal-content ][ text-center ]">
-				<div class="[ modal-header ][ bg-light ][ padding ]">
-					<h2 class="[ color-primary ][ no-margin ]">
+				<div class="[ modal-header ][ bg-primary ][ padding ]">
+					<h2 class="[ color-light ][ no-margin ]">
 						<span class="[ modal-title ]" id="modalHola">¡Hola!</span>
 						<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
-							<img class="[ svg ][ icon icon--stroke ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
+							<img class="[ svg ][ icon icon--stroke ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 						</a>
 					</h2>
 				</div>
-				<div class="[ modal-body ][ bg-primary ]">
+				<div class="[ modal-body ][ bg-light ]">
 					<p>Inicia sesión</p>
 					<div class="[ margin-bottom--small ]">
 						<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
@@ -341,21 +341,21 @@
 
 						<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 							<label for="username">Correo electrónico<span class="required">*</span></label>
-							<input type="email" class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>"  data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." />
+							<input type="email" class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>"  data-parsley-type="email" required data-parsley-error-message="Por favor ingresa un correo electrónico válido." />
 						</p>
 						<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ]">
 							<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-							<input class="[ form-control form-control-bg ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
+							<input class="[ form-control ][ margin-bottom--small ][ input-text ][ col-xs-12 ]" type="password" name="password" id="password" required data-parsley-error-message="Por favor ingresa tu contraseña." />
 						</p>
 						<span class="[ invalid-login-msg ][ js-invalid-login-msg ]"></span>
 
 						<p class="[ lost_password ]">
-							<small><a class="[ color-light ]" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">¿Olvidaste tu contraseña?</a></small>
+							<small><a class="[ color-secondary ]" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">¿Olvidaste tu contraseña?</a></small>
 						</p>
 
 						<p class="[ form-row ]">
 							<?php wp_nonce_field( 'woocommerce-login' ); ?>
-							<input type="submit" class="button [ btn btn-sm btn-hollow btn-light ]" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
+							<input type="submit" class="button [ btn btn-sm btn-hollow btn-primary ]" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
 							<label for="rememberme" class="[ inline ][ hidden ]">
 								<input name="rememberme" type="checkbox" id="rememberme" value="forever" checked="checked" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
 							</label>

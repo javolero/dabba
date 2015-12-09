@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	
+
 	<?php if ( ! is_user_logged_in() ) : ?>
 
 		<!-- HERO -->
@@ -96,7 +96,7 @@
 		</section>
 	<?php endif; ?>
 
-	<section class="[ detalles ][ bg-gradient ][ padding--bottom--large ][ margin-bottom--large ]">
+	<section class="[ detalles ][ bg-secondary ][ padding--bottom--large ][ margin-bottom--large ]">
 		<div class="[ container ][ text-center color-light ][ padding--top--xlarge ]">
 			<div class="[ block ][ col-xs-12 col-sm-10 col-md-8 col-lg-6 col-centered ][ text-center ]">
 				<div class="[ row ]">

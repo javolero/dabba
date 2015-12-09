@@ -188,10 +188,10 @@ function addPolyAreaEntrega( map ){
 
 	var areaEntrega = new google.maps.Polygon({
 		paths: areaEntregaCoords,
-		strokeColor: '#F65275',
+		strokeColor: '#673695',
 		strokeOpacity: 0.8,
 		strokeWeight: 2,
-		fillColor: '#F65275',
+		fillColor: '#673695',
 		fillOpacity: 0.35
 	});
 	areaEntrega.setMap(map);
@@ -212,10 +212,10 @@ function addAmpGranada( map ){
 	];
 	var areaAmpGranada = new google.maps.Polygon({
 		paths: ampGranadaCoords,
-		strokeColor: '#F65275',
+		strokeColor: '#673695',
 		strokeOpacity: 0.8,
 		strokeWeight: 2,
-		fillColor: '#F65275',
+		fillColor: '#673695',
 		fillOpacity: 0.35
 	});
 	areaAmpGranada.setMap(map);
@@ -244,10 +244,10 @@ function addLomas( map ){
 	];
 	var areaLomas = new google.maps.Polygon({
 		paths: lomasCoords,
-		strokeColor: '#F65275',
+		strokeColor: '#673695',
 		strokeOpacity: 0.8,
 		strokeWeight: 2,
-		fillColor: '#F65275',
+		fillColor: '#673695',
 		fillOpacity: 0.35
 	});
 	areaLomas.setMap(map);

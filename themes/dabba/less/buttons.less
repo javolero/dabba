@@ -269,37 +269,40 @@ input[type="button"] {
 // -------------------------
 
 .button-social-login-facebook{
-  color: @light;
-  background: @facebook;
+  color: @facebook;
+  background: transparent;
+  border: 1px solid @facebook;
 
   &:hover,
   &:focus,
   &.focus {
     color: @light;
-    background: darken(@facebook, 10%);
+    background: @facebook;
   }
 }
 
 .button-social-login-twitter{
-  color: @light;
-  background: @twitter;
+  color: @twitter;
+  background: transparent;
+  border: 1px solid @twitter;
 
   &:hover,
   &:focus,
   &.focus {
     color: @light;
-    background: darken(@twitter, 10%);
+    background: @twitter;
   }
 }
 
 .button-social-login-google{
   color: @google;
-  background: @light;
+  background: transparent;
+  border: 1px solid @google;
 
   &:hover,
   &:focus,
   &.focus {
-    color: @google;
-    background: darken(@light, 10%);
+    color: @light;
+    background: @google;
   }
 }
