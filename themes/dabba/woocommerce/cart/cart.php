@@ -135,7 +135,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<input type="text" name="coupon_code" class="[ input-text ][ form-control form-control-bg ][ col-xs-12 ]" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
 								</div><div
 								class="[ col-xs-4 ][ pull-none  ][ inline-block align-middle ][ text-right ]">
-									<input type="submit" class="[ btn btn-light btn-hollow btn-sm ]" name="apply_coupon" value="aplicar" />
+									<input type="submit" class="[ btn btn-light btn-hollow btn-sm ]" name="apply_coupon" value="aplicar" id="btn-aplicar-cupon" />
 								</div>
 
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
@@ -147,7 +147,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 
 					<div class="[ text-center ][ margin-bottom ]">
-						<input type="submit" class="[ btn btn-primary btn-hollow btn-sm ]" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+						<input type="submit" class="[ btn btn-primary btn-hollow btn-sm ]" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" id="btn-actualizar-carrito" />
 					</div>
 
 					<?php do_action( 'woocommerce_after_cart_contents' ); ?>

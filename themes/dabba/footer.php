@@ -30,10 +30,10 @@
 							<!-- <a class="[ margin-sides--xsmall ][ inline-block ]" href="<?php echo 'https://twitter.com/' ?>">
 								<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg">
 							</a> -->
-							<a class="[ margin-sides--xsmall ][ inline-block ]" href="https://www.facebook.com/dabbamx/" target="_blank">
+							<a class="[ margin-sides--xsmall ][ inline-block ]" href="https://www.facebook.com/dabbamx/" target="_blank" id="btn-facebook-footer">
 								<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg">
 							</a>
-							<a class="[ margin-sides--xsmall ][ inline-block ]" href="https://instagram.com/dabbamx/" target="_blank">
+							<a class="[ margin-sides--xsmall ][ inline-block ]" href="https://instagram.com/dabbamx/" target="_blank" id="btn-instagram-footer">
 								<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-instagram.svg">
 							</a>
 						</section>
@@ -60,15 +60,17 @@
 		<?php if( is_single() || is_home() ) : ?>
 			<?php if ( ! is_user_logged_in() ) : ?>
 				<!-- <a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#coming" data-toggle="modal"> -->
-				<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#comienza" data-toggle="modal">
+				<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#comienza" data-toggle="modal" id="btn-ordena-ahora">
 					ordena ahora
 				</a>
 			<?php else: ?>
-				<?php echo get_todays_add_to_cart_btn(); ?>
+				<?php if( product_can_be_bought( get_the_id() ) ) : ?>
+					<?php echo get_todays_add_to_cart_btn(); ?>
+				<?php endif; ?>
 			<?php endif; ?>
 		<?php elseif( ! is_page( 'checkout' ) ) : ?>
 			<!-- <a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#coming" data-toggle="modal"> -->
-			<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal">
+			<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal" id="btn-ver-platillos">
 				ver platillos
 			</a>
 		<?php endif; ?>
@@ -168,7 +170,7 @@
 					</h2>
 				</div>
 				<div class="[ modal-body ][ bg-primary ]">
-					<div class="[ margin-bottom--large ]">
+					<div class="[ margin-bottom ]">
 						<p class="[ margin-bottom--large ]">Ingresa tu siguiente información.</p>
 						<form id="form-zona" data-parsley-validate-comienza>
 							<p class="[ margin-bottom--xsmall no-padding ][ text-left ][ col-xs-12 ][ no-margin ]">
@@ -192,6 +194,8 @@
 						</form>
 					</div>
 					<a href="#" class="[ btn btn-sm btn-hollow btn-light ][ js-btn-siguiente ]" data-toggle="modal">siguiente</a>
+					<p class="[ margin-top--large ]">¿Ya eres parte de Dabba?</p>
+					<a class="[ btn btn-sm btn-hollow btn-light ][ js-inicia-sesion ]" href="#">inicia sesión</a>
 				</div><!-- End of Modal-body-->
 			</div><!-- End of Modal-content-->
 		</div><!-- End of Modal-->
@@ -255,7 +259,7 @@
 
 						<div class="[ clearfix ]"></div>
 						<div class="[ margin-bottom ]">&nbsp;</div>
-						<input type="submit" class="[ button ][ btn btn-sm btn-hollow btn-light ]" name="register" value="ver platillo de hoy" />
+						<input type="submit" class="[ button ][ btn btn-sm btn-hollow btn-light ]" name="register" value="ver platillo de hoy" id="btn-registro" />
 
 						<?php do_action( 'woocommerce_register_form_end' ); ?>
 					</form>
@@ -295,7 +299,7 @@
 				<div class="[ modal-header ][ bg-light ][ padding ]">
 					<h2 class="[ color-primary ][ no-margin ]">
 						<span class="">¡Comida gratis!</span>
-						<a class="[ close ]" data-dismiss="modal" aria-hidden="true">
+						<a class="[ close ]" data-dismiss="modal" aria-hidden="true" id="btn-comida-gratis">
 							<img class="[ svg ][ icon icon--stroke ][ color-primary ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/close.svg">
 						</a>
 					</h2>
@@ -350,7 +354,7 @@
 						<span class="[ invalid-login-msg ][ js-invalid-login-msg ]"></span>
 
 						<p class="[ lost_password ]">
-							<small><a class="[ color-light ]" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">¿Olvidaste tu contraseña?</a></small>
+							<small><a class="[ color-light ]" href="<?php echo esc_url( wp_lostpassword_url() ); ?>" id="btn-contrasena">¿Olvidaste tu contraseña?</a></small>
 						</p>
 
 						<p class="[ form-row ]">

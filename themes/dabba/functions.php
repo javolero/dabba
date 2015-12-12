@@ -417,7 +417,7 @@ function send_email_reuniones(){
 	$fecha 				= $_POST['fecha'];
 	$comentarios 		= isset( $_POST['comentarios'] ) ? $_POST['comentarios'] : '-';
 
-	$to = 'miguel@pcuervo.com';
+	$to = 'miguel@pcuervo.com,clientes@dabba.mx';
 	$subject = 'Informes acerca de Dabba para reuniones';
 	$headers = 'From: Dabba <no-reply@dabba.mx>' . "\r\n";
 	$message = '<html><body>';
@@ -667,11 +667,10 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
  * Crea un cupón único para la persona que se registró.
  * @return $coupon_code
  */
-function create_coupon(){
+function create_coupon( $user_id ){
 
 	$date = new DateTime();
 	$coupon_code = 'BIENVENIDO-' . $date->getTimestamp(); // Code
-	//$coupon_code = 'BIENVENIDO'; // Code
 	$amount = '120'; // Amount
 	$discount_type = 'fixed_cart'; // Type: fixed_cart, percent, fixed_product, percent_product
 
@@ -689,16 +688,92 @@ function create_coupon(){
 	update_post_meta( $new_coupon_id, 'individual_use', 'yes' );
 	update_post_meta( $new_coupon_id, 'product_ids', '' );
 	update_post_meta( $new_coupon_id, 'exclude_product_ids', '' );
-	update_post_meta( $new_coupon_id, 'usage_limit', '2' );
+	update_post_meta( $new_coupon_id, 'usage_limit', '1' );
 	update_post_meta( $new_coupon_id, 'expiry_date', '' );
 	update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
 	update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
 
+	// Add coupon to user
+	add_coupon_to_user( $user_id, $coupon_code );
+
 	return $coupon_code;
 
 }// create_coupon
-// add_action('user_register', 'create_coupon');
+add_action('user_register', 'create_coupon');
 
+/**
+ * Liga un cupón con un usuario
+ * @param int $user_id
+ * @param int $coupon_id
+ */
+function add_coupon_to_user( $user_id, $coupon_name ) {
+
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'dabba_coupons';
+	$wpdb->insert( 
+		$table_name, 
+		array( 
+			'user_id' 		=> $user_id, 
+			'coupon_name' 	=> $coupon_name
+		) 
+	);
+
+}
+
+/**
+ * Jala los cupones de un usuario
+ * @param int $user_id
+ * @param mixed $coupon_info
+ */
+function get_user_coupons( $user_id ){
+
+	global $wpdb; 
+
+	$coupons = array();
+	$coupon_query = "
+		SELECT *
+		FROM wp_dabba_coupons 
+		WHERE user_id = " . $user_id;
+	$coupon_results = $wpdb->get_results( $coupon_query, ARRAY_A );
+
+	if( empty( $coupon_results ) ) return 0;
+
+	foreach ( $coupon_results as $res ) {
+		$coupon = new WC_Coupon( $res['coupon_name'] );
+		array_push( $coupons, $coupon );
+	}
+	return $coupons;
+
+}// get_user_coupons
+
+function get_user_credits(){
+
+	global $current_user;
+	get_currentuserinfo();
+	$args = array(
+		'post_type'         => 'shop_coupon',
+		'post_status'       => 'publish',
+		'posts_per_page'    => -1,
+		'meta_query'        => array(
+			'relation'  => 'AND',
+			array(
+				'key'       => 'customer_email',
+				'value'     => $current_user->user_email,
+				'compare'   => 'LIKE'
+			),
+			array(
+				'key'       => 'coupon_amount',
+				'value'     => 0,
+				'compare'   => '>=',
+				'type'      => 'NUMERIC'
+			)
+		)
+	);
+
+	$coupons = get_posts( $args );
+
+	return $coupons;
+}// get_user_credits
 
 add_action('woocommerce_payment_complete', 'update_user_name');
 function update_user_name( $user_id ){
@@ -733,7 +808,36 @@ function get_notices() {
 	return json_encode( $notice_arr );
 }
 
+function redirect_to_home() {
+    wp_redirect( home_url() );
+    exit();
+}
+add_action('wp_logout', 'redirect_to_home');
+
 /**
  * Deletes all woocommerce styles
  */
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+
+function create_dabba_coupon_table() {
+	global $wpdb;
+
+	$table_name = $wpdb->prefix . 'dabba_coupons';
+	
+	$charset_collate = $wpdb->get_charset_collate();
+
+	$sql = "CREATE TABLE $table_name (
+		id mediumint(9) NOT NULL AUTO_INCREMENT,
+		user_id int NOT NULL,
+		coupon_name VARCHAR(23) NOT NULL,
+		UNIQUE KEY id (id)
+	) $charset_collate;";
+
+	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+	dbDelta( $sql );
+}
+create_dabba_coupon_table();
+
+
+

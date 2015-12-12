@@ -76,7 +76,7 @@
 				<div class="[ row ]">
 					<div class="[ col-sm-4 ][ hidden-xs ][ text-left ]">
 						<?php if ( ! is_user_logged_in() ) : ?>
-							<a class="[ show ]" href="#login" data-toggle="modal">
+							<a class="[ show ]" href="#login" data-toggle="modal" id="btn-entrar-header">
 							<!-- <a class="[ show ]" href="#coming" data-toggle="modal"> -->
 								<img class="[ svg ][ icon icon--iconed icon--fill ][ color-light ][ no-margin ]" src="<?php echo THEMEPATH; ?>icons/user.svg">
 								<p class="[ inline-block align-middle ][ color-light ][ no-margin margin-left--small ]">Entrar</p>
