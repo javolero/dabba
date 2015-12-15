@@ -6560,6 +6560,28 @@ button.close {
     padding-bottom: 35%;
   }
 }
+.bg-image--25-1 {
+  width: 100%;
+  padding-bottom: 35%;
+}
+@media (min-width: 768px) {
+  .bg-image-25-1--sm {
+    width: 100%;
+    padding-bottom: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .bg-image--25-1--md {
+    width: 100%;
+    padding-bottom: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .bg-image--25-1--lg {
+    width: 100%;
+    padding-bottom: 25%;
+  }
+}
 .modal-open {
   overflow: hidden;
 }

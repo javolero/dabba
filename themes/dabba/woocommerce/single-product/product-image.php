@@ -37,7 +37,7 @@ global $post, $woocommerce, $product;
 				$gallery = '';
 			}
 
-			echo "<div class='[ bg-image bg-image--16-9 bg-image--3-1--sm ]' style='background-image: url( $image[0] )' ></div>";
+			echo "<div class='[ bg-image bg-image--16-9 bg-image--3-1--sm bg-image--25-1--md ]' style='background-image: url( $image[0] )' ></div>";
 			//echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s" data-rel="prettyPhoto' . $gallery . '">%s</a>', $image_link, $image_caption, $image ), $post->ID );
 
 		} else {

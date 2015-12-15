@@ -37,7 +37,6 @@ $fibra_dietetica = get_post_meta( $post->ID, '_fibra_dietetica_meta', true );
 			<?php endforeach; ?>
 		</div>
 	</article>
-	<hr class="[ divider-primary ][ margin-bottom-large ]">
 <?php endif; ?>
 
 <?php if ( ! empty( $ingredientes[0] ) ) : ?>

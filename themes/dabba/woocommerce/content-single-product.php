@@ -45,8 +45,7 @@ $fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) )
 			 */
 			do_action( 'woocommerce_before_single_product_summary' );
 		?>
-		<p class="[ bg-primary ][ padding--sides padding--top-bottom--small ][ text-center ][ color-light ]"><?php echo $fecha_menu ?></p>
-
+		<p class="[ padding--top-bottom--small no-margin ][ text-center color-intermediate ]"><?php echo $fecha_menu ?></p>
 		<section class="[ summary entry-summary ]">
 			<?php do_action( 'woocommerce_single_product_summary' ); ?>
 		</section><!-- .summary -->

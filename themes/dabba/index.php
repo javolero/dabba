@@ -19,18 +19,6 @@
 			</video>
 		</section>
 
-		<section class="[ descripcion ][ container ][ margin-bottom--large ]">
-			<h4 class="[ text-center ][ no-margin ]">
-				Ingredientes frescos de temporada<br />
-				&mdash; <br />
-				Platillos innovadores <br />
-				&mdash; <br />
-				Donde estés
-			</h4>
-		</section>
-
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
-
 		<section class="[ container ][ como-funciona ][ text-center ][ margin-bottom--large ]">
 			<div class="[ row ]">
 				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
@@ -50,8 +38,6 @@
 				</div>
 			</div>
 		</section>
-
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
 
 	<?php endif; ?>
 
