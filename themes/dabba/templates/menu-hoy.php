@@ -39,7 +39,7 @@
 								<div class="[ pull-right ]">
 									<?php
 									if ( ! $product->is_in_stock() ) :
-										echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ]">agotado</a>';
+										echo '<a rel="nofollow" class="[ btn btn-sm btn-default btn-hollow ]">agotado</a>';
 									else:
 										echo woocommerce_template_loop_add_to_cart();
 									endif;
@@ -51,8 +51,6 @@
 				</section>
 			</div>
 		</section>
-
-		<hr class="[ divider-primary ][ margin-bottom--large ]">
 
 <?php
 	endif; wp_reset_query();

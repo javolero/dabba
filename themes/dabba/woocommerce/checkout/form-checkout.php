@@ -61,7 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
-				<section class="[ col-xs-12 col-md-5 ][ bg-gradient ][ color-light ][ padding--top-bottom--large margin-bottom--large ][ order_review ]">
+				<section class="[ col-xs-12 col-md-5 ][ bg-primary ][ color-light ][ padding--top-bottom--large margin-bottom--large ][ order_review ]">
 					<div id="order_review" class="[ woocommerce-checkout-review-order ]">
 						<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 					</div>

@@ -18,8 +18,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="[ container ][ margin-top margin-bottom--large ][ text-center ]">
 	<p class="[ cart-empty ]"><?php _e( 'Your cart is currently empty.', 'woocommerce' ) ?></p>
 	<?php do_action( 'woocommerce_cart_is_empty' ); ?>
-	<a class="[ btn btn-primary btn-hollow ]" href="<?php echo site_url() ?>">Ver platillos</a>
+	<a class="[ btn btn-primary btn-hollow ]" href="<?php echo site_url() ?>">ver platillos</a>
 </div>
-
-<hr class="[ divider-primary ][ margin-bottom-large ]">
-

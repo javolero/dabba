@@ -10,14 +10,39 @@
   #gradient >.directional(@primary, @secondary, 145deg);
 }
 
+.bg-primary{
+  background-color: @primary;
+  color: @light;
+}
+
+.bg-secondary{
+  background-color: @secondary;
+  color: @light;
+}
+
 .bg-tertiary{
   background-color: @tertiary;
   color: @light;
 }
 
+.bg-success {
+  .bg-variant(@state-success-bg);
+}
+.bg-info {
+  .bg-variant(@state-info-bg);
+}
+.bg-warning {
+  .bg-variant(@state-warning-bg);
+}
+.bg-danger {
+  .bg-variant(@state-danger-bg);
+}
+
+
 // Colors
 // -------------------------
 .color-primary{ color: @primary; }
+.color-secondary{ color: @secondary; }
 .color-dark{ color: @gray-darker; }
 .color-light{ color: @light; }
 .color-gray{ color: @gray; }
@@ -74,6 +99,12 @@
 .affix {
   position: fixed;
 }
+
+// Widths
+.width-100{ width: 100%; }
+
+// Heights
+.height-100{ height: 100%; }
 
 //Padding
 .no-padding{ padding: 0 !important; }

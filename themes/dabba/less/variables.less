@@ -7,9 +7,9 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@primary: 					#F05475; //pink
-@secondary: 				#673695; //purple
-@tertiary:					#0D1016; //almost black
+@primary: 					#673695; //purple
+@secondary: 				#0D1016; //almost black
+@tertiary:					fade(@gray-lighter, 60%); //Light light gray
 
 @light:						#FFFFFF; //white
 
@@ -202,12 +202,12 @@
 //##
 
 //** `<input>` background color
-@input-bg:                       fade(@gray-lighter, 60%);
+@input-bg:                       fade(@gray-lighter, 80%);
 //** `<input disabled>` background color
 @input-bg-disabled:              @gray-light;
 
 //** Text color for `<input>`s
-@input-color:                    @tertiary;
+@input-color:                    @secondary;
 //** `<input>` border color
 @input-border:                   #ccc;
 

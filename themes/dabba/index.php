@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	
+
 	<?php if ( ! is_user_logged_in() ) : ?>
 
 		<!-- HERO -->
@@ -12,14 +12,12 @@
 					<p class="[ text-center color-light text-lowercase ][ no-margin ]">¿ya estás registrado? <a class="[ underline ]" href="#login" data-toggle="modal" id="btn-entra-aqui">entra aquí</a></p>
 				</div>
 			<?php endif; ?>
-			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-bottom ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/home-intro--md.jpg">
+			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-bottom ]" autoplay loop poster="<?php echo THEMEPATH; ?>images/home-intro--md.jpg">
 				<source src="<?php echo THEMEPATH; ?>videos/video.mp4" type="video/mp4">
 				<source src="<?php echo THEMEPATH; ?>videos/video.webm" type="video/webm">
 				<source src="<?php echo THEMEPATH; ?>videos/video.ogv" type="video/ogg">
 			</video>
 		</section>
-
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
 
 		<section class="[ container ][ como-funciona ][ text-center ][ margin-bottom--large ]">
 			<div class="[ row ]">
@@ -40,8 +38,6 @@
 				</div>
 			</div>
 		</section>
-
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
 
 	<?php endif; ?>
 
@@ -86,20 +82,20 @@
 		</section>
 	<?php endif; ?>
 
-	<section class="[ detalles ][ bg-gradient ][ padding--bottom--large ][ margin-bottom--large ]">
-		<div class="[ container ][ text-center color-light ][ padding--top--xlarge ]">
-			<div class="[ block ][ col-xs-12 col-sm-10 col-md-8 col-lg-6 col-centered ][ text-center ]">
+	<section class="[ detalles ][ margin-bottom--large ]">
+		<div class="[ container ][ text-center color-light ]">
+			<div class="[ block ][ col-xs-12 col-sm-10 col-md-8 col-lg-6 col-centered ][ text-center color-secondary ]">
 				<div class="[ row ]">
 					<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
-						<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
+						<img class="[ svg ][ icon icon--feature icon--stroke ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
 						<h3 class="[ no-margin ]">Horario de entrega</h3>
-						<p class="[ text-light ][ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
-						<p class="[ text-light ][ no-margin ][ text-uppercase ]">1pm - 4pm</p>
+						<p class="[ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
+						<p class="[ no-margin ][ text-uppercase ]">1pm - 4pm</p>
 					</div>
 					<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
-						<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
+						<img class="[ svg ][ icon icon--feature icon--stroke ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
 						<h3 class="[ no-margin ]">$99 - $119</h3>
-						<p class="[ text-light ][ no-margin ][ no-margin ]">Postre y precio de envío incluidos.</p>
+						<p class="[ no-margin ][ no-margin ]">Postre y precio de envío incluidos.</p>
 					</div>
 				</div>
 			</div>
@@ -138,7 +134,7 @@
 		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ][ text-center ]">
 			<h2 class="">Comparte Dabba</h2>
 			<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ]">
-				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por XXX, entre más amigos invites, más comida gratis para tí.</p>
+				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por $119, entre más amigos invites, más comida gratis para tí.</p>
 			</div>
 			<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#invita-a-un-amigo" data-toggle="modal" id="btn-invitar">invitar</a>
 		</section>
