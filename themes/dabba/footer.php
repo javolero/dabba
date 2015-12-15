@@ -10,9 +10,9 @@
 								<div class="[ col-xs-3 ]">
 									<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="">
 								</div>
-								<div class="[ col-xs-3 ]">
+<!-- 								<div class="[ col-xs-3 ]">
 									<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/amex.svg" alt="">
-								</div>
+								</div> -->
 								<div class="[ col-xs-3 ]">
 									<img class="[ icon icon--responsive ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="">
 								</div>
