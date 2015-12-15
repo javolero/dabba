@@ -3883,6 +3883,18 @@ fieldset[disabled] .btn-danger.active {
   color: #673695;
   background: #ffffff;
 }
+.btn-hollow.btn-default {
+  border-color: rgba(51, 51, 51, 0.4);
+  color: rgba(51, 51, 51, 0.4);
+  cursor: default;
+}
+.btn-hollow.btn-default:hover,
+.btn-hollow.btn-default:focus,
+.btn-hollow.btn-default.focus {
+  border-color: rgba(51, 51, 51, 0.4);
+  color: rgba(51, 51, 51, 0.4);
+  background: transparent;
+}
 .btn-link {
   color: #673695;
   font-weight: normal;
@@ -6528,24 +6540,24 @@ button.close {
 }
 .bg-image--3-1 {
   width: 100%;
-  padding-bottom: 30%;
+  padding-bottom: 35%;
 }
 @media (min-width: 768px) {
   .bg-image--3-1--sm {
     width: 100%;
-    padding-bottom: 30%;
+    padding-bottom: 35%;
   }
 }
 @media (min-width: 992px) {
   .bg-image--3-1--md {
     width: 100%;
-    padding-bottom: 30%;
+    padding-bottom: 35%;
   }
 }
 @media (min-width: 1200px) {
   .bg-image--3-1--lg {
     width: 100%;
-    padding-bottom: 30%;
+    padding-bottom: 35%;
   }
 }
 .modal-open {
@@ -7402,6 +7414,9 @@ button.toast-close-button {
 .color-primary {
   color: #673695;
 }
+.color-secondary {
+  color: #0d1016;
+}
 .color-dark {
   color: #222222;
 }
@@ -7980,9 +7995,7 @@ button.toast-close-button {
 }
 header {
   height: 60px;
-  position: absolute;
-  background: transparent;
-  z-index: 100;
+  background: #0d1016;
 }
 .hero {
   width: 100%;

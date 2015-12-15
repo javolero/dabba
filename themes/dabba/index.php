@@ -96,20 +96,20 @@
 		</section>
 	<?php endif; ?>
 
-	<section class="[ detalles ][ bg-secondary ][ padding--bottom--large ][ margin-bottom--large ]">
-		<div class="[ container ][ text-center color-light ][ padding--top--xlarge ]">
-			<div class="[ block ][ col-xs-12 col-sm-10 col-md-8 col-lg-6 col-centered ][ text-center ]">
+	<section class="[ detalles ][ margin-bottom--large ]">
+		<div class="[ container ][ text-center color-light ]">
+			<div class="[ block ][ col-xs-12 col-sm-10 col-md-8 col-lg-6 col-centered ][ text-center color-secondary ]">
 				<div class="[ row ]">
 					<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
-						<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
+						<img class="[ svg ][ icon icon--feature icon--stroke ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/clock.svg">
 						<h3 class="[ no-margin ]">Horario de entrega</h3>
-						<p class="[ text-light ][ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
-						<p class="[ text-light ][ no-margin ][ text-uppercase ]">1pm - 4pm</p>
+						<p class="[ no-margin ][ text-uppercase ]">Lunes - Viernes</p>
+						<p class="[ no-margin ][ text-uppercase ]">1pm - 4pm</p>
 					</div>
 					<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
-						<img class="[ svg ][ icon icon--feature icon--stroke ][ color-light ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
+						<img class="[ svg ][ icon icon--feature icon--stroke ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
 						<h3 class="[ no-margin ]">$99 - $119</h3>
-						<p class="[ text-light ][ no-margin ][ no-margin ]">Postre y precio de envío incluidos.</p>
+						<p class="[ no-margin ][ no-margin ]">Postre y precio de envío incluidos.</p>
 					</div>
 				</div>
 			</div>

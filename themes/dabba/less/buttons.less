@@ -134,6 +134,21 @@
 }
 
 
+.btn-hollow.btn-default{
+  border-color: fade(@btn-default-color, 40%);
+  color: fade(@btn-default-color, 40%);
+  cursor: default;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    border-color: fade(@btn-default-color, 40%);
+    color: fade(@btn-default-color, 40%);
+    background: transparent;
+  }
+}
+
+
 
 // Link buttons
 // -------------------------
