@@ -85,6 +85,11 @@ function footer_scripts(){
 					$('#comienza').modal('toggle');
 				});
 
+				$('.js-inicia-sesion').on('click', function(){
+					$('#comienza').modal('toggle');
+					$('#login').modal('toggle');
+				});
+
 				$('.add_to_cart_button').on('click', function(){
 					toggleClass('.js-notification__number', 'added');
 				});

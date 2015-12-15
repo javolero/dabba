@@ -9,7 +9,7 @@
 			</div>
 			<?php if ( ! is_user_logged_in() ) : ?>
 				<div class="[ col-xs-12 ][ z-index-2 ][ center-bottom ][ hero__login  ]">
-					<p class="[ text-center color-light text-lowercase ][ no-margin ]">¿ya estás registrado? <a class="[ underline ]" href="#login" data-toggle="modal">entra aquí</a></p>
+					<p class="[ text-center color-light text-lowercase ][ no-margin ]">¿ya estás registrado? <a class="[ underline ]" href="#login" data-toggle="modal" id="btn-entra-aqui">entra aquí</a></p>
 				</div>
 			<?php endif; ?>
 			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-bottom ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/home-intro--md.jpg">
@@ -19,6 +19,11 @@
 			</video>
 		</section>
 
+<<<<<<< HEAD
+=======
+		<hr class="[ divider-primary ][ margin-bottom-large ]">
+
+>>>>>>> 8412477c7ae29b3b86ad922db55d172b532263a1
 		<section class="[ container ][ como-funciona ][ text-center ][ margin-bottom--large ]">
 			<div class="[ row ]">
 				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
@@ -122,7 +127,7 @@
 					<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ][ no-padding ][ text-center ]">
 						<p>¿No entregamos en tu zona?</p>
 						<p>Déjanos tu correo y tu zona, cuando estemos por allá te regalaremos una comida, ¿qué dices?</p>
-						<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#comida-gratis" data-toggle="modal">ok</a>
+						<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#comida-gratis" data-toggle="modal" id="btn-ok">ok</a>
 					</div><!-- row -->
 				<?php endif; ?>
 			</article>
@@ -136,7 +141,7 @@
 			<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ]">
 				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por XXX, entre más amigos invites, más comida gratis para tí.</p>
 			</div>
-			<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#invita-a-un-amigo" data-toggle="modal">invitar</a>
+			<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#invita-a-un-amigo" data-toggle="modal" id="btn-invitar">invitar</a>
 		</section>
 	<?php endif; ?>
 

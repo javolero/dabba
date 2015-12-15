@@ -42,6 +42,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="[ col-xs-12 col-sm-6 ]">
 			<?php do_action( 'woocommerce_before_my_account' ); ?>
 
+			<?php wc_get_template( 'myaccount/my-coupons-credits.php' ); ?>
+			
 			<?php wc_get_template( 'myaccount/my-programmed-orders.php' ); ?>
 
 			<?php wc_get_template( 'myaccount/my-orders.php', array( 'order_count' => $order_count ) ); ?>
@@ -54,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="[ margin-bottom--large ]">
 		<?php
 		printf(
-			__( '<a class="[ color-primary ][ btn btn-primary btn-hollow btn-sm ][ margin-sides--small ]" href="%2$s">Sign out</a>', 'woocommerce' ) . ' ',
+			__( '<a class="[ color-primary ][ btn btn-primary btn-hollow btn-sm ][ margin-sides--small ]" href="%2$s" id="btn-cerrar-sesion">Cerrar sesión</a>', 'woocommerce' ) . ' ',
 			$current_user->display_name,
 			wc_get_endpoint_url( 'customer-logout', '', wc_get_page_permalink( 'myaccount' ) )
 		);
