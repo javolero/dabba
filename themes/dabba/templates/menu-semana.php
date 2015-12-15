@@ -42,10 +42,9 @@
 								echo '<a rel="nofollow" class="[ btn btn-sm btn-default btn-hollow ]">agotado</a>';
 							elseif( product_can_be_bought( $product->id ) ):
 								echo woocommerce_template_loop_add_to_cart();
-							elseif( ! product_can_be_bought( $product->id ) ):
-								echo '<a href="#" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ]">ver detalles</a>';
-							endif;
-							?>
+							elseif( ! product_can_be_bought( $product->id ) ): ?>
+								<a href="<?php the_permalink(); ?>" rel="nofollow" class="[ btn btn-sm btn-primary btn-hollow ]">ver detalles</a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

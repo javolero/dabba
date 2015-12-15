@@ -289,7 +289,7 @@ function showInfoNotification( infoMsg ){
 
 function showInvalidLoginError(){
 
-    $('.js-invalid-login-msg').text('El nombre de usuario o contraseña son incorrectos, por favor intenta nuevamente.');
+    $('.js-invalid-login-msg').removeClass('hidden').text('El nombre de usuario o contraseña son incorrectos, por favor intenta nuevamente.');
     $('#login').modal('toggle');
 
 }// showInvalidLoginError

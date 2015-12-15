@@ -127,15 +127,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-					<div class="[ actions ][ coupon ][ padding--top-bottom margin-bottom ][ bg-gradient ][ color-light ][ row ]">
+					<div class="[ actions ][ margin-bottom ][ coupon ][ row ]">
 
 						<?php if ( WC()->cart->coupons_enabled() ) { ?>
 								<!-- <label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> -->
 								<div class="[ col-xs-8 ][ pull-none  ][ inline-block align-middle ]">
-									<input type="text" name="coupon_code" class="[ input-text ][ form-control form-control-bg ][ col-xs-12 ]" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+									<input type="text" name="coupon_code" class="[ input-text ][ form-control ][ width-100 ]" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
 								</div><div
 								class="[ col-xs-4 ][ pull-none  ][ inline-block align-middle ][ text-right ]">
-									<input type="submit" class="[ btn btn-light btn-hollow btn-sm ]" name="apply_coupon" value="aplicar" id="btn-aplicar-cupon" />
+									<input type="submit" class="[ btn btn-primary btn-hollow btn-sm ]" name="apply_coupon" value="aplicar" id="btn-aplicar-cupon" />
 								</div>
 
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>

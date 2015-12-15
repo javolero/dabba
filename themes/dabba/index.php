@@ -12,18 +12,13 @@
 					<p class="[ text-center color-light text-lowercase ][ no-margin ]">¿ya estás registrado? <a class="[ underline ]" href="#login" data-toggle="modal" id="btn-entra-aqui">entra aquí</a></p>
 				</div>
 			<?php endif; ?>
-			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-bottom ]" autoplay loop poster="<?php echo THEMEPATH; ?>img/home-intro--md.jpg">
+			<video class="[ hero__video hero__video--home ][ z-index-1 ][ center-bottom ]" autoplay loop poster="<?php echo THEMEPATH; ?>images/home-intro--md.jpg">
 				<source src="<?php echo THEMEPATH; ?>videos/video.mp4" type="video/mp4">
 				<source src="<?php echo THEMEPATH; ?>videos/video.webm" type="video/webm">
 				<source src="<?php echo THEMEPATH; ?>videos/video.ogv" type="video/ogg">
 			</video>
 		</section>
 
-<<<<<<< HEAD
-=======
-		<hr class="[ divider-primary ][ margin-bottom-large ]">
-
->>>>>>> 8412477c7ae29b3b86ad922db55d172b532263a1
 		<section class="[ container ][ como-funciona ][ text-center ][ margin-bottom--large ]">
 			<div class="[ row ]">
 				<div class="[ col-xs-12 col-sm-4 ][ margin-bottom ]">
@@ -139,7 +134,7 @@
 		<section class="[ container-fluid ][ creditos ][ margin-bottom--large ][ text-center ]">
 			<h2 class="">Comparte Dabba</h2>
 			<div class="[ block ][ col-xs-12 col-sm-8 col-md-6 col-centered ]">
-				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por XXX, entre más amigos invites, más comida gratis para tí.</p>
+				<p class="[ text-center lead ]">Invita a un amigo a unirse a Dabba y recibe un cupón por $119, entre más amigos invites, más comida gratis para tí.</p>
 			</div>
 			<a class="[ btn btn-primary btn-sm btn-hollow ]" href="#invita-a-un-amigo" data-toggle="modal" id="btn-invitar">invitar</a>
 		</section>

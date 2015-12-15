@@ -38,6 +38,10 @@ html, body{ height: 100%; }
   position: relative;
 }
 
+// Selections
+::selection{ background: @primary; color: @light; }
+::-moz-selection { background: @primary; color: @light; }
+
 // Reset fonts for relevant elements
 input,
 button,
