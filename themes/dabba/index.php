@@ -97,7 +97,7 @@
 					<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
 						<img class="[ svg ][ icon icon--feature icon--stroke ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/coins.svg">
 						<h3 class="[ no-margin ]">$99 - $119</h3>
-						<p class="[ no-margin ][ no-margin ]">Postre y precio de envío incluidos.</p>
+						<p class="[ no-margin ][ no-margin ]">Precio de envío incluido.</p>
 					</div>
 				</div>
 			</div>
