@@ -100,7 +100,7 @@ function getScrollY() {
 \*------------------------------------*/
 
 function toggleClass(element, classToToggle){
-    element.toggleClass(classToToggle);
+    $(element).toggleClass(classToToggle);
 }
 
 function toggleElement(element){
