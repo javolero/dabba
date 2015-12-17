@@ -6898,7 +6898,7 @@ msgstr ""
 
 #: includes/class-wc-frontend-scripts.php:236
 msgid "Error processing checkout. Please try again."
-msgstr ""
+msgstr "Por favor llena las campos obligatorios (*)"
 
 #: includes/class-wc-frontend-scripts.php:243
 #: includes/wc-template-functions.php:1626

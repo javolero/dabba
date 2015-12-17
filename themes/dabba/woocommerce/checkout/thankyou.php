@@ -37,29 +37,29 @@ if ( $order ) : ?>
 
 			<h3 class="[ text-center ]">¡Gracias por tu compra! <br />Tu pedido ha sido recibido.</h3>
 
-			<div class="[ order_details ]">
-				<li class="[ order ]">
-					<?php _e( 'Order Number:', 'woocommerce' ); ?>
-					<strong><?php echo $order->get_order_number(); ?></strong>
-				</li>
-				<li class="[ date ]">
-					<?php _e( 'Date:', 'woocommerce' ); ?>
-					<strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong>
-				</li>
-				<li class="[ total ]">
-					<?php _e( 'Total:', 'woocommerce' ); ?>
-					<strong><?php echo $order->get_formatted_order_total(); ?></strong>
-				</li>
-				<?php if ( $order->payment_method_title ) : ?>
-				<li class="[ method ]">
-					<?php _e( 'Payment Method:', 'woocommerce' ); ?>
-					<strong><?php echo $order->payment_method_title; ?></strong>
-				</li>
-				<?php endif; ?>
-			</div>
-			<div class="clear"></div>
+			<table class="shop_table order_details">
+				<tbody>
+					<tr>
+						<th class="product-name"><?php _e( 'Order Number:', 'woocommerce' ); ?></th>
+						<th class="product-total"><?php echo $order->get_order_number(); ?></th>
+					</tr>
+					<tr>
+						<th class="product-name"><?php _e( 'Date:', 'woocommerce' ); ?></th>
+						<th class="product-total"><strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong></th>
+					</tr>
+					<tr>
+						<th class="product-name"><?php _e( 'Total:', 'woocommerce' ); ?></th>
+						<th class="product-total"><strong><?php echo $order->get_formatted_order_total(); ?></strong></th>
+					</tr>
+					<tr>
+						<th class="product-name"><?php _e( 'Payment Method:', 'woocommerce' ); ?></th>
+						<th class="product-total"><strong><?php echo $order->payment_method_title; ?></strong></th>
+					</tr>
+				</tbody>
+			</table>
 
-		<?php endif; ?>
+			<?php endif; ?>
+			<div class="[ clear ]"></div>
 
 		<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
 		<?php do_action( 'woocommerce_thankyou', $order->id ); ?>

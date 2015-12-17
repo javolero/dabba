@@ -2730,18 +2730,18 @@ output {
 }
 .input-text::-moz-placeholder,
 .form-control::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: #888888;
   opacity: 1;
   font-weight: 300;
 }
 .input-text:-ms-input-placeholder,
 .form-control:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: #888888;
   font-weight: 300;
 }
 .input-text::-webkit-input-placeholder,
 .form-control::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: #888888;
   font-weight: 300;
 }
 .input-text[disabled],
@@ -3187,7 +3187,7 @@ select[multiple].input-lg {
   width: 100%;
   padding: 0 30px 0 12px;
   background-color: #ffffff;
-  background: #ffffff url("icons/down-arrow.png") no-repeat 98% 50%;
+  background: #ffffff url("images/arrow-down.png") no-repeat 98% 50%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -5709,6 +5709,11 @@ a.thumbnail.active {
 .added_to_cart {
   display: none;
 }
+.woocommerce-error {
+  padding: 6px 12px;
+  background-color: #d9534f;
+  color: #ffffff;
+}
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -6951,7 +6956,7 @@ button.toast-close-button {
   cursor: pointer;
 }
 #toast-container > .toast-info {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
+  background-image: url('icons/info.svg') !important;
 }
 #toast-container > .toast-error {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=") !important;
@@ -8553,5 +8558,10 @@ details[open] summary::-webkit-details-marker,
 .payment_method_paypal a,
 .payment_method_paypal img {
   display: none;
+}
+.woocommerce-checkout #payment div.payment_box input.input-text,
+.woocommerce-checkout #payment div.payment_box textarea {
+  width: 100%;
+  background: #ffffff;
 }
 /*# sourceMappingURL=bootstrap.css.map */

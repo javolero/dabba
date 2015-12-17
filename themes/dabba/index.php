@@ -39,6 +39,8 @@
 			</div>
 		</section>
 
+		<hr class="[ divider-primary ][ margin-bottom-large ]">
+
 	<?php endif; ?>
 
 	<?php if( can_order_today() ) get_template_part( 'templates/menu', 'hoy' ); ?>
