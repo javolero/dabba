@@ -808,11 +808,6 @@ function get_notices() {
 	return json_encode( $notice_arr );
 }
 
-function redirect_to_home() {
-    wp_redirect( home_url() );
-    exit();
-}
-add_action('wp_logout', 'redirect_to_home');
 
 /**
  * Deletes all woocommerce styles
@@ -839,5 +834,24 @@ function create_dabba_coupon_table() {
 }
 create_dabba_coupon_table();
 
+function clear_cart_contents_logout(){
+	if( function_exists('WC') ){
+        WC()->cart->empty_cart();
+    }
+    wp_redirect( home_url() );
+    exit();
+}
+add_action('wp_logout', 'clear_cart_contents_logout');
 
+function clear_cart_after_order_time(){
+
+	if (date('H') < 15) return;
+
+	//if( function_exists('WC') ) WC()->cart->empty_cart(); 
+	if( function_exists('WC') ) WC()->cart->empty_cart(); 
+
+
+
+}
+// clear_cart_after_order_time();
 
