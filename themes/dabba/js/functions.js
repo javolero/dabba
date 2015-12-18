@@ -277,6 +277,11 @@ function showErrorNotification( errorMsg ){
 
 function showSuccessNotification( successMsg ){
 
+    if( successMsg.indexOf('Estas autenticado como') > -1 ) {
+        toastr.success( '¡Bienvenido a Dabba!' );
+        return;
+    }
+
     toastr.success( successMsg );
 
 }// showSuccessNotification
