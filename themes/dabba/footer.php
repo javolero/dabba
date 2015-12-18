@@ -64,7 +64,7 @@
 					<?php echo get_todays_add_to_cart_btn(); ?>
 				<?php endif; ?>
 			<?php endif; ?>
-		<?php elseif( ! is_page( 'checkout' ) ) : ?>
+		<?php elseif( ! is_page( 'checkout' ) && ! is_page( 'cart' ) ) : ?>
 			<!-- <a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="#coming" data-toggle="modal"> -->
 			<a class="[ btn btn-primary btn--action btn--action--center ][ bar-action--sm ][ padding--sides ]" href="<?php echo site_url() ?>" data-toggle="modal" id="btn-ver-platillos">
 				ver platillos
