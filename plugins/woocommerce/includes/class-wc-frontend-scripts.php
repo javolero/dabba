@@ -233,7 +233,7 @@ class WC_Frontend_Scripts {
 					'checkout_url'              => WC_AJAX::get_endpoint( "checkout" ),
 					'is_checkout'               => is_page( wc_get_page_id( 'checkout' ) ) && empty( $wp->query_vars['order-pay'] ) && ! isset( $wp->query_vars['order-received'] ) ? 1 : 0,
 					'debug_mode'                => defined('WP_DEBUG') && WP_DEBUG,
-					'i18n_checkout_error'       => esc_attr__( 'Por favor llena las campos obligatorios (*)', 'woocommerce' ),
+					'i18n_checkout_error'       => esc_attr__( 'Error processing checkout. Please try again.', 'woocommerce' ),
 				);
 			break;
 			case 'wc-address-i18n' :

@@ -6906,7 +6906,7 @@ msgstr "Por favor selecciona una puntuación"
 
 #: includes/class-wc-frontend-scripts.php:229
 msgid "Error processing checkout. Please try again."
-msgstr "Por favor llena las campos obligatorios (*)"
+msgstr ""
 
 #: includes/class-wc-frontend-scripts.php:236
 #: includes/wc-template-functions.php:1626

@@ -700,7 +700,7 @@ class WC_Checkout {
 			// only print notices if not reloading the checkout, otherwise they're lost in the page reload
 			if ( ! isset( WC()->session->reload_checkout ) ) {
 				ob_start();
-				// wc_print_notices();
+				wc_print_notices();
 				$messages = ob_get_clean();
 			}
 
