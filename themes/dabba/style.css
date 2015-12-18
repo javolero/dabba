@@ -7457,6 +7457,15 @@ a.bg-danger:focus {
 .color-danger {
   color: #d9534f;
 }
+.color-facebook {
+  color: #3b5998;
+}
+.color-twitter {
+  color: #55acee;
+}
+.color-google {
+  color: #e24b44;
+}
 .clearfix:before,
 .clearfix:after,
 .dl-horizontal dd:before,
@@ -8569,5 +8578,10 @@ details[open] summary::-webkit-details-marker,
 .woocommerce-checkout #payment div.payment_box textarea {
   width: 100%;
   background: #ffffff;
+}
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+.platillo-semana:last-of-type:nth-child(odd) {
+  margin: 0 auto;
+  float: none;
 }
 /*# sourceMappingURL=bootstrap.css.map */

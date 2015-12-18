@@ -31,13 +31,13 @@ $google_share_link = "https://plus.google.com/share?url=" . $url . '&amp;title='
 	<?php echo '<p>' . $not_encode_url . '</p>'; ?>
 	<?php if (get_option( 'rf_share_facebook' ) == 'yes') : ?>
 		<a target="_blank" class="[ margin-sides--small margin-bottom--small ][ btn button-social-login-facebook ]" href="<?php echo $facebook_share_link ?>">
-			<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg"> <?php echo __('Facebook' ,'mg_referfriend')?>
+			<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-facebook ]" src="<?php echo THEMEPATH; ?>icons/logo-facebook.svg"> <?php echo __('Facebook' ,'mg_referfriend')?>
 		</a>
 	<?php endif ?>
 
 	<?php if (get_option('rf_share_twitter') == 'yes') : ?>
 		<a target="_blank" class="[ margin-sides--small margin-bottom--small ][ btn button-social-login-twitter ]" href="<?php echo $twitter_share_link?>">
-			<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg"> <?php echo __('Twitter' ,'mg_referfriend')?>
+			<img class="[ svg ][ icon icon--iconed--mini icon--fill ][ color-twitter ]" src="<?php echo THEMEPATH; ?>icons/logo-twitter.svg"> <?php echo __('Twitter' ,'mg_referfriend')?>
 		</a>
 	<?php endif ?>
 

@@ -41,6 +41,10 @@
 						<button class="[ button ][ btn btn-sm btn-hollow btn-primary ]" type="submit">Enviar</button>
 					</div>
 				</form>
+				<div class="[ js-para-reuniones-response ][ hidden ]">
+					<h3 class="[ margin-bottom--small ]">Gracias</h3>
+					<p>Recibirás un correo con los pasos a seguir para obetener este servicio.</p>
+				</div>
 			</div>
 		</div>
 

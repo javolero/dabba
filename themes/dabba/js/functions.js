@@ -335,7 +335,9 @@ function sendMailReuniones( data ){
         ajax_url,
         data,
         function( response ){
-            console.log( response );
+            //console.log( response );
+            $('.js-para-reuniones').addClass('hidden');
+            $('.js-para-reuniones-response').removeClass('hidden');
         }
     );
 

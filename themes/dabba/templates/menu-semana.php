@@ -17,7 +17,7 @@
 
 	if( $query->have_posts() ) :
 		echo '<h2 class="[ text-center ]">Menú de la semana</h2>';
-		echo '<div class="row">';
+		echo '<div class="[ row ]">';
 		while( $query->have_posts() ) : $query->the_post();
 			global $product;
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );

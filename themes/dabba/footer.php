@@ -216,7 +216,7 @@
 							</a>
 						</h2>
 					</div>
-					<div class="[ modal-body ][ bg-primary ]">
+					<div class="[ modal-body ]">
 						<p>Sí entregamos en tu zona, regístrate con</p>
 						<div class="[ margin-bottom ]">
 							<?php echo do_shortcode('[woocommerce_social_login_buttons return_url="' . site_url() . '"]'); ?>
