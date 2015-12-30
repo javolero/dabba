@@ -39,10 +39,8 @@ class DABBA_API_Web_services {
 
 		add_action( 'dabba_api_webservice_register', array( $this, 'register' ) );
 
-
-
-
-
+		add_action( 'dabba_api_webservice_today_menu', array( $this, 'today_menu' ) );
+		add_action( 'dabba_api_webservice_weekend_menu', array( $this, 'weekend_menu' ) );
 
 
 		//add_action( 'wpsws_general_settings', array( $this, 'settings' ), 1 );
@@ -267,6 +265,109 @@ class DABBA_API_Web_services {
 
 
 
+
+	}
+
+
+
+	public function today_menu(){
+
+		$data = array(
+			'can_order_today' => can_order_today(),
+			'menu' => array(),
+		);
+
+
+		$product_args = array(
+			'post_type' 		=> 'product',
+			'posts_per_page'	=> 1,
+			'meta_query' 		=> array(
+				array(
+					'key' 	=> '_fecha_menu_meta',
+					'value'	=> date('Y-m-d'),
+				)
+			)
+		);
+		$query = new WP_Query( $product_args );
+
+		if( $query->have_posts() ) {
+
+			$query->the_post();
+
+			global $product;
+			global $post;
+
+			$image 				= wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
+
+
+			$guarnicion_1 		= get_post_meta($post->ID, '_guarnicion_1_meta', true);
+			$guarnicion_2 		= get_post_meta($post->ID, '_guarnicion_2_meta', true);
+
+
+			$data['menu'][] = array(
+				'title' => get_the_title(),
+				'content' => format_contenido_platillo( $guarnicion_1, $guarnicion_2 ),
+				'image' => $image[0],
+				'guarnicion_1' => $guarnicion_1,
+				'guarnicion_2' => $guarnicion_2,
+				'is_in_stock' => $product->is_in_stock(),
+			);
+		}
+
+		DABBA_API_Output::get()->output( true, 200, '', $data );
+		
+	}
+
+	public function weekend_menu(){
+
+		$data = array(
+			'menu' => array(),
+		);
+
+		$query_count = 0;
+		$product_args = array(
+			'post_type' 		=> 'product',
+			'posts_per_page'	=> 5,
+			'meta_query' 		=> array(
+				array(
+					'key' 	=> '_fecha_menu_meta',
+					'value'	=> get_dias_restantes_semana(),
+				)
+			),
+			'orderby'			=> 'meta_value',
+			'order'				=> 'ASC'
+		);
+		$query = new WP_Query( $product_args );
+
+		if( $query->have_posts() ) {
+			
+			while( $query->have_posts() ) {
+				$query->the_post();
+				global $product;
+				global $post;
+
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'shop_single' );
+				$fecha_menu = get_fecha_es( get_post_meta($post->ID, '_fecha_menu_meta', true) );
+				
+				$guarnicion_1 		= get_post_meta($post->ID, '_guarnicion_1_meta', true);
+				$guarnicion_2 		= get_post_meta($post->ID, '_guarnicion_2_meta', true);
+
+
+
+				$data['menu'][] = array(
+					'title' => get_the_title(),
+					'content' => format_contenido_platillo( $guarnicion_1, $guarnicion_2 ),
+					'image' => $image[0],
+					'guarnicion_1' => $guarnicion_1,
+					'guarnicion_2' => $guarnicion_2,
+					'fecha_menu' => $fecha_menu,
+					'can_be_bought' => product_can_be_bought( $product->id ),
+					'is_in_stock' => $product->is_in_stock(),
+				);
+			}
+		}
+
+		DABBA_API_Output::get()->output( true, 200, '', $data );
 
 	}
 

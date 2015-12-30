@@ -150,9 +150,39 @@ Url: <code><?php bloginfo('url'); ?>/api/register</code><br/><br/>
 
 <input type="submit" value="Enviar"/>
 
+</form>
 
 
 
+<h2>Today Menu</h2>
+Url: <code><?php bloginfo('url'); ?>/api/today_menu</code><br/><br/>
+<form action="<?php bloginfo('url'); ?>/api/today_menu" method="post" target="_blank">
+
+
+
+<label for="auth_key">auth_key [post]</label>
+<input type="text" name="auth_key" id="auth_key" value="<?php echo DABBA_API_AUTH_KEY; ?>"/><br/>
+
+
+<input type="submit" value="Enviar"/>
+
+</form>
+
+
+
+<h2>Weekend Menu</h2>
+Url: <code><?php bloginfo('url'); ?>/api/weekend_menu</code><br/><br/>
+<form action="<?php bloginfo('url'); ?>/api/weekend_menu" method="post" target="_blank">
+
+
+
+<label for="auth_key">auth_key [post]</label>
+<input type="text" name="auth_key" id="auth_key" value="<?php echo DABBA_API_AUTH_KEY; ?>"/><br/>
+
+
+<input type="submit" value="Enviar"/>
+
+</form>
 
 
 
